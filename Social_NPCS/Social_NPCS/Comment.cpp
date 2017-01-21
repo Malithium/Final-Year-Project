@@ -1,14 +1,11 @@
 #include "Comment.h"
 
-
-
-Comment::Comment(std::string nBody, std::string nId, std::string nP_Id, bool nReply, std::vector<std::string>replyIds)
+Comment::Comment(std::string nBody, std::string nId, std::string nP_Id, bool nReply)
 {
 	setBody(nBody);
 	setId(nId);
 	setParentId(nP_Id);
 	setReply(nReply);
-	setReplyIds(replyIds);
 }
 
 std::string Comment::getBody()
@@ -31,11 +28,6 @@ bool Comment::getReply()
 	return reply;
 }
 
-std::vector<std::string> Comment::getReplyIDs()
-{
-	return reply_IDs;
-}
-
 void Comment::setBody(std::string nBody)
 {
 	body = nBody;
@@ -56,7 +48,7 @@ void Comment::setReply(bool nReply)
 	reply = nReply;
 }
 
-void Comment::setReplyIds(std::vector<std::string> nReplyIds)
+bool operator== (const Comment &c1, const Comment &c2)
 {
-	reply_IDs = nReplyIds;
+	return c1.id == c2.id;
 }

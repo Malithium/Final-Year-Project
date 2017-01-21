@@ -5,6 +5,7 @@
 #include "PythonHandler.h"
 #include "GroupPopulator.h"
 #include "JSONReader.h"
+
 #include <iostream>
 
 int main()
@@ -16,6 +17,7 @@ int main()
 	GroupPopulator populator(reader.ReadJsonFile());
 	Group grp = populator.PopulateGroup();
 
+	system("PAUSE");
     return 0;
 }
 

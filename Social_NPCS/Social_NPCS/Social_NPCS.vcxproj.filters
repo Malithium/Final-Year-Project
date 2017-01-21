@@ -13,6 +13,18 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\DataObjects">
+      <UniqueIdentifier>{88cf69da-8b10-4dab-b9b2-cee6e77981ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\DataHelpers">
+      <UniqueIdentifier>{c4e99e33-2106-4d36-8c9f-ab3f4c3d0fe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\JSON">
+      <UniqueIdentifier>{297bb6df-ed6f-4993-9864-4921c1cdbec5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Python">
+      <UniqueIdentifier>{e9e5d9e3-5e80-4e85-9821-42a2846b5226}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -45,6 +57,9 @@
     <ClInclude Include="GroupPopulator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CommentFormatter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -53,26 +68,29 @@
     <ClCompile Include="Social_NPCS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PythonHandler.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="jsoncpp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="JSONReader.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Comment.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Topic.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DataObjects</Filter>
     </ClCompile>
     <ClCompile Include="Group.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DataObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Topic.cpp">
+      <Filter>Source Files\DataObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="CommentFormatter.cpp">
+      <Filter>Source Files\DataHelpers</Filter>
     </ClCompile>
     <ClCompile Include="GroupPopulator.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\DataHelpers</Filter>
+    </ClCompile>
+    <ClCompile Include="jsoncpp.cpp">
+      <Filter>Source Files\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="JSONReader.cpp">
+      <Filter>Source Files\JSON</Filter>
+    </ClCompile>
+    <ClCompile Include="PythonHandler.cpp">
+      <Filter>Source Files\Python</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
