@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Social_NPCS", "Social_NPCS\Social_NPCS.vcxproj", "{0C51A46A-A516-44DF-810C-8F6066BA9B0E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Social_NPCS_Test", "Social_NPCS_Test\Social_NPCS_Test.vcxproj", "{CCFAAE83-BCB9-46FB-9242-A84EF3DC5872}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0C51A46A-A516-44DF-810C-8F6066BA9B0E} = {0C51A46A-A516-44DF-810C-8F6066BA9B0E}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +26,14 @@ Global
 		{0C51A46A-A516-44DF-810C-8F6066BA9B0E}.Release|x64.Build.0 = Release|x64
 		{0C51A46A-A516-44DF-810C-8F6066BA9B0E}.Release|x86.ActiveCfg = Release|Win32
 		{0C51A46A-A516-44DF-810C-8F6066BA9B0E}.Release|x86.Build.0 = Release|Win32
+		{CCFAAE83-BCB9-46FB-9242-A84EF3DC5872}.Debug|x64.ActiveCfg = Debug|x64
+		{CCFAAE83-BCB9-46FB-9242-A84EF3DC5872}.Debug|x64.Build.0 = Debug|x64
+		{CCFAAE83-BCB9-46FB-9242-A84EF3DC5872}.Debug|x86.ActiveCfg = Debug|Win32
+		{CCFAAE83-BCB9-46FB-9242-A84EF3DC5872}.Debug|x86.Build.0 = Debug|Win32
+		{CCFAAE83-BCB9-46FB-9242-A84EF3DC5872}.Release|x64.ActiveCfg = Release|x64
+		{CCFAAE83-BCB9-46FB-9242-A84EF3DC5872}.Release|x64.Build.0 = Release|x64
+		{CCFAAE83-BCB9-46FB-9242-A84EF3DC5872}.Release|x86.ActiveCfg = Release|Win32
+		{CCFAAE83-BCB9-46FB-9242-A84EF3DC5872}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
