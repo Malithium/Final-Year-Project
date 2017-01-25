@@ -25,6 +25,9 @@
     <Filter Include="Source Files\Python">
       <UniqueIdentifier>{e9e5d9e3-5e80-4e85-9821-42a2846b5226}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\SDL">
+      <UniqueIdentifier>{7cb60ca6-a202-471e-ab32-e5a41bce0a99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -60,6 +63,9 @@
     <ClInclude Include="CommentFormatter.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="SDLWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -91,6 +97,9 @@
     </ClCompile>
     <ClCompile Include="PythonHandler.cpp">
       <Filter>Source Files\Python</Filter>
+    </ClCompile>
+    <ClCompile Include="SDLWindow.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
