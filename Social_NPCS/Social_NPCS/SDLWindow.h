@@ -1,5 +1,7 @@
 #pragma once
 #include <SDL.h>
+#include <SDL_image.h>
+#include <SDL_ttf.h>
 #include <string>
 class SDLWindow
 {
@@ -23,9 +25,12 @@ public:
 
 	SDL_Window* getWindow();
 	void setWindow(const char* title, int x, int y, int width, int height, Uint32 flag);
+
+	SDL_Renderer* getRenderer();
 private:
 	SDL_Window* Window;
 	SDL_Surface* Surface;
+	SDL_Renderer* Renderer;
 
 	const char* SCREEN_TITLE;
 	int SCREEN_X;
