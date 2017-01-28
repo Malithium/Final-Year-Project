@@ -162,6 +162,7 @@
     <ClInclude Include="json.h" />
     <ClInclude Include="JSONReader.h" />
     <ClInclude Include="LoadTexture.h" />
+    <ClInclude Include="NPC.h" />
     <ClInclude Include="NPC_Group.h" />
     <ClInclude Include="PythonHandler.h" />
     <ClInclude Include="SDLWindow.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="jsoncpp.cpp" />
     <ClCompile Include="JSONReader.cpp" />
     <ClCompile Include="LoadTexture.cpp" />
+    <ClCompile Include="NPC.cpp" />
     <ClCompile Include="NPC_Group.cpp" />
     <ClCompile Include="PythonHandler.cpp" />
     <ClCompile Include="SDLWindow.cpp" />

@@ -12,7 +12,7 @@ public:
 	bool loadFromFile(std::string path, SDL_Renderer* renderer);
 
 	//Creates image from font string
-	bool loadFromRenderedText(std::string textureText, SDL_Color textColor, SDL_Renderer* renderer);
+	bool loadFromRenderedText(std::string textureText, SDL_Color textColor, SDL_Renderer* renderer, Uint32 nWidth);
 
 	void free();
 

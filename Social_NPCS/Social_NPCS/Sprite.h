@@ -11,6 +11,11 @@ public:
 	int getX();
 	int getY();
 
+	void setY(int y);
+	void setX(int x);
+
+	void free();
+
 	virtual void render(SDL_Renderer* renderer);
 	bool loadMedia(SDL_Renderer* renderer, std::string file);
 private:

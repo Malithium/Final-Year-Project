@@ -1,19 +1,23 @@
 #pragma once
 #include <vector>
-#include "Sprite.h"
+#include "NPC.h"
+#include "Group.h"
+#include <algorithm>
+
 class NPC_Group
 {
 public:
-	NPC_Group(int x, int y, int size);
+	NPC_Group(int x, int y, int size, SDL_Renderer* renderer, Topic tp);
 
-	std::vector<Sprite> getNPCList();
-
-	void createGroup(SDL_Renderer* renderer);
-	void renderGroup(SDL_Renderer* renderer);
-	void LoadGroup(SDL_Renderer* renderer);
-	void populateVector();
+	void LoadNPCs(SDL_Renderer* renderer);
+	void renderConversation(SDL_Renderer* renderer);
+	void ConversationSimulation(SDL_Renderer* renderer, bool time);
+	std::vector<NPC> getNPCList();
 private:
-	std::vector<Sprite> NPCs;
+	std::vector<NPC> NPCs;
+	std::vector<Comment> script;
+
+	int currentComment = 0;
 
 	int GroupX;
 	int GroupY;

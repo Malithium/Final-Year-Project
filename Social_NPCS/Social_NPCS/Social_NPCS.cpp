@@ -13,6 +13,8 @@
 
 #include <iostream>
 
+int lastTime = 0, currentTime;
+
 int main(int argc, char* args[])
 {
 	PythonHandler pHandler("comments", "getComments");
@@ -25,6 +27,7 @@ int main(int argc, char* args[])
 	SDLWindow window("Social NPC's", SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED, 640, 480, SDL_WINDOW_SHOWN);
 	LoadTexture textureLoader;
 
+	Uint32 startTime = 0;
 	Topic tp = grp.getTopics()[0];
 	if (!window.init())
 	{
@@ -36,19 +39,15 @@ int main(int argc, char* args[])
 		Sprite npc(window.getScreenWidth()/2, window.getScreenHeight()/2);
 		Sprite npc2((window.getScreenWidth() / 2) + 32, (window.getScreenHeight() / 2 )+ 32);
 
-		NPC_Group group1(window.getScreenWidth()/2, window.getScreenHeight()/2, 6);
+	
 		SDL_Event e;
 		SDL_Renderer* renderer = window.getRenderer();
-		
-		TextBox tBox;
+		NPC_Group group1(window.getScreenWidth() / 2, window.getScreenHeight() / 2, 6, renderer, grp.getTopics()[0]);
+		NPC oneNPC("Textbox.png", "NPC.png", grp.getTopics()[0].getTopic(), renderer, window.getScreenWidth() / 2, window.getScreenHeight() / 2);
 
-		tBox.loadMedia(renderer, "TextBox.png");
-		tBox.loadText(renderer, tp.getComments()[0].getBody());
-
-		group1.createGroup(renderer);
-
-		while (!quit)
-		{
+		int i = 0;
+		bool time = false;
+		while (!quit) {
 			while (SDL_PollEvent(&e) != 0)
 			{
 				if (e.type == SDL_QUIT)
@@ -56,15 +55,43 @@ int main(int argc, char* args[])
 					quit = true;
 				}
 			}
+			currentTime = SDL_GetTicks();
 			SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 			SDL_RenderClear(renderer);
-			
-			group1.renderGroup(renderer);
-			tBox.render(renderer);
-			tBox.renderComment(renderer, window.getScreenWidth()/2,window.getScreenHeight()/2);
-			SDL_RenderPresent(renderer);
-		}
+			/*
+			if (i == 0)
+			{
+				oneNPC.LoadComment(renderer, i);
+				i++;
+			}
+			if (currentTime > lastTime + 3000)
+			{
+				if (i > oneNPC.getLinesToRender())
+					i = 0;
+				oneNPC.LoadComment(renderer, i);
+				lastTime = currentTime;
+				i++;
+			}
+			*/
 
+			group1.LoadNPCs(renderer);
+			group1.ConversationSimulation(renderer, time);
+			//oneNPC.render(renderer);
+			//oneNPC.renderBox(renderer);
+			//oneNPC.renderComment(renderer);
+			if (currentTime > lastTime + 3000)
+			{
+				time = true;
+				lastTime = currentTime;
+			}
+			else
+			{
+				time = false;
+			}
+			group1.renderConversation(renderer);
+			SDL_RenderPresent(renderer);
+			//std::cout << "Time: " << startTime << std::endl;
+		}
 	}
     return 0;
 }

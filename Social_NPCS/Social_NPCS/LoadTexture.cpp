@@ -48,13 +48,12 @@ bool LoadTexture::loadFromFile(std::string path, SDL_Renderer* renderer)
 	return texture != NULL;
 }
 
-bool LoadTexture::loadFromRenderedText(std::string textureText, SDL_Color textColor, SDL_Renderer* renderer)
+bool LoadTexture::loadFromRenderedText(std::string textureText, SDL_Color textColor, SDL_Renderer* renderer, Uint32 nWidth)
 {
 	//Get rid of preexisting texture
 	free();
-
 	//Render text surface
-	SDL_Surface* textSurface = TTF_RenderText_Solid(font, textureText.c_str(), textColor);
+	SDL_Surface* textSurface = TTF_RenderText_Blended_Wrapped(font, textureText.c_str(), textColor, nWidth);
 	if (textSurface == NULL)
 	{
 		printf("Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError());
