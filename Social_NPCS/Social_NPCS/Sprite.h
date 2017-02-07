@@ -1,9 +1,10 @@
 #pragma once
-#include "LoadTexture.h"
+#include "Texture.h"
 class Sprite
 {
 public:
-	Sprite( int x = 0, int y = 0, LoadTexture l = LoadTexture());
+	Sprite();
+	Sprite(std::string fileName, SDL_Renderer* renderer, int x = 0, int y = 0);
 
 	int getWidth();
 	int getHeight();
@@ -14,14 +15,14 @@ public:
 	void setY(int y);
 	void setX(int x);
 
+	void render(SDL_Renderer* renderer);
 	void free();
-
-	virtual void render(SDL_Renderer* renderer);
-	bool loadMedia(SDL_Renderer* renderer, std::string file);
+	bool loadMedia(SDL_Renderer* renderer);
 private:
 	int posX, posY;
 	int width, height;
+	std::string spriteFile;
 
-	LoadTexture loader;
+	Texture texture;
 };
 

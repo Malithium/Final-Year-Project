@@ -1,10 +1,10 @@
 #include "Sprite.h"
 
-Sprite::Sprite(int x, int y, LoadTexture l)
+Sprite::Sprite(){}
+
+Sprite::Sprite(std::string fileName, SDL_Renderer* renderer, int x, int y): posX(x), posY(y), spriteFile(fileName)
 {
-	posX = x;
-	posY = y;
-	loader = l;
+
 }
 
 int Sprite::getHeight()
@@ -39,25 +39,27 @@ void Sprite::setY(int y)
 
 void Sprite::render(SDL_Renderer* renderer)
 {
-	loader.render(posX, posY, renderer);
+	texture.render(posX, posY, renderer);
 }
 
 void Sprite::free()
 {
-	loader.free();
+	texture.free();
 }
 
-bool Sprite::loadMedia(SDL_Renderer* renderer, std::string file)
+bool Sprite::loadMedia(SDL_Renderer* renderer)
 {
+	//Loading success flag
 	bool success = true;
 
-	if (!loader.loadFromFile(file, renderer))
+	//Load dot texture
+	if (!texture.loadFromFile(spriteFile, renderer))
 	{
-		printf("Failed to load the media!\n");
+		printf("Failed to load texture!\n");
 		success = false;
 	}
-	width = loader.getWidth();
-	height = loader.getHeight();
+	width = texture.getWidth();
+	height = texture.getHeight();
 
 	return success;
 }

@@ -3,19 +3,22 @@
 #include "NPC.h"
 #include "Group.h"
 #include <algorithm>
-
+#include <ctime>
+#include <cstdlib>
 class NPC_Group
 {
 public:
-	NPC_Group(int x, int y, int size, SDL_Renderer* renderer, Topic tp);
+	NPC_Group(int x, int y, int size, std::string tBoxFile, std::string npcFile, SDL_Renderer* renderer, Topic tp);
 
 	void LoadNPCs(SDL_Renderer* renderer);
 	void renderConversation(SDL_Renderer* renderer);
-	void ConversationSimulation(SDL_Renderer* renderer, bool time);
+	void ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_Font* font);
 	std::vector<NPC> getNPCList();
 private:
 	std::vector<NPC> NPCs;
 	std::vector<Comment> script;
+
+	std::string topicString;
 
 	int currentComment = 0;
 

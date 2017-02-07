@@ -28,6 +28,9 @@
     <Filter Include="Source Files\SDL">
       <UniqueIdentifier>{7cb60ca6-a202-471e-ab32-e5a41bce0a99}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ResourceData">
+      <UniqueIdentifier>{7ed4b41a-9962-4d65-9cde-a1dab701bed5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
@@ -69,9 +72,6 @@
     <ClInclude Include="Sprite.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="LoadTexture.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="NPC_Group.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -79,6 +79,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="NPC.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ResourceData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -119,17 +125,25 @@
     <ClCompile Include="Sprite.cpp">
       <Filter>Source Files\SDL</Filter>
     </ClCompile>
-    <ClCompile Include="LoadTexture.cpp">
-      <Filter>Source Files\SDL</Filter>
-    </ClCompile>
     <ClCompile Include="NPC_Group.cpp">
       <Filter>Source Files\SDL</Filter>
-    </ClCompile>
-    <ClCompile Include="TextBox.cpp">
-      <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="NPC.cpp">
       <Filter>Source Files\SDL</Filter>
     </ClCompile>
+    <ClCompile Include="TextBox.cpp">
+      <Filter>Source Files\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>Source Files\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="ResourceData.cpp">
+      <Filter>Source Files\ResourceData</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ResourceData.json">
+      <Filter>Source Files\ResourceData</Filter>
+    </None>
   </ItemGroup>
 </Project>

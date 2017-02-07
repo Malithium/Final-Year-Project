@@ -9,18 +9,22 @@ class TextBox : public Sprite
 {
 public:
 	TextBox();
-	void renderComment(SDL_Renderer * renderer);
-	bool loadText(SDL_Renderer* renderer, std::string text);
-	void createStrings(std::string text);
+	TextBox(std::string fileName, SDL_Renderer* renderer, int x, int y);
+	void renderComment(SDL_Renderer* renderer);
+	bool loadText(SDL_Renderer* renderer, std::string text, TTF_Font* font);
+	void createStrings(std::string text, TTF_Font* font);
 
 	int getLinesToRender();
+
+	void freeComment();
 
 	std::string returnLine(int i);
 	void emptyTextToRender();
 
-	void freeText();
 private:
+	int fontWidth, fontHeight;
+
 	std::vector<std::string> textToRender;
-	LoadTexture fontTexture;
+	Texture fontTexture;
 };
 

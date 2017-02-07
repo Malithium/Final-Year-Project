@@ -1,22 +1,21 @@
 #include "TextBox.h"
 
-TextBox::TextBox()
-{
-}
+TextBox::TextBox(){}
+
+TextBox::TextBox(std::string fileName, SDL_Renderer* renderer, int x, int y): Sprite(fileName, renderer, x, y){}
 
 void TextBox::renderComment(SDL_Renderer* renderer)
 {
-	fontTexture.render(getX(), getY() + getHeight() / 4, renderer);
+	fontTexture.render(getX(), getY(), renderer);
 }
 
-bool TextBox::loadText(SDL_Renderer* renderer, std::string text)
+bool TextBox::loadText(SDL_Renderer* renderer, std::string text, TTF_Font* font)
 {
 	//Loading success flag
 	bool success = true;
 
 	//Open the font
-	fontTexture.setFont("lazy.ttf", 28);
-	if (fontTexture.getFont() == NULL)
+	if (font == NULL)
 	{
 		printf("Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError());
 		success = false;
@@ -25,31 +24,32 @@ bool TextBox::loadText(SDL_Renderer* renderer, std::string text)
 	{
 		//Render text
 		SDL_Color textColor = { 0, 0, 0 };
-		int boxWidth = getWidth();
-		if (!fontTexture.loadFromRenderedText(text, textColor, renderer, boxWidth))
+		if (!fontTexture.loadFromRenderedText(text, textColor, renderer, font, getWidth()))
 		{
 			printf("Failed to render text texture!\n");
 			success = false;
 		}
+		fontWidth = fontTexture.getWidth();
+		fontHeight = fontTexture.getHeight();
 	}
 
 	return success;
 }
 
-void TextBox::createStrings(std::string text)
+void TextBox::createStrings(std::string text, TTF_Font* font)
 {
-	fontTexture.setFont("lazy.ttf", 28);
-	if (fontTexture.getFont() == NULL)
+	if (font == NULL)
 	{
 		printf("Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError());
 	}
 	else
 	{
 		int tW, tH;
-		TTF_SizeText(fontTexture.getFont(), "a", &tW, &tH);
-		int maxCharsPerLine = getWidth() / tW;
+		TTF_SizeText(font, "a", &tW, &tH);
+		int supposedWidth = getWidth();
+		std::cout << supposedWidth << std::endl;
+		int maxCharsPerLine = supposedWidth / tW;
 		int numSubStrings = text.length() / maxCharsPerLine;
-
 		std::vector<std::string> ret;
 
 		std::stringstream threeChunks;
@@ -59,7 +59,7 @@ void TextBox::createStrings(std::string text)
 			std::string textChunk = text.substr(i * maxCharsPerLine, maxCharsPerLine);
 			threeChunks << textChunk;
 			counter++;
-			if (counter == 3)
+			if (counter == 3 || counter == numSubStrings)
 			{
 				counter = 0;
 				textToRender.push_back(threeChunks.str());
@@ -76,6 +76,11 @@ void TextBox::createStrings(std::string text)
 	}
 }
 
+void TextBox::freeComment()
+{
+	fontTexture.free();
+}
+
 int TextBox::getLinesToRender()
 {
 	return textToRender.size();
@@ -83,15 +88,13 @@ int TextBox::getLinesToRender()
 
 std::string TextBox::returnLine(int i)
 {
-	return textToRender[i];
+	if (textToRender.size() > 0)
+		return textToRender[i];
+	else
+		return "";
 }
 
 void TextBox::emptyTextToRender()
 {
 	textToRender.clear();
-}
-
-void TextBox::freeText()
-{
-	fontTexture.free();
 }
