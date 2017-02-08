@@ -67,6 +67,10 @@ void NPC_Group::LoadNPCs(SDL_Renderer* renderer)
 	}
 }
 
+
+/*
+returns the NPCs in the group
+*/
 std::vector<NPC> NPC_Group::getNPCList()
 {
 	return NPCs;
@@ -77,13 +81,15 @@ a method that handles the background logic of the NPC conversation's within the 
 */
 void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_Font* font)
 {
-	//if the specfied amount of time has passed
+	//if the specfied amount of time has passed simulate conversation
 	if (timer)
 	{
 			for (int i = 0; i < NPCs.size(); i++)
 			{
+				//if the current NPC is speaking
 				if (NPCs[i].getSpeaking() == true)
 				{
+					//load the textbox and comment
 					NPCs[i].LoadBox(renderer);
 					if (NPCs[i].getReadingTopic())
 					{
@@ -91,48 +97,57 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 						NPCs[i].setReadingTopic(false);
 					}
 
+					//retrieve the amount of lines we are rendering
 					int lines = NPCs[i].getLinesToRender();
+
+					//if we have yet to reach the maximum amount of lines to render
 					if (currentComment < lines)
 					{
+						//load the comment
 						NPCs[i].LoadComment(renderer, currentComment, font);
 						currentComment++;
 					}
 					else
 					{
+						//free up the speech box and comment
 						currentComment = 0;
 						NPCs[i].setSpeaking(false);
 						NPCs[i].freeBox();
 
+						//get a random number between 0 and groupsize
 						srand(time(NULL));
-						int random = rand() % 6;
+						int random = rand() % GroupSize;
 
-						if (random != i)
-						{
-							NPCs[random].setSpeaking(true);
-							NPCs[random].prepareComment(script[0].getBody(), font);
-							script.erase(script.begin());
-						}
-						else
+						//if the random number matches our current NPC, change its value
+						if (random == i)
 						{
 							if (random == 5)
 								random--;
 							else
 								random++;
-							NPCs[random].setSpeaking(true);
-							NPCs[random].prepareComment(script[0].getBody(), font);
-							script.erase(script.begin());
 						}
+
+						//set the next NPC to speak and prepare its comment
+						NPCs[random].setSpeaking(true);
+						NPCs[random].prepareComment(script[0].getBody(), font);
+
+						//remove the comment that was just rendered
+						script.erase(script.begin());						
 					}
 				}			
 		}
 	}
 }
 
+/*
+renders the textbox and comments of the NPC's
+*/
 void NPC_Group::renderConversation(SDL_Renderer* renderer)
 {
 	std::vector<NPC>::iterator npcIterator;
 	for (npcIterator = NPCs.begin(); npcIterator != NPCs.end(); npcIterator++)
 	{
+		//render the comment of the NPC currently speaking
 		if (npcIterator->getSpeaking()) {
 			(npcIterator)->renderBox(renderer);
 			(npcIterator)->renderComment(renderer);

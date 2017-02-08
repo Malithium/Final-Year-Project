@@ -17,7 +17,7 @@ bool TextBox::loadText(SDL_Renderer* renderer, std::string text, TTF_Font* font)
 	//Open the font
 	if (font == NULL)
 	{
-		printf("Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError());
+		printf("Failed to load font! SDL_ttf Error: %s\n", TTF_GetError());
 		success = false;
 	}
 	else
@@ -40,7 +40,7 @@ void TextBox::createStrings(std::string text, TTF_Font* font)
 {
 	if (font == NULL)
 	{
-		printf("Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError());
+		printf("Failed to load font! SDL_ttf Error: %s\n", TTF_GetError());
 	}
 	else
 	{
