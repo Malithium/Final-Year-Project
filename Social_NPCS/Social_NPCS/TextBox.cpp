@@ -47,7 +47,6 @@ void TextBox::createStrings(std::string text, TTF_Font* font)
 		int tW, tH;
 		TTF_SizeText(font, "a", &tW, &tH);
 		int supposedWidth = getWidth();
-		std::cout << supposedWidth << std::endl;
 		int maxCharsPerLine = supposedWidth / tW;
 		int numSubStrings = text.length() / maxCharsPerLine;
 		std::vector<std::string> ret;

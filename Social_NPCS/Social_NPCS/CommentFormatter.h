@@ -1,8 +1,11 @@
 #pragma once
 #include <vector>
 #include <string>
-//#include <algorithm>
 #include "Comment.h"
+
+/**
+* The comment formatter sorts the a list of comments by comment->reply->reply... 
+*/
 class CommentFormatter
 {
 public:

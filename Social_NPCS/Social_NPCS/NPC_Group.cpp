@@ -63,7 +63,8 @@ void NPC_Group::LoadNPCs(SDL_Renderer* renderer)
 	for (npcIterator = NPCs.begin(); npcIterator != NPCs.end(); npcIterator++)
 	{
 		(npcIterator)->loadMedia(renderer);
-		(npcIterator)->render(renderer);	
+		(npcIterator)->evaluateEmotionLevel();
+		(npcIterator)->render(renderer);
 	}
 }
 
@@ -97,6 +98,10 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 						NPCs[i].setReadingTopic(false);
 					}
 
+					if (isReply)
+					{
+						NPCs[LastSpoken].applyEmotionLevel(polar);
+					}
 					//retrieve the amount of lines we are rendering
 					int lines = NPCs[i].getLinesToRender();
 
@@ -110,6 +115,7 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 					else
 					{
 						//free up the speech box and comment
+						LastSpoken = i;
 						currentComment = 0;
 						NPCs[i].setSpeaking(false);
 						NPCs[i].freeBox();
@@ -121,21 +127,25 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 						//if the random number matches our current NPC, change its value
 						if (random == i)
 						{
-							if (random == 5)
+							if (random == GroupSize - 1)
 								random--;
 							else
 								random++;
 						}
 
 						//set the next NPC to speak and prepare its comment
-						NPCs[random].setSpeaking(true);
-						NPCs[random].prepareComment(script[0].getBody(), font);
-
-						//remove the comment that was just rendered
-						script.erase(script.begin());						
+						if (script.size() > 0)
+						{
+							NPCs[random].setSpeaking(true);
+							NPCs[random].prepareComment(script[0].getBody(), font);
+							isReply = script[0].getReply();
+							polar = script[0].getPolarity();
+							//remove the comment that was just rendered
+							script.erase(script.begin());
+						}
 					}
-				}			
-		}
+				}
+			}
 	}
 }
 

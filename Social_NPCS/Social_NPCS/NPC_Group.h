@@ -19,8 +19,11 @@ private:
 	std::vector<Comment> script;
 
 	std::string topicString;
-
 	int currentComment = 0;
+
+	bool isReply;
+	int LastSpoken;
+	float polar;
 
 	int GroupX;
 	int GroupY;

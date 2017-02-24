@@ -1,5 +1,6 @@
 #pragma once
 #include "Texture.h"
+#include <iostream>
 class Sprite
 {
 public:
@@ -15,6 +16,7 @@ public:
 	void setY(int y);
 	void setX(int x);
 
+	void setColor(int r, int g, int b);
 	void render(SDL_Renderer* renderer);
 	void free();
 	bool loadMedia(SDL_Renderer* renderer);

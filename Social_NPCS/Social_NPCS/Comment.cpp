@@ -1,12 +1,6 @@
 #include "Comment.h"
 
-Comment::Comment(std::string nBody, std::string nId, std::string nP_Id, bool nReply)
-{
-	setBody(nBody);
-	setId(nId);
-	setParentId(nP_Id);
-	setReply(nReply);
-}
+Comment::Comment(std::string nBody, std::string nId, std::string nP_Id, bool nReply, float nPolar): body(nBody), id(nId), parent_id(nP_Id), reply(nReply), polarity(nPolar){}
 
 std::string Comment::getBody()
 {
@@ -28,6 +22,11 @@ bool Comment::getReply()
 	return reply;
 }
 
+float Comment::getPolarity()
+{
+	return polarity;
+}
+
 void Comment::setBody(std::string nBody)
 {
 	body = nBody;
@@ -46,6 +45,11 @@ void Comment::setParentId(std::string nP_Id)
 void Comment::setReply(bool nReply)
 {
 	reply = nReply;
+}
+
+void Comment::setPolarity(float polar)
+{
+	polarity = polar;
 }
 
 bool operator== (const Comment &c1, const Comment &c2)

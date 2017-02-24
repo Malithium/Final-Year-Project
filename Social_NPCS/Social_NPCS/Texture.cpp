@@ -72,6 +72,7 @@ bool Texture::loadFromRenderedText(std::string textureText, SDL_Color textColor,
 	}
 	else
 	{
+		
 		//Create texture from surface pixels
 		mTexture = SDL_CreateTextureFromSurface(renderer, textSurface);
 		if (mTexture == NULL)
@@ -103,6 +104,11 @@ void Texture::free()
 		mWidth = 0;
 		mHeight = 0;
 	}
+}
+
+void Texture::setColor(int r, int g, int b)
+{
+	SDL_SetTextureColorMod(mTexture, r, g, b);
 }
 
 void Texture::render(int x, int y, SDL_Renderer* renderer, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)

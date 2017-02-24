@@ -15,13 +15,23 @@ public:
 	bool getSpeaking();
 	void setSpeaking(bool val);
 
+	float getEmotionLevel();
+	void applyEmotionLevel(float polarity);
+	void evaluateEmotionLevel();
+
 	bool getReadingTopic();
 	void setReadingTopic(bool val);
 
 	int getLinesToRender();
 private:
 	TextBox speech;
+
+	int r = 255;
+	int g = 255;
+	int b = 255;
+
 	bool speaking = false;
 	bool readingTopic = false;
+	float emotionLevels = 0.0f;
 };
 

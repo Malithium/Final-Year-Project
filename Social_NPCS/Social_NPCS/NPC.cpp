@@ -50,6 +50,31 @@ bool NPC::getSpeaking()
 	return speaking;
 }
 
+float NPC::getEmotionLevel()
+{
+	return emotionLevels;
+}
+
+void NPC::evaluateEmotionLevel()
+{
+	int emo = getEmotionLevel();
+
+	if (emo < 0)
+	{
+		emo = abs(emo) * 10;
+		if (emo > 255)
+			emo = 255;
+		setColor(r, g-emo, b-emo);
+	}
+	else if(emo > 0)
+	{
+		emo = emo * 10;
+		if (emo > 255)
+			emo = 255;
+		setColor(r-emo, g, b-emo);
+	}
+}
+
 void NPC::setSpeaking(bool val)
 {
 	speaking = val;
@@ -63,4 +88,9 @@ bool NPC::getReadingTopic()
 void NPC::setReadingTopic(bool val)
 {
 	readingTopic = val;
+}
+
+void NPC::applyEmotionLevel(float val)
+{
+	emotionLevels += val;
 }

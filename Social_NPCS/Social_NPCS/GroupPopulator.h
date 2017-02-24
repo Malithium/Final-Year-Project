@@ -3,6 +3,10 @@
 #include <fstream>
 #include "Group.h"
 #include "CommentFormatter.h"
+
+/*
+Populates the group object with data parsed into the contructor
+*/
 class GroupPopulator
 {
 public:

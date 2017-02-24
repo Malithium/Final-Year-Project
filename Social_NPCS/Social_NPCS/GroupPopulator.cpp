@@ -24,7 +24,7 @@ Group GroupPopulator::PopulateGroup()
 		//acess each 'comments' value in the JSON file
 		for (const Json::Value& comms : tops["comments"])
 		{
-			Comment com(comms["body"].asString(), comms["id"].asString(), comms["parent_id"].asString(), comms["reply"].asBool());
+			Comment com(comms["body"].asString(), comms["id"].asString(), comms["parent_id"].asString(), comms["reply"].asBool(), comms["polarity"].asFloat());
 			nComms.push_back(com);
 		}
 

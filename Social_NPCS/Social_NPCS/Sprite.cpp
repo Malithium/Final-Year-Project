@@ -47,6 +47,11 @@ void Sprite::free()
 	texture.free();
 }
 
+void Sprite::setColor(int r, int g, int b)
+{
+	texture.setColor(r, g, b);
+}
+
 bool Sprite::loadMedia(SDL_Renderer* renderer)
 {
 	//Loading success flag

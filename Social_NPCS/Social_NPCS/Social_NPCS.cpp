@@ -44,18 +44,19 @@ int main(int argc, char* args[])
 		SDL_Event e;
 		SDL_Renderer* renderer = window.getRenderer();
 
-		NPC_Group group1(window.getScreenWidth() / 2, window.getScreenHeight() / 2, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[0]);
-		NPC_Group group2(window.getScreenWidth()-180, window.getScreenHeight()-180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[1]);
+		NPC_Group group1(window.getScreenWidth() / 2, window.getScreenHeight() / 2, 4, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[0]);
+		NPC_Group group2(window.getScreenWidth()-180, window.getScreenHeight()-180, 5, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[1]);
 		NPC_Group group3(180, 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[2]);
-		NPC_Group group4(window.getScreenWidth() -180, 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[3]);
-		NPC_Group group5(180, window.getScreenHeight() - 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[4]);
+		NPC_Group group4(window.getScreenWidth() -180, 180, 2, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[3]);
+		NPC_Group group5(180, window.getScreenHeight() - 180, 3, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[4]);
 
 		//Open up the font to be used in the application
 		TTF_Font* font;
 		font = TTF_OpenFont(rData.readData("Font_File").c_str(), atoi(rData.readData("Font_Size").c_str()));
-
+		Sprite colorTest("NPC.png", renderer, 100, 100);
 		int i = 0;
-		bool time = false;
+		bool time = true;
+
 		while (!quit) {
 			while (SDL_PollEvent(&e) != 0)
 			{
@@ -69,7 +70,7 @@ int main(int argc, char* args[])
 
 			SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 			SDL_RenderClear(renderer);
-
+			/*
 			if (currentTime > lastTime + 3000)
 			{
 				time = true;
@@ -79,7 +80,7 @@ int main(int argc, char* args[])
 			{
 				time = false;
 			}
-
+			*/
 			group1.LoadNPCs(renderer);
 			group1.ConversationSimulation(renderer, time, font);
 			group1.renderConversation(renderer);
