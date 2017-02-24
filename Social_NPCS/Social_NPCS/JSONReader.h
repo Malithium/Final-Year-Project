@@ -3,6 +3,9 @@
 #include <json\json.h>
 #include <fstream>
 
+/**
+* Reads in a JSON file
+*/
 class JSONReader
 {
 public:

@@ -1,6 +1,9 @@
 #pragma once
 #include <Python.h>
 #include <string>
+/**
+* Wrapper to handle the C/Python api functionality, in charge of calling the external python scripts
+*/
 class PythonHandler
 {
 public:

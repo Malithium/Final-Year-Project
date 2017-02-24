@@ -1,5 +1,10 @@
 #pragma once
 #include "TextBox.h"
+
+/**
+* NPC class inherits from sprite class, uses the textbox class in conjunction with it's base rendering methods for the NPC sprite.
+* holds all the actions a NPC can perform within the application.
+*/
 class NPC: public Sprite
 {
 public:
@@ -25,10 +30,6 @@ public:
 	int getLinesToRender();
 private:
 	TextBox speech;
-
-	int r = 255;
-	int g = 255;
-	int b = 255;
 
 	bool speaking = false;
 	bool readingTopic = false;

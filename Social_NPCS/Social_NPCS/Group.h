@@ -1,5 +1,8 @@
 #pragma once
 #include "Topic.h"
+/**
+*  Model representation for the Group object within the program
+*/
 class Group
 {
 public:

@@ -4,7 +4,9 @@
 #include <string>
 #include <iostream>
 #include <sstream>
-
+/**
+* Inherit's from the base sprite class, handles text rendering to the screen, and freeing up that text
+*/
 class TextBox : public Sprite
 {
 public:

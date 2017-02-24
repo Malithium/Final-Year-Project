@@ -4,8 +4,8 @@
 #include "Group.h"
 #include "CommentFormatter.h"
 
-/*
-Populates the group object with data parsed into the contructor
+/**
+* Populates the group object with data parsed into the contructor
 */
 class GroupPopulator
 {

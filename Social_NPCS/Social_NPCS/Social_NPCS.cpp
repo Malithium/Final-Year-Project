@@ -1,7 +1,6 @@
 // Social_NPCS.cpp : Defines the entry point for the console application.
 //
 
-#include "stdafx.h"
 #include "PythonHandler.h"
 #include "GroupPopulator.h"
 #include "JSONReader.h"

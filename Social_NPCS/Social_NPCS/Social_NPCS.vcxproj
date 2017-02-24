@@ -167,8 +167,6 @@
     <ClInclude Include="ResourceData.h" />
     <ClInclude Include="SDLWindow.h" />
     <ClInclude Include="Sprite.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
     <ClInclude Include="TextBox.h" />
     <ClInclude Include="Texture.h" />
     <ClInclude Include="Topic.h" />
@@ -187,7 +185,6 @@
     <ClCompile Include="SDLWindow.cpp" />
     <ClCompile Include="Social_NPCS.cpp" />
     <ClCompile Include="Sprite.cpp" />
-    <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="TextBox.cpp" />
     <ClCompile Include="Texture.cpp" />
     <ClCompile Include="Topic.cpp" />

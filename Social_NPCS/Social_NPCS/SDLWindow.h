@@ -3,6 +3,9 @@
 #include <SDL_image.h>
 #include <SDL_ttf.h>
 #include <string>
+/**
+* wrapper for the SDL window and renderer within the application
+*/
 class SDLWindow
 {
 public:

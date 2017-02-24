@@ -1,6 +1,9 @@
 #pragma once
 #include "Texture.h"
 #include <iostream>
+/**
+* Base sprite class, all graphical sprites will inherit this class
+*/
 class Sprite
 {
 public:

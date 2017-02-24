@@ -2,7 +2,9 @@
 #include <json/json.h>
 #include <string>
 #include <fstream>
-
+/**
+* Reads in the resource data for the application
+*/
 class ResourceData
 {
 public:

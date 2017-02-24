@@ -1,5 +1,8 @@
 #pragma once
 #include "Comment.h"
+/**
+* Model representation for the comment object within the program
+*/
 class Topic
 {
 public:

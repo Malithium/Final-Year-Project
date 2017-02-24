@@ -64,14 +64,14 @@ void NPC::evaluateEmotionLevel()
 		emo = abs(emo) * 10;
 		if (emo > 255)
 			emo = 255;
-		setColor(r, g-emo, b-emo);
+		setColor(255, 255-emo, 255-emo);
 	}
 	else if(emo > 0)
 	{
 		emo = emo * 10;
 		if (emo > 255)
 			emo = 255;
-		setColor(r-emo, g, b-emo);
+		setColor(255-emo, 255, 255-emo);
 	}
 }
 

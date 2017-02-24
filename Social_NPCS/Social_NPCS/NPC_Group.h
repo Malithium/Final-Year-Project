@@ -5,6 +5,9 @@
 #include <algorithm>
 #include <ctime>
 #include <cstdlib>
+/**
+* Created to hold a maximum group of 6 NPC's, it simulates the group conversation amongst the NPC's within the group.
+*/
 class NPC_Group
 {
 public:

@@ -7,6 +7,9 @@
 #include <iostream>
 #include <cmath>
 
+/**
+* Implementation is based on the LTexture class from http://lazyfoo.net/tutorials/SDL/12_color_modulation/index.php it is a wrapper surrounding the SDL_Texture class
+*/
 class Texture
 {
 public:

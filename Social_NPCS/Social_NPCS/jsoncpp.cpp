@@ -72,7 +72,6 @@ license you like.
 
 
 
-#include "stdafx.h"
 #include "json.h"
 
 #ifndef JSON_IS_AMALGAMATION
