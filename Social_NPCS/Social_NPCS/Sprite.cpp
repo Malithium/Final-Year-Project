@@ -1,6 +1,11 @@
 #include "Sprite.h"
 
-Sprite::Sprite(){}
+Sprite::Sprite()
+{
+	posX = 0;
+	posY = 0;
+	spriteFile = "";
+}
 
 Sprite::Sprite(std::string fileName, SDL_Renderer* renderer, int x, int y): posX(x), posY(y), spriteFile(fileName)
 {
@@ -63,8 +68,14 @@ bool Sprite::loadMedia(SDL_Renderer* renderer)
 		printf("Failed to load texture!\n");
 		success = false;
 	}
-	width = texture.getWidth();
-	height = texture.getHeight();
+
+		width = texture.getWidth();
+		height = texture.getHeight();
 
 	return success;
+}
+
+bool operator== (const Sprite &c1, const Sprite &c2)
+{
+	return c1.posX == c2.posX;
 }

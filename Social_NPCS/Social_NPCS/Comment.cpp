@@ -52,7 +52,14 @@ void Comment::setPolarity(float polar)
 	polarity = polar;
 }
 
+/*
 bool operator== (const Comment &c1, const Comment &c2)
 {
 	return c1.id == c2.id;
+}
+*/
+
+bool operator== (const Comment &c1, const Comment &c2)
+{
+	return (c1.id == c2.id) && (c1.body == c2.body) && (c1.parent_id == c2.parent_id) && (c1.polarity == c2.polarity) && (c1.reply == c2.reply);
 }

@@ -28,44 +28,57 @@ void PythonHandler::setFunctionName(std::string funcName)
 
 void PythonHandler::callPythonModule()
 {
-	//Begin python
-	Py_Initialize();
-
-	//Call the python module
-	PyObject* module = PyImport_ImportModule(moduleName.c_str());
-	if (module == 0)
+	try
 	{
+		//Begin python
+		Py_Initialize();
+
+		//Call the python module
+		PyObject* module = PyImport_ImportModule(moduleName.c_str());
+		if (module == 0)
+		{
+			PyErr_Print();
+			printf("Couldn't find python module");
+		}
+
+		//Create a dictionary of the function's inside the module
+		PyObject* comDict = PyModule_GetDict(module);
+
+		//State the specified function name from the dictionary
+		PyObject* func = PyDict_GetItemString(comDict, functionName.c_str());
+
+		//State the argument's you want NOTE: currently only work's with functions with 0 arguments
+		PyObject* args = PyTuple_New(0);
+
+		//Call the object
+		PyObject* result = PyObject_CallObject(func, args);
+		if (result == NULL)
+		{
+			printf("Calling function failed");
+		}
+
+		//Print any errors
 		PyErr_Print();
-		printf("Couldn't find python module");
+
+		//Clean up the pointer's
+		Py_DECREF(module);
+		Py_DECREF(comDict);
+		Py_DECREF(func);
+		Py_DECREF(args);
+		Py_DECREF(result);
+
+		//End the python process
+		Py_Finalize();
 	}
+	catch (...) {
+		PyObject *ptype, *pvalue, *ptraceback;
+		PyErr_Fetch(&ptype, &pvalue, &ptraceback);
 
-	//Create a dictionary of the function's inside the module
-	PyObject* comDict = PyModule_GetDict(module);
+		char* pStrErrorMessage = _PyUnicode_AsString(pvalue);
 
-	//State the specified function name from the dictionary
-	PyObject* func = PyDict_GetItemString(comDict, functionName.c_str());
-
-	//State the argument's you want NOTE: currently only work's with functions with 0 arguments
-	PyObject* args = PyTuple_New(0);
-
-	//Call the object
-	PyObject* result = PyObject_CallObject(func, args);
-	if (result == NULL)
-	{
-		printf("Calling function failed");
+		Py_DECREF(ptype);
+		Py_DECREF(pvalue);
+		Py_DECREF(ptraceback);
 	}
-
-	//Print any errors
-	PyErr_Print();
-
-	//Clean up the pointer's
-	Py_DECREF(module);
-	Py_DECREF(comDict);
-	Py_DECREF(func);
-	Py_DECREF(args);
-	Py_DECREF(result);
-
-	//End the python process
-	Py_Finalize();
 }
 

@@ -1,6 +1,10 @@
 #include "GroupPopulator.h"
 
 
+GroupPopulator::GroupPopulator()
+{
+
+}
 
 GroupPopulator::GroupPopulator(std::ifstream file)
 {

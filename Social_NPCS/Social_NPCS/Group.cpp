@@ -1,5 +1,7 @@
 #include "Group.h"
 
+Group::Group(){}
+
 Group::Group(std::string nId, std::vector<Topic> nTopics)
 {
 	setId(nId);
@@ -24,4 +26,9 @@ void Group::setId(std::string nId)
 void Group::setTopics(std::vector<Topic> nTopics)
 {
 	topics = nTopics;
+}
+
+bool operator== (const Group &t1, const Group &t2)
+{
+	return  (t1.id == t2.id) && (t1.topics == t2.topics);
 }

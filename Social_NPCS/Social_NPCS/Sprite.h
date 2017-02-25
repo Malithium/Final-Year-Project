@@ -23,6 +23,7 @@ public:
 	void render(SDL_Renderer* renderer);
 	void free();
 	bool loadMedia(SDL_Renderer* renderer);
+	friend bool operator== (const Sprite &c1, const Sprite &c2);
 private:
 	int posX, posY;
 	int width, height;

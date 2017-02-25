@@ -11,6 +11,7 @@ class GroupPopulator
 {
 public:
 	GroupPopulator(std::ifstream file);
+	GroupPopulator();
 	Group PopulateGroup();
 
 private:
