@@ -1,6 +1,9 @@
 #include "SDLWindow.h"
 
+SDLWindow::SDLWindow()
+{
 
+}
 
 SDLWindow::SDLWindow(char* title, int x, int y, int width, int height, Uint32 flag): SCREEN_X(x), SCREEN_Y(y), SCREEN_WIDTH(width), SCREEN_HEIGHT(height), SCREEN_TITLE(title), SCREEN_FLAG(flag)
 {

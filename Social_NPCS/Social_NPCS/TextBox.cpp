@@ -9,6 +9,11 @@ void TextBox::renderComment(SDL_Renderer* renderer)
 	fontTexture.render(getX(), getY(), renderer);
 }
 
+Texture TextBox::getFontTexture()
+{
+	return fontTexture;
+}
+
 bool TextBox::loadText(SDL_Renderer* renderer, std::string text, TTF_Font* font)
 {
 	//Loading success flag

@@ -1,6 +1,6 @@
 #include "Texture.h"
 
-
+ 
 
 Texture::Texture()
 {
@@ -56,6 +56,11 @@ bool Texture::loadFromFile(std::string path, SDL_Renderer* renderer)
 	//Return success
 	mTexture = newTexture;
 	return mTexture != NULL;
+}
+
+SDL_Texture* Texture::getSDLTexture()
+{
+	return mTexture;
 }
 
 bool Texture::loadFromRenderedText(std::string textureText, SDL_Color textColor, SDL_Renderer* renderer, TTF_Font* gFont, int wrapLength)

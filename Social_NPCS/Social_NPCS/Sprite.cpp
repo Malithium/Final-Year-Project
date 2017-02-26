@@ -12,6 +12,11 @@ Sprite::Sprite(std::string fileName, SDL_Renderer* renderer, int x, int y): posX
 
 }
 
+Texture Sprite::getTexture()
+{
+	return texture;
+}
+
 int Sprite::getHeight()
 {
 	return height;
@@ -73,9 +78,4 @@ bool Sprite::loadMedia(SDL_Renderer* renderer)
 		height = texture.getHeight();
 
 	return success;
-}
-
-bool operator== (const Sprite &c1, const Sprite &c2)
-{
-	return c1.posX == c2.posX;
 }

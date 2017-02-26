@@ -16,6 +16,8 @@ public:
 	bool loadText(SDL_Renderer* renderer, std::string text, TTF_Font* font);
 	void createStrings(std::string text, TTF_Font* font);
 
+	Texture getFontTexture();
+
 	int getLinesToRender();
 
 	void freeComment();

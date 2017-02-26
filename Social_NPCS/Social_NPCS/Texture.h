@@ -29,6 +29,8 @@ public:
 
 	void setColor(int r, int g, int b);
 
+	SDL_Texture* getSDLTexture();
+
 	//Gets image dimensions
 	int getWidth();
 	int getHeight();

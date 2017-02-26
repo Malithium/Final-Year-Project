@@ -9,6 +9,7 @@
 class SDLWindow
 {
 public:
+	SDLWindow();
 	SDLWindow(char* title, int x, int y, int width, int height, Uint32 flag);
 	~SDLWindow();
 
