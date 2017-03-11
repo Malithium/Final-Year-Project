@@ -104,3 +104,13 @@ int NPC::getBoredom()
 {
 	return boredom;
 }
+
+void NPC::setText(std::string str)
+{
+	text = str;
+}
+
+std::string NPC::getText()
+{
+	return text;
+}

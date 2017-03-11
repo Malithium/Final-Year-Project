@@ -82,44 +82,31 @@ a method that handles the background logic of the NPC conversation's within the 
 */
 void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_Font* font)
 {
-	//if the specfied amount of time has passed simulate conversation
 	if (timer)
 	{
-			for (int i = 0; i < NPCs.size(); i++)
+		for (int i = 0; i < NPCs.size(); i++) {
+			if (NPCs[i].getSpeaking() == true)
 			{
-				//check if a speaker has been set
-				bool speakerDesignated = false;
-				for (int p = 0; p < NPCs.size(); p++)
-				{
-					if (NPCs[p].getSpeaking()) {
-						speakerDesignated = true;
-						break;
-					}					
+				if (clearLast) {
+					NPCs[lastSpoken].freeBox();
+					clearLast = false;
 				}
 
-				if (!speakerDesignated)
+				if (!reading)
 				{
-					NPCs[i].setSpeaking(true);
-				}
-				//if the current NPC is speaking
-				if (NPCs[i].getSpeaking() == true)
-				{
-					//load the textbox and comment
 					NPCs[i].LoadBox(renderer);
 					if (NPCs[i].getReadingTopic())
 					{
 						NPCs[i].prepareComment(topicString, font);
-						NPCs[i].setReadingTopic(false);
+						NPCs[i].setReadingTopic(false);						
 					}
-
-					if (isReply)
-					{
-						NPCs[LastSpoken].applyEmotionLevel(polar);
-					}
-					//retrieve the amount of lines we are rendering
+					reading = true;
+				}
+				
+				if(reading)
+				{
+					//get the chunked comment from the NPC
 					int lines = NPCs[i].getLinesToRender();
-
-					//if we have yet to reach the maximum amount of lines to render
 					if (currentComment < lines)
 					{
 						//load the comment
@@ -128,60 +115,87 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 					}
 					else
 					{
-
-						//free up the speech box and comment
-						LastSpoken = i;
+						if (isReply && !(NPCs[i].getReadingTopic()))
+						{
+							NPCs[lastSpoken].applyEmotionLevel(polar);
+						}
+						reading = false;
+						lastSpoken = i;
 						currentComment = 0;
 						NPCs[i].setSpeaking(false);
-						NPCs[i].freeBox();
-
-						//get a random number between 0 and groupsize
-						srand(time(NULL));
-						int random = rand() % GroupSize;
-
-						//if the random number matches our current NPC, change its value
-						if (random == i)
-						{
-							if (random == GroupSize - 1)
-								random--;
-							else
-								random++;
-						}
-						for(int n = 0; n < NPCs.size(); n++)
-						{
-							if (random != n)
-								NPCs[n].setBoredom(NPCs[n].getBoredom() + 1);
-								CheckBoredom(n);
-						}
-						//set the next NPC to speak and prepare its comment
-						if (script.size() > 0)
-						{
-							NPCs[random].setSpeaking(true);
-							NPCs[random].prepareComment(script[0].getBody(), font);
-							NPCs[random].setBoredom(0);
-							isReply = script[0].getReply();
-							polar = script[0].getPolarity();
-							//remove the comment that was just rendered
-							script.erase(script.begin());
-						}
+						speakerDesignated = false;
+						topicRead = false;
+						EvaluateGroupBoredom();
 					}
 				}
 			}
+		}
+	}
+	else
+	{
+		if (NPCs.size() == 1)
+		{
+			NPCs[0].freeBox();
+			NPCs[0].free();
+			NPCs.erase(NPCs.begin());
+			GroupSize = NPCs.size();
+		}
+		bool speakCheck = false;
+		if (speakerDesignated) {
+			for (int p = 0; p < NPCs.size(); p++)
+			{
+				if (NPCs[p].getSpeaking()) {
+					speakCheck = true;
+					break;
+				}
+			}
+		}
+
+		if (!speakCheck) {
+			speakerDesignated = false;
+		}
+
+		if (speakerDesignated == false && topicRead == false)
+		{
+			int random = GetRandomNumber();
+
+			//set the next NPC to speak and prepare its comment
+			if (script.size() > 0)
+			{
+				NPCs[random].setSpeaking(true);
+				NPCs[random].prepareComment(script[0].getBody(), font);
+				NPCs[random].setText(script[0].getBody());
+				NPCs[random].setBoredom(0);
+				isReply = script[0].getReply();
+				polar = script[0].getPolarity();
+
+				//remove the comment that was just rendered
+				script.erase(script.begin());
+				speakerDesignated = true;
+				clearLast = true;
+			}
+		}
 	}
 }
 
 /**
 * checks which NPCs are bored
 */
-void NPC_Group::CheckBoredom(int n)
+void NPC_Group::CheckBoredom()
 {
-	int bored = NPCs[n].getBoredom();
-
-	if (bored > 7)
+	
+	for (int n = 0; n < NPCs.size(); n++)
 	{
-		NPCs.erase(NPCs.begin() + n);
-		GroupSize = NPCs.size();
+		int bored = NPCs[n].getBoredom();
+		if (bored > 20)
+		{
+			NPCs[n].freeBox();
+			NPCs[n].free();
+			NPCs.erase(NPCs.begin() + n);
+			GroupSize = NPCs.size();
+		}
 	}
+
 }
 
 /*
@@ -197,5 +211,35 @@ void NPC_Group::renderConversation(SDL_Renderer* renderer)
 			(npcIterator)->renderBox(renderer);
 			(npcIterator)->renderComment(renderer);
 		}
+	}
+}
+
+int NPC_Group::GetRandomNumber()
+{
+	int gSize = NPCs.size();
+
+	std::mt19937 rng;
+	rng.seed(std::random_device()());
+	std::uniform_int_distribution<std::mt19937::result_type> distGroup(0, gSize - 1);
+
+	int random = distGroup(rng);
+	//if the random number matches our current NPC, change its value
+	if (random == lastSpoken)
+	{
+		if (random == NPCs.size() - 1)
+			random--;
+		else
+			random++;
+	}
+
+	return random;
+}
+
+void NPC_Group::EvaluateGroupBoredom()
+{
+	for (int n = 0; n < NPCs.size(); n++)
+	{
+		if (!NPCs[n].getSpeaking())
+			NPCs[n].setBoredom(NPCs[n].getBoredom() + 1);
 	}
 }

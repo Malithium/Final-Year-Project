@@ -32,9 +32,13 @@ public:
 
 	int getLinesToRender();
 
+	std::string getText();
+	void setText(std::string t);
+
 private:
 	TextBox speech;
 
+	std::string text;
 	bool speaking = false;
 	bool readingTopic = false;
 	float emotionLevels = 0.0f;

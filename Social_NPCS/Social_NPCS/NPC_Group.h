@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <ctime>
 #include <cstdlib>
+#include <random>
 /**
 * Created to hold a maximum group of 6 NPC's, it simulates the group conversation amongst the NPC's within the group.
 */
@@ -16,17 +17,26 @@ public:
 	void LoadNPCs(SDL_Renderer* renderer);
 	void renderConversation(SDL_Renderer* renderer);
 	void ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_Font* font);
-	void CheckBoredom(int npc);
+	void CheckBoredom();
+
+	int GetRandomNumber();
+	void EvaluateGroupBoredom();
+
 	std::vector<NPC> getNPCList();
 private:
 	std::vector<NPC> NPCs;
 	std::vector<Comment> script;
 
+	bool speakerDesignated = false;
+	bool reading = false;
+	bool topicRead = true;
+	bool clearLast = false;
+
 	std::string topicString;
 	int currentComment = 0;
 
 	bool isReply;
-	int LastSpoken;
+	int lastSpoken;
 	float polar;
 
 	int GroupX;

@@ -16,6 +16,7 @@ int main(int argc, char* args[])
 	int lastTime = 0, currentTime;
 	struct stat st;
 
+
 	//Load in our resourceData
 	JSONReader resourceReader("ResourceData.json");
 	JSONReader reader("data.json");
@@ -57,14 +58,19 @@ int main(int argc, char* args[])
 	{
 		bool quit = false;
 		
+		Texture* npcSprite = new Texture();
+
 		SDL_Event e;
 		SDL_Renderer* renderer = window.getRenderer();
 
-		NPC_Group group1(window.getScreenWidth() / 2, window.getScreenHeight() / 2, 2, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[0]);
-		NPC_Group group2(window.getScreenWidth()-180, window.getScreenHeight()-180, 5, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[1]);
+
+		
+		NPC_Group group1(window.getScreenWidth() / 2, window.getScreenHeight() / 2, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[0]);
+		NPC_Group group2(window.getScreenWidth()-180, window.getScreenHeight()-180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[1]);
 		NPC_Group group3(180, 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[2]);
-		NPC_Group group4(window.getScreenWidth() -180, 180, 2, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[3]);
-		NPC_Group group5(180, window.getScreenHeight() - 180, 3, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[4]);
+		NPC_Group group4(window.getScreenWidth() -180, 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[3]);
+		NPC_Group group5(180, window.getScreenHeight() - 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[4]);
+		
 
 		//Open up the font to be used in the application
 		TTF_Font* font;
@@ -87,7 +93,7 @@ int main(int argc, char* args[])
 			SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 			SDL_RenderClear(renderer);
 			
-			if (currentTime > lastTime + 3000)
+			if (currentTime > lastTime + 30)
 			{
 				time = true;
 				lastTime = currentTime;
@@ -100,23 +106,28 @@ int main(int argc, char* args[])
 			group1.LoadNPCs(renderer);
 			group1.ConversationSimulation(renderer, time, font);
 			group1.renderConversation(renderer);
+			group1.CheckBoredom();
+			
+			group2.LoadNPCs(renderer);
+			group2.ConversationSimulation(renderer, time, font);
+			group2.renderConversation(renderer);
+			group2.CheckBoredom();
 
-			//group2.LoadNPCs(renderer);
-			//group2.ConversationSimulation(renderer, time, font);
-			//group2.renderConversation(renderer);
+			group3.LoadNPCs(renderer);
+			group3.ConversationSimulation(renderer, time, font);
+			group3.renderConversation(renderer);
+			group3.CheckBoredom();
 
-			//group3.LoadNPCs(renderer);
-			//group3.ConversationSimulation(renderer, time, font);
-			//group3.renderConversation(renderer);
+			group4.LoadNPCs(renderer);
+			group4.ConversationSimulation(renderer, time, font);
+			group4.renderConversation(renderer);
+			group4.CheckBoredom();
 
-			//group4.LoadNPCs(renderer);
-			//group4.ConversationSimulation(renderer, time, font);
-			//group4.renderConversation(renderer);
-
-			//group5.LoadNPCs(renderer);
-			//group5.ConversationSimulation(renderer, time, font);
-			//group5.renderConversation(renderer);
-
+			group5.LoadNPCs(renderer);
+			group5.ConversationSimulation(renderer, time, font);
+			group5.renderConversation(renderer);
+			group5.CheckBoredom();
+			
 			SDL_RenderPresent(renderer);
 		}
 		//close our font file
