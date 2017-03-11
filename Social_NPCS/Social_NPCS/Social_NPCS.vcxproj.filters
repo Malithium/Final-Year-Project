@@ -81,6 +81,9 @@
     <ClInclude Include="ResourceData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Room.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Social_NPCS.cpp">
@@ -130,6 +133,9 @@
     </ClCompile>
     <ClCompile Include="ResourceData.cpp">
       <Filter>Source Files\ResourceData</Filter>
+    </ClCompile>
+    <ClCompile Include="Room.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

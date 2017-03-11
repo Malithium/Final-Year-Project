@@ -6,7 +6,7 @@
 #include "JSONReader.h"
 #include "ResourceData.h"
 #include "SDLWindow.h"
-#include "NPC_Group.h"
+#include "Room.h"
 #include "TextBox.h"
 #include <sys/stat.h>
 #include <sys/types.h>
@@ -64,13 +64,14 @@ int main(int argc, char* args[])
 		SDL_Renderer* renderer = window.getRenderer();
 
 
-		
+		/*
 		NPC_Group group1(window.getScreenWidth() / 2, window.getScreenHeight() / 2, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[0]);
 		NPC_Group group2(window.getScreenWidth()-180, window.getScreenHeight()-180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[1]);
 		NPC_Group group3(180, 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[2]);
 		NPC_Group group4(window.getScreenWidth() -180, 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[3]);
 		NPC_Group group5(180, window.getScreenHeight() - 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[4]);
-		
+		*/
+		Room room1(5, 180, 180, window.getScreenWidth(), window.getScreenHeight(), rData.readData("NPC_Sprite"), rData.readData("TextBox_Sprite"), renderer, grp);
 
 		//Open up the font to be used in the application
 		TTF_Font* font;
@@ -102,7 +103,10 @@ int main(int argc, char* args[])
 			{
 				time = false;
 			}
-			
+
+			room1.LoadNPCs(renderer);
+			room1.LoadConversation(renderer, time, font);
+			/*
 			group1.LoadNPCs(renderer);
 			group1.ConversationSimulation(renderer, time, font);
 			group1.renderConversation(renderer);
@@ -127,7 +131,7 @@ int main(int argc, char* args[])
 			group5.ConversationSimulation(renderer, time, font);
 			group5.renderConversation(renderer);
 			group5.CheckBoredom();
-			
+			*/
 			SDL_RenderPresent(renderer);
 		}
 		//close our font file

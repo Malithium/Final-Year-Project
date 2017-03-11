@@ -165,6 +165,7 @@
     <ClInclude Include="NPC_Group.h" />
     <ClInclude Include="PythonHandler.h" />
     <ClInclude Include="ResourceData.h" />
+    <ClInclude Include="Room.h" />
     <ClInclude Include="SDLWindow.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="TextBox.h" />
@@ -182,6 +183,7 @@
     <ClCompile Include="NPC_Group.cpp" />
     <ClCompile Include="PythonHandler.cpp" />
     <ClCompile Include="ResourceData.cpp" />
+    <ClCompile Include="Room.cpp" />
     <ClCompile Include="SDLWindow.cpp" />
     <ClCompile Include="Social_NPCS.cpp" />
     <ClCompile Include="Sprite.cpp" />

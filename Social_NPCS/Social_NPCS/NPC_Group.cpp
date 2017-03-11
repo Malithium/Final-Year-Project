@@ -7,72 +7,62 @@ NPC_Group::NPC_Group(int x, int y, int size, std::string tBoxFile, std::string n
 {
 	script = tp.getComments();
 	topicString = tp.getTopic();
-	for (int i = 0; i < GroupSize; i++)
-	{
-		switch (i)
-		{
-		case 0:
-		{
-			NPC nNPC(tBoxFile, npcFile, "", renderer, GroupX, GroupY - 35);
-			nNPC.setSpeaking(true);
-			nNPC.setReadingTopic(true);
-			NPCs.push_back(nNPC);
-			break;
-		}
-		case 1:
-		{
-			NPC nNPC(tBoxFile, npcFile, "", renderer, GroupX + 35, GroupY - 17);
-			NPCs.push_back(nNPC);
-			break;
-		}
-		case 2:
-		{
-			NPC nNPC(tBoxFile, npcFile, "", renderer, GroupX + 35, GroupY + 17);
-			NPCs.push_back(nNPC);
-			break;
-		}
-		case 3:
-		{
-			NPC nNPC(tBoxFile, npcFile, "", renderer, GroupX, GroupY + 35);
-			NPCs.push_back(nNPC);
-			break;
-		}
-		case 4:
-		{
-			NPC nNPC(tBoxFile, npcFile, "", renderer, GroupX -35, GroupY + 17);
-			NPCs.push_back(nNPC);
-			break;
-		}
-		case 5:
-		{
-			NPC nNPC(tBoxFile, npcFile, "", renderer, GroupX - 35, GroupY - 17);
-			NPCs.push_back(nNPC);
-			break;
-		}
-		}
-	}
 }
 
-
-/*
-call each of the NPC's render functions to render each of there sprites to the screen.
-*/
-void NPC_Group::LoadNPCs(SDL_Renderer* renderer)
+std::pair<int, int> NPC_Group::getGroupPositions(int pos)
 {
-	std::vector<NPC>::iterator npcIterator;
-	for (npcIterator = NPCs.begin(); npcIterator != NPCs.end(); npcIterator++)
+	std::pair<int, int> XYPos;
+	switch (pos)
 	{
-		(npcIterator)->loadMedia(renderer);
-		(npcIterator)->evaluateEmotionLevel();
-		(npcIterator)->render(renderer);
+	case 0:
+		XYPos.first = GroupX;
+		XYPos.second = GroupY - 35;
+		break;
+	case 1:
+		XYPos.first = GroupX + 35;
+		XYPos.second = GroupY - 17;
+		break;
+	case 2:
+		XYPos.first = GroupX + 35;
+		XYPos.second = GroupY + 17;
+		break;
+	case 3:
+		XYPos.first = GroupX;
+		XYPos.second = GroupY + 35;
+		break;
+	case 4:
+		XYPos.first = GroupX - 35;
+		XYPos.second = GroupY + 17;
+		break;
+	case 5:
+		XYPos.first = GroupX - 35;
+		XYPos.second = GroupY - 17;
+		break;
 	}
+
+	return XYPos;
 }
 
+void NPC_Group::AddToGroup(std::shared_ptr<NPC> nNPC)
+{
+	if (NPCs.size() < 6)
+	{
+		std::pair<int, int> XYPos = getGroupPositions(NPCs.size());
+		nNPC->setX(XYPos.first);
+		nNPC->setY(XYPos.second);
+		if (NPCs.size() == 0)
+		{
+			nNPC->setSpeaking(true);
+			nNPC->setReadingTopic(true);
+		}
+		NPCs.push_back(nNPC);
+	}
+}
 
 /*
 returns the NPCs in the group
 */
-std::vector<NPC> NPC_Group::getNPCList()
+std::vector<std::shared_ptr<NPC>> NPC_Group::getNPCList()
 {
 	return NPCs;
 }
@@ -85,20 +75,15 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 	if (timer)
 	{
 		for (int i = 0; i < NPCs.size(); i++) {
-			if (NPCs[i].getSpeaking() == true)
+			if (NPCs[i]->getSpeaking() == true)
 			{
-				if (clearLast) {
-					NPCs[lastSpoken].freeBox();
-					clearLast = false;
-				}
-
 				if (!reading)
 				{
-					NPCs[i].LoadBox(renderer);
-					if (NPCs[i].getReadingTopic())
+					NPCs[i]->LoadBox(renderer);
+					if (NPCs[i]->getReadingTopic())
 					{
-						NPCs[i].prepareComment(topicString, font);
-						NPCs[i].setReadingTopic(false);						
+						NPCs[i]->prepareComment(topicString, font);
+						NPCs[i]->setReadingTopic(false);						
 					}
 					reading = true;
 				}
@@ -106,23 +91,24 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 				if(reading)
 				{
 					//get the chunked comment from the NPC
-					int lines = NPCs[i].getLinesToRender();
+					int lines = NPCs[i]->getLinesToRender();
 					if (currentComment < lines)
 					{
 						//load the comment
-						NPCs[i].LoadComment(renderer, currentComment, font);
+						NPCs[i]->LoadComment(renderer, currentComment, font);
 						currentComment++;
 					}
 					else
 					{
-						if (isReply && !(NPCs[i].getReadingTopic()))
+						if (isReply && !(NPCs[i]->getReadingTopic()))
 						{
-							NPCs[lastSpoken].applyEmotionLevel(polar);
+							if(lastSpoken < NPCs.size())
+								NPCs[lastSpoken]->applyEmotionLevel(polar);
 						}
 						reading = false;
 						lastSpoken = i;
 						currentComment = 0;
-						NPCs[i].setSpeaking(false);
+						NPCs[i]->setSpeaking(false);
 						speakerDesignated = false;
 						topicRead = false;
 						EvaluateGroupBoredom();
@@ -135,8 +121,8 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 	{
 		if (NPCs.size() == 1)
 		{
-			NPCs[0].freeBox();
-			NPCs[0].free();
+			NPCs[0]->freeBox();
+			NPCs[0]->free();
 			NPCs.erase(NPCs.begin());
 			GroupSize = NPCs.size();
 		}
@@ -144,7 +130,7 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 		if (speakerDesignated) {
 			for (int p = 0; p < NPCs.size(); p++)
 			{
-				if (NPCs[p].getSpeaking()) {
+				if (NPCs[p]->getSpeaking()) {
 					speakCheck = true;
 					break;
 				}
@@ -162,17 +148,16 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 			//set the next NPC to speak and prepare its comment
 			if (script.size() > 0)
 			{
-				NPCs[random].setSpeaking(true);
-				NPCs[random].prepareComment(script[0].getBody(), font);
-				NPCs[random].setText(script[0].getBody());
-				NPCs[random].setBoredom(0);
+				NPCs[random]->setSpeaking(true);
+				NPCs[random]->prepareComment(script[0].getBody(), font);
+				NPCs[random]->setText(script[0].getBody());
+				NPCs[random]->setBoredom(0);
 				isReply = script[0].getReply();
 				polar = script[0].getPolarity();
 
 				//remove the comment that was just rendered
 				script.erase(script.begin());
 				speakerDesignated = true;
-				clearLast = true;
 			}
 		}
 	}
@@ -183,14 +168,13 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 */
 void NPC_Group::CheckBoredom()
 {
-	
 	for (int n = 0; n < NPCs.size(); n++)
 	{
-		int bored = NPCs[n].getBoredom();
-		if (bored > 20)
+		int bored = NPCs[n]->getBoredom();
+		if (bored > 10)
 		{
-			NPCs[n].freeBox();
-			NPCs[n].free();
+			NPCs[n]->freeBox();
+			NPCs[n]->free();
 			NPCs.erase(NPCs.begin() + n);
 			GroupSize = NPCs.size();
 		}
@@ -203,13 +187,13 @@ renders the textbox and comments of the NPC's
 */
 void NPC_Group::renderConversation(SDL_Renderer* renderer)
 {
-	std::vector<NPC>::iterator npcIterator;
+	std::vector<std::shared_ptr<NPC>>::iterator npcIterator;
 	for (npcIterator = NPCs.begin(); npcIterator != NPCs.end(); npcIterator++)
 	{
 		//render the comment of the NPC currently speaking
-		if (npcIterator->getSpeaking()) {
-			(npcIterator)->renderBox(renderer);
-			(npcIterator)->renderComment(renderer);
+		if ((*npcIterator)->getSpeaking()) {
+			(*npcIterator)->renderBox(renderer);
+			(*npcIterator)->renderComment(renderer);
 		}
 	}
 }
@@ -239,7 +223,7 @@ void NPC_Group::EvaluateGroupBoredom()
 {
 	for (int n = 0; n < NPCs.size(); n++)
 	{
-		if (!NPCs[n].getSpeaking())
-			NPCs[n].setBoredom(NPCs[n].getBoredom() + 1);
+		if (!NPCs[n]->getSpeaking())
+			NPCs[n]->setBoredom(NPCs[n]->getBoredom() + 1);
 	}
 }
