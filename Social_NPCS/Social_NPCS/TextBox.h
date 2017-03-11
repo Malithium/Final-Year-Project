@@ -4,6 +4,7 @@
 #include <string>
 #include <iostream>
 #include <sstream>
+#include <stdexcept>
 /**
 * Inherit's from the base sprite class, handles text rendering to the screen, and freeing up that text
 */

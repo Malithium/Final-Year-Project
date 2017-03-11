@@ -94,3 +94,13 @@ void NPC::applyEmotionLevel(float val)
 {
 	emotionLevels += val;
 }
+
+void NPC::setBoredom(int bored)
+{
+	boredom = bored;
+}
+
+int NPC::getBoredom()
+{
+	return boredom;
+}

@@ -8,21 +8,38 @@
 #include "SDLWindow.h"
 #include "NPC_Group.h"
 #include "TextBox.h"
+#include <sys/stat.h>
+#include <sys/types.h>
 
 int main(int argc, char* args[])
 {
 	int lastTime = 0, currentTime;
+	struct stat st;
 
 	//Load in our resourceData
 	JSONReader resourceReader("ResourceData.json");
 	JSONReader reader("data.json");
+
+	int ierr = stat("data.json", &st);
+	if (ierr != 0) {
+		std::cout << "error";
+	}
+
+	time_t date = st.st_mtime;
+	time_t base;
+	time(&base);
+
 	ResourceData rData(resourceReader.ReadJsonFile());
 
-	//call the python module to get reddit comments
-	std::string pFile = rData.readData("Python_File");
-	std::string pMod = rData.readData("Python_Module");
-	PythonHandler pHandler(rData.readData("Python_File"), rData.readData("Python_Module"));
-	pHandler.callPythonModule();
+	//check the timestamp on our data file, if it is less than 24 hours, then dont run the python script
+	if ((base - date) >= 60 * 60 * 24)
+	{
+		//call the python module to get reddit comments
+		std::string pFile = rData.readData("Python_File");
+		std::string pMod = rData.readData("Python_Module");
+		PythonHandler pHandler(rData.readData("Python_File"), rData.readData("Python_Module"));
+		pHandler.callPythonModule();
+	}
 
 	//populate the group object with the data from the generated JSON file
 	GroupPopulator populator(reader.ReadJsonFile());
@@ -43,7 +60,7 @@ int main(int argc, char* args[])
 		SDL_Event e;
 		SDL_Renderer* renderer = window.getRenderer();
 
-		NPC_Group group1(window.getScreenWidth() / 2, window.getScreenHeight() / 2, 4, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[0]);
+		NPC_Group group1(window.getScreenWidth() / 2, window.getScreenHeight() / 2, 2, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[0]);
 		NPC_Group group2(window.getScreenWidth()-180, window.getScreenHeight()-180, 5, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[1]);
 		NPC_Group group3(180, 180, 6, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[2]);
 		NPC_Group group4(window.getScreenWidth() -180, 180, 2, rData.readData("TextBox_Sprite"), rData.readData("NPC_Sprite"), renderer, grp.getTopics()[3]);
@@ -69,7 +86,7 @@ int main(int argc, char* args[])
 
 			SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 			SDL_RenderClear(renderer);
-			/*
+			
 			if (currentTime > lastTime + 3000)
 			{
 				time = true;
@@ -79,26 +96,26 @@ int main(int argc, char* args[])
 			{
 				time = false;
 			}
-			*/
+			
 			group1.LoadNPCs(renderer);
 			group1.ConversationSimulation(renderer, time, font);
 			group1.renderConversation(renderer);
 
-			group2.LoadNPCs(renderer);
-			group2.ConversationSimulation(renderer, time, font);
-			group2.renderConversation(renderer);
+			//group2.LoadNPCs(renderer);
+			//group2.ConversationSimulation(renderer, time, font);
+			//group2.renderConversation(renderer);
 
-			group3.LoadNPCs(renderer);
-			group3.ConversationSimulation(renderer, time, font);
-			group3.renderConversation(renderer);
+			//group3.LoadNPCs(renderer);
+			//group3.ConversationSimulation(renderer, time, font);
+			//group3.renderConversation(renderer);
 
-			group4.LoadNPCs(renderer);
-			group4.ConversationSimulation(renderer, time, font);
-			group4.renderConversation(renderer);
+			//group4.LoadNPCs(renderer);
+			//group4.ConversationSimulation(renderer, time, font);
+			//group4.renderConversation(renderer);
 
-			group5.LoadNPCs(renderer);
-			group5.ConversationSimulation(renderer, time, font);
-			group5.renderConversation(renderer);
+			//group5.LoadNPCs(renderer);
+			//group5.ConversationSimulation(renderer, time, font);
+			//group5.renderConversation(renderer);
 
 			SDL_RenderPresent(renderer);
 		}

@@ -87,6 +87,20 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 	{
 			for (int i = 0; i < NPCs.size(); i++)
 			{
+				//check if a speaker has been set
+				bool speakerDesignated = false;
+				for (int p = 0; p < NPCs.size(); p++)
+				{
+					if (NPCs[p].getSpeaking()) {
+						speakerDesignated = true;
+						break;
+					}					
+				}
+
+				if (!speakerDesignated)
+				{
+					NPCs[i].setSpeaking(true);
+				}
 				//if the current NPC is speaking
 				if (NPCs[i].getSpeaking() == true)
 				{
@@ -114,6 +128,7 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 					}
 					else
 					{
+
 						//free up the speech box and comment
 						LastSpoken = i;
 						currentComment = 0;
@@ -132,12 +147,18 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 							else
 								random++;
 						}
-
+						for(int n = 0; n < NPCs.size(); n++)
+						{
+							if (random != n)
+								NPCs[n].setBoredom(NPCs[n].getBoredom() + 1);
+								CheckBoredom(n);
+						}
 						//set the next NPC to speak and prepare its comment
 						if (script.size() > 0)
 						{
 							NPCs[random].setSpeaking(true);
 							NPCs[random].prepareComment(script[0].getBody(), font);
+							NPCs[random].setBoredom(0);
 							isReply = script[0].getReply();
 							polar = script[0].getPolarity();
 							//remove the comment that was just rendered
@@ -146,6 +167,20 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 					}
 				}
 			}
+	}
+}
+
+/**
+* checks which NPCs are bored
+*/
+void NPC_Group::CheckBoredom(int n)
+{
+	int bored = NPCs[n].getBoredom();
+
+	if (bored > 7)
+	{
+		NPCs.erase(NPCs.begin() + n);
+		GroupSize = NPCs.size();
 	}
 }
 

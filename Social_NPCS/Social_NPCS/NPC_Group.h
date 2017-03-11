@@ -16,6 +16,7 @@ public:
 	void LoadNPCs(SDL_Renderer* renderer);
 	void renderConversation(SDL_Renderer* renderer);
 	void ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_Font* font);
+	void CheckBoredom(int npc);
 	std::vector<NPC> getNPCList();
 private:
 	std::vector<NPC> NPCs;

@@ -20,6 +20,9 @@ public:
 	bool getSpeaking();
 	void setSpeaking(bool val);
 
+	void setBoredom(int bored);
+	int getBoredom();
+
 	float getEmotionLevel();
 	void applyEmotionLevel(float polarity);
 	void evaluateEmotionLevel();
@@ -28,11 +31,13 @@ public:
 	void setReadingTopic(bool val);
 
 	int getLinesToRender();
+
 private:
 	TextBox speech;
 
 	bool speaking = false;
 	bool readingTopic = false;
 	float emotionLevels = 0.0f;
+	int boredom = 0;
 };
 

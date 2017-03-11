@@ -216,3 +216,6 @@ Social_NPCS_Test/
 
 #db file
 *.db
+
+#JSON files
+*.json

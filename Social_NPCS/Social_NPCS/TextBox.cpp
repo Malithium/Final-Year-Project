@@ -43,39 +43,50 @@ bool TextBox::loadText(SDL_Renderer* renderer, std::string text, TTF_Font* font)
 
 void TextBox::createStrings(std::string text, TTF_Font* font)
 {
+	
 	if (font == NULL)
 	{
 		printf("Failed to load font! SDL_ttf Error: %s\n", TTF_GetError());
 	}
 	else
 	{
-		int tW, tH;
-		TTF_SizeText(font, "a", &tW, &tH);
-		int supposedWidth = getWidth();
-		int maxCharsPerLine = supposedWidth / tW;
-		int numSubStrings = text.length() / maxCharsPerLine;
-		std::vector<std::string> ret;
-
-		std::stringstream threeChunks;
-		int counter = 0;
-		for (int i = 0; i < numSubStrings; i++)
+		try
 		{
-			std::string textChunk = text.substr(i * maxCharsPerLine, maxCharsPerLine);
-			threeChunks << textChunk;
-			counter++;
-			if (counter == 3 || counter == numSubStrings)
+			int tW, tH;
+			TTF_SizeText(font, "a", &tW, &tH);
+			int supposedWidth = getWidth();
+			if (supposedWidth == 0)
+				throw std::overflow_error("texture Width is 0!");
+			int maxCharsPerLine = supposedWidth / tW;
+
+			int numSubStrings = text.length() / maxCharsPerLine;
+			std::vector<std::string> ret;
+
+			std::stringstream threeChunks;
+			int counter = 0;
+			for (int i = 0; i < numSubStrings; i++)
 			{
-				counter = 0;
+				std::string textChunk = text.substr(i * maxCharsPerLine, maxCharsPerLine);
+				threeChunks << textChunk;
+				counter++;
+				if (counter == 3 || counter == numSubStrings)
+				{
+					counter = 0;
+					textToRender.push_back(threeChunks.str());
+					threeChunks.str("");
+				}
+			}
+
+			if (text.length() % maxCharsPerLine != 0)
+			{
+				threeChunks << text.substr(maxCharsPerLine * numSubStrings);
 				textToRender.push_back(threeChunks.str());
 				threeChunks.str("");
 			}
 		}
-
-		if (text.length() % maxCharsPerLine != 0)
+		catch (std::overflow_error e)
 		{
-			threeChunks << text.substr(maxCharsPerLine * numSubStrings);
-			textToRender.push_back(threeChunks.str());
-			threeChunks.str("");
+			std::cout << e.what() << "->";
 		}
 	}
 }
