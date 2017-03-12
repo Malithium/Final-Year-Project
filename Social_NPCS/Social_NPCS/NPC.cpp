@@ -114,3 +114,47 @@ std::string NPC::getText()
 {
 	return text;
 }
+
+bool NPC::getIdle()
+{
+	return idle;
+}
+
+void NPC::setIdle(bool nIdle)
+{
+	idle = nIdle;
+}
+
+std::pair<int, int> NPC::getEndGoal()
+{
+	return endGoal;
+}
+
+void NPC::setEndGoal(std::pair<int, int> newGoal)
+{
+	endGoal = newGoal;
+}
+
+SDL_Rect NPC::getBBox()
+{
+	return colliderBox;
+}
+
+void NPC::setBBox(int x, int y, int w, int h)
+{
+	colliderBox.x = x;
+	colliderBox.y = y;
+	colliderBox.w = w;
+	colliderBox.h = h;
+
+}
+
+std::vector<std::shared_ptr<Node>> NPC::getPath()
+{
+	return path;
+}
+
+void NPC::setPath(std::vector<std::shared_ptr<Node>> newPath)
+{
+	path = newPath;
+}

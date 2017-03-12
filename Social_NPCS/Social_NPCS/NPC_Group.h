@@ -21,6 +21,7 @@ public:
 	std::pair<int, int> getGroupPositions(int pos);
 
 	void AddToGroup(std::shared_ptr<NPC> nNPC);
+	void JoinGroup(std::shared_ptr<NPC> nNPC);
 
 	int GetRandomNumber();
 	void EvaluateGroupBoredom();

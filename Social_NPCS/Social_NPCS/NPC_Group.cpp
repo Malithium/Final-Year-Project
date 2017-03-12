@@ -59,6 +59,15 @@ void NPC_Group::AddToGroup(std::shared_ptr<NPC> nNPC)
 	}
 }
 
+void NPC_Group::JoinGroup(std::shared_ptr<NPC> nNPC)
+{
+	if (NPCs.size() < 6)
+	{
+		std::pair<int, int> XYPos = getGroupPositions(NPCs.size());
+		NPCs.push_back(nNPC);
+	}
+}
+
 /*
 returns the NPCs in the group
 */
@@ -75,7 +84,7 @@ void NPC_Group::ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_F
 	if (timer)
 	{
 		for (int i = 0; i < NPCs.size(); i++) {
-			if (NPCs[i]->getSpeaking() == true)
+			if (NPCs[i]->getSpeaking() == true && NPCs[i]->getIdle() == false)
 			{
 				if (!reading)
 				{
@@ -175,6 +184,7 @@ void NPC_Group::CheckBoredom()
 		{
 			NPCs[n]->freeBox();
 			NPCs[n]->free();
+			NPCs[n]->setIdle(true);
 			NPCs.erase(NPCs.begin() + n);
 			GroupSize = NPCs.size();
 		}
@@ -216,6 +226,11 @@ int NPC_Group::GetRandomNumber()
 			random++;
 	}
 
+	if (NPCs[random]->getIdle() == true)
+	{
+		random--;
+	}
+
 	return random;
 }
 
@@ -223,7 +238,7 @@ void NPC_Group::EvaluateGroupBoredom()
 {
 	for (int n = 0; n < NPCs.size(); n++)
 	{
-		if (!NPCs[n]->getSpeaking())
+		if (!NPCs[n]->getSpeaking() && NPCs[n]->getIdle() == false)
 			NPCs[n]->setBoredom(NPCs[n]->getBoredom() + 1);
 	}
 }

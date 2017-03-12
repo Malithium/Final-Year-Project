@@ -161,6 +161,7 @@
     <ClInclude Include="GroupPopulator.h" />
     <ClInclude Include="json.h" />
     <ClInclude Include="JSONReader.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="NPC.h" />
     <ClInclude Include="NPC_Group.h" />
     <ClInclude Include="PythonHandler.h" />
@@ -179,6 +180,7 @@
     <ClCompile Include="GroupPopulator.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
     <ClCompile Include="JSONReader.cpp" />
+    <ClCompile Include="Node.cpp" />
     <ClCompile Include="NPC.cpp" />
     <ClCompile Include="NPC_Group.cpp" />
     <ClCompile Include="PythonHandler.cpp" />
