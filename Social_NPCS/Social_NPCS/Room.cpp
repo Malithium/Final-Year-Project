@@ -92,7 +92,7 @@ void Room::LoadConversation(SDL_Renderer* renderer, bool time, TTF_Font* font)
 	for (groupIterator = roomGroups.begin(); groupIterator != roomGroups.end(); groupIterator++)
 	{
 		(*groupIterator)->ConversationSimulation(renderer, time, font);
-		(*groupIterator)->renderConversation(renderer);
+		//(*groupIterator)->renderConversation(renderer);
 		(*groupIterator)->CheckBoredom();
 	}
 }
@@ -139,5 +139,202 @@ void Room::CheckIdleNPCs(SDL_Renderer* renderer)
 
 void Room::generatePath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer)
 {
-	
+	std::vector<std::shared_ptr<Node>> possibleNodes;
+	std::vector<std::shared_ptr<Node>> finalPath;
+	std::vector<std::shared_ptr<Node>> visitedNodes;
+
+	std::vector<std::shared_ptr<Node>>::iterator possIterator;
+	std::vector<std::shared_ptr<Node>>::iterator nodeIterator;
+	std::vector<std::shared_ptr<Node>>::iterator finalIterator;
+	std::vector<std::shared_ptr<Node>>::iterator visitedIterator;
+	std::vector<std::shared_ptr<Node>>::iterator stdIterator;
+	std::vector<std::shared_ptr<NPC>>::iterator NPCsIterator;
+
+	bool canMakeGoal = false;
+	while (!canMakeGoal)
+	{
+		//iterate over every node in the room
+		for (nodeIterator = roomNodes.begin(); nodeIterator != roomNodes.end(); ++nodeIterator)
+		{
+			bool intersection = false;
+			bool beenVisited = false;
+			bool goalIntersection = false;
+
+
+			//check if we have already visited the node
+			if (visitedNodes.size() > 0)
+			{
+				for (visitedIterator = visitedNodes.begin(); visitedIterator != visitedNodes.end(); ++visitedIterator)
+				{
+					if ((*nodeIterator)->getX() == (*visitedIterator)->getX() && (*nodeIterator)->getY() == (*visitedIterator)->getY())
+					{
+						beenVisited = true;
+					}
+				}
+			}
+
+			if (!beenVisited)
+			{
+				//Iterate over every NPC in the room
+				for (NPCsIterator = roomNPCs.begin(); NPCsIterator != roomNPCs.end(); ++NPCsIterator)
+				{
+					if (!((*NPCsIterator)->getX() == npc->getX() && (*NPCsIterator)->getY() == npc->getY()))
+					{
+						int baseX;
+						int baseY;
+						if (visitedNodes.size() == 0)
+						{
+							baseX = npc->getX() + (npc->getWidth() / 2);
+							baseY = npc->getY() + (npc->getHeight() / 2);
+						}
+						else
+						{
+							baseX = visitedNodes[visitedNodes.size() - 1]->getX();
+							baseY = visitedNodes[visitedNodes.size() - 1]->getY();
+						}
+
+						int x2 = (*nodeIterator)->getX();
+						int y2 = (*nodeIterator)->getY();
+
+						//checks for intersections between a line and a rect
+						SDL_Rect npcBox = (*NPCsIterator)->getBBox();
+						bool check = SDL_IntersectRectAndLine(&npcBox, &baseX, &baseY, &x2, &y2);
+						if (check)
+						{
+							intersection = true;
+						}
+
+						int goalX = npc->getEndGoal().first;
+						int goalY = npc->getEndGoal().second;
+
+						bool goalCheck = SDL_IntersectRectAndLine(&npcBox, &baseX, &baseY, &goalX, &goalY);
+						if (goalCheck)
+						{
+							goalIntersection = true;
+						}
+					}
+				}
+				if (!goalIntersection)
+				{
+					canMakeGoal = true;
+				}
+				if (!intersection)
+				{
+					possibleNodes.push_back((*nodeIterator));
+				}
+			}
+		}
+		
+
+		if (!canMakeGoal)
+		{
+			//iterate over all possible nodes
+			for (possIterator = possibleNodes.begin(); possIterator != possibleNodes.end(); ++possIterator)
+			{
+					std::vector<std::shared_ptr<Node>>::iterator nxtIter;
+					int nextX = 0;
+					int nextY = 0;
+					if (possIterator != possibleNodes.end() && possIterator + 1 != possibleNodes.end())
+					{
+						nxtIter = possIterator; ++nxtIter;
+						nextX = (*nxtIter)->getX();
+						nextY = (*nxtIter)->getY();
+					}
+
+					//Our current position
+					int baseX;
+					int baseY;
+
+					//The Node we are traveling to
+					int currX = (*possIterator)->getX();
+					int currY = (*possIterator)->getY();
+
+					//The coordinates of the goal
+					int goalX = npc->getEndGoal().first;
+					int goalY = npc->getEndGoal().second;
+
+					if (visitedNodes.size() == 0)
+					{
+						baseX = npc->getX() + (npc->getWidth() / 2);
+						baseY = npc->getY() + (npc->getHeight() / 2);
+					}
+					else
+					{
+						baseX = visitedNodes[visitedNodes.size() - 1]->getX();
+						baseY = visitedNodes[visitedNodes.size() - 1]->getY();
+					}
+
+					int distX = currX - baseX;
+					int distY = currY - baseY;
+					int toNodeLength = sqrt((distX*distX) + (distY*distY));
+
+					int goalDistX = goalX - nextX;
+					int goalDistY = goalY - nextY;
+					int toGoalLength = sqrt((goalDistX*goalDistX) + (goalDistY*goalDistY));
+
+					int eval1 = toNodeLength + toGoalLength;
+					if (nextX != 0 && nextY != 0)
+					{
+						int nDistX = nextX - baseX;
+						int nDistY = nextY - baseY;
+						int nToNodeLength = sqrt((nDistX*nDistX) + (nDistY*nDistY));
+
+						int nGoalDistX = goalX - nextX;
+						int nGoalDistY = goalY - nextY;
+						int nToGoalLength = sqrt((nGoalDistX*nGoalDistX) + (nGoalDistY*nGoalDistY));
+
+						int eval2 = nToNodeLength + nToGoalLength;
+
+						if (eval1 < eval2)
+							possibleNodes.erase(possibleNodes.begin() + 1);
+						else
+							possibleNodes.erase(possibleNodes.begin());
+					}
+				}
+			if (visitedNodes.size() > 0)
+			{
+				if (possibleNodes[0]->getX() == visitedNodes[visitedNodes.size() - 1]->getX() && possibleNodes[0]->getY() == visitedNodes[visitedNodes.size() - 1]->getY())
+				{
+					canMakeGoal = true;
+					finalPath.push_back(std::shared_ptr<Node>(new Node(npc->getEndGoal().first, npc->getEndGoal().second)));
+				}
+				else
+				{
+					visitedNodes.push_back(possibleNodes[0]);
+					finalPath.push_back(possibleNodes[0]);
+					possibleNodes.clear();
+				}
+			}
+			else
+			{
+				visitedNodes.push_back(possibleNodes[0]);
+				finalPath.push_back(possibleNodes[0]);
+				possibleNodes.clear();
+			}
+		}
+		else
+		{
+			finalPath.push_back(std::shared_ptr<Node>(new Node(npc->getEndGoal().first, npc->getEndGoal().second)));
+		}
+	}
+	SDL_SetRenderDrawColor(renderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
+	for (stdIterator = finalPath.begin(); stdIterator != finalPath.end(); ++stdIterator)
+	{
+		std::vector<std::shared_ptr<Node>>::iterator nxtIter;
+		if (stdIterator != finalPath.end() && stdIterator + 1 != finalPath.end())
+		{
+			nxtIter = stdIterator; ++nxtIter;
+			if (stdIterator == finalPath.begin())
+				SDL_RenderDrawLine(renderer, npc->getX() + (npc->getWidth() / 2), npc->getY() + (npc->getHeight() / 2), (*stdIterator)->getX(), (*stdIterator)->getY());
+
+			SDL_RenderDrawLine(renderer, (*stdIterator)->getX(), (*stdIterator)->getY(), (*nxtIter)->getX(), (*nxtIter)->getY());
+		}		
+	}
+	SDL_Rect endPoint;
+	endPoint.h = 10;
+	endPoint.w = 10;
+	endPoint.x = finalPath[finalPath.size() - 1]->getX();
+	endPoint.y = finalPath[finalPath.size() - 1]->getY();
+	SDL_RenderDrawRect(renderer, &endPoint);
+	npc->setPath(finalPath);
 }
