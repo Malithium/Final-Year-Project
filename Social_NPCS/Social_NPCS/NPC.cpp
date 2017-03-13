@@ -17,6 +17,63 @@ void NPC::LoadComment(SDL_Renderer* renderer, int i, TTF_Font* font)
 	speech.loadText(renderer, txt, font);
 }
 
+void NPC::setID(int i)
+{
+	id = i;
+}
+
+int NPC::getID()
+{
+	return id;
+}
+
+void NPC::setGroupID(int id)
+{
+	groupID = id;
+}
+
+int NPC::getGroupID()
+{
+	return groupID;
+}
+
+int NPC::getBoredom()
+{
+	return boredLvl;
+}
+
+void NPC::move()
+{
+	if (path.size() > 0)
+	{
+		float movementX = path[0]->getX() - getX();
+		float movementY = path[0]->getY() - getY();
+
+		float toWayPointLength = sqrt(movementX*movementX + movementY*movementY);
+		if (toWayPointLength > 0)
+		{
+			movementX = movementX / toWayPointLength;
+			movementY = movementY / toWayPointLength;
+		}
+
+		float nX = getX();
+		float nY = getY();
+		setX(nX += movementX * 2);
+		setY(nY += movementY * 2);
+
+		if (path[0]->getX() - getX() < 3 && path[0]->getY() - getY() < 3 && path[0]->getX() - getX() > -3 && path[0]->getY() - getY() > -3)
+		{
+			setX(path[0]->getX());
+			setY(path[0]->getY());
+			path.erase(path.begin());
+		}
+	}
+}
+
+void NPC::setBoredom(int lvl)
+{
+	boredLvl = lvl;
+}
 void NPC::LoadBox(SDL_Renderer* renderer)
 {
 	speech.setX(getX() - 40);
@@ -74,35 +131,24 @@ void NPC::evaluateEmotionLevel()
 		setColor(255-emo, 255, 255-emo);
 	}
 }
+int NPC::getCurrentLine()
+{
+	return currentLine;
+}
+
+void NPC::setCurrentLine(int line)
+{
+	currentLine = line;
+}
 
 void NPC::setSpeaking(bool val)
 {
 	speaking = val;
 }
 
-bool NPC::getReadingTopic()
-{
-	return readingTopic;
-}
-
-void NPC::setReadingTopic(bool val)
-{
-	readingTopic = val;
-}
-
 void NPC::applyEmotionLevel(float val)
 {
 	emotionLevels += val;
-}
-
-void NPC::setBoredom(int bored)
-{
-	boredom = bored;
-}
-
-int NPC::getBoredom()
-{
-	return boredom;
 }
 
 void NPC::setText(std::string str)
@@ -157,4 +203,27 @@ std::vector<std::shared_ptr<Node>> NPC::getPath()
 void NPC::setPath(std::vector<std::shared_ptr<Node>> newPath)
 {
 	path = newPath;
+}
+bool NPC::getReading()
+{
+	return reading;
+}
+
+void NPC::setReading(bool read)
+{
+	reading = read;
+}
+
+bool NPC::getMoving()
+{
+	return moving;
+}
+void NPC::setMoving(bool move)
+{
+	moving = move;
+}
+
+bool operator== (const NPC &c1, const NPC &c2)
+{
+	return (c1.id == c2.id);
 }

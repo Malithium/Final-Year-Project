@@ -87,6 +87,9 @@
     <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Conversation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Social_NPCS.cpp">
@@ -142,6 +145,9 @@
     </ClCompile>
     <ClCompile Include="Node.cpp">
       <Filter>Source Files\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="Conversation.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

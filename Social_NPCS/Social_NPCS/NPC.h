@@ -16,6 +16,15 @@ public:
 	void LoadBox(SDL_Renderer* renderer);
 	void renderBox(SDL_Renderer* renderer);
 
+	void setID(int i);
+	int getID();
+
+	int getGroupID();
+	void setGroupID(int id);
+
+	int getCurrentLine();
+	void setCurrentLine(int id);
+
 	void renderComment(SDL_Renderer* renderer);
 
 	void freeBox();
@@ -23,18 +32,23 @@ public:
 	bool getSpeaking();
 	void setSpeaking(bool val);
 
-	void setBoredom(int bored);
-	int getBoredom();
-
 	float getEmotionLevel();
 	void applyEmotionLevel(float polarity);
 	void evaluateEmotionLevel();
 
-	bool getReadingTopic();
-	void setReadingTopic(bool val);
-
 	bool getIdle();
 	void setIdle(bool nIdle);
+
+	bool getMoving();
+	void setMoving(bool move);
+
+	bool getReading();
+	void setReading(bool read);
+
+	int getBoredom();
+	void setBoredom(int lvl);
+
+	void move();
 
 	SDL_Rect getBBox();
 	void setBBox(int x, int y, int width, int height);
@@ -50,19 +64,24 @@ public:
 	std::pair<int, int> getEndGoal();
 	void setEndGoal(std::pair<int, int> newGoal);
 
+	friend bool operator== (const NPC &c1, const NPC &c2);
 private:
-	TextBox speech;
-	std::vector<std::shared_ptr<Node>> path;
-
+	int id;
+	int groupID;
+	int currentLine;
+	int boredLvl;
 	std::string text;
-	bool speaking = false;
-	bool readingTopic = false;
-	bool idle = false;
+	TextBox speech;
+
+	std::vector<std::shared_ptr<Node>> path;
 	std::pair<int, int> endGoal;
 
-	float emotionLevels = 0.0f;
-	int boredom = 0;
+	bool speaking = false;
+	bool reading = false;
+	bool idle = false;
+	bool moving = false;
 
+	float emotionLevels = 0.0f;
 	SDL_Rect colliderBox;
 };
 

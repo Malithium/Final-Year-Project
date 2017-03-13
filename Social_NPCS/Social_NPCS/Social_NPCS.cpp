@@ -61,7 +61,7 @@ int main(int argc, char* args[])
 		Texture* npcSprite = new Texture();
 		SDL_Event e;
 		SDL_Renderer* renderer = window.getRenderer();
-		Room room1(3, 180, 180, window.getScreenWidth(), window.getScreenHeight(), rData.readData("NPC_Sprite"), rData.readData("TextBox_Sprite"), renderer, grp);
+		Room room1(5, 180, 180, window.getScreenWidth(), window.getScreenHeight(), rData.readData("NPC_Sprite"), rData.readData("TextBox_Sprite"), renderer, grp);
 
 		//Open up the font to be used in the application
 		TTF_Font* font;
@@ -96,7 +96,7 @@ int main(int argc, char* args[])
 
 			room1.LoadNPCs(renderer);
 			room1.LoadConversation(renderer, time, font);
-			room1.CheckIdleNPCs(renderer);
+			room1.HandleMove(renderer);
 
 			SDL_RenderPresent(renderer);
 		}

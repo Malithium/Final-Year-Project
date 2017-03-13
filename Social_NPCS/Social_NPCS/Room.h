@@ -13,9 +13,13 @@ public:
 	std::pair<int, int> getRoomPosition(int pos);
 	void LoadNPCs(SDL_Renderer* renderer);
 	void LoadConversation(SDL_Renderer* renderer, bool time, TTF_Font* font);
-
-	void CheckIdleNPCs(SDL_Renderer* renderer);
+	void HandleMove(SDL_Renderer* renderer);
 	void generatePath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer);
+	void basicPath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer);
+	int findOpenGroup(int exclude);
+	void leaveGroup(std::shared_ptr<NPC> npc);
+	void joinGroup(std::shared_ptr<NPC> npc, int id);
+
 private:
 	int roomWidth, roomHeight, roomX, roomY;
 

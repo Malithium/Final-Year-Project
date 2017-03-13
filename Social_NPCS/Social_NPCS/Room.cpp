@@ -1,7 +1,5 @@
 #include "Room.h"
 
-
-
 Room::Room(){}
 
 Room::Room(int groupNum, int x, int y, int width, int height, std::string NPCSprite, std::string TextBoxSprite, SDL_Renderer* renderer, Group grp)
@@ -10,6 +8,8 @@ Room::Room(int groupNum, int x, int y, int width, int height, std::string NPCSpr
 	roomHeight = height;
 	roomX = x;
 	roomY = y;
+	int id = 0;
+	int groupID = 0;
 	for (int i = 0; i < groupNum; i++)
 	{
 		std::mt19937 rng;
@@ -19,14 +19,19 @@ Room::Room(int groupNum, int x, int y, int width, int height, std::string NPCSpr
 
 		std::pair<int, int> positions = getRoomPosition(i);
 		std::shared_ptr<NPC_Group> group(new NPC_Group(positions.first, positions.second, random, TextBoxSprite, NPCSprite, renderer, grp.getTopics()[i]));
-
+		
 		for (int n = 0; n < random; n++)
 		{
 			std::shared_ptr<NPC> nNPC(new NPC(TextBoxSprite, NPCSprite, "", renderer, 0, 0));
+			nNPC->setID(id);
+			nNPC->setGroupID(groupID);
 			group->AddToGroup(nNPC);
 			roomNPCs.push_back(nNPC);
+			id++;
 		}
+		group->setID(groupID);
 		roomGroups.push_back(group);
+		groupID++;
 		std::shared_ptr<Node> node1(new Node(positions.first - 50, positions.second - 50));
 		std::shared_ptr<Node> node2(new Node(positions.first + 80, positions.second - 50));
 		std::shared_ptr<Node> node3(new Node(positions.first - 50, positions.second + 80));
@@ -35,6 +40,8 @@ Room::Room(int groupNum, int x, int y, int width, int height, std::string NPCSpr
 		roomNodes.push_back(node2);
 		roomNodes.push_back(node3);
 		roomNodes.push_back(node4);
+		int size = roomGroups[i]->getNPCList().size();
+		std::cout << "Group of index " << i << " has: " << size << " NPCs" << std::endl;
 	}
 }
 
@@ -78,9 +85,6 @@ void Room::LoadNPCs(SDL_Renderer* renderer)
 	{
 		(*npcIterator)->loadMedia(renderer);
 		(*npcIterator)->setBBox((*npcIterator)->getX(), (*npcIterator)->getY(), (*npcIterator)->getWidth(), (*npcIterator)->getHeight());
-		SDL_SetRenderDrawColor(renderer, 0, 255, 0, SDL_ALPHA_OPAQUE);
-		SDL_Rect box = (*npcIterator)->getBBox();
-		SDL_RenderDrawRect(renderer, &box);
 		(*npcIterator)->evaluateEmotionLevel();
 		(*npcIterator)->render(renderer);
 	}
@@ -92,51 +96,86 @@ void Room::LoadConversation(SDL_Renderer* renderer, bool time, TTF_Font* font)
 	for (groupIterator = roomGroups.begin(); groupIterator != roomGroups.end(); groupIterator++)
 	{
 		(*groupIterator)->ConversationSimulation(renderer, time, font);
-		//(*groupIterator)->renderConversation(renderer);
-		(*groupIterator)->CheckBoredom();
+		(*groupIterator)->renderConversation(renderer);
 	}
 }
-
-void Room::CheckIdleNPCs(SDL_Renderer* renderer)
+int Room::findOpenGroup(int exclude)
 {
-	std::vector<std::shared_ptr<NPC>>::iterator npcIterator;
-	for (npcIterator = roomNPCs.begin(); npcIterator != roomNPCs.end(); npcIterator++)
+	for (int i = 0; i < roomGroups.size(); i++)
 	{
-		if ((*npcIterator)->getIdle() == true && (*npcIterator)->getPath().size() == 0)
+		if (roomGroups[i]->isAvailable() && roomGroups[i]->getID() != exclude)
 		{
-			std::mt19937 rng;
-			rng.seed(std::random_device()());
-			std::uniform_int_distribution<std::mt19937::result_type> distGroup(0, roomGroups.size()-1);
-			int random = distGroup(rng);
-			bool sameGroup = false;
+			return roomGroups[i]->getID();
+		}
+	}
+	return -1;
+}
 
-			for (int i = 0; i < roomGroups[random]->getNPCList().size(); i++)
+void Room::leaveGroup(std::shared_ptr<NPC> npc)
+{
+	for (int i = 0; i < roomGroups.size(); i++)
+	{
+		for (int n = 0; n < roomGroups[i]->getNPCList().size(); n++)
+		{
+			if (roomGroups[i]->getNPCList()[n]->getID() == npc->getID())
 			{
-				if ((*npcIterator)->getX() == roomGroups[random]->getNPCList()[i]->getX() && (*npcIterator)->getY() == roomGroups[random]->getNPCList()[i]->getY())
-				{
-					sameGroup = true;
-				}
-			}
-
-			if (sameGroup)
-			{
-				if (random >= roomGroups.size())
-					random--;
-				else
-					random++;
-			}
-
-			if (roomGroups.size()-1 > 0 && roomGroups[random]->getNPCList().size() < 6)
-			{
-				std::pair<int, int> newPosition = roomGroups[random]->getGroupPositions(roomGroups[random]->getNPCList().size());
-				(*npcIterator)->setEndGoal(newPosition);
-				if((*npcIterator)->getPath().size() == 0)
-					generatePath((*npcIterator), renderer);
+				roomGroups[i]->leaveSpace(npc);
 			}
 		}
 	}
 }
 
+void Room::joinGroup(std::shared_ptr<NPC> npc, int id)
+{
+	for (int i = 0; i < roomGroups.size(); i++)
+	{
+		if (roomGroups[i]->getID() == id)
+		{
+			roomGroups[i]->joinSpace(npc);
+			npc->setMoving(true);
+		}
+	}
+}
+void Room::HandleMove(SDL_Renderer* renderer)
+{
+	for (int i = 0; i < roomNPCs.size(); i++)
+	{
+		if (roomNPCs[i]->getIdle())
+		{
+			if (!roomNPCs[i]->getMoving())
+			{
+				int gID = findOpenGroup(roomNPCs[i]->getGroupID());
+				if (gID > -1)
+				{
+					leaveGroup(roomNPCs[i]);
+					joinGroup(roomNPCs[i], gID);					
+					basicPath(roomNPCs[i], renderer);
+					roomNPCs[i]->setMoving(true);
+					roomNPCs[i]->freeBox();
+				}
+			}
+			else
+			{
+				roomNPCs[i]->move();
+				if (roomNPCs[i]->getX() == roomNPCs[i]->getEndGoal().first && roomNPCs[i]->getY() == roomNPCs[i]->getEndGoal().second)
+				{
+					roomNPCs[i]->setIdle(false);
+					roomNPCs[i]->setMoving(false);
+					roomNPCs[i]->setBoredom(0);
+				}
+			}
+		}
+	}
+}
+
+void Room::basicPath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer)
+{
+	std::vector<std::shared_ptr<Node>> basicPath;
+	basicPath.push_back(std::shared_ptr<Node>(new Node(npc->getEndGoal().first, npc->getEndGoal().second)));
+	npc->setPath(basicPath);
+	std::cout << "The goal Node for NPC: " << npc->getID() << " is: " << basicPath[0]->getX() << " , " << basicPath[0]->getY() << std::endl;
+}
+/*
 void Room::generatePath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer)
 {
 	std::vector<std::shared_ptr<Node>> possibleNodes;
@@ -147,7 +186,6 @@ void Room::generatePath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer)
 	std::vector<std::shared_ptr<Node>>::iterator nodeIterator;
 	std::vector<std::shared_ptr<Node>>::iterator finalIterator;
 	std::vector<std::shared_ptr<Node>>::iterator visitedIterator;
-	std::vector<std::shared_ptr<Node>>::iterator stdIterator;
 	std::vector<std::shared_ptr<NPC>>::iterator NPCsIterator;
 
 	bool canMakeGoal = false;
@@ -266,22 +304,22 @@ void Room::generatePath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer)
 
 					int distX = currX - baseX;
 					int distY = currY - baseY;
-					int toNodeLength = sqrt((distX*distX) + (distY*distY));
+					int toNodeLength = distX + distY;
 
-					int goalDistX = goalX - nextX;
-					int goalDistY = goalY - nextY;
-					int toGoalLength = sqrt((goalDistX*goalDistX) + (goalDistY*goalDistY));
+					int goalDistX = nextX - goalX;
+					int goalDistY = nextY - goalY;
+					int toGoalLength = goalDistX + goalDistY;
 
 					int eval1 = toNodeLength + toGoalLength;
 					if (nextX != 0 && nextY != 0)
 					{
 						int nDistX = nextX - baseX;
 						int nDistY = nextY - baseY;
-						int nToNodeLength = sqrt((nDistX*nDistX) + (nDistY*nDistY));
+						int nToNodeLength = nDistX + nDistY;
 
-						int nGoalDistX = goalX - nextX;
-						int nGoalDistY = goalY - nextY;
-						int nToGoalLength = sqrt((nGoalDistX*nGoalDistX) + (nGoalDistY*nGoalDistY));
+						int nGoalDistX = nextX - goalX;
+						int nGoalDistY = nextY - goalY;
+						int nToGoalLength = nGoalDistX + nGoalDistY;
 
 						int eval2 = nToNodeLength + nToGoalLength;
 
@@ -317,24 +355,7 @@ void Room::generatePath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer)
 			finalPath.push_back(std::shared_ptr<Node>(new Node(npc->getEndGoal().first, npc->getEndGoal().second)));
 		}
 	}
-	SDL_SetRenderDrawColor(renderer, 255, 0, 0, SDL_ALPHA_OPAQUE);
-	for (stdIterator = finalPath.begin(); stdIterator != finalPath.end(); ++stdIterator)
-	{
-		std::vector<std::shared_ptr<Node>>::iterator nxtIter;
-		if (stdIterator != finalPath.end() && stdIterator + 1 != finalPath.end())
-		{
-			nxtIter = stdIterator; ++nxtIter;
-			if (stdIterator == finalPath.begin())
-				SDL_RenderDrawLine(renderer, npc->getX() + (npc->getWidth() / 2), npc->getY() + (npc->getHeight() / 2), (*stdIterator)->getX(), (*stdIterator)->getY());
 
-			SDL_RenderDrawLine(renderer, (*stdIterator)->getX(), (*stdIterator)->getY(), (*nxtIter)->getX(), (*nxtIter)->getY());
-		}		
-	}
-	SDL_Rect endPoint;
-	endPoint.h = 10;
-	endPoint.w = 10;
-	endPoint.x = finalPath[finalPath.size() - 1]->getX();
-	endPoint.y = finalPath[finalPath.size() - 1]->getY();
-	SDL_RenderDrawRect(renderer, &endPoint);
 	npc->setPath(finalPath);
 }
+*/

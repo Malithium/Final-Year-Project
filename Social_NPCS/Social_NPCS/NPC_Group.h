@@ -17,22 +17,34 @@ public:
 
 	void renderConversation(SDL_Renderer* renderer);
 	void ConversationSimulation(SDL_Renderer* renderer, bool timer, TTF_Font* font);
-	void CheckBoredom();
-	std::pair<int, int> getGroupPositions(int pos);
 
-	void AddToGroup(std::shared_ptr<NPC> nNPC);
-	void JoinGroup(std::shared_ptr<NPC> nNPC);
+	int getID();
+	void setID(int id);
+
+	bool AddToGroup(std::shared_ptr<NPC> nNPC);
+
+	std::vector<Comment> getScript();
+
+	bool isAvailable();
+	std::pair<int, int> getSpace();
+	void leaveSpace(std::shared_ptr<NPC> npc);
+	bool joinSpace(std::shared_ptr<NPC> npc);
 
 	int GetRandomNumber();
-	void EvaluateGroupBoredom();
+	void simulateConversation(SDL_Renderer* renderer, TTF_Font* font);
+	bool evaluateSpeaker();
+	void setSpeaker();
 
 	std::vector<std::shared_ptr<NPC>> getNPCList();
 private:
 	std::vector<std::shared_ptr<NPC>> NPCs;
 	std::vector<Comment> script;
 
+	int ID;
+
+	std::vector<std::pair<int, int>> availableSpace;
+
 	bool speakerDesignated = false;
-	bool reading = false;
 	bool topicRead = true;
 
 	std::string topicString;

@@ -55,12 +55,12 @@ void TextBox::createStrings(std::string text, TTF_Font* font)
 			int tW, tH;
 			TTF_SizeText(font, "a", &tW, &tH);
 			int supposedWidth = getWidth();
-
-			int maxCharsPerLine = supposedWidth / tW;
+			
+			int maxCharsPerLine = 180 / tW;
 
 			if (maxCharsPerLine == 0)
 				throw std::overflow_error("texture Width is 0!");
-
+				
 			int numSubStrings = text.length() / maxCharsPerLine;
 			std::vector<std::string> ret;
 
@@ -88,7 +88,7 @@ void TextBox::createStrings(std::string text, TTF_Font* font)
 		}
 		catch (std::overflow_error e)
 		{
-			std::cout << e.what() << "->";
+			std::cout << e.what() << std::endl;;
 		}
 	}
 }
