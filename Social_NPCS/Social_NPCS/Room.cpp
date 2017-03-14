@@ -150,6 +150,7 @@ void Room::HandleMove(SDL_Renderer* renderer)
 					leaveGroup(roomNPCs[i]);
 					joinGroup(roomNPCs[i], gID);					
 					basicPath(roomNPCs[i], renderer);
+					//generatePath(roomNPCs[i], renderer);
 					roomNPCs[i]->setMoving(true);
 					roomNPCs[i]->freeBox();
 				}
@@ -175,7 +176,7 @@ void Room::basicPath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer)
 	npc->setPath(basicPath);
 	std::cout << "The goal Node for NPC: " << npc->getID() << " is: " << basicPath[0]->getX() << " , " << basicPath[0]->getY() << std::endl;
 }
-/*
+
 void Room::generatePath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer)
 {
 	std::vector<std::shared_ptr<Node>> possibleNodes;
@@ -358,4 +359,3 @@ void Room::generatePath(std::shared_ptr<NPC> npc, SDL_Renderer* renderer)
 
 	npc->setPath(finalPath);
 }
-*/

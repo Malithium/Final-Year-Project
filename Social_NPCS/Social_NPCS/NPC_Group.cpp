@@ -45,6 +45,7 @@ bool NPC_Group::joinSpace(std::shared_ptr<NPC> npc)
 			{
 				npc->setSpeaking(true);
 			}
+			npc->setGroupID(ID);
 			NPCs.push_back(npc);
 			success = true;
 		}
@@ -243,7 +244,8 @@ void NPC_Group::simulateConversation(SDL_Renderer* renderer, TTF_Font* font)
 						npc->prepareComment(script[0].getBody(), font);
 						npc->setReading(true);
 					}
-					else
+					
+					if(npc->getReading())
 					{
 						int lines = npc->getLinesToRender();
 						if (npc->getCurrentLine() < lines)
@@ -265,9 +267,16 @@ void NPC_Group::simulateConversation(SDL_Renderer* renderer, TTF_Font* font)
 							lastSpoken = i;
 							npc->setCurrentLine(0);
 							script.erase(script.begin());
-							
+							setSpeaker();
 						}
 					}
+				}
+			}
+			else
+			{
+				if (npc->getSpeaking())
+				{
+					npc->setSpeaking(false);
 				}
 			}
 		}
