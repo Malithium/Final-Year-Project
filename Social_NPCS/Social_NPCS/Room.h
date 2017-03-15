@@ -19,6 +19,7 @@ public:
 	int findOpenGroup(int exclude);
 	void leaveGroup(std::shared_ptr<NPC> npc);
 	void joinGroup(std::shared_ptr<NPC> npc, int id);
+	void cleanUpGroups();
 
 private:
 	int roomWidth, roomHeight, roomX, roomY;

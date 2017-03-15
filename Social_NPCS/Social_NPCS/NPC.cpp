@@ -2,6 +2,7 @@
 
 NPC::NPC(std::string tBoxSprite, std::string NPCSprite, std::string text, SDL_Renderer* renderer, int x, int y) : Sprite(NPCSprite, renderer, x, y)
 {
+	boredLvl = 0;
 	speech = TextBox(tBoxSprite, renderer, x, y);
 }
 

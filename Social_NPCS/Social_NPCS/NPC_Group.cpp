@@ -311,7 +311,7 @@ void NPC_Group::setSpeaker()
 			{
 				int bored = NPCs[i]->getBoredom() + 1;
 				NPCs[i]->setBoredom(bored);
-				if (NPCs[i]->getBoredom() > 10)
+				if (NPCs[i]->getBoredom() > 13)
 				{
 					NPCs[i]->setIdle(true);
 				}

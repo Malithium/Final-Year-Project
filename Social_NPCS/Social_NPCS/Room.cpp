@@ -140,10 +140,15 @@ void Room::HandleMove(SDL_Renderer* renderer)
 {
 	for (int i = 0; i < roomNPCs.size(); i++)
 	{
+		if (roomNPCs[i]->getGroupID() == -1)
+		{
+			roomNPCs[i]->setIdle(true);
+		}
 		if (roomNPCs[i]->getIdle())
 		{
 			if (!roomNPCs[i]->getMoving())
 			{
+				cleanUpGroups();
 				int gID = findOpenGroup(roomNPCs[i]->getGroupID());
 				if (gID > -1)
 				{
@@ -151,6 +156,15 @@ void Room::HandleMove(SDL_Renderer* renderer)
 					joinGroup(roomNPCs[i], gID);					
 					basicPath(roomNPCs[i], renderer);
 					//generatePath(roomNPCs[i], renderer);
+					roomNPCs[i]->setMoving(true);
+					roomNPCs[i]->freeBox();
+				}
+
+				if (gID == -1)
+				{
+					leaveGroup(roomNPCs[i]);
+					roomNPCs[i]->setEndGoal(std::pair<int, int>(800, 800));
+					basicPath(roomNPCs[i], renderer);
 					roomNPCs[i]->setMoving(true);
 					roomNPCs[i]->freeBox();
 				}
@@ -163,8 +177,33 @@ void Room::HandleMove(SDL_Renderer* renderer)
 					roomNPCs[i]->setIdle(false);
 					roomNPCs[i]->setMoving(false);
 					roomNPCs[i]->setBoredom(0);
+					if (roomNPCs[i]->getX() == 800 && roomNPCs[i]->getY() == 800)
+					{
+						roomNPCs.erase(roomNPCs.begin() + i);
+					}
 				}
 			}
+		}
+	}
+}
+
+void Room::cleanUpGroups()
+{
+	for (int g = 0; g < roomGroups.size(); g++)
+	{
+		if (roomGroups[g]->getScript().size() == 0)
+		{
+			std::vector<std::shared_ptr<NPC>> grpNPCList = roomGroups[g]->getNPCList();
+			for (int i = 0; i < grpNPCList.size(); i++)
+			{
+				grpNPCList[i]->setIdle(true);
+				grpNPCList[i]->setSpeaking(false);
+				grpNPCList[i]->setReading(false);
+				grpNPCList[i]->setText("");
+				grpNPCList[i]->setGroupID(-1);
+				leaveGroup(grpNPCList[i]);
+			}
+			roomGroups.erase(roomGroups.begin()+g);
 		}
 	}
 }
