@@ -19,13 +19,14 @@ public:
 	int findOpenGroup(int exclude);
 	void leaveGroup(std::shared_ptr<NPC> npc);
 	void joinGroup(std::shared_ptr<NPC> npc, int id);
+	bool checkGroup(int id);
 	void cleanUpGroups();
 
 private:
 	int roomWidth, roomHeight, roomX, roomY;
 
 	std::vector<std::shared_ptr<NPC>> roomNPCs;
-	std::vector<std::shared_ptr<NPC_Group>> roomGroups;
+	std::vector<std::shared_ptr<Base_Group>> roomGroups;
 	std::vector<std::shared_ptr<Node>> roomNodes;
 	std::string roomsubject;
 };

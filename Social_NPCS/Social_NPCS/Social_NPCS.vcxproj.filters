@@ -87,7 +87,7 @@
     <ClInclude Include="Node.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Conversation.h">
+    <ClInclude Include="Base_Group.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -146,7 +146,7 @@
     <ClCompile Include="Node.cpp">
       <Filter>Source Files\SDL</Filter>
     </ClCompile>
-    <ClCompile Include="Conversation.cpp">
+    <ClCompile Include="Base_Group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -50,9 +50,6 @@ public:
 
 	void move();
 
-	SDL_Rect getBBox();
-	void setBBox(int x, int y, int width, int height);
-
 	std::vector<std::shared_ptr<Node>> NPC::getPath();
 	void NPC::setPath(std::vector<std::shared_ptr<Node>> newPath);
 
@@ -82,6 +79,5 @@ private:
 	bool moving = false;
 
 	float emotionLevels = 0.0f;
-	SDL_Rect colliderBox;
 };
 

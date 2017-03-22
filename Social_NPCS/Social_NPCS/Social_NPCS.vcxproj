@@ -155,9 +155,9 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Base_Group.h" />
     <ClInclude Include="Comment.h" />
     <ClInclude Include="CommentFormatter.h" />
-    <ClInclude Include="Conversation.h" />
     <ClInclude Include="Group.h" />
     <ClInclude Include="GroupPopulator.h" />
     <ClInclude Include="json.h" />
@@ -175,9 +175,9 @@
     <ClInclude Include="Topic.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Base_Group.cpp" />
     <ClCompile Include="Comment.cpp" />
     <ClCompile Include="CommentFormatter.cpp" />
-    <ClCompile Include="Conversation.cpp" />
     <ClCompile Include="Group.cpp" />
     <ClCompile Include="GroupPopulator.cpp" />
     <ClCompile Include="jsoncpp.cpp" />
