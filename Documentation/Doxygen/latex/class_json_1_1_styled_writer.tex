@@ -1,0 +1,734 @@
+\hypertarget{class_json_1_1_styled_writer}{}\section{Json\+:\+:Styled\+Writer Class Reference}
+\label{class_json_1_1_styled_writer}\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+
+
+Writes a \hyperlink{class_json_1_1_value}{Value} in \href{http://www.json.org}{\tt J\+S\+ON} format in a human friendly way.  
+
+
+
+
+{\ttfamily \#include $<$json.\+h$>$}
+
+
+
+Inheritance diagram for Json\+:\+:Styled\+Writer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_json_1_1_styled_writer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Json\+:\+:Styled\+Writer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_1_1_styled_writer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_styled_writer_a1f1b5f922a6a0ef0e56c6dd2f6170192}{Styled\+Writer} ()
+\item 
+\hyperlink{class_json_1_1_styled_writer_a6a18380a4c5dd5e37a892dc182aac88c}{$\sim$\+Styled\+Writer} () \hyperlink{json_8h_a824d6199c91488107e443226fa6022c5}{J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_styled_writer_a5efab19b9746da9920c29cdae3a6b404}{write} (const \hyperlink{class_json_1_1_value}{Value} \&root) \hyperlink{json_8h_a824d6199c91488107e443226fa6022c5}{J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\begin{DoxyCompactList}\small\item\em Serialize a \hyperlink{class_json_1_1_value}{Value} in \href{http://www.json.org}{\tt J\+S\+ON} format. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} $>$ \hyperlink{class_json_1_1_styled_writer_a798fcefa41730de612a5cf7e73003e8a}{Child\+Values}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_json_1_1_styled_writer_ac40143cf43f7c4a94d3d0b41e5245069}{write\+Value} (const \hyperlink{class_json_1_1_value}{Value} \&value)
+\item 
+void \hyperlink{class_json_1_1_styled_writer_a0618c23d62965515def15ece1e677f5d}{write\+Array\+Value} (const \hyperlink{class_json_1_1_value}{Value} \&value)
+\item 
+bool \hyperlink{class_json_1_1_styled_writer_aa5dc671edf10b9976f1511da2271ab9d}{is\+Multine\+Array} (const \hyperlink{class_json_1_1_value}{Value} \&value)
+\item 
+void \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{push\+Value} (const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&value)
+\item 
+void \hyperlink{class_json_1_1_styled_writer_a885f4bfb5701896d60eee6716d2db7e4}{write\+Indent} ()
+\item 
+void \hyperlink{class_json_1_1_styled_writer_ac38e02972054125c38efbe327b52f6ac}{write\+With\+Indent} (const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&value)
+\item 
+void \hyperlink{class_json_1_1_styled_writer_a0b65be6186a7c6638270990265e42b97}{indent} ()
+\item 
+void \hyperlink{class_json_1_1_styled_writer_acee1c9285519b573cfcb00b7e7f5a809}{unindent} ()
+\item 
+void \hyperlink{class_json_1_1_styled_writer_ad3452c48fabf968bf3693549331ec06e}{write\+Comment\+Before\+Value} (const \hyperlink{class_json_1_1_value}{Value} \&root)
+\item 
+void \hyperlink{class_json_1_1_styled_writer_ab12b274c62822fc51ec4617c6be95139}{write\+Comment\+After\+Value\+On\+Same\+Line} (const \hyperlink{class_json_1_1_value}{Value} \&root)
+\item 
+bool \hyperlink{class_json_1_1_styled_writer_a37a806d010f708cb68556f2666f79bdf}{has\+Comment\+For\+Value} (const \hyperlink{class_json_1_1_value}{Value} \&value)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_styled_writer_a692dda1b1621fb5620e0a7b1b10f3b1f}{normalize\+E\+OL} (const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&text)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_styled_writer_a798fcefa41730de612a5cf7e73003e8a}{Child\+Values} \hyperlink{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}{child\+Values\+\_\+}
+\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\+\_\+}
+\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_styled_writer_a7d91709c94c152bd44eaf80faac130ae}{indent\+String\+\_\+}
+\item 
+unsigned int \hyperlink{class_json_1_1_styled_writer_ae648d2e1fc0f7d45c748c96805106cb0}{right\+Margin\+\_\+}
+\item 
+unsigned int \hyperlink{class_json_1_1_styled_writer_a0b5ab768cc56433d463eb1f03da8614e}{indent\+Size\+\_\+}
+\item 
+bool \hyperlink{class_json_1_1_styled_writer_acaabfa48b50a8bb7fa9ce98e2ae971d9}{add\+Child\+Values\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Writes a \hyperlink{class_json_1_1_value}{Value} in \href{http://www.json.org}{\tt J\+S\+ON} format in a human friendly way. 
+
+The rules for line break and indent are as follow\+:
+\begin{DoxyItemize}
+\item Object value\+:
+\begin{DoxyItemize}
+\item if empty then print \{\} without indent and line break
+\item if not empty the print \textquotesingle{}\{\textquotesingle{}, line break \& indent, print one value per line and then unindent and line break and print \textquotesingle{}\}\textquotesingle{}.
+\end{DoxyItemize}
+\item Array value\+:
+\begin{DoxyItemize}
+\item if empty then print \mbox{[}\mbox{]} without indent and line break
+\item if the array contains no object value, empty array or some other value types, and all the values fit on one lines, then print the array on a single line.
+\item otherwise, it the values do not fit on one line, or the array contains object or non empty array, then print one value per line.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+If the \hyperlink{class_json_1_1_value}{Value} have comments then they are outputed according to their \hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351}{Comment\+Placement}.
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_json_1_1_reader}{Reader}, \hyperlink{class_json_1_1_value}{Value}, \hyperlink{class_json_1_1_value_a29f3a30f7e5d3af6f38d57999bf5b480}{Value\+::set\+Comment()} 
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000009}{Deprecated}]Use \hyperlink{class_json_1_1_stream_writer_builder}{Stream\+Writer\+Builder}. \end{DoxyRefDesc}
+
+
+Definition at line 1960 of file json.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a798fcefa41730de612a5cf7e73003e8a}\label{class_json_1_1_styled_writer_a798fcefa41730de612a5cf7e73003e8a}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!Child\+Values@{Child\+Values}}
+\index{Child\+Values@{Child\+Values}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{Child\+Values}{ChildValues}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG}$>$ \hyperlink{class_json_1_1_styled_writer_a798fcefa41730de612a5cf7e73003e8a}{Json\+::\+Styled\+Writer\+::\+Child\+Values}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1986 of file json.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a1f1b5f922a6a0ef0e56c6dd2f6170192}\label{class_json_1_1_styled_writer_a1f1b5f922a6a0ef0e56c6dd2f6170192}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!Styled\+Writer@{Styled\+Writer}}
+\index{Styled\+Writer@{Styled\+Writer}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{Styled\+Writer()}{StyledWriter()}}
+{\footnotesize\ttfamily Json\+::\+Styled\+Writer\+::\+Styled\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4479 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+4480     : \hyperlink{class_json_1_1_styled_writer_ae648d2e1fc0f7d45c748c96805106cb0}{rightMargin\_}(74), \hyperlink{class_json_1_1_styled_writer_a0b5ab768cc56433d463eb1f03da8614e}{indentSize\_}(3), \hyperlink{class_json_1_1_styled_writer_acaabfa48b50a8bb7fa9ce98e2ae971d9}{addChildValues\_}() \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a6a18380a4c5dd5e37a892dc182aac88c}\label{class_json_1_1_styled_writer_a6a18380a4c5dd5e37a892dc182aac88c}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!````~Styled\+Writer@{$\sim$\+Styled\+Writer}}
+\index{````~Styled\+Writer@{$\sim$\+Styled\+Writer}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{$\sim$\+Styled\+Writer()}{~StyledWriter()}}
+{\footnotesize\ttfamily Json\+::\+Styled\+Writer\+::$\sim$\+Styled\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1963 of file json.\+h.
+
+
+
+References J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE, J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, and Json\+::normalize\+E\+O\+L().
+
+
+\begin{DoxyCode}
+1963 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a37a806d010f708cb68556f2666f79bdf}\label{class_json_1_1_styled_writer_a37a806d010f708cb68556f2666f79bdf}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!has\+Comment\+For\+Value@{has\+Comment\+For\+Value}}
+\index{has\+Comment\+For\+Value@{has\+Comment\+For\+Value}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{has\+Comment\+For\+Value()}{hasCommentForValue()}}
+{\footnotesize\ttfamily bool Json\+::\+Styled\+Writer\+::has\+Comment\+For\+Value (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4683 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::comment\+After, Json\+::comment\+After\+On\+Same\+Line, Json\+::comment\+Before, and Json\+::\+Value\+::has\+Comment().
+
+
+
+Referenced by is\+Multine\+Array().
+
+
+\begin{DoxyCode}
+4683                                                         \{
+4684   \textcolor{keywordflow}{return} value.hasComment(\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a52f1733775460517b2ea6bedf4906d52}{commentBefore}) ||
+4685          value.hasComment(\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a008a230a0586de54f30b76afe70fdcfa}{commentAfterOnSameLine}) ||
+4686          value.hasComment(\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351ac5784ca53b12250888ddb642b06aebef}{commentAfter});
+4687 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a0b65be6186a7c6638270990265e42b97}\label{class_json_1_1_styled_writer_a0b65be6186a7c6638270990265e42b97}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!indent@{indent}}
+\index{indent@{indent}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{indent()}{indent()}}
+{\footnotesize\ttfamily void Json\+::\+Styled\+Writer\+::indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4645 of file jsoncpp.\+cpp.
+
+
+
+References indent\+Size\+\_\+, indent\+String\+\_\+, and J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG.
+
+
+
+Referenced by write\+Array\+Value(), and write\+Value().
+
+
+\begin{DoxyCode}
+4645 \{ \hyperlink{class_json_1_1_styled_writer_a7d91709c94c152bd44eaf80faac130ae}{indentString\_} += \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}(\hyperlink{class_json_1_1_styled_writer_a0b5ab768cc56433d463eb1f03da8614e}{indentSize\_}, \textcolor{charliteral}{' '}); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_aa5dc671edf10b9976f1511da2271ab9d}\label{class_json_1_1_styled_writer_aa5dc671edf10b9976f1511da2271ab9d}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!is\+Multine\+Array@{is\+Multine\+Array}}
+\index{is\+Multine\+Array@{is\+Multine\+Array}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{is\+Multine\+Array()}{isMultineArray()}}
+{\footnotesize\ttfamily bool Json\+::\+Styled\+Writer\+::is\+Multine\+Array (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4595 of file jsoncpp.\+cpp.
+
+
+
+References add\+Child\+Values\+\_\+, child\+Values\+\_\+, has\+Comment\+For\+Value(), Json\+::\+Value\+::is\+Array(), Json\+::\+Value\+::is\+Object(), right\+Margin\+\_\+, Json\+::\+Value\+::size(), and write\+Value().
+
+
+
+Referenced by write\+Array\+Value().
+
+
+\begin{DoxyCode}
+4595                                                     \{
+4596   \hyperlink{namespace_json_a8048e741f2177c3b5d9ede4a5b8c53c2}{ArrayIndex} \textcolor{keyword}{const} size = value.size();
+4597   \textcolor{keywordtype}{bool} isMultiLine = size * 3 >= \hyperlink{class_json_1_1_styled_writer_ae648d2e1fc0f7d45c748c96805106cb0}{rightMargin\_};
+4598   \hyperlink{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}{childValues\_}.clear();
+4599   \textcolor{keywordflow}{for} (\hyperlink{namespace_json_a8048e741f2177c3b5d9ede4a5b8c53c2}{ArrayIndex} index = 0; index < size && !isMultiLine; ++index) \{
+4600     \textcolor{keyword}{const} Value& childValue = value[index];
+4601     isMultiLine = ((childValue.isArray() || childValue.isObject()) &&
+4602                         childValue.size() > 0);
+4603   \}
+4604   \textcolor{keywordflow}{if} (!isMultiLine) \textcolor{comment}{// check if line length > max line length}
+4605   \{
+4606     \hyperlink{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}{childValues\_}.reserve(size);
+4607     \hyperlink{class_json_1_1_styled_writer_acaabfa48b50a8bb7fa9ce98e2ae971d9}{addChildValues\_} = \textcolor{keyword}{true};
+4608     \hyperlink{namespace_json_a8048e741f2177c3b5d9ede4a5b8c53c2}{ArrayIndex} lineLength = 4 + (size - 1) * 2; \textcolor{comment}{// '[ ' + ', '*n + ' ]'}
+4609     \textcolor{keywordflow}{for} (\hyperlink{namespace_json_a8048e741f2177c3b5d9ede4a5b8c53c2}{ArrayIndex} index = 0; index < size; ++index) \{
+4610       \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_styled_writer_a37a806d010f708cb68556f2666f79bdf}{hasCommentForValue}(value[index])) \{
+4611         isMultiLine = \textcolor{keyword}{true};
+4612       \}
+4613       \hyperlink{class_json_1_1_styled_writer_ac40143cf43f7c4a94d3d0b41e5245069}{writeValue}(value[index]);
+4614       lineLength += \textcolor{keyword}{static\_cast<}\hyperlink{namespace_json_a8048e741f2177c3b5d9ede4a5b8c53c2}{ArrayIndex}\textcolor{keyword}{>}(\hyperlink{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}{childValues\_}[index].length());
+4615     \}
+4616     \hyperlink{class_json_1_1_styled_writer_acaabfa48b50a8bb7fa9ce98e2ae971d9}{addChildValues\_} = \textcolor{keyword}{false};
+4617     isMultiLine = isMultiLine || lineLength >= \hyperlink{class_json_1_1_styled_writer_ae648d2e1fc0f7d45c748c96805106cb0}{rightMargin\_};
+4618   \}
+4619   \textcolor{keywordflow}{return} isMultiLine;
+4620 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a692dda1b1621fb5620e0a7b1b10f3b1f}\label{class_json_1_1_styled_writer_a692dda1b1621fb5620e0a7b1b10f3b1f}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!normalize\+E\+OL@{normalize\+E\+OL}}
+\index{normalize\+E\+OL@{normalize\+E\+OL}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{normalize\+E\+O\+L()}{normalizeEOL()}}
+{\footnotesize\ttfamily static \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Styled\+Writer\+::normalize\+E\+OL (\begin{DoxyParamCaption}\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{text }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}\label{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!push\+Value@{push\+Value}}
+\index{push\+Value@{push\+Value}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{push\+Value()}{pushValue()}}
+{\footnotesize\ttfamily void Json\+::\+Styled\+Writer\+::push\+Value (\begin{DoxyParamCaption}\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4622 of file jsoncpp.\+cpp.
+
+
+
+References add\+Child\+Values\+\_\+, child\+Values\+\_\+, and document\+\_\+.
+
+
+
+Referenced by write\+Array\+Value(), and write\+Value().
+
+
+\begin{DoxyCode}
+4622                                                         \{
+4623   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_styled_writer_acaabfa48b50a8bb7fa9ce98e2ae971d9}{addChildValues\_})
+4624     \hyperlink{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}{childValues\_}.push\_back(value);
+4625   \textcolor{keywordflow}{else}
+4626     \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += value;
+4627 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_acee1c9285519b573cfcb00b7e7f5a809}\label{class_json_1_1_styled_writer_acee1c9285519b573cfcb00b7e7f5a809}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!unindent@{unindent}}
+\index{unindent@{unindent}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{unindent()}{unindent()}}
+{\footnotesize\ttfamily void Json\+::\+Styled\+Writer\+::unindent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4647 of file jsoncpp.\+cpp.
+
+
+
+References indent\+Size\+\_\+, and indent\+String\+\_\+.
+
+
+
+Referenced by write\+Array\+Value(), and write\+Value().
+
+
+\begin{DoxyCode}
+4647                             \{
+4648   assert(\hyperlink{class_json_1_1_styled_writer_a7d91709c94c152bd44eaf80faac130ae}{indentString\_}.size() >= \hyperlink{class_json_1_1_styled_writer_a0b5ab768cc56433d463eb1f03da8614e}{indentSize\_});
+4649   \hyperlink{class_json_1_1_styled_writer_a7d91709c94c152bd44eaf80faac130ae}{indentString\_}.resize(\hyperlink{class_json_1_1_styled_writer_a7d91709c94c152bd44eaf80faac130ae}{indentString\_}.size() - 
+      \hyperlink{class_json_1_1_styled_writer_a0b5ab768cc56433d463eb1f03da8614e}{indentSize\_});
+4650 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a5efab19b9746da9920c29cdae3a6b404}\label{class_json_1_1_styled_writer_a5efab19b9746da9920c29cdae3a6b404}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!write@{write}}
+\index{write@{write}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Styled\+Writer\+::write (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Serialize a \hyperlink{class_json_1_1_value}{Value} in \href{http://www.json.org}{\tt J\+S\+ON} format. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em root} & \hyperlink{class_json_1_1_value}{Value} to serialize. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+String containing the J\+S\+ON document that represents the root value. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_json_1_1_writer_a61c55882b82c7651d0b9b683c6d3f371}{Json\+::\+Writer}.
+
+
+
+Definition at line 4482 of file jsoncpp.\+cpp.
+
+
+
+References add\+Child\+Values\+\_\+, document\+\_\+, indent\+String\+\_\+, write\+Comment\+After\+Value\+On\+Same\+Line(), write\+Comment\+Before\+Value(), and write\+Value().
+
+
+
+Referenced by Json\+::\+Value\+::to\+Styled\+String().
+
+
+\begin{DoxyCode}
+4482                                                     \{
+4483   \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} = \textcolor{stringliteral}{""};
+4484   \hyperlink{class_json_1_1_styled_writer_acaabfa48b50a8bb7fa9ce98e2ae971d9}{addChildValues\_} = \textcolor{keyword}{false};
+4485   \hyperlink{class_json_1_1_styled_writer_a7d91709c94c152bd44eaf80faac130ae}{indentString\_} = \textcolor{stringliteral}{""};
+4486   \hyperlink{class_json_1_1_styled_writer_ad3452c48fabf968bf3693549331ec06e}{writeCommentBeforeValue}(root);
+4487   \hyperlink{class_json_1_1_styled_writer_ac40143cf43f7c4a94d3d0b41e5245069}{writeValue}(root);
+4488   \hyperlink{class_json_1_1_styled_writer_ab12b274c62822fc51ec4617c6be95139}{writeCommentAfterValueOnSameLine}(root);
+4489   \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{stringliteral}{"\(\backslash\)n"};
+4490   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_};
+4491 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a0618c23d62965515def15ece1e677f5d}\label{class_json_1_1_styled_writer_a0618c23d62965515def15ece1e677f5d}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!write\+Array\+Value@{write\+Array\+Value}}
+\index{write\+Array\+Value@{write\+Array\+Value}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{write\+Array\+Value()}{writeArrayValue()}}
+{\footnotesize\ttfamily void Json\+::\+Styled\+Writer\+::write\+Array\+Value (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4552 of file jsoncpp.\+cpp.
+
+
+
+References child\+Values\+\_\+, document\+\_\+, indent(), is\+Multine\+Array(), push\+Value(), Json\+::\+Value\+::size(), unindent(), write\+Comment\+After\+Value\+On\+Same\+Line(), write\+Comment\+Before\+Value(), write\+Indent(), write\+Value(), and write\+With\+Indent().
+
+
+
+Referenced by write\+Value().
+
+
+\begin{DoxyCode}
+4552                                                      \{
+4553   \textcolor{keywordtype}{unsigned} size = value.size();
+4554   \textcolor{keywordflow}{if} (size == 0)
+4555     \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{pushValue}(\textcolor{stringliteral}{"[]"});
+4556   \textcolor{keywordflow}{else} \{
+4557     \textcolor{keywordtype}{bool} isArrayMultiLine = \hyperlink{class_json_1_1_styled_writer_aa5dc671edf10b9976f1511da2271ab9d}{isMultineArray}(value);
+4558     \textcolor{keywordflow}{if} (isArrayMultiLine) \{
+4559       \hyperlink{class_json_1_1_styled_writer_ac38e02972054125c38efbe327b52f6ac}{writeWithIndent}(\textcolor{stringliteral}{"["});
+4560       \hyperlink{class_json_1_1_styled_writer_a0b65be6186a7c6638270990265e42b97}{indent}();
+4561       \textcolor{keywordtype}{bool} hasChildValue = !\hyperlink{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}{childValues\_}.empty();
+4562       \textcolor{keywordtype}{unsigned} index = 0;
+4563       \textcolor{keywordflow}{for} (;;) \{
+4564         \textcolor{keyword}{const} Value& childValue = value[index];
+4565         \hyperlink{class_json_1_1_styled_writer_ad3452c48fabf968bf3693549331ec06e}{writeCommentBeforeValue}(childValue);
+4566         \textcolor{keywordflow}{if} (hasChildValue)
+4567           \hyperlink{class_json_1_1_styled_writer_ac38e02972054125c38efbe327b52f6ac}{writeWithIndent}(\hyperlink{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}{childValues\_}[index]);
+4568         \textcolor{keywordflow}{else} \{
+4569           \hyperlink{class_json_1_1_styled_writer_a885f4bfb5701896d60eee6716d2db7e4}{writeIndent}();
+4570           \hyperlink{class_json_1_1_styled_writer_ac40143cf43f7c4a94d3d0b41e5245069}{writeValue}(childValue);
+4571         \}
+4572         \textcolor{keywordflow}{if} (++index == size) \{
+4573           \hyperlink{class_json_1_1_styled_writer_ab12b274c62822fc51ec4617c6be95139}{writeCommentAfterValueOnSameLine}(childValue);
+4574           \textcolor{keywordflow}{break};
+4575         \}
+4576         \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{charliteral}{','};
+4577         \hyperlink{class_json_1_1_styled_writer_ab12b274c62822fc51ec4617c6be95139}{writeCommentAfterValueOnSameLine}(childValue);
+4578       \}
+4579       \hyperlink{class_json_1_1_styled_writer_acee1c9285519b573cfcb00b7e7f5a809}{unindent}();
+4580       \hyperlink{class_json_1_1_styled_writer_ac38e02972054125c38efbe327b52f6ac}{writeWithIndent}(\textcolor{stringliteral}{"]"});
+4581     \} \textcolor{keywordflow}{else} \textcolor{comment}{// output on a single line}
+4582     \{
+4583       assert(\hyperlink{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}{childValues\_}.size() == size);
+4584       \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{stringliteral}{"[ "};
+4585       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{unsigned} index = 0; index < size; ++index) \{
+4586         \textcolor{keywordflow}{if} (index > 0)
+4587           document\_ += \textcolor{stringliteral}{", "};
+4588         document\_ += \hyperlink{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}{childValues\_}[index];
+4589       \}
+4590       document\_ += \textcolor{stringliteral}{" ]"};
+4591     \}
+4592   \}
+4593 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_ab12b274c62822fc51ec4617c6be95139}\label{class_json_1_1_styled_writer_ab12b274c62822fc51ec4617c6be95139}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!write\+Comment\+After\+Value\+On\+Same\+Line@{write\+Comment\+After\+Value\+On\+Same\+Line}}
+\index{write\+Comment\+After\+Value\+On\+Same\+Line@{write\+Comment\+After\+Value\+On\+Same\+Line}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{write\+Comment\+After\+Value\+On\+Same\+Line()}{writeCommentAfterValueOnSameLine()}}
+{\footnotesize\ttfamily void Json\+::\+Styled\+Writer\+::write\+Comment\+After\+Value\+On\+Same\+Line (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4672 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::comment\+After, Json\+::comment\+After\+On\+Same\+Line, document\+\_\+, Json\+::\+Value\+::get\+Comment(), and Json\+::\+Value\+::has\+Comment().
+
+
+
+Referenced by write(), write\+Array\+Value(), and write\+Value().
+
+
+\begin{DoxyCode}
+4672                                                                      \{
+4673   \textcolor{keywordflow}{if} (root.hasComment(\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a008a230a0586de54f30b76afe70fdcfa}{commentAfterOnSameLine}))
+4674     \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{stringliteral}{" "} + root.getComment(\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a008a230a0586de54f30b76afe70fdcfa}{commentAfterOnSameLine});
+4675 
+4676   \textcolor{keywordflow}{if} (root.hasComment(\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351ac5784ca53b12250888ddb642b06aebef}{commentAfter})) \{
+4677     \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{stringliteral}{"\(\backslash\)n"};
+4678     \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += root.getComment(\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351ac5784ca53b12250888ddb642b06aebef}{commentAfter});
+4679     \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{stringliteral}{"\(\backslash\)n"};
+4680   \}
+4681 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_ad3452c48fabf968bf3693549331ec06e}\label{class_json_1_1_styled_writer_ad3452c48fabf968bf3693549331ec06e}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!write\+Comment\+Before\+Value@{write\+Comment\+Before\+Value}}
+\index{write\+Comment\+Before\+Value@{write\+Comment\+Before\+Value}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{write\+Comment\+Before\+Value()}{writeCommentBeforeValue()}}
+{\footnotesize\ttfamily void Json\+::\+Styled\+Writer\+::write\+Comment\+Before\+Value (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4652 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::comment\+Before, document\+\_\+, Json\+::\+Value\+::get\+Comment(), Json\+::\+Value\+::has\+Comment(), J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, and write\+Indent().
+
+
+
+Referenced by write(), write\+Array\+Value(), and write\+Value().
+
+
+\begin{DoxyCode}
+4652                                                             \{
+4653   \textcolor{keywordflow}{if} (!root.hasComment(\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a52f1733775460517b2ea6bedf4906d52}{commentBefore}))
+4654     \textcolor{keywordflow}{return};
+4655 
+4656   \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{stringliteral}{"\(\backslash\)n"};
+4657   \hyperlink{class_json_1_1_styled_writer_a885f4bfb5701896d60eee6716d2db7e4}{writeIndent}();
+4658   \textcolor{keyword}{const} \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}& comment = root.getComment(\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a52f1733775460517b2ea6bedf4906d52}{commentBefore});
+4659   JSONCPP\_STRING::const\_iterator iter = comment.begin();
+4660   \textcolor{keywordflow}{while} (iter != comment.end()) \{
+4661     \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += *iter;
+4662     \textcolor{keywordflow}{if} (*iter == \textcolor{charliteral}{'\(\backslash\)n'} &&
+4663        (iter != comment.end() && *(iter + 1) == \textcolor{charliteral}{'/'}))
+4664       \hyperlink{class_json_1_1_styled_writer_a885f4bfb5701896d60eee6716d2db7e4}{writeIndent}();
+4665     ++iter;
+4666   \}
+4667 
+4668   \textcolor{comment}{// Comments are stripped of trailing newlines, so add one here}
+4669   \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{stringliteral}{"\(\backslash\)n"};
+4670 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a885f4bfb5701896d60eee6716d2db7e4}\label{class_json_1_1_styled_writer_a885f4bfb5701896d60eee6716d2db7e4}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!write\+Indent@{write\+Indent}}
+\index{write\+Indent@{write\+Indent}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{write\+Indent()}{writeIndent()}}
+{\footnotesize\ttfamily void Json\+::\+Styled\+Writer\+::write\+Indent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4629 of file jsoncpp.\+cpp.
+
+
+
+References document\+\_\+, and indent\+String\+\_\+.
+
+
+
+Referenced by write\+Array\+Value(), write\+Comment\+Before\+Value(), and write\+With\+Indent().
+
+
+\begin{DoxyCode}
+4629                                \{
+4630   \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_}.empty()) \{
+4631     \textcolor{keywordtype}{char} last = \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_}[\hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_}.length() - 1];
+4632     \textcolor{keywordflow}{if} (last == \textcolor{charliteral}{' '}) \textcolor{comment}{// already indented}
+4633       \textcolor{keywordflow}{return};
+4634     \textcolor{keywordflow}{if} (last != \textcolor{charliteral}{'\(\backslash\)n'}) \textcolor{comment}{// Comments may add new-line}
+4635       \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{charliteral}{'\(\backslash\)n'};
+4636   \}
+4637   \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \hyperlink{class_json_1_1_styled_writer_a7d91709c94c152bd44eaf80faac130ae}{indentString\_};
+4638 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_ac40143cf43f7c4a94d3d0b41e5245069}\label{class_json_1_1_styled_writer_ac40143cf43f7c4a94d3d0b41e5245069}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!write\+Value@{write\+Value}}
+\index{write\+Value@{write\+Value}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{write\+Value()}{writeValue()}}
+{\footnotesize\ttfamily void Json\+::\+Styled\+Writer\+::write\+Value (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4493 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::array\+Value, Json\+::\+Value\+::as\+Bool(), Json\+::\+Value\+::as\+Double(), Json\+::\+Value\+::as\+Largest\+Int(), Json\+::\+Value\+::as\+Largest\+U\+Int(), Json\+::boolean\+Value, document\+\_\+, Json\+::\+Value\+::get\+Member\+Names(), Json\+::\+Value\+::get\+String(), indent(), Json\+::int\+Value, J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, Json\+::null\+Value, Json\+::object\+Value, push\+Value(), Json\+::real\+Value, Json\+::string\+Value, Json\+::\+Value\+::type(), Json\+::uint\+Value, unindent(), Json\+::value\+To\+Quoted\+String(), Json\+::value\+To\+Quoted\+String\+N(), Json\+::value\+To\+String(), write\+Array\+Value(), write\+Comment\+After\+Value\+On\+Same\+Line(), write\+Comment\+Before\+Value(), and write\+With\+Indent().
+
+
+
+Referenced by is\+Multine\+Array(), write(), and write\+Array\+Value().
+
+
+\begin{DoxyCode}
+4493                                                 \{
+4494   \textcolor{keywordflow}{switch} (value.type()) \{
+4495   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue}:
+4496     \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{pushValue}(\textcolor{stringliteral}{"null"});
+4497     \textcolor{keywordflow}{break};
+4498   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae5a9d708d5c9e23ae9bf98898522512d}{intValue}:
+4499     \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{pushValue}(\hyperlink{namespace_json_a498503e8f49d6a3811e3c9f6757da60d}{valueToString}(value.asLargestInt()));
+4500     \textcolor{keywordflow}{break};
+4501   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaea788d9a3bb00adc6d68d97d43e1ccd3}{uintValue}:
+4502     \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{pushValue}(\hyperlink{namespace_json_a498503e8f49d6a3811e3c9f6757da60d}{valueToString}(value.asLargestUInt()));
+4503     \textcolor{keywordflow}{break};
+4504   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eab837c7b869c14d8be712deb45c9e490e}{realValue}:
+4505     \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{pushValue}(\hyperlink{namespace_json_a498503e8f49d6a3811e3c9f6757da60d}{valueToString}(value.asDouble()));
+4506     \textcolor{keywordflow}{break};
+4507   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea804ef857affea2d415843c73f261c258}{stringValue}:
+4508   \{
+4509     \textcolor{comment}{// Is NULL possible for value.string\_? No.}
+4510     \textcolor{keywordtype}{char} \textcolor{keyword}{const}* str;
+4511     \textcolor{keywordtype}{char} \textcolor{keyword}{const}* end;
+4512     \textcolor{keywordtype}{bool} ok = value.getString(&str, &end);
+4513     \textcolor{keywordflow}{if} (ok) \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{pushValue}(\hyperlink{namespace_json_a29aff81733b8fdaabf3f1acfc3ad339f}{valueToQuotedStringN}(str, static\_cast<unsigned>(end-str)
+      ));
+4514     \textcolor{keywordflow}{else} \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{pushValue}(\textcolor{stringliteral}{""});
+4515     \textcolor{keywordflow}{break};
+4516   \}
+4517   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea14c30dbf4da86f7b809be299f671f7fd}{booleanValue}:
+4518     \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{pushValue}(\hyperlink{namespace_json_a498503e8f49d6a3811e3c9f6757da60d}{valueToString}(value.asBool()));
+4519     \textcolor{keywordflow}{break};
+4520   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue}:
+4521     \hyperlink{class_json_1_1_styled_writer_a0618c23d62965515def15ece1e677f5d}{writeArrayValue}(value);
+4522     \textcolor{keywordflow}{break};
+4523   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue}: \{
+4524     \hyperlink{class_json_1_1_value_a9ae9069983fc38f1928d76f9c79ac64d}{Value::Members} members(value.getMemberNames());
+4525     \textcolor{keywordflow}{if} (members.empty())
+4526       \hyperlink{class_json_1_1_styled_writer_a236a833b4bdaa09915c2cac715970f08}{pushValue}(\textcolor{stringliteral}{"\{\}"});
+4527     \textcolor{keywordflow}{else} \{
+4528       \hyperlink{class_json_1_1_styled_writer_ac38e02972054125c38efbe327b52f6ac}{writeWithIndent}(\textcolor{stringliteral}{"\{"});
+4529       \hyperlink{class_json_1_1_styled_writer_a0b65be6186a7c6638270990265e42b97}{indent}();
+4530       Value::Members::iterator it = members.begin();
+4531       \textcolor{keywordflow}{for} (;;) \{
+4532         \textcolor{keyword}{const} \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}& name = *it;
+4533         \textcolor{keyword}{const} Value& childValue = value[name];
+4534         \hyperlink{class_json_1_1_styled_writer_ad3452c48fabf968bf3693549331ec06e}{writeCommentBeforeValue}(childValue);
+4535         \hyperlink{class_json_1_1_styled_writer_ac38e02972054125c38efbe327b52f6ac}{writeWithIndent}(\hyperlink{namespace_json_aaf777a6923bcb4cf63a2729973fe5315}{valueToQuotedString}(name.c\_str()));
+4536         \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{stringliteral}{" : "};
+4537         \hyperlink{class_json_1_1_styled_writer_ac40143cf43f7c4a94d3d0b41e5245069}{writeValue}(childValue);
+4538         \textcolor{keywordflow}{if} (++it == members.end()) \{
+4539           \hyperlink{class_json_1_1_styled_writer_ab12b274c62822fc51ec4617c6be95139}{writeCommentAfterValueOnSameLine}(childValue);
+4540           \textcolor{keywordflow}{break};
+4541         \}
+4542         \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += \textcolor{charliteral}{','};
+4543         \hyperlink{class_json_1_1_styled_writer_ab12b274c62822fc51ec4617c6be95139}{writeCommentAfterValueOnSameLine}(childValue);
+4544       \}
+4545       \hyperlink{class_json_1_1_styled_writer_acee1c9285519b573cfcb00b7e7f5a809}{unindent}();
+4546       \hyperlink{class_json_1_1_styled_writer_ac38e02972054125c38efbe327b52f6ac}{writeWithIndent}(\textcolor{stringliteral}{"\}"});
+4547     \}
+4548   \} \textcolor{keywordflow}{break};
+4549   \}
+4550 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_ac38e02972054125c38efbe327b52f6ac}\label{class_json_1_1_styled_writer_ac38e02972054125c38efbe327b52f6ac}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!write\+With\+Indent@{write\+With\+Indent}}
+\index{write\+With\+Indent@{write\+With\+Indent}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{write\+With\+Indent()}{writeWithIndent()}}
+{\footnotesize\ttfamily void Json\+::\+Styled\+Writer\+::write\+With\+Indent (\begin{DoxyParamCaption}\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4640 of file jsoncpp.\+cpp.
+
+
+
+References document\+\_\+, and write\+Indent().
+
+
+
+Referenced by write\+Array\+Value(), and write\+Value().
+
+
+\begin{DoxyCode}
+4640                                                               \{
+4641   \hyperlink{class_json_1_1_styled_writer_a885f4bfb5701896d60eee6716d2db7e4}{writeIndent}();
+4642   \hyperlink{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}{document\_} += value;
+4643 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_json_1_1_styled_writer_acaabfa48b50a8bb7fa9ce98e2ae971d9}\label{class_json_1_1_styled_writer_acaabfa48b50a8bb7fa9ce98e2ae971d9}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!add\+Child\+Values\+\_\+@{add\+Child\+Values\+\_\+}}
+\index{add\+Child\+Values\+\_\+@{add\+Child\+Values\+\_\+}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{add\+Child\+Values\+\_\+}{addChildValues\_}}
+{\footnotesize\ttfamily bool Json\+::\+Styled\+Writer\+::add\+Child\+Values\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1993 of file json.\+h.
+
+
+
+Referenced by is\+Multine\+Array(), push\+Value(), and write().
+
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}\label{class_json_1_1_styled_writer_a1f905495f0705365af117ec541e29fdf}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!child\+Values\+\_\+@{child\+Values\+\_\+}}
+\index{child\+Values\+\_\+@{child\+Values\+\_\+}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{child\+Values\+\_\+}{childValues\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_styled_writer_a798fcefa41730de612a5cf7e73003e8a}{Child\+Values} Json\+::\+Styled\+Writer\+::child\+Values\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1988 of file json.\+h.
+
+
+
+Referenced by is\+Multine\+Array(), push\+Value(), and write\+Array\+Value().
+
+\mbox{\Hypertarget{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}\label{class_json_1_1_styled_writer_ae967b0c77e4d7cb889ce7b6ee4ce28d7}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!document\+\_\+@{document\+\_\+}}
+\index{document\+\_\+@{document\+\_\+}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{document\+\_\+}{document\_}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Styled\+Writer\+::document\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1989 of file json.\+h.
+
+
+
+Referenced by push\+Value(), write(), write\+Array\+Value(), write\+Comment\+After\+Value\+On\+Same\+Line(), write\+Comment\+Before\+Value(), write\+Indent(), write\+Value(), and write\+With\+Indent().
+
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a0b5ab768cc56433d463eb1f03da8614e}\label{class_json_1_1_styled_writer_a0b5ab768cc56433d463eb1f03da8614e}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!indent\+Size\+\_\+@{indent\+Size\+\_\+}}
+\index{indent\+Size\+\_\+@{indent\+Size\+\_\+}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{indent\+Size\+\_\+}{indentSize\_}}
+{\footnotesize\ttfamily unsigned int Json\+::\+Styled\+Writer\+::indent\+Size\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1992 of file json.\+h.
+
+
+
+Referenced by indent(), and unindent().
+
+\mbox{\Hypertarget{class_json_1_1_styled_writer_a7d91709c94c152bd44eaf80faac130ae}\label{class_json_1_1_styled_writer_a7d91709c94c152bd44eaf80faac130ae}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!indent\+String\+\_\+@{indent\+String\+\_\+}}
+\index{indent\+String\+\_\+@{indent\+String\+\_\+}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{indent\+String\+\_\+}{indentString\_}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Styled\+Writer\+::indent\+String\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1990 of file json.\+h.
+
+
+
+Referenced by indent(), unindent(), write(), and write\+Indent().
+
+\mbox{\Hypertarget{class_json_1_1_styled_writer_ae648d2e1fc0f7d45c748c96805106cb0}\label{class_json_1_1_styled_writer_ae648d2e1fc0f7d45c748c96805106cb0}} 
+\index{Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}!right\+Margin\+\_\+@{right\+Margin\+\_\+}}
+\index{right\+Margin\+\_\+@{right\+Margin\+\_\+}!Json\+::\+Styled\+Writer@{Json\+::\+Styled\+Writer}}
+\subsubsection{\texorpdfstring{right\+Margin\+\_\+}{rightMargin\_}}
+{\footnotesize\ttfamily unsigned int Json\+::\+Styled\+Writer\+::right\+Margin\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1991 of file json.\+h.
+
+
+
+Referenced by is\+Multine\+Array().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{json_8h}{json.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{jsoncpp_8cpp}{jsoncpp.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,40 @@
+\hypertarget{_comment_8cpp}{}\section{C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\+Comment.cpp File Reference}
+\label{_comment_8cpp}\index{C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\+Comment.\+cpp@{C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\+Comment.\+cpp}}
+{\ttfamily \#include \char`\"{}Comment.\+h\char`\"{}}\newline
+Include dependency graph for Comment.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{_comment_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{_comment_8cpp_ac5edd8dbab6e9d702dcdde889b96c250}{operator==} (const \hyperlink{class_comment}{Comment} \&c1, const \hyperlink{class_comment}{Comment} \&c2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_comment_8cpp_ac5edd8dbab6e9d702dcdde889b96c250}\label{_comment_8cpp_ac5edd8dbab6e9d702dcdde889b96c250}} 
+\index{Comment.\+cpp@{Comment.\+cpp}!operator==@{operator==}}
+\index{operator==@{operator==}!Comment.\+cpp@{Comment.\+cpp}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_comment}{Comment} \&}]{c1,  }\item[{const \hyperlink{class_comment}{Comment} \&}]{c2 }\end{DoxyParamCaption})}
+
+
+
+Definition at line 66 of file Comment.\+cpp.
+
+
+
+References Comment\+::body, Comment\+::id, Comment\+::parent\+\_\+id, Comment\+::polarity, and Comment\+::reply.
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{return} (c1.\hyperlink{class_comment_a63db6067036146247c4ab7f663d90369}{id} == c2.\hyperlink{class_comment_a63db6067036146247c4ab7f663d90369}{id}) && (c1.\hyperlink{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}{body} == c2.\hyperlink{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}{body}) && (c1.\hyperlink{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}{parent\_id} == c2.
+      \hyperlink{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}{parent\_id}) && (c1.\hyperlink{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}{polarity} == c2.\hyperlink{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}{polarity}) && (c1.\hyperlink{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}{reply} == c2.
+      \hyperlink{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}{reply});
+69 \}
+\end{DoxyCode}

@@ -1,0 +1,263 @@
+\hypertarget{class_n_p_c___group}{}\section{N\+P\+C\+\_\+\+Group Class Reference}
+\label{class_n_p_c___group}\index{N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}}
+
+
+{\ttfamily \#include $<$N\+P\+C\+\_\+\+Group.\+h$>$}
+
+
+
+Inheritance diagram for N\+P\+C\+\_\+\+Group\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_n_p_c___group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for N\+P\+C\+\_\+\+Group\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_p_c___group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_n_p_c___group_ab680383cc2de42390440bae5bae6b53e}{N\+P\+C\+\_\+\+Group} (int x, int y, int size, std\+::string t\+Box\+File, std\+::string npc\+File, S\+D\+L\+\_\+\+Renderer $\ast$renderer, \hyperlink{class_topic}{Topic} tp)
+\item 
+void \hyperlink{class_n_p_c___group_a139f16a36dba893743e227ea276fd5e7}{simulate\+Conversation} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, bool time, std\+::string boredom\+Level, T\+T\+F\+\_\+\+Font $\ast$font)
+\item 
+bool \hyperlink{class_n_p_c___group_a2e0b8772b42985bd7e87359013918601}{evaluate\+Speaker} ()
+\item 
+void \hyperlink{class_n_p_c___group_a5c1f3d1ad1f50910bb912ed828615ff8}{set\+Speaker} (std\+::string boredom\+Level)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_n_p_c___group}{N\+P\+C\+\_\+\+Group} class is designed to represent a maximum group of 6 \hyperlink{class_n_p_c}{N\+PC}\textquotesingle{}s. the specfied \hyperlink{class_n_p_c}{N\+PC}\textquotesingle{}s are initialised when the group is initialised. 
+
+Definition at line 9 of file N\+P\+C\+\_\+\+Group.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_p_c___group_ab680383cc2de42390440bae5bae6b53e}\label{class_n_p_c___group_ab680383cc2de42390440bae5bae6b53e}} 
+\index{N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}!N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}}
+\index{N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}!N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}}
+\subsubsection{\texorpdfstring{N\+P\+C\+\_\+\+Group()}{NPC\_Group()}}
+{\footnotesize\ttfamily N\+P\+C\+\_\+\+Group\+::\+N\+P\+C\+\_\+\+Group (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{size,  }\item[{std\+::string}]{t\+Box\+File,  }\item[{std\+::string}]{npc\+File,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\hyperlink{class_topic}{Topic}}]{tp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file N\+P\+C\+\_\+\+Group.\+cpp.
+
+
+\begin{DoxyCode}
+3                                                                                                            
+              : \hyperlink{class_base___group_a96e70ee101d6430696f7b13b07190787}{Base\_Group}(x, y, size, tBoxFile, npcFile, renderer, tp)
+4 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_p_c___group_a2e0b8772b42985bd7e87359013918601}\label{class_n_p_c___group_a2e0b8772b42985bd7e87359013918601}} 
+\index{N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}!evaluate\+Speaker@{evaluate\+Speaker}}
+\index{evaluate\+Speaker@{evaluate\+Speaker}!N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}}
+\subsubsection{\texorpdfstring{evaluate\+Speaker()}{evaluateSpeaker()}}
+{\footnotesize\ttfamily bool N\+P\+C\+\_\+\+Group\+::evaluate\+Speaker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method checks if someone has already been selected to speak 
+
+Reimplemented from \hyperlink{class_base___group_a8264ff598ce7e789c6419e2e6eef08fd}{Base\+\_\+\+Group}.
+
+
+
+Definition at line 96 of file N\+P\+C\+\_\+\+Group.\+cpp.
+
+
+
+References Base\+\_\+\+Group\+::get\+N\+P\+C\+List(), and Base\+\_\+\+Group\+::\+N\+P\+Cs.
+
+
+
+Referenced by set\+Speaker().
+
+
+\begin{DoxyCode}
+97 \{
+98     std::vector<std::shared\_ptr<NPC>> \hyperlink{class_base___group_a4757f3c06c73eea029f71b871c1d863e}{NPCs} = \hyperlink{class_base___group_a75eec9132aaf532b4429e0af76b31775}{getNPCList}();
+99     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < NPCs.size(); i++)
+100     \{
+101         \textcolor{comment}{// if there is already a speaker return true}
+102         \textcolor{keywordflow}{if} (NPCs[i]->getSpeaking())
+103             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+104     \}
+105     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+106 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c___group_a5c1f3d1ad1f50910bb912ed828615ff8}\label{class_n_p_c___group_a5c1f3d1ad1f50910bb912ed828615ff8}} 
+\index{N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}!set\+Speaker@{set\+Speaker}}
+\index{set\+Speaker@{set\+Speaker}!N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}}
+\subsubsection{\texorpdfstring{set\+Speaker()}{setSpeaker()}}
+{\footnotesize\ttfamily void N\+P\+C\+\_\+\+Group\+::set\+Speaker (\begin{DoxyParamCaption}\item[{std\+::string}]{boredom\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+set\textquotesingle{}s the next speaker of the conversation, also applys boredom to the other N\+P\+Cs 
+
+Reimplemented from \hyperlink{class_base___group_ae35b3719076cf40d6577b4ae3779758c}{Base\+\_\+\+Group}.
+
+
+
+Definition at line 111 of file N\+P\+C\+\_\+\+Group.\+cpp.
+
+
+
+References evaluate\+Speaker(), Base\+\_\+\+Group\+::get\+I\+D(), Base\+\_\+\+Group\+::get\+N\+P\+C\+List(), Base\+\_\+\+Group\+::\+Get\+Random\+Number(), and Base\+\_\+\+Group\+::\+N\+P\+Cs.
+
+
+
+Referenced by simulate\+Conversation().
+
+
+\begin{DoxyCode}
+112 \{
+113     \textcolor{keywordflow}{if} (!\hyperlink{class_n_p_c___group_a2e0b8772b42985bd7e87359013918601}{evaluateSpeaker}()) \{
+114         \textcolor{comment}{// get a random number}
+115         \textcolor{keywordtype}{int} r = \hyperlink{class_base___group_a3864a2806457151363344051f2814389}{GetRandomNumber}();
+116         std::vector<std::shared\_ptr<NPC>> \hyperlink{class_base___group_a4757f3c06c73eea029f71b871c1d863e}{NPCs} = \hyperlink{class_base___group_a75eec9132aaf532b4429e0af76b31775}{getNPCList}();
+117         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < NPCs.size(); i++)
+118         \{
+119             \textcolor{comment}{// if the NPC does not match the chosen speaker, increment their boredom levels}
+120             \textcolor{keywordflow}{if} (NPCs[i]->\hyperlink{class_base___group_a7299ae154b26d741ac2f6f794bc3a544}{getID}() != NPCs[r]->getID())
+121             \{
+122                 \textcolor{keywordtype}{int} bored = NPCs[i]->getBoredom() + 1;
+123                 NPCs[i]->setBoredom(bored);
+124 
+125                 \textcolor{comment}{// if the boredom level surpasses the global boredom threshhold, set the NPC to idle}
+126                 \textcolor{keywordflow}{if} (NPCs[i]->getBoredom() > atoi(boredomLevel.c\_str()))
+127                 \{
+128                     NPCs[i]->setIdle(\textcolor{keyword}{true});
+129                 \}
+130             \}
+131         \}
+132 
+133         \textcolor{comment}{// set the speakers boredom to 0}
+134         NPCs[r]->setSpeaking(\textcolor{keyword}{true});
+135         NPCs[r]->setBoredom(0);
+136     \}
+137 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c___group_a139f16a36dba893743e227ea276fd5e7}\label{class_n_p_c___group_a139f16a36dba893743e227ea276fd5e7}} 
+\index{N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}!simulate\+Conversation@{simulate\+Conversation}}
+\index{simulate\+Conversation@{simulate\+Conversation}!N\+P\+C\+\_\+\+Group@{N\+P\+C\+\_\+\+Group}}
+\subsubsection{\texorpdfstring{simulate\+Conversation()}{simulateConversation()}}
+{\footnotesize\ttfamily void N\+P\+C\+\_\+\+Group\+::simulate\+Conversation (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{bool}]{time,  }\item[{std\+::string}]{boredom\+Level,  }\item[{T\+T\+F\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+This method is the implementation of Algorithm 1, which makes use of a script and anonymous N\+P\+Cs 
+
+Reimplemented from \hyperlink{class_base___group_aa5080b6388c5974394bf326ce80bfa91}{Base\+\_\+\+Group}.
+
+
+
+Definition at line 9 of file N\+P\+C\+\_\+\+Group.\+cpp.
+
+
+
+References Base\+\_\+\+Group\+::get\+Is\+Reply(), Base\+\_\+\+Group\+::get\+Last\+Spoken(), Base\+\_\+\+Group\+::get\+N\+P\+C\+List(), Base\+\_\+\+Group\+::get\+Polar(), Base\+\_\+\+Group\+::get\+Script(), Base\+\_\+\+Group\+::\+N\+P\+Cs, Base\+\_\+\+Group\+::set\+Is\+Reply(), Base\+\_\+\+Group\+::set\+Last\+Spoken(), Base\+\_\+\+Group\+::set\+Polar(), set\+Speaker(), and Base\+\_\+\+Group\+::update\+Script().
+
+
+\begin{DoxyCode}
+10 \{
+11     \textcolor{comment}{// if the neccecary amount of time has passed, run the simulation code}
+12     \textcolor{keywordflow}{if} (time)
+13     \{
+14         \textcolor{comment}{// set the speaker of the conversation}
+15         \hyperlink{class_n_p_c___group_a5c1f3d1ad1f50910bb912ed828615ff8}{setSpeaker}(boredomLevel);
+16 
+17         std::vector<std::shared\_ptr<NPC>> \hyperlink{class_base___group_a4757f3c06c73eea029f71b871c1d863e}{NPCs} = \hyperlink{class_base___group_a75eec9132aaf532b4429e0af76b31775}{getNPCList}();
+18         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < NPCs.size(); i++)
+19         \{
+20             std::shared\_ptr<NPC> npc = NPCs[i];
+21             \textcolor{comment}{//check if the script has ended}
+22             \textcolor{keywordflow}{if} (\hyperlink{class_base___group_a48dadfbc8cdefca9bdd2c42b99115ad8}{getScript}().size() > 0)
+23             \{
+24                 \textcolor{comment}{//ignore all idle NPCs}
+25                 \textcolor{keywordflow}{if} (!npc->getIdle())
+26                 \{
+27                     \textcolor{comment}{//get the NPC who is set to speak}
+28                     \textcolor{keywordflow}{if} (npc->getSpeaking())
+29                     \{
+30                         \textcolor{comment}{// if the NPC is not reading, then assign him a fresh comment}
+31                         \textcolor{keywordflow}{if} (!npc->getReading())
+32                         \{
+33                             npc->LoadBox(renderer);
+34                             npc->setText(\hyperlink{class_base___group_a48dadfbc8cdefca9bdd2c42b99115ad8}{getScript}()[0].getBody());
+35                             npc->prepareComment(\hyperlink{class_base___group_a48dadfbc8cdefca9bdd2c42b99115ad8}{getScript}()[0].getBody(), font);
+36                             npc->setReading(\textcolor{keyword}{true});
+37                         \}
+38 
+39                         \textcolor{keywordflow}{if} (npc->getReading())
+40                         \{
+41                             \textcolor{comment}{// get the number of lines thats is being rendered to the screen}
+42                             \textcolor{keywordtype}{int} lines = npc->getLinesToRender();
+43                             \textcolor{keywordflow}{if} (npc->getCurrentLine() < lines)
+44                             \{
+45                                 \textcolor{comment}{// load the NPCs comment as a texture}
+46                                 npc->LoadComment(renderer, npc->getCurrentLine(), font);
+47                                 npc->setCurrentLine(npc->getCurrentLine() + 1);
+48                             \}
+49                             \textcolor{keywordflow}{else}
+50                             \{
+51                                 \textcolor{keywordflow}{if} (\hyperlink{class_base___group_a878700b51979d0acd3eb83cdfa4c0449}{getIsReply}())
+52                                 \{
+53                                     \textcolor{comment}{// if this comment is a reply, apply the sentiment score to the
+       previous speaker}
+54                                     \textcolor{keywordflow}{if} (\hyperlink{class_base___group_a8fb88afb104365ec23447ee1f3649b4c}{getLastSpoken}() < 
+      \hyperlink{class_base___group_a75eec9132aaf532b4429e0af76b31775}{getNPCList}().size())
+55                                         NPCs[\hyperlink{class_base___group_a8fb88afb104365ec23447ee1f3649b4c}{getLastSpoken}()]->applyEmotionLevel(
+      \hyperlink{class_base___group_a57cd8ebf1eee11eab80816ee87223f36}{getPolar}());
+56                                 \}
+57 
+58                                 \textcolor{comment}{//the NPC has finished reading, so set him to not speak, and update
+       conversation values}
+59                                 npc->setSpeaking(\textcolor{keyword}{false});
+60                                 npc->setReading(\textcolor{keyword}{false});
+61                                 \hyperlink{class_base___group_aebe2b457ac29aefcc7105908a61460c8}{setIsReply}(\hyperlink{class_base___group_a48dadfbc8cdefca9bdd2c42b99115ad8}{getScript}()[0].getReply());
+62                                 \hyperlink{class_base___group_a36ef627854f502a064fca8aea44a22fe}{setPolar}(\hyperlink{class_base___group_a48dadfbc8cdefca9bdd2c42b99115ad8}{getScript}()[0].getPolarity());
+63                                 \hyperlink{class_base___group_a07e58c944f222f5c3d3b33c8adf83d14}{setLastSpoken}(i);
+64                                 npc->setCurrentLine(0);
+65                                 \hyperlink{class_base___group_a8c16feac44492aa68f4ee758662892c8}{updateScript}();
+66                                 \hyperlink{class_n_p_c___group_a5c1f3d1ad1f50910bb912ed828615ff8}{setSpeaker}(boredomLevel);
+67                             \}
+68                         \}
+69                     \}
+70                 \}
+71                 \textcolor{keywordflow}{else}
+72                 \{
+73                     \textcolor{comment}{// if the NPC is idle, he is not part of the conversation, and cant speak}
+74                     \textcolor{keywordflow}{if} (npc->getSpeaking())
+75                     \{
+76                         npc->setSpeaking(\textcolor{keyword}{false});
+77                     \}
+78                 \}
+79             \}
+80             \textcolor{keywordflow}{else}
+81             \{
+82                 \textcolor{comment}{// if there is no script there is not conversation, so there cant be a speaker.}
+83                 npc->setSpeaking(\textcolor{keyword}{false});
+84                 npc->setReading(\textcolor{keyword}{false});
+85                 \hyperlink{class_base___group_a07e58c944f222f5c3d3b33c8adf83d14}{setLastSpoken}(i);
+86                 npc->setCurrentLine(0);
+87                 npc->freeBox();
+88             \}
+89         \}
+90     \}
+91 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_n_p_c___group_8h}{N\+P\+C\+\_\+\+Group.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_n_p_c___group_8cpp}{N\+P\+C\+\_\+\+Group.\+cpp}\end{DoxyCompactItemize}

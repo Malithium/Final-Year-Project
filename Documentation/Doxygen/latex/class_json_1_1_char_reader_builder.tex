@@ -1,0 +1,343 @@
+\hypertarget{class_json_1_1_char_reader_builder}{}\section{Json\+:\+:Char\+Reader\+Builder Class Reference}
+\label{class_json_1_1_char_reader_builder}\index{Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}}
+
+
+Build a \hyperlink{class_json_1_1_char_reader}{Char\+Reader} implementation.  
+
+
+
+
+{\ttfamily \#include $<$json.\+h$>$}
+
+
+
+Inheritance diagram for Json\+:\+:Char\+Reader\+Builder\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=213pt]{class_json_1_1_char_reader_builder__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Json\+:\+:Char\+Reader\+Builder\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_1_1_char_reader_builder__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_char_reader_builder_a6e197b69a2ede3d87b03b9c5c78ba46a}{Char\+Reader\+Builder} ()
+\item 
+\hyperlink{class_json_1_1_char_reader_builder_ae8226503f5b947e9d618c39dd992c85c}{$\sim$\+Char\+Reader\+Builder} () \hyperlink{json_8h_a824d6199c91488107e443226fa6022c5}{J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\item 
+\hyperlink{class_json_1_1_char_reader}{Char\+Reader} $\ast$ \hyperlink{class_json_1_1_char_reader_builder_a3a262fcc76c1eb8eebfd4718fb4e9722}{new\+Char\+Reader} () const \hyperlink{json_8h_a824d6199c91488107e443226fa6022c5}{J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\begin{DoxyCompactList}\small\item\em Allocate a \hyperlink{class_json_1_1_char_reader}{Char\+Reader} via operator new(). \end{DoxyCompactList}\item 
+bool \hyperlink{class_json_1_1_char_reader_builder_af890b5cb70e9b372e41de5c9e6535d21}{validate} (\hyperlink{class_json_1_1_value}{Json\+::\+Value} $\ast$invalid) const
+\item 
+\hyperlink{class_json_1_1_value}{Value} \& \hyperlink{class_json_1_1_char_reader_builder_a84b35ef443340c06c0aa7b47851d8d86}{operator\mbox{[}$\,$\mbox{]}} (\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} key)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_json_1_1_char_reader_builder_a03ff031e06aabff989ab4addc87294ab}{set\+Defaults} (\hyperlink{class_json_1_1_value}{Json\+::\+Value} $\ast$settings)
+\item 
+static void \hyperlink{class_json_1_1_char_reader_builder_a9c19e3c5475f9072d527810d4bf56749}{strict\+Mode} (\hyperlink{class_json_1_1_value}{Json\+::\+Value} $\ast$settings)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_value}{Json\+::\+Value} \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Build a \hyperlink{class_json_1_1_char_reader}{Char\+Reader} implementation. 
+
+Usage\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{using namespace }\hyperlink{namespace_json}{Json};
+\hyperlink{class_json_1_1_char_reader_builder}{CharReaderBuilder} builder;
+builder[\textcolor{stringliteral}{"collectComments"}] = \textcolor{keyword}{false};
+\hyperlink{class_json_1_1_value}{Value} value;
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING} errs;
+\textcolor{keywordtype}{bool} ok = \hyperlink{namespace_json_aab0cf1ecf81d1aeca12be2a416a84352}{parseFromStream}(builder, std::cin, &value, &errs);
+\end{DoxyCode}
+ 
+
+Definition at line 1621 of file json.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_char_reader_builder_a6e197b69a2ede3d87b03b9c5c78ba46a}\label{class_json_1_1_char_reader_builder_a6e197b69a2ede3d87b03b9c5c78ba46a}} 
+\index{Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}!Char\+Reader\+Builder@{Char\+Reader\+Builder}}
+\index{Char\+Reader\+Builder@{Char\+Reader\+Builder}!Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}}
+\subsubsection{\texorpdfstring{Char\+Reader\+Builder()}{CharReaderBuilder()}}
+{\footnotesize\ttfamily Json\+::\+Char\+Reader\+Builder\+::\+Char\+Reader\+Builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2133 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2134 \{
+2135   \hyperlink{class_json_1_1_char_reader_builder_a03ff031e06aabff989ab4addc87294ab}{setDefaults}(&\hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_});
+2136 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_char_reader_builder_ae8226503f5b947e9d618c39dd992c85c}\label{class_json_1_1_char_reader_builder_ae8226503f5b947e9d618c39dd992c85c}} 
+\index{Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}!````~Char\+Reader\+Builder@{$\sim$\+Char\+Reader\+Builder}}
+\index{````~Char\+Reader\+Builder@{$\sim$\+Char\+Reader\+Builder}!Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}}
+\subsubsection{\texorpdfstring{$\sim$\+Char\+Reader\+Builder()}{~CharReaderBuilder()}}
+{\footnotesize\ttfamily Json\+::\+Char\+Reader\+Builder\+::$\sim$\+Char\+Reader\+Builder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2137 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2138 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_char_reader_builder_a3a262fcc76c1eb8eebfd4718fb4e9722}\label{class_json_1_1_char_reader_builder_a3a262fcc76c1eb8eebfd4718fb4e9722}} 
+\index{Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}!new\+Char\+Reader@{new\+Char\+Reader}}
+\index{new\+Char\+Reader@{new\+Char\+Reader}!Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}}
+\subsubsection{\texorpdfstring{new\+Char\+Reader()}{newCharReader()}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_char_reader}{Char\+Reader} $\ast$ Json\+::\+Char\+Reader\+Builder\+::new\+Char\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Allocate a \hyperlink{class_json_1_1_char_reader}{Char\+Reader} via operator new(). 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if something goes wrong (e.\+g. invalid settings) \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_json_1_1_char_reader_1_1_factory_a4c5862a1ffd432372dbe65cf59de98c4}{Json\+::\+Char\+Reader\+::\+Factory}.
+
+
+
+Definition at line 2139 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::\+Our\+Features\+::all(), Json\+::\+Our\+Features\+::allow\+Comments\+\_\+, Json\+::\+Our\+Features\+::allow\+Dropped\+Null\+Placeholders\+\_\+, Json\+::\+Our\+Features\+::allow\+Numeric\+Keys\+\_\+, Json\+::\+Our\+Features\+::allow\+Single\+Quotes\+\_\+, Json\+::\+Our\+Features\+::allow\+Special\+Floats\+\_\+, Json\+::\+Our\+Features\+::fail\+If\+Extra\+\_\+, Json\+::\+Our\+Features\+::reject\+Dup\+Keys\+\_\+, Json\+::\+Our\+Features\+::stack\+Limit\+\_\+, and Json\+::\+Our\+Features\+::strict\+Root\+\_\+.
+
+
+\begin{DoxyCode}
+2140 \{
+2141   \textcolor{keywordtype}{bool} collectComments = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"collectComments"}].\hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{asBool}();
+2142   OurFeatures features = \hyperlink{class_json_1_1_our_features_a0686e1406b6677f496529f9f3fe98d1e}{OurFeatures::all}();
+2143   features.allowComments\_ = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"allowComments"}].\hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{asBool}();
+2144   features.strictRoot\_ = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"strictRoot"}].\hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{asBool}();
+2145   features.allowDroppedNullPlaceholders\_ = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"allowDroppedNullPlaceholders"}].
+      \hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{asBool}();
+2146   features.allowNumericKeys\_ = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"allowNumericKeys"}].\hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{asBool}();
+2147   features.allowSingleQuotes\_ = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"allowSingleQuotes"}].\hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{asBool}();
+2148   features.stackLimit\_ = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"stackLimit"}].\hyperlink{class_json_1_1_value_a614d635bc248a592593feb322cd15ab8}{asInt}();
+2149   features.failIfExtra\_ = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"failIfExtra"}].\hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{asBool}();
+2150   features.rejectDupKeys\_ = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"rejectDupKeys"}].\hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{asBool}();
+2151   features.allowSpecialFloats\_ = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[\textcolor{stringliteral}{"allowSpecialFloats"}].\hyperlink{class_json_1_1_value_ab693fb7b9b1595bb0adc49658bbf780d}{asBool}();
+2152   \textcolor{keywordflow}{return} \textcolor{keyword}{new} OurCharReader(collectComments, features);
+2153 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_char_reader_builder_a84b35ef443340c06c0aa7b47851d8d86}\label{class_json_1_1_char_reader_builder_a84b35ef443340c06c0aa7b47851d8d86}} 
+\index{Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}!operator\mbox{[}\mbox{]}@{operator[]}}
+\index{operator\mbox{[}\mbox{]}@{operator[]}!Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}}
+\subsubsection{\texorpdfstring{operator[]()}{operator[]()}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Value} \& Json\+::\+Char\+Reader\+Builder\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG}}]{key }\end{DoxyParamCaption})}
+
+A simple way to update a specific setting. 
+
+Definition at line 2185 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2186 \{
+2187   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[key];
+2188 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_char_reader_builder_a03ff031e06aabff989ab4addc87294ab}\label{class_json_1_1_char_reader_builder_a03ff031e06aabff989ab4addc87294ab}} 
+\index{Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}!set\+Defaults@{set\+Defaults}}
+\index{set\+Defaults@{set\+Defaults}!Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}}
+\subsubsection{\texorpdfstring{set\+Defaults()}{setDefaults()}}
+{\footnotesize\ttfamily void Json\+::\+Char\+Reader\+Builder\+::set\+Defaults (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_value}{Json\+::\+Value} $\ast$}]{settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Called by ctor, but you can use this to reset settings\+\_\+. \begin{DoxyPrecond}{Precondition}
+\textquotesingle{}settings\textquotesingle{} != N\+U\+LL (but Json\+::null is fine) 
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Defaults\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+\end{DoxyRemark}
+\mbox{[}Char\+Reader\+Builder\+Defaults\mbox{]}
+
+\mbox{[}Char\+Reader\+Builder\+Defaults\mbox{]} 
+
+Definition at line 2205 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2206 \{
+2208   (*settings)[\textcolor{stringliteral}{"collectComments"}] = \textcolor{keyword}{true};
+2209   (*settings)[\textcolor{stringliteral}{"allowComments"}] = \textcolor{keyword}{true};
+2210   (*settings)[\textcolor{stringliteral}{"strictRoot"}] = \textcolor{keyword}{false};
+2211   (*settings)[\textcolor{stringliteral}{"allowDroppedNullPlaceholders"}] = \textcolor{keyword}{false};
+2212   (*settings)[\textcolor{stringliteral}{"allowNumericKeys"}] = \textcolor{keyword}{false};
+2213   (*settings)[\textcolor{stringliteral}{"allowSingleQuotes"}] = \textcolor{keyword}{false};
+2214   (*settings)[\textcolor{stringliteral}{"stackLimit"}] = 1000;
+2215   (*settings)[\textcolor{stringliteral}{"failIfExtra"}] = \textcolor{keyword}{false};
+2216   (*settings)[\textcolor{stringliteral}{"rejectDupKeys"}] = \textcolor{keyword}{false};
+2217   (*settings)[\textcolor{stringliteral}{"allowSpecialFloats"}] = \textcolor{keyword}{false};
+2219 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_char_reader_builder_a9c19e3c5475f9072d527810d4bf56749}\label{class_json_1_1_char_reader_builder_a9c19e3c5475f9072d527810d4bf56749}} 
+\index{Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}!strict\+Mode@{strict\+Mode}}
+\index{strict\+Mode@{strict\+Mode}!Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}}
+\subsubsection{\texorpdfstring{strict\+Mode()}{strictMode()}}
+{\footnotesize\ttfamily void Json\+::\+Char\+Reader\+Builder\+::strict\+Mode (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_value}{Json\+::\+Value} $\ast$}]{settings }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Same as old \hyperlink{class_json_1_1_features_ae23176c14b2e79e81fb61fb1a8ab58ee}{Features\+::strict\+Mode()}. \begin{DoxyPrecond}{Precondition}
+\textquotesingle{}settings\textquotesingle{} != N\+U\+LL (but Json\+::null is fine) 
+\end{DoxyPrecond}
+\begin{DoxyRemark}{Remarks}
+Defaults\+: 
+\begin{DoxyCodeInclude}
+\end{DoxyCodeInclude}
+
+\end{DoxyRemark}
+\mbox{[}Char\+Reader\+Builder\+Strict\+Mode\mbox{]}
+
+\mbox{[}Char\+Reader\+Builder\+Strict\+Mode\mbox{]} 
+
+Definition at line 2190 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2191 \{
+2193   (*settings)[\textcolor{stringliteral}{"allowComments"}] = \textcolor{keyword}{false};
+2194   (*settings)[\textcolor{stringliteral}{"strictRoot"}] = \textcolor{keyword}{true};
+2195   (*settings)[\textcolor{stringliteral}{"allowDroppedNullPlaceholders"}] = \textcolor{keyword}{false};
+2196   (*settings)[\textcolor{stringliteral}{"allowNumericKeys"}] = \textcolor{keyword}{false};
+2197   (*settings)[\textcolor{stringliteral}{"allowSingleQuotes"}] = \textcolor{keyword}{false};
+2198   (*settings)[\textcolor{stringliteral}{"stackLimit"}] = 1000;
+2199   (*settings)[\textcolor{stringliteral}{"failIfExtra"}] = \textcolor{keyword}{true};
+2200   (*settings)[\textcolor{stringliteral}{"rejectDupKeys"}] = \textcolor{keyword}{true};
+2201   (*settings)[\textcolor{stringliteral}{"allowSpecialFloats"}] = \textcolor{keyword}{false};
+2203 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_char_reader_builder_af890b5cb70e9b372e41de5c9e6535d21}\label{class_json_1_1_char_reader_builder_af890b5cb70e9b372e41de5c9e6535d21}} 
+\index{Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}!validate@{validate}}
+\index{validate@{validate}!Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}}
+\subsubsection{\texorpdfstring{validate()}{validate()}}
+{\footnotesize\ttfamily bool Json\+::\+Char\+Reader\+Builder\+::validate (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_value}{Json\+::\+Value} $\ast$}]{invalid }\end{DoxyParamCaption}) const}
+
+\begin{DoxyReturn}{Returns}
+true if \textquotesingle{}settings\textquotesingle{} are legal and consistent; otherwise, indicate bad settings via \textquotesingle{}invalid\textquotesingle{}. 
+\end{DoxyReturn}
+
+
+Definition at line 2168 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::get\+Valid\+Reader\+Keys(), J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, and Json\+::\+Value\+::size().
+
+
+\begin{DoxyCode}
+2169 \{
+2170   \hyperlink{class_json_1_1_value}{Json::Value} my\_invalid;
+2171   \textcolor{keywordflow}{if} (!invalid) invalid = &my\_invalid;  \textcolor{comment}{// so we do not need to test for NULL}
+2172   \hyperlink{class_json_1_1_value}{Json::Value}& inv = *invalid;
+2173   std::set<JSONCPP\_STRING> valid\_keys;
+2174   \hyperlink{namespace_json_a8c38450840f3d88e9b981ae132f7ad0a}{getValidReaderKeys}(&valid\_keys);
+2175   \hyperlink{class_json_1_1_value_a9ae9069983fc38f1928d76f9c79ac64d}{Value::Members} keys = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}.\hyperlink{class_json_1_1_value_a79d7725dce6260317333e69022367ac9}{getMemberNames}();
+2176   \textcolor{keywordtype}{size\_t} n = keys.size();
+2177   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < n; ++i) \{
+2178     \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING} \textcolor{keyword}{const}& key = keys[i];
+2179     \textcolor{keywordflow}{if} (valid\_keys.find(key) == valid\_keys.end()) \{
+2180       inv[key] = \hyperlink{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}{settings\_}[key];
+2181     \}
+2182   \}
+2183   \textcolor{keywordflow}{return} 0u == inv.\hyperlink{class_json_1_1_value_a0ec2808e1d7efa4e9fad938d6667be44}{size}();
+2184 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}\label{class_json_1_1_char_reader_builder_ac69b7911ad64c171c51ebaf2ea26d958}} 
+\index{Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}!settings\+\_\+@{settings\+\_\+}}
+\index{settings\+\_\+@{settings\+\_\+}!Json\+::\+Char\+Reader\+Builder@{Json\+::\+Char\+Reader\+Builder}}
+\subsubsection{\texorpdfstring{settings\+\_\+}{settings\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Json\+::\+Value} Json\+::\+Char\+Reader\+Builder\+::settings\+\_\+}
+
+Configuration of this builder. These are case-\/sensitive. Available settings (case-\/sensitive)\+:
+\begin{DoxyItemize}
+\item {\ttfamily \char`\"{}collect\+Comments\char`\"{}\+: false or true}
+\begin{DoxyItemize}
+\item true to collect comment and allow writing them back during serialization, false to discard comments. This parameter is ignored if allow\+Comments is false.
+\end{DoxyItemize}
+\item {\ttfamily \char`\"{}allow\+Comments\char`\"{}\+: false or true}
+\begin{DoxyItemize}
+\item true if comments are allowed.
+\end{DoxyItemize}
+\item {\ttfamily \char`\"{}strict\+Root\char`\"{}\+: false or true}
+\begin{DoxyItemize}
+\item true if root must be either an array or an object value
+\end{DoxyItemize}
+\item {\ttfamily \char`\"{}allow\+Dropped\+Null\+Placeholders\char`\"{}\+: false or true}
+\begin{DoxyItemize}
+\item true if dropped null placeholders are allowed. (See \hyperlink{class_json_1_1_stream_writer_builder}{Stream\+Writer\+Builder}.)
+\end{DoxyItemize}
+\item {\ttfamily \char`\"{}allow\+Numeric\+Keys\char`\"{}\+: false or true}
+\begin{DoxyItemize}
+\item true if numeric object keys are allowed.
+\end{DoxyItemize}
+\item {\ttfamily \char`\"{}allow\+Single\+Quotes\char`\"{}\+: false or true}
+\begin{DoxyItemize}
+\item true if \textquotesingle{}\textquotesingle{} are allowed for strings (both keys and values)
+\end{DoxyItemize}
+\item {\ttfamily \char`\"{}stack\+Limit\char`\"{}\+: integer}
+\begin{DoxyItemize}
+\item Exceeding stack\+Limit (recursive depth of {\ttfamily read\+Value()}) will cause an exception.
+\item This is a security issue (seg-\/faults caused by deeply nested J\+S\+ON), so the default is low.
+\end{DoxyItemize}
+\item {\ttfamily \char`\"{}fail\+If\+Extra\char`\"{}\+: false or true}
+\begin{DoxyItemize}
+\item If true, {\ttfamily parse()} returns false when extra non-\/whitespace trails the J\+S\+ON value in the input string.
+\end{DoxyItemize}
+\item {\ttfamily \char`\"{}reject\+Dup\+Keys\char`\"{}\+: false or true}
+\begin{DoxyItemize}
+\item If true, {\ttfamily parse()} returns false when a key is duplicated within an object.
+\end{DoxyItemize}
+\item {\ttfamily \char`\"{}allow\+Special\+Floats\char`\"{}\+: false or true}
+\begin{DoxyItemize}
+\item If true, special float values (Na\+Ns and infinities) are allowed and their values are lossfree restorable.
+\end{DoxyItemize}
+\end{DoxyItemize}
+
+You can examine \textquotesingle{}settings\+\_\+` yourself to see the defaults. You can also write and read them just like any J\+S\+ON \hyperlink{class_json_1_1_value}{Value}. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_json_1_1_char_reader_builder_a03ff031e06aabff989ab4addc87294ab}{set\+Defaults()} 
+\end{DoxySeeAlso}
+
+
+Definition at line 1661 of file json.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{json_8h}{json.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{jsoncpp_8cpp}{jsoncpp.\+cpp}\end{DoxyCompactItemize}

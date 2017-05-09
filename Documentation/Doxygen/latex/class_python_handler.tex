@@ -1,0 +1,275 @@
+\hypertarget{class_python_handler}{}\section{Python\+Handler Class Reference}
+\label{class_python_handler}\index{Python\+Handler@{Python\+Handler}}
+
+
+{\ttfamily \#include $<$Python\+Handler.\+h$>$}
+
+
+
+Collaboration diagram for Python\+Handler\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{class_python_handler__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_python_handler_ac49f0f52604ab7afb9443712bf1c2cd0}{Python\+Handler} (std\+::string module, std\+::string function)
+\item 
+std\+::string \hyperlink{class_python_handler_acf20183155762af98d1f8804881cddb4}{get\+Module\+Name} ()
+\item 
+void \hyperlink{class_python_handler_a035cda1c3987043041c7aeb8e3440f04}{set\+Module\+Name} (std\+::string module)
+\item 
+std\+::string \hyperlink{class_python_handler_a60186d0ff375491ad5d91c7448c29288}{get\+Function\+Name} ()
+\item 
+void \hyperlink{class_python_handler_a640d790693c476a5bdd87050c7416ff0}{set\+Function\+Name} (std\+::string function)
+\item 
+void \hyperlink{class_python_handler_ac60ae844922ca438081e1f8cc0164b45}{call\+Python\+Module} ()
+\begin{DoxyCompactList}\small\item\em Call the python script to gather comments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_python_handler_ae29ce86e7c2dce2340caa90ba1d6ac72}{module\+Name}
+\item 
+std\+::string \hyperlink{class_python_handler_a5946996068756c245e023cfe7e77f034}{function\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wrapper to handle the C/\+Python api functionality, in charge of calling the external python scripts 
+
+Definition at line 7 of file Python\+Handler.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_python_handler_ac49f0f52604ab7afb9443712bf1c2cd0}\label{class_python_handler_ac49f0f52604ab7afb9443712bf1c2cd0}} 
+\index{Python\+Handler@{Python\+Handler}!Python\+Handler@{Python\+Handler}}
+\index{Python\+Handler@{Python\+Handler}!Python\+Handler@{Python\+Handler}}
+\subsubsection{\texorpdfstring{Python\+Handler()}{PythonHandler()}}
+{\footnotesize\ttfamily Python\+Handler\+::\+Python\+Handler (\begin{DoxyParamCaption}\item[{std\+::string}]{module,  }\item[{std\+::string}]{function }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Python\+Handler.\+cpp.
+
+
+
+References set\+Function\+Name(), and set\+Module\+Name().
+
+
+\begin{DoxyCode}
+4 \{
+5     \hyperlink{class_python_handler_a035cda1c3987043041c7aeb8e3440f04}{setModuleName}(module);
+6     \hyperlink{class_python_handler_a640d790693c476a5bdd87050c7416ff0}{setFunctionName}(\textcolor{keyword}{function});
+7 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_python_handler_ac60ae844922ca438081e1f8cc0164b45}\label{class_python_handler_ac60ae844922ca438081e1f8cc0164b45}} 
+\index{Python\+Handler@{Python\+Handler}!call\+Python\+Module@{call\+Python\+Module}}
+\index{call\+Python\+Module@{call\+Python\+Module}!Python\+Handler@{Python\+Handler}}
+\subsubsection{\texorpdfstring{call\+Python\+Module()}{callPythonModule()}}
+{\footnotesize\ttfamily void Python\+Handler\+::call\+Python\+Module (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Call the python script to gather comments. 
+
+
+
+Definition at line 29 of file Python\+Handler.\+cpp.
+
+
+
+References function\+Name, and module\+Name.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+30 \{
+31     \textcolor{keywordflow}{try}
+32     \{
+33         \textcolor{comment}{//Begin python}
+34         Py\_Initialize();
+35 
+36         \textcolor{comment}{//Call the python module}
+37         PyObject* module = PyImport\_ImportModule(\hyperlink{class_python_handler_ae29ce86e7c2dce2340caa90ba1d6ac72}{moduleName}.c\_str());
+38         \textcolor{keywordflow}{if} (module == 0)
+39         \{
+40             PyErr\_Print();
+41             printf(\textcolor{stringliteral}{"Couldn't find python module"});
+42         \}
+43 
+44         \textcolor{comment}{//Create a dictionary of the function's inside the module}
+45         PyObject* comDict = PyModule\_GetDict(module);
+46 
+47         \textcolor{comment}{//State the specified function name from the dictionary}
+48         PyObject* func = PyDict\_GetItemString(comDict, \hyperlink{class_python_handler_a5946996068756c245e023cfe7e77f034}{functionName}.c\_str());
+49 
+50         \textcolor{comment}{//State the argument's you want NOTE: currently only work's with functions with 0 arguments}
+51         PyObject* args = PyTuple\_New(0);
+52 
+53         \textcolor{comment}{//Call the object}
+54         PyObject* result = PyObject\_CallObject(func, args);
+55         \textcolor{keywordflow}{if} (result == NULL)
+56         \{
+57             printf(\textcolor{stringliteral}{"Calling function failed"});
+58         \}
+59 
+60         \textcolor{comment}{//Print any errors}
+61         PyErr\_Print();
+62 
+63         \textcolor{comment}{//Clean up the pointer's}
+64         Py\_DECREF(module);
+65         Py\_DECREF(comDict);
+66         Py\_DECREF(func);
+67         Py\_DECREF(args);
+68         Py\_DECREF(result);
+69 
+70         \textcolor{comment}{//End the python process}
+71         Py\_Finalize();
+72     \}
+73     \textcolor{keywordflow}{catch} (...) \{
+74         PyObject *ptype, *pvalue, *ptraceback;
+75         PyErr\_Fetch(&ptype, &pvalue, &ptraceback);
+76 
+77         \textcolor{keywordtype}{char}* pStrErrorMessage = \_PyUnicode\_AsString(pvalue);
+78 
+79         Py\_DECREF(ptype);
+80         Py\_DECREF(pvalue);
+81         Py\_DECREF(ptraceback);
+82     \}
+83 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_python_handler_a60186d0ff375491ad5d91c7448c29288}\label{class_python_handler_a60186d0ff375491ad5d91c7448c29288}} 
+\index{Python\+Handler@{Python\+Handler}!get\+Function\+Name@{get\+Function\+Name}}
+\index{get\+Function\+Name@{get\+Function\+Name}!Python\+Handler@{Python\+Handler}}
+\subsubsection{\texorpdfstring{get\+Function\+Name()}{getFunctionName()}}
+{\footnotesize\ttfamily std\+::string Python\+Handler\+::get\+Function\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 19 of file Python\+Handler.\+cpp.
+
+
+
+References function\+Name.
+
+
+\begin{DoxyCode}
+20 \{
+21     \textcolor{keywordflow}{return} \hyperlink{class_python_handler_a5946996068756c245e023cfe7e77f034}{functionName};
+22 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_python_handler_acf20183155762af98d1f8804881cddb4}\label{class_python_handler_acf20183155762af98d1f8804881cddb4}} 
+\index{Python\+Handler@{Python\+Handler}!get\+Module\+Name@{get\+Module\+Name}}
+\index{get\+Module\+Name@{get\+Module\+Name}!Python\+Handler@{Python\+Handler}}
+\subsubsection{\texorpdfstring{get\+Module\+Name()}{getModuleName()}}
+{\footnotesize\ttfamily std\+::string Python\+Handler\+::get\+Module\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file Python\+Handler.\+cpp.
+
+
+
+References module\+Name.
+
+
+\begin{DoxyCode}
+10 \{
+11     \textcolor{keywordflow}{return} \hyperlink{class_python_handler_ae29ce86e7c2dce2340caa90ba1d6ac72}{moduleName};
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_python_handler_a640d790693c476a5bdd87050c7416ff0}\label{class_python_handler_a640d790693c476a5bdd87050c7416ff0}} 
+\index{Python\+Handler@{Python\+Handler}!set\+Function\+Name@{set\+Function\+Name}}
+\index{set\+Function\+Name@{set\+Function\+Name}!Python\+Handler@{Python\+Handler}}
+\subsubsection{\texorpdfstring{set\+Function\+Name()}{setFunctionName()}}
+{\footnotesize\ttfamily void Python\+Handler\+::set\+Function\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{function }\end{DoxyParamCaption})}
+
+
+
+Definition at line 24 of file Python\+Handler.\+cpp.
+
+
+
+References function\+Name.
+
+
+
+Referenced by Python\+Handler().
+
+
+\begin{DoxyCode}
+25 \{
+26     \hyperlink{class_python_handler_a5946996068756c245e023cfe7e77f034}{functionName} = funcName;
+27 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_python_handler_a035cda1c3987043041c7aeb8e3440f04}\label{class_python_handler_a035cda1c3987043041c7aeb8e3440f04}} 
+\index{Python\+Handler@{Python\+Handler}!set\+Module\+Name@{set\+Module\+Name}}
+\index{set\+Module\+Name@{set\+Module\+Name}!Python\+Handler@{Python\+Handler}}
+\subsubsection{\texorpdfstring{set\+Module\+Name()}{setModuleName()}}
+{\footnotesize\ttfamily void Python\+Handler\+::set\+Module\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{module }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file Python\+Handler.\+cpp.
+
+
+
+References module\+Name.
+
+
+
+Referenced by Python\+Handler().
+
+
+\begin{DoxyCode}
+15 \{
+16     \hyperlink{class_python_handler_ae29ce86e7c2dce2340caa90ba1d6ac72}{moduleName} = modName;
+17 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_python_handler_a5946996068756c245e023cfe7e77f034}\label{class_python_handler_a5946996068756c245e023cfe7e77f034}} 
+\index{Python\+Handler@{Python\+Handler}!function\+Name@{function\+Name}}
+\index{function\+Name@{function\+Name}!Python\+Handler@{Python\+Handler}}
+\subsubsection{\texorpdfstring{function\+Name}{functionName}}
+{\footnotesize\ttfamily std\+::string Python\+Handler\+::function\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file Python\+Handler.\+h.
+
+
+
+Referenced by call\+Python\+Module(), get\+Function\+Name(), and set\+Function\+Name().
+
+\mbox{\Hypertarget{class_python_handler_ae29ce86e7c2dce2340caa90ba1d6ac72}\label{class_python_handler_ae29ce86e7c2dce2340caa90ba1d6ac72}} 
+\index{Python\+Handler@{Python\+Handler}!module\+Name@{module\+Name}}
+\index{module\+Name@{module\+Name}!Python\+Handler@{Python\+Handler}}
+\subsubsection{\texorpdfstring{module\+Name}{moduleName}}
+{\footnotesize\ttfamily std\+::string Python\+Handler\+::module\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file Python\+Handler.\+h.
+
+
+
+Referenced by call\+Python\+Module(), get\+Module\+Name(), and set\+Module\+Name().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_python_handler_8h}{Python\+Handler.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_python_handler_8cpp}{Python\+Handler.\+cpp}\end{DoxyCompactItemize}

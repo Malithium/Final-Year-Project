@@ -1,0 +1,464 @@
+\hypertarget{class_comment}{}\section{Comment Class Reference}
+\label{class_comment}\index{Comment@{Comment}}
+
+
+{\ttfamily \#include $<$Comment.\+h$>$}
+
+
+
+Collaboration diagram for Comment\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{class_comment__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_comment_aa72817b1d59ba65d90a924e0ca056bee}{Comment} (std\+::string n\+Body, std\+::string n\+Id, std\+::string n\+P\+\_\+\+Id, bool n\+Reply, float polar, std\+::string username)
+\item 
+std\+::string \hyperlink{class_comment_acd202bf4ef1b23aa8a11cae4af4b44b4}{get\+Body} ()
+\item 
+std\+::string \hyperlink{class_comment_ab46d905afeb79abd5caa6434c84020d8}{get\+Id} ()
+\item 
+std\+::string \hyperlink{class_comment_a2903eea46f56ee796715e4989d1745f1}{get\+Parent\+Id} ()
+\item 
+std\+::string \hyperlink{class_comment_a192b820f7ad3d8065437436eae4408c5}{get\+User\+Name} ()
+\item 
+bool \hyperlink{class_comment_a89cfdb81dd327cf01d4f0fbb1d6f3c44}{get\+Reply} ()
+\item 
+float \hyperlink{class_comment_ab8f639d0d25165885bfbf09d3469f2b0}{get\+Polarity} ()
+\item 
+void \hyperlink{class_comment_abadebf70476d2ac212154fd52df103e7}{set\+Body} (std\+::string n\+Body)
+\item 
+void \hyperlink{class_comment_abb43aa20506c1d6cdb54c6b62e2b0d9d}{set\+Id} (std\+::string n\+Id)
+\item 
+void \hyperlink{class_comment_ac08d6d07afad5663c1d6c5886c7be333}{set\+Parent\+Id} (std\+::string p\+Id)
+\item 
+void \hyperlink{class_comment_a9e47b4560fb5d4e8e9e254a23622c6d5}{set\+User\+Name} (std\+::string name)
+\item 
+void \hyperlink{class_comment_ae6c057526fb2d3b789dfe99a0450f134}{set\+Reply} (bool rep)
+\item 
+void \hyperlink{class_comment_aa980db478aa7780f1094854e4df1bf4c}{set\+Polarity} (float polar)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_comment_a28bb2d16cad342d68d84b184c4ce07ba}{n}
+\item 
+std\+::string \hyperlink{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}{body}
+\item 
+std\+::string \hyperlink{class_comment_a63db6067036146247c4ab7f663d90369}{id}
+\item 
+std\+::string \hyperlink{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}{parent\+\_\+id}
+\item 
+std\+::string \hyperlink{class_comment_ad477f53e20e76aa9352926f93ccc7a56}{user\+Name}
+\item 
+float \hyperlink{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}{polarity}
+\item 
+bool \hyperlink{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}{reply}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_comment_ac5edd8dbab6e9d702dcdde889b96c250}{operator==} (const \hyperlink{class_comment}{Comment} \&c1, const \hyperlink{class_comment}{Comment} \&c2)
+\begin{DoxyCompactList}\small\item\em Custom comparison operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Model representation for the comment object within the program 
+
+Definition at line 10 of file Comment.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_comment_aa72817b1d59ba65d90a924e0ca056bee}\label{class_comment_aa72817b1d59ba65d90a924e0ca056bee}} 
+\index{Comment@{Comment}!Comment@{Comment}}
+\index{Comment@{Comment}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{Comment()}{Comment()}}
+{\footnotesize\ttfamily Comment\+::\+Comment (\begin{DoxyParamCaption}\item[{std\+::string}]{n\+Body,  }\item[{std\+::string}]{n\+Id,  }\item[{std\+::string}]{n\+P\+\_\+\+Id,  }\item[{bool}]{n\+Reply,  }\item[{float}]{polar,  }\item[{std\+::string}]{username }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Comment.\+cpp.
+
+
+\begin{DoxyCode}
+3                                                                                                            
+         : 
+4     \hyperlink{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}{body}(nBody), \hyperlink{class_comment_a63db6067036146247c4ab7f663d90369}{id}(nId), \hyperlink{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}{parent\_id}(nP\_Id), \hyperlink{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}{reply}(nReply), 
+      \hyperlink{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}{polarity}(nPolar), \hyperlink{class_comment_ad477f53e20e76aa9352926f93ccc7a56}{userName}(username)\{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_comment_acd202bf4ef1b23aa8a11cae4af4b44b4}\label{class_comment_acd202bf4ef1b23aa8a11cae4af4b44b4}} 
+\index{Comment@{Comment}!get\+Body@{get\+Body}}
+\index{get\+Body@{get\+Body}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{get\+Body()}{getBody()}}
+{\footnotesize\ttfamily std\+::string Comment\+::get\+Body (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 6 of file Comment.\+cpp.
+
+
+
+References body.
+
+
+\begin{DoxyCode}
+7 \{
+8     \textcolor{keywordflow}{return} \hyperlink{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}{body};
+9 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_ab46d905afeb79abd5caa6434c84020d8}\label{class_comment_ab46d905afeb79abd5caa6434c84020d8}} 
+\index{Comment@{Comment}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily std\+::string Comment\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Comment.\+cpp.
+
+
+
+References id.
+
+
+
+Referenced by Comment\+Formatter\+::sort\+Comment\+List().
+
+
+\begin{DoxyCode}
+12 \{
+13     \textcolor{keywordflow}{return} \hyperlink{class_comment_a63db6067036146247c4ab7f663d90369}{id};
+14 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_a2903eea46f56ee796715e4989d1745f1}\label{class_comment_a2903eea46f56ee796715e4989d1745f1}} 
+\index{Comment@{Comment}!get\+Parent\+Id@{get\+Parent\+Id}}
+\index{get\+Parent\+Id@{get\+Parent\+Id}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{get\+Parent\+Id()}{getParentId()}}
+{\footnotesize\ttfamily std\+::string Comment\+::get\+Parent\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file Comment.\+cpp.
+
+
+
+References parent\+\_\+id.
+
+
+\begin{DoxyCode}
+17 \{
+18     \textcolor{keywordflow}{return} \hyperlink{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}{parent\_id};
+19 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_ab8f639d0d25165885bfbf09d3469f2b0}\label{class_comment_ab8f639d0d25165885bfbf09d3469f2b0}} 
+\index{Comment@{Comment}!get\+Polarity@{get\+Polarity}}
+\index{get\+Polarity@{get\+Polarity}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{get\+Polarity()}{getPolarity()}}
+{\footnotesize\ttfamily float Comment\+::get\+Polarity (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file Comment.\+cpp.
+
+
+
+References polarity.
+
+
+\begin{DoxyCode}
+27 \{
+28     \textcolor{keywordflow}{return} \hyperlink{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}{polarity};
+29 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_a89cfdb81dd327cf01d4f0fbb1d6f3c44}\label{class_comment_a89cfdb81dd327cf01d4f0fbb1d6f3c44}} 
+\index{Comment@{Comment}!get\+Reply@{get\+Reply}}
+\index{get\+Reply@{get\+Reply}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{get\+Reply()}{getReply()}}
+{\footnotesize\ttfamily bool Comment\+::get\+Reply (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file Comment.\+cpp.
+
+
+
+References reply.
+
+
+\begin{DoxyCode}
+22 \{
+23     \textcolor{keywordflow}{return} \hyperlink{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}{reply};
+24 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_a192b820f7ad3d8065437436eae4408c5}\label{class_comment_a192b820f7ad3d8065437436eae4408c5}} 
+\index{Comment@{Comment}!get\+User\+Name@{get\+User\+Name}}
+\index{get\+User\+Name@{get\+User\+Name}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{get\+User\+Name()}{getUserName()}}
+{\footnotesize\ttfamily std\+::string Comment\+::get\+User\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 56 of file Comment.\+cpp.
+
+
+
+References user\+Name.
+
+
+\begin{DoxyCode}
+57 \{
+58     \textcolor{keywordflow}{return} \hyperlink{class_comment_ad477f53e20e76aa9352926f93ccc7a56}{userName};
+59 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_abadebf70476d2ac212154fd52df103e7}\label{class_comment_abadebf70476d2ac212154fd52df103e7}} 
+\index{Comment@{Comment}!set\+Body@{set\+Body}}
+\index{set\+Body@{set\+Body}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{set\+Body()}{setBody()}}
+{\footnotesize\ttfamily void Comment\+::set\+Body (\begin{DoxyParamCaption}\item[{std\+::string}]{n\+Body }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file Comment.\+cpp.
+
+
+
+References body.
+
+
+\begin{DoxyCode}
+32 \{
+33     \hyperlink{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}{body} = nBody;
+34 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_abb43aa20506c1d6cdb54c6b62e2b0d9d}\label{class_comment_abb43aa20506c1d6cdb54c6b62e2b0d9d}} 
+\index{Comment@{Comment}!set\+Id@{set\+Id}}
+\index{set\+Id@{set\+Id}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{set\+Id()}{setId()}}
+{\footnotesize\ttfamily void Comment\+::set\+Id (\begin{DoxyParamCaption}\item[{std\+::string}]{n\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file Comment.\+cpp.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keywordtype}{id} = nId;
+39 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_ac08d6d07afad5663c1d6c5886c7be333}\label{class_comment_ac08d6d07afad5663c1d6c5886c7be333}} 
+\index{Comment@{Comment}!set\+Parent\+Id@{set\+Parent\+Id}}
+\index{set\+Parent\+Id@{set\+Parent\+Id}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{set\+Parent\+Id()}{setParentId()}}
+{\footnotesize\ttfamily void Comment\+::set\+Parent\+Id (\begin{DoxyParamCaption}\item[{std\+::string}]{p\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file Comment.\+cpp.
+
+
+
+References parent\+\_\+id.
+
+
+\begin{DoxyCode}
+42 \{
+43     \hyperlink{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}{parent\_id} = nP\_Id;
+44 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_aa980db478aa7780f1094854e4df1bf4c}\label{class_comment_aa980db478aa7780f1094854e4df1bf4c}} 
+\index{Comment@{Comment}!set\+Polarity@{set\+Polarity}}
+\index{set\+Polarity@{set\+Polarity}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{set\+Polarity()}{setPolarity()}}
+{\footnotesize\ttfamily void Comment\+::set\+Polarity (\begin{DoxyParamCaption}\item[{float}]{polar }\end{DoxyParamCaption})}
+
+
+
+Definition at line 51 of file Comment.\+cpp.
+
+
+
+References polarity.
+
+
+\begin{DoxyCode}
+52 \{
+53     \hyperlink{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}{polarity} = polar;
+54 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_ae6c057526fb2d3b789dfe99a0450f134}\label{class_comment_ae6c057526fb2d3b789dfe99a0450f134}} 
+\index{Comment@{Comment}!set\+Reply@{set\+Reply}}
+\index{set\+Reply@{set\+Reply}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{set\+Reply()}{setReply()}}
+{\footnotesize\ttfamily void Comment\+::set\+Reply (\begin{DoxyParamCaption}\item[{bool}]{rep }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file Comment.\+cpp.
+
+
+
+References reply.
+
+
+\begin{DoxyCode}
+47 \{
+48     \hyperlink{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}{reply} = nReply;
+49 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_a9e47b4560fb5d4e8e9e254a23622c6d5}\label{class_comment_a9e47b4560fb5d4e8e9e254a23622c6d5}} 
+\index{Comment@{Comment}!set\+User\+Name@{set\+User\+Name}}
+\index{set\+User\+Name@{set\+User\+Name}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{set\+User\+Name()}{setUserName()}}
+{\footnotesize\ttfamily void Comment\+::set\+User\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file Comment.\+cpp.
+
+
+
+References user\+Name.
+
+
+\begin{DoxyCode}
+62 \{
+63     \hyperlink{class_comment_ad477f53e20e76aa9352926f93ccc7a56}{userName} = name;
+64 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_comment_ac5edd8dbab6e9d702dcdde889b96c250}\label{class_comment_ac5edd8dbab6e9d702dcdde889b96c250}} 
+\index{Comment@{Comment}!operator==@{operator==}}
+\index{operator==@{operator==}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_comment}{Comment} \&}]{c1,  }\item[{const \hyperlink{class_comment}{Comment} \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Custom comparison operator. 
+
+
+
+Definition at line 66 of file Comment.\+cpp.
+
+
+\begin{DoxyCode}
+67 \{
+68     \textcolor{keywordflow}{return} (c1.\hyperlink{class_comment_a63db6067036146247c4ab7f663d90369}{id} == c2.\hyperlink{class_comment_a63db6067036146247c4ab7f663d90369}{id}) && (c1.\hyperlink{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}{body} == c2.\hyperlink{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}{body}) && (c1.\hyperlink{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}{parent\_id} == c2.
+      \hyperlink{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}{parent\_id}) && (c1.\hyperlink{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}{polarity} == c2.\hyperlink{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}{polarity}) && (c1.\hyperlink{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}{reply} == c2.
+      \hyperlink{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}{reply});
+69 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}\label{class_comment_af8df10ee9d38440d5c4d500ccc9f2519}} 
+\index{Comment@{Comment}!body@{body}}
+\index{body@{body}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{body}{body}}
+{\footnotesize\ttfamily std\+::string Comment\+::body\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file Comment.\+h.
+
+
+
+Referenced by get\+Body(), operator==(), and set\+Body().
+
+\mbox{\Hypertarget{class_comment_a63db6067036146247c4ab7f663d90369}\label{class_comment_a63db6067036146247c4ab7f663d90369}} 
+\index{Comment@{Comment}!id@{id}}
+\index{id@{id}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily std\+::string Comment\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Comment.\+h.
+
+
+
+Referenced by get\+Id(), and operator==().
+
+\mbox{\Hypertarget{class_comment_a28bb2d16cad342d68d84b184c4ce07ba}\label{class_comment_a28bb2d16cad342d68d84b184c4ce07ba}} 
+\index{Comment@{Comment}!n@{n}}
+\index{n@{n}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{n}{n}}
+{\footnotesize\ttfamily std\+::string Comment\+::n\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 34 of file Comment.\+h.
+
+\mbox{\Hypertarget{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}\label{class_comment_abc88c0f64df05cb3d29ad1c7aa1621c5}} 
+\index{Comment@{Comment}!parent\+\_\+id@{parent\+\_\+id}}
+\index{parent\+\_\+id@{parent\+\_\+id}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{parent\+\_\+id}{parent\_id}}
+{\footnotesize\ttfamily std\+::string Comment\+::parent\+\_\+id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 37 of file Comment.\+h.
+
+
+
+Referenced by get\+Parent\+Id(), operator==(), and set\+Parent\+Id().
+
+\mbox{\Hypertarget{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}\label{class_comment_a617b67425b39c1f5f1eb0ada3d4bbd74}} 
+\index{Comment@{Comment}!polarity@{polarity}}
+\index{polarity@{polarity}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{polarity}{polarity}}
+{\footnotesize\ttfamily float Comment\+::polarity\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file Comment.\+h.
+
+
+
+Referenced by get\+Polarity(), operator==(), and set\+Polarity().
+
+\mbox{\Hypertarget{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}\label{class_comment_a7b8ceeb67364d5e08299baeeff38ba03}} 
+\index{Comment@{Comment}!reply@{reply}}
+\index{reply@{reply}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{reply}{reply}}
+{\footnotesize\ttfamily bool Comment\+::reply\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file Comment.\+h.
+
+
+
+Referenced by get\+Reply(), operator==(), and set\+Reply().
+
+\mbox{\Hypertarget{class_comment_ad477f53e20e76aa9352926f93ccc7a56}\label{class_comment_ad477f53e20e76aa9352926f93ccc7a56}} 
+\index{Comment@{Comment}!user\+Name@{user\+Name}}
+\index{user\+Name@{user\+Name}!Comment@{Comment}}
+\subsubsection{\texorpdfstring{user\+Name}{userName}}
+{\footnotesize\ttfamily std\+::string Comment\+::user\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Comment.\+h.
+
+
+
+Referenced by get\+User\+Name(), and set\+User\+Name().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_comment_8h}{Comment.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_comment_8cpp}{Comment.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,170 @@
+\hypertarget{class_user___group}{}\section{User\+\_\+\+Group Class Reference}
+\label{class_user___group}\index{User\+\_\+\+Group@{User\+\_\+\+Group}}
+
+
+{\ttfamily \#include $<$User\+\_\+\+Group.\+h$>$}
+
+
+
+Inheritance diagram for User\+\_\+\+Group\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{class_user___group__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for User\+\_\+\+Group\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_user___group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_user___group_a553bb5b748ef79772fe5cecedc2154be}{User\+\_\+\+Group} (int x, int y, int size, std\+::string t\+Box\+File, std\+::string npc\+File, S\+D\+L\+\_\+\+Renderer $\ast$renderer, \hyperlink{class_topic}{Topic} tp)
+\item 
+void \hyperlink{class_user___group_a0142ca8121ea4bb4d881153e48e486f9}{simulate\+Conversation} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, bool time, std\+::string boredom\+Level, T\+T\+F\+\_\+\+Font $\ast$font)
+\begin{DoxyCompactList}\small\item\em Template methods to be inherited by child classes, these are the core classes for simulating conversation. \end{DoxyCompactList}\item 
+bool \hyperlink{class_user___group_a40051b822a0f0dd126b95d0f0fd28eff}{evaluate\+Speaker} ()
+\item 
+void \hyperlink{class_user___group_aeb67757a4645ae32ea0b9c426fece2de}{set\+Speaker} (std\+::string boredom\+Level)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 4 of file User\+\_\+\+Group.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_user___group_a553bb5b748ef79772fe5cecedc2154be}\label{class_user___group_a553bb5b748ef79772fe5cecedc2154be}} 
+\index{User\+\_\+\+Group@{User\+\_\+\+Group}!User\+\_\+\+Group@{User\+\_\+\+Group}}
+\index{User\+\_\+\+Group@{User\+\_\+\+Group}!User\+\_\+\+Group@{User\+\_\+\+Group}}
+\subsubsection{\texorpdfstring{User\+\_\+\+Group()}{User\_Group()}}
+{\footnotesize\ttfamily User\+\_\+\+Group\+::\+User\+\_\+\+Group (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{size,  }\item[{std\+::string}]{t\+Box\+File,  }\item[{std\+::string}]{npc\+File,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\hyperlink{class_topic}{Topic}}]{tp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file User\+\_\+\+Group.\+cpp.
+
+
+\begin{DoxyCode}
+5                                                                                                            
+                : \hyperlink{class_base___group_a96e70ee101d6430696f7b13b07190787}{Base\_Group}(x, y, size, tBoxFile, npcFile, renderer, tp)
+6 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_user___group_a40051b822a0f0dd126b95d0f0fd28eff}\label{class_user___group_a40051b822a0f0dd126b95d0f0fd28eff}} 
+\index{User\+\_\+\+Group@{User\+\_\+\+Group}!evaluate\+Speaker@{evaluate\+Speaker}}
+\index{evaluate\+Speaker@{evaluate\+Speaker}!User\+\_\+\+Group@{User\+\_\+\+Group}}
+\subsubsection{\texorpdfstring{evaluate\+Speaker()}{evaluateSpeaker()}}
+{\footnotesize\ttfamily bool User\+\_\+\+Group\+::evaluate\+Speaker (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_base___group_a8264ff598ce7e789c6419e2e6eef08fd}{Base\+\_\+\+Group}.
+
+
+
+Definition at line 13 of file User\+\_\+\+Group.\+cpp.
+
+
+
+References Base\+\_\+\+Group\+::get\+N\+P\+C\+List(), and Base\+\_\+\+Group\+::\+N\+P\+Cs.
+
+
+
+Referenced by set\+Speaker().
+
+
+\begin{DoxyCode}
+14 \{
+15     std::vector<std::shared\_ptr<NPC>> \hyperlink{class_base___group_a4757f3c06c73eea029f71b871c1d863e}{NPCs} = \hyperlink{class_base___group_a75eec9132aaf532b4429e0af76b31775}{getNPCList}();
+16     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < NPCs.size(); i++)
+17     \{
+18         \textcolor{keywordflow}{if} (NPCs[i]->getSpeaking())
+19             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+20     \}
+21     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+22 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_user___group_aeb67757a4645ae32ea0b9c426fece2de}\label{class_user___group_aeb67757a4645ae32ea0b9c426fece2de}} 
+\index{User\+\_\+\+Group@{User\+\_\+\+Group}!set\+Speaker@{set\+Speaker}}
+\index{set\+Speaker@{set\+Speaker}!User\+\_\+\+Group@{User\+\_\+\+Group}}
+\subsubsection{\texorpdfstring{set\+Speaker()}{setSpeaker()}}
+{\footnotesize\ttfamily void User\+\_\+\+Group\+::set\+Speaker (\begin{DoxyParamCaption}\item[{std\+::string}]{boredom\+Level }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented from \hyperlink{class_base___group_ae35b3719076cf40d6577b4ae3779758c}{Base\+\_\+\+Group}.
+
+
+
+Definition at line 24 of file User\+\_\+\+Group.\+cpp.
+
+
+
+References evaluate\+Speaker(), Base\+\_\+\+Group\+::get\+I\+D(), Base\+\_\+\+Group\+::get\+N\+P\+C\+List(), Base\+\_\+\+Group\+::\+Get\+Random\+Number(), Base\+\_\+\+Group\+::get\+Script(), and Base\+\_\+\+Group\+::\+N\+P\+Cs.
+
+
+\begin{DoxyCode}
+25 \{
+26     \textcolor{keywordflow}{if} (!\hyperlink{class_user___group_a40051b822a0f0dd126b95d0f0fd28eff}{evaluateSpeaker}()) \{
+27         \textcolor{keywordtype}{int} r = \hyperlink{class_base___group_a3864a2806457151363344051f2814389}{GetRandomNumber}();
+28         std::vector<std::shared\_ptr<NPC>> \hyperlink{class_base___group_a4757f3c06c73eea029f71b871c1d863e}{NPCs} = \hyperlink{class_base___group_a75eec9132aaf532b4429e0af76b31775}{getNPCList}();
+29         std::vector<Comment> comms = \hyperlink{class_base___group_a48dadfbc8cdefca9bdd2c42b99115ad8}{getScript}();
+30         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < NPCs.size(); i++)
+31         \{
+32             \textcolor{keywordflow}{if} (NPCs[i]->\hyperlink{class_base___group_a7299ae154b26d741ac2f6f794bc3a544}{getID}() != NPCs[r]->getID())
+33             \{
+34                 std::string pred = NPCs[i]->getCurrentUser();
+35                 \textcolor{comment}{/*}
+36 \textcolor{comment}{                if (std::find\_if(comms.begin(), comms.end(), CommentComp(pred)) != comms.end())}
+37 \textcolor{comment}{                \{}
+38 \textcolor{comment}{}
+39 \textcolor{comment}{                \};}
+40 \textcolor{comment}{                */}
+41             \}
+42         \}
+43         NPCs[r]->setSpeaking(\textcolor{keyword}{true});
+44     \}
+45 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_user___group_a0142ca8121ea4bb4d881153e48e486f9}\label{class_user___group_a0142ca8121ea4bb4d881153e48e486f9}} 
+\index{User\+\_\+\+Group@{User\+\_\+\+Group}!simulate\+Conversation@{simulate\+Conversation}}
+\index{simulate\+Conversation@{simulate\+Conversation}!User\+\_\+\+Group@{User\+\_\+\+Group}}
+\subsubsection{\texorpdfstring{simulate\+Conversation()}{simulateConversation()}}
+{\footnotesize\ttfamily void User\+\_\+\+Group\+::simulate\+Conversation (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{bool}]{time,  }\item[{std\+::string}]{boredom\+Level,  }\item[{T\+T\+F\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Template methods to be inherited by child classes, these are the core classes for simulating conversation. 
+
+
+
+Reimplemented from \hyperlink{class_base___group_aa5080b6388c5974394bf326ce80bfa91}{Base\+\_\+\+Group}.
+
+
+
+Definition at line 8 of file User\+\_\+\+Group.\+cpp.
+
+
+\begin{DoxyCode}
+9 \{
+10     \textcolor{comment}{// TODO: implement algorithm 2}
+11 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_user___group_8h}{User\+\_\+\+Group.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_user___group_8cpp}{User\+\_\+\+Group.\+cpp}\end{DoxyCompactItemize}

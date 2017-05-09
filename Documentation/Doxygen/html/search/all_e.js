@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['readdata',['readData',['../class_resource_data.html#a2e18ba115b2598590c15a16240542948',1,'ResourceData']]],
+  ['reading',['reading',['../class_n_p_c.html#a04d8f196cdd6de84f38131836d9c9cc7',1,'NPC']]],
+  ['readjsonfile',['ReadJsonFile',['../class_j_s_o_n_reader.html#a47c90ec12638eed9ea96feefc76096e1',1,'JSONReader']]],
+  ['render',['render',['../class_sprite.html#a72231a3cc5414b94ab6bfcbddc3b327c',1,'Sprite::render()'],['../class_texture.html#ac91a5257c451c80ffbf9a3d1485ba1c8',1,'Texture::render()']]],
+  ['renderbox',['renderBox',['../class_n_p_c.html#ad5e9a664ceae6a920e63d34f2738b21d',1,'NPC']]],
+  ['rendercomment',['renderComment',['../class_n_p_c.html#abfad5a818584b5ee6fab0605873ae5c4',1,'NPC::renderComment()'],['../class_text_box.html#a8746fe595a510ea6c3dc9908b448802c',1,'TextBox::renderComment()']]],
+  ['renderconversation',['renderConversation',['../class_base___group.html#a44b94b9d83c0aa526c9b51e2a46274cd',1,'Base_Group']]],
+  ['renderer',['Renderer',['../class_s_d_l_window.html#ae679402fd05b8eb3fd8680f1f036aaca',1,'SDLWindow']]],
+  ['reply',['reply',['../class_comment.html#a7b8ceeb67364d5e08299baeeff38ba03',1,'Comment']]],
+  ['resourcedata',['ResourceData',['../class_resource_data.html',1,'ResourceData'],['../class_resource_data.html#afa0fffd6caad715b697c1b3a388c975d',1,'ResourceData::ResourceData()']]],
+  ['resourcedata_2ecpp',['ResourceData.cpp',['../_resource_data_8cpp.html',1,'']]],
+  ['resourcedata_2eh',['ResourceData.h',['../_resource_data_8h.html',1,'']]],
+  ['returnline',['returnLine',['../class_text_box.html#ac10a24236f968ae36705f8bf300dfd79',1,'TextBox']]],
+  ['room',['Room',['../class_room.html',1,'Room'],['../class_room.html#ac6ef93a7d9c3e1d624e025058d5f16ff',1,'Room::Room()'],['../class_room.html#a2f37c248b2d9882531e01ab675ea54f0',1,'Room::Room(int groupNum, int x, int y, int width, int height, std::string NPCSprite, std::string TextBoxSprite, SDL_Renderer *renderer, Group grp)']]],
+  ['room_2ecpp',['Room.cpp',['../_room_8cpp.html',1,'']]],
+  ['room_2eh',['Room.h',['../_room_8h.html',1,'']]],
+  ['roomgroups',['roomGroups',['../class_room.html#a2d63fa17f30d50dd5267f04170a662b0',1,'Room']]],
+  ['roomheight',['roomHeight',['../class_room.html#a3f6fbe94c4c124e4c4df85e57fbb703b',1,'Room']]],
+  ['roomnodes',['roomNodes',['../class_room.html#adcf7b7bd55783c0e80b2508ce9485d78',1,'Room']]],
+  ['roomnpcs',['roomNPCs',['../class_room.html#a34bdf24cc8c52d638bcfd851c295f23b',1,'Room']]],
+  ['roomsubject',['roomsubject',['../class_room.html#a469d309dfc2c2693c27cbcb512f9c14c',1,'Room']]],
+  ['roomwidth',['roomWidth',['../class_room.html#a3538dc1a9a08a492cec337399db77259',1,'Room']]],
+  ['roomx',['roomX',['../class_room.html#a5cb7d8efa1ea04af080f7e2c041fea1a',1,'Room']]],
+  ['roomy',['roomY',['../class_room.html#a702c5d200cedc6e9eef5cbc2034fdc17',1,'Room']]],
+  ['root',['root',['../class_group_populator.html#a161f0427ec538d3a99da2e53fdbc9b2b',1,'GroupPopulator::root()'],['../class_resource_data.html#a0e9ea464b4a3fae26f68d01e344008fb',1,'ResourceData::root()']]]
+];

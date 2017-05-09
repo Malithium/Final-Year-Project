@@ -1,0 +1,138 @@
+\hypertarget{class_comment_formatter}{}\section{Comment\+Formatter Class Reference}
+\label{class_comment_formatter}\index{Comment\+Formatter@{Comment\+Formatter}}
+
+
+{\ttfamily \#include $<$Comment\+Formatter.\+h$>$}
+
+
+
+Collaboration diagram for Comment\+Formatter\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=196pt]{class_comment_formatter__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_comment_formatter_a2109e1c890568fbc960c06605d30563e}{Comment\+Formatter} ()
+\item 
+std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$ \hyperlink{class_comment_formatter_a6a9af9cdde666a914d97c3f45e6c8a49}{sort\+Comment\+List} (\hyperlink{class_comment}{Comment} com, std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$ coms, std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$ n\+Coms, int maximum)
+\item 
+bool \hyperlink{class_comment_formatter_a3ee22833399687c24694b6e11a3337ba}{contains\+\_\+id} (const std\+::string \&parent\+\_\+id, const std\+::string \&id)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The comment formatter sorts the a list of comments by comment-\/$>$reply-\/$>$reply... 
+
+Definition at line 9 of file Comment\+Formatter.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_comment_formatter_a2109e1c890568fbc960c06605d30563e}\label{class_comment_formatter_a2109e1c890568fbc960c06605d30563e}} 
+\index{Comment\+Formatter@{Comment\+Formatter}!Comment\+Formatter@{Comment\+Formatter}}
+\index{Comment\+Formatter@{Comment\+Formatter}!Comment\+Formatter@{Comment\+Formatter}}
+\subsubsection{\texorpdfstring{Comment\+Formatter()}{CommentFormatter()}}
+{\footnotesize\ttfamily Comment\+Formatter\+::\+Comment\+Formatter (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Comment\+Formatter.\+cpp.
+
+
+\begin{DoxyCode}
+4 \{
+5 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_comment_formatter_a3ee22833399687c24694b6e11a3337ba}\label{class_comment_formatter_a3ee22833399687c24694b6e11a3337ba}} 
+\index{Comment\+Formatter@{Comment\+Formatter}!contains\+\_\+id@{contains\+\_\+id}}
+\index{contains\+\_\+id@{contains\+\_\+id}!Comment\+Formatter@{Comment\+Formatter}}
+\subsubsection{\texorpdfstring{contains\+\_\+id()}{contains\_id()}}
+{\footnotesize\ttfamily bool Comment\+Formatter\+::contains\+\_\+id (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{parent\+\_\+id,  }\item[{const std\+::string \&}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file Comment\+Formatter.\+cpp.
+
+
+
+Referenced by sort\+Comment\+List().
+
+
+\begin{DoxyCode}
+47 \{
+48     \textcolor{keywordtype}{size\_t} pos = 0;
+49     \textcolor{keywordflow}{while} ((pos = parent\_id.substr(pos).find(\textcolor{keywordtype}{id})) != std::string::npos)
+50     \{
+51         \textcolor{keywordflow}{if} (!(isalpha(parent\_id[pos - 1])) || !(isalpha(parent\_id[pos + \textcolor{keywordtype}{id}.size() + 1])))
+52             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+53     \}
+54     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+55 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_comment_formatter_a6a9af9cdde666a914d97c3f45e6c8a49}\label{class_comment_formatter_a6a9af9cdde666a914d97c3f45e6c8a49}} 
+\index{Comment\+Formatter@{Comment\+Formatter}!sort\+Comment\+List@{sort\+Comment\+List}}
+\index{sort\+Comment\+List@{sort\+Comment\+List}!Comment\+Formatter@{Comment\+Formatter}}
+\subsubsection{\texorpdfstring{sort\+Comment\+List()}{sortCommentList()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$ Comment\+Formatter\+::sort\+Comment\+List (\begin{DoxyParamCaption}\item[{\hyperlink{class_comment}{Comment}}]{com,  }\item[{std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$}]{coms,  }\item[{std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$}]{n\+Coms,  }\item[{int}]{maximum }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Comment\+Formatter.\+cpp.
+
+
+
+References contains\+\_\+id(), and Comment\+::get\+Id().
+
+
+
+Referenced by Group\+Populator\+::\+Populate\+Group().
+
+
+\begin{DoxyCode}
+12 \{
+13     \textcolor{comment}{//we only want to do this when nComs is less than the maximum given value}
+14     \textcolor{keywordflow}{if} (nComs.size() < maximum) \{
+15 
+16         \textcolor{comment}{//push back the current comment}
+17         nComs.push\_back(com);
+18 
+19         \textcolor{comment}{//erase the comment from coms, this is so that we do not go beyond the index range of coms, and to
+       avoid adding duplicates}
+20         coms.erase(std::remove(coms.begin(), coms.end(), com), coms.end());
+21         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < coms.size(); i++)
+22         \{
+23             \textcolor{comment}{//we check to see if a comment contain's the id of com in it's parent\_id, if it does, then it
+       is a reply to that comment}
+24             \textcolor{keywordflow}{if} (\hyperlink{class_comment_formatter_a3ee22833399687c24694b6e11a3337ba}{contains\_id}(coms[i].getParentId(), com.\hyperlink{class_comment_ab46d905afeb79abd5caa6434c84020d8}{getId}())) \{
+25                 \hyperlink{class_comment}{Comment} cRep = coms[i];
+26 
+27                 \textcolor{comment}{//remove the reply from the comments array}
+28                 coms.erase(std::remove(coms.begin(), coms.end(), coms[i]), coms.end());
+29 
+30                 \textcolor{comment}{//parse the reply into this function along with our current value's, this is so that we can
+       find any reply's for the reply itself}
+31                 nComs = \hyperlink{class_comment_formatter_a6a9af9cdde666a914d97c3f45e6c8a49}{sortCommentList}(cRep, coms, nComs, maximum);
+32             \}
+33         \}
+34 
+35         \textcolor{comment}{//if the size of com's is not 0, then there are still comments we have not sorted so we call the
+       function again.}
+36         \textcolor{keywordflow}{if}(coms.size() != 0)
+37             nComs = \hyperlink{class_comment_formatter_a6a9af9cdde666a914d97c3f45e6c8a49}{sortCommentList}(coms[0], coms, nComs, maximum);
+38     \}
+39     \textcolor{keywordflow}{return} nComs;
+40 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_comment_formatter_8h}{Comment\+Formatter.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_comment_formatter_8cpp}{Comment\+Formatter.\+cpp}\end{DoxyCompactItemize}

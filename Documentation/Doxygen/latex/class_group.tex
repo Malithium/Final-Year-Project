@@ -1,0 +1,238 @@
+\hypertarget{class_group}{}\section{Group Class Reference}
+\label{class_group}\index{Group@{Group}}
+
+
+{\ttfamily \#include $<$Group.\+h$>$}
+
+
+
+Collaboration diagram for Group\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=222pt]{class_group__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_group_a7b74f9ac68e0504ccf2e2854b7355ff1}{Group} ()
+\item 
+\hyperlink{class_group_ac3639ca791bff4ceeaeba9e3fe4c1835}{Group} (std\+::string n\+Id, std\+::vector$<$ \hyperlink{class_topic}{Topic} $>$ n\+Topics)
+\item 
+std\+::string \hyperlink{class_group_ac28178935f780582ce7f5f518d43b6f8}{get\+Id} ()
+\item 
+std\+::vector$<$ \hyperlink{class_topic}{Topic} $>$ \hyperlink{class_group_a160daa5f96a8203bd30340dfc1810af1}{get\+Topics} ()
+\item 
+void \hyperlink{class_group_aba314538b0284ebfdf2e89fcdeef8697}{set\+Id} (std\+::string n\+Id)
+\item 
+void \hyperlink{class_group_ab37f8ac624dedf6eb84e2603e9c51df2}{set\+Topics} (std\+::vector$<$ \hyperlink{class_topic}{Topic} $>$ n\+Topics)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_group_ade135fec88f463adb44f780cb476e7d3}{id}
+\item 
+std\+::vector$<$ \hyperlink{class_topic}{Topic} $>$ \hyperlink{class_group_a5927c259318d2058c9d1573110718bb5}{topics}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_group_a5127806edb762fcce6c5450dcb17a395}{operator==} (const \hyperlink{class_group}{Group} \&c1, const \hyperlink{class_group}{Group} \&c2)
+\begin{DoxyCompactList}\small\item\em Custom compare operator. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Model representation for the \hyperlink{class_group}{Group} object within the program 
+
+Definition at line 6 of file Group.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_group_a7b74f9ac68e0504ccf2e2854b7355ff1}\label{class_group_a7b74f9ac68e0504ccf2e2854b7355ff1}} 
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\subsubsection{\texorpdfstring{Group()}{Group()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Group\+::\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Group.\+cpp.
+
+
+\begin{DoxyCode}
+3 \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_group_ac3639ca791bff4ceeaeba9e3fe4c1835}\label{class_group_ac3639ca791bff4ceeaeba9e3fe4c1835}} 
+\index{Group@{Group}!Group@{Group}}
+\index{Group@{Group}!Group@{Group}}
+\subsubsection{\texorpdfstring{Group()}{Group()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Group\+::\+Group (\begin{DoxyParamCaption}\item[{std\+::string}]{n\+Id,  }\item[{std\+::vector$<$ \hyperlink{class_topic}{Topic} $>$}]{n\+Topics }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Group.\+cpp.
+
+
+
+References set\+Id(), and set\+Topics().
+
+
+\begin{DoxyCode}
+6 \{
+7     \hyperlink{class_group_aba314538b0284ebfdf2e89fcdeef8697}{setId}(nId);
+8     \hyperlink{class_group_ab37f8ac624dedf6eb84e2603e9c51df2}{setTopics}(nTopics);
+9 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_group_ac28178935f780582ce7f5f518d43b6f8}\label{class_group_ac28178935f780582ce7f5f518d43b6f8}} 
+\index{Group@{Group}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Group@{Group}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily std\+::string Group\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Group.\+cpp.
+
+
+
+References id.
+
+
+\begin{DoxyCode}
+12 \{
+13     \textcolor{keywordflow}{return} \hyperlink{class_group_ade135fec88f463adb44f780cb476e7d3}{id};
+14 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_group_a160daa5f96a8203bd30340dfc1810af1}\label{class_group_a160daa5f96a8203bd30340dfc1810af1}} 
+\index{Group@{Group}!get\+Topics@{get\+Topics}}
+\index{get\+Topics@{get\+Topics}!Group@{Group}}
+\subsubsection{\texorpdfstring{get\+Topics()}{getTopics()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_topic}{Topic} $>$ Group\+::get\+Topics (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file Group.\+cpp.
+
+
+
+References topics.
+
+
+
+Referenced by Room\+::\+Room().
+
+
+\begin{DoxyCode}
+17 \{
+18     \textcolor{keywordflow}{return} \hyperlink{class_group_a5927c259318d2058c9d1573110718bb5}{topics};
+19 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_group_aba314538b0284ebfdf2e89fcdeef8697}\label{class_group_aba314538b0284ebfdf2e89fcdeef8697}} 
+\index{Group@{Group}!set\+Id@{set\+Id}}
+\index{set\+Id@{set\+Id}!Group@{Group}}
+\subsubsection{\texorpdfstring{set\+Id()}{setId()}}
+{\footnotesize\ttfamily void Group\+::set\+Id (\begin{DoxyParamCaption}\item[{std\+::string}]{n\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file Group.\+cpp.
+
+
+
+Referenced by Group().
+
+
+\begin{DoxyCode}
+22 \{
+23     \textcolor{keywordtype}{id} = nId;
+24 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_group_ab37f8ac624dedf6eb84e2603e9c51df2}\label{class_group_ab37f8ac624dedf6eb84e2603e9c51df2}} 
+\index{Group@{Group}!set\+Topics@{set\+Topics}}
+\index{set\+Topics@{set\+Topics}!Group@{Group}}
+\subsubsection{\texorpdfstring{set\+Topics()}{setTopics()}}
+{\footnotesize\ttfamily void Group\+::set\+Topics (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_topic}{Topic} $>$}]{n\+Topics }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file Group.\+cpp.
+
+
+
+References topics.
+
+
+
+Referenced by Group().
+
+
+\begin{DoxyCode}
+27 \{
+28     \hyperlink{class_group_a5927c259318d2058c9d1573110718bb5}{topics} = nTopics;
+29 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_group_a5127806edb762fcce6c5450dcb17a395}\label{class_group_a5127806edb762fcce6c5450dcb17a395}} 
+\index{Group@{Group}!operator==@{operator==}}
+\index{operator==@{operator==}!Group@{Group}}
+\subsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_group}{Group} \&}]{c1,  }\item[{const \hyperlink{class_group}{Group} \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Custom compare operator. 
+
+
+
+Definition at line 31 of file Group.\+cpp.
+
+
+\begin{DoxyCode}
+32 \{
+33     \textcolor{keywordflow}{return}  (t1.id == t2.id) && (t1.topics == t2.topics);
+34 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_group_ade135fec88f463adb44f780cb476e7d3}\label{class_group_ade135fec88f463adb44f780cb476e7d3}} 
+\index{Group@{Group}!id@{id}}
+\index{id@{id}!Group@{Group}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily std\+::string Group\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file Group.\+h.
+
+
+
+Referenced by get\+Id(), and operator==().
+
+\mbox{\Hypertarget{class_group_a5927c259318d2058c9d1573110718bb5}\label{class_group_a5927c259318d2058c9d1573110718bb5}} 
+\index{Group@{Group}!topics@{topics}}
+\index{topics@{topics}!Group@{Group}}
+\subsubsection{\texorpdfstring{topics}{topics}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_topic}{Topic}$>$ Group\+::topics\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file Group.\+h.
+
+
+
+Referenced by get\+Topics(), operator==(), and set\+Topics().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_group_8h}{Group.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_group_8cpp}{Group.\+cpp}\end{DoxyCompactItemize}

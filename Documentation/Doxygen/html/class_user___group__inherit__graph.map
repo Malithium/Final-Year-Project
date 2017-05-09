@@ -1,0 +1,3 @@
+<map id="User_Group" name="User_Group">
+<area shape="rect" id="node2" href="$class_base___group.html" title="{Base_Group\n|&#45; NPCs\l&#45; script\l&#45; ID\l&#45; availableSpace\l&#45; speakerDesignated\l&#45; topicRead\l&#45; topicString\l&#45; currentComment\l&#45; isReply\l&#45; lastSpoken\l&#45; polar\l&#45; GroupX\l&#45; GroupY\l&#45; GroupSize\l|+ Base_Group()\l+ Base_Group()\l+ renderConversation()\l+ getID()\l+ setID()\l+ AddToGroup()\l+ getScript()\l+ isAvailable()\l+ getSpace()\l+ leaveSpace()\land 15 more...\l}" alt="" coords="12,5,164,420"/>
+</map>

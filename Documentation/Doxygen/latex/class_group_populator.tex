@@ -1,0 +1,150 @@
+\hypertarget{class_group_populator}{}\section{Group\+Populator Class Reference}
+\label{class_group_populator}\index{Group\+Populator@{Group\+Populator}}
+
+
+{\ttfamily \#include $<$Group\+Populator.\+h$>$}
+
+
+
+Collaboration diagram for Group\+Populator\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=179pt]{class_group_populator__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_group_populator_a90814524b9b87b4841bdc64f3c7e56ef}{Group\+Populator} (std\+::ifstream file)
+\item 
+\hyperlink{class_group_populator_a8d125db2718e9d7bb70699094045f43b}{Group\+Populator} ()
+\item 
+\hyperlink{class_group}{Group} \hyperlink{class_group_populator_ae4c9f15b1d55f61497c97140df8af0b7}{Populate\+Group} ()
+\begin{DoxyCompactList}\small\item\em returns a populated group object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Json\+::\+Value \hyperlink{class_group_populator_a161f0427ec538d3a99da2e53fdbc9b2b}{root}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Populates the group object with data parsed into the contructor 
+
+Definition at line 10 of file Group\+Populator.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_group_populator_a90814524b9b87b4841bdc64f3c7e56ef}\label{class_group_populator_a90814524b9b87b4841bdc64f3c7e56ef}} 
+\index{Group\+Populator@{Group\+Populator}!Group\+Populator@{Group\+Populator}}
+\index{Group\+Populator@{Group\+Populator}!Group\+Populator@{Group\+Populator}}
+\subsubsection{\texorpdfstring{Group\+Populator()}{GroupPopulator()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Group\+Populator\+::\+Group\+Populator (\begin{DoxyParamCaption}\item[{std\+::ifstream}]{file }\end{DoxyParamCaption})}
+
+
+
+Definition at line 9 of file Group\+Populator.\+cpp.
+
+
+
+References root.
+
+
+\begin{DoxyCode}
+10 \{
+11     file >> \hyperlink{class_group_populator_a161f0427ec538d3a99da2e53fdbc9b2b}{root};
+12 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_group_populator_a8d125db2718e9d7bb70699094045f43b}\label{class_group_populator_a8d125db2718e9d7bb70699094045f43b}} 
+\index{Group\+Populator@{Group\+Populator}!Group\+Populator@{Group\+Populator}}
+\index{Group\+Populator@{Group\+Populator}!Group\+Populator@{Group\+Populator}}
+\subsubsection{\texorpdfstring{Group\+Populator()}{GroupPopulator()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Group\+Populator\+::\+Group\+Populator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file Group\+Populator.\+cpp.
+
+
+\begin{DoxyCode}
+5 \{
+6 
+7 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_group_populator_ae4c9f15b1d55f61497c97140df8af0b7}\label{class_group_populator_ae4c9f15b1d55f61497c97140df8af0b7}} 
+\index{Group\+Populator@{Group\+Populator}!Populate\+Group@{Populate\+Group}}
+\index{Populate\+Group@{Populate\+Group}!Group\+Populator@{Group\+Populator}}
+\subsubsection{\texorpdfstring{Populate\+Group()}{PopulateGroup()}}
+{\footnotesize\ttfamily \hyperlink{class_group}{Group} Group\+Populator\+::\+Populate\+Group (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns a populated group object 
+
+access\textquotesingle{}s the read in J\+S\+ON file to populate our group object 
+
+Definition at line 17 of file Group\+Populator.\+cpp.
+
+
+
+References root, and Comment\+Formatter\+::sort\+Comment\+List().
+
+
+\begin{DoxyCode}
+18 \{
+19     std::vector<Topic> nTops;
+20     \hyperlink{class_comment_formatter}{CommentFormatter} cfrm;
+21     std::vector<Comment> a;
+22 
+23     \textcolor{comment}{// access each 'topics' value in the JSON file}
+24     \textcolor{keywordflow}{for} (\textcolor{keyword}{const} Json::Value& tops : \hyperlink{class_group_populator_a161f0427ec538d3a99da2e53fdbc9b2b}{root}[\textcolor{stringliteral}{"topics"}])
+25     \{
+26         std::vector<Comment> nComms;
+27 
+28         \textcolor{comment}{// acess each 'comments' value in the JSON file}
+29         \textcolor{keywordflow}{for} (\textcolor{keyword}{const} Json::Value& comms : tops[\textcolor{stringliteral}{"comments"}])
+30         \{
+31             \hyperlink{class_comment}{Comment} com(comms[\textcolor{stringliteral}{"body"}].asString(), comms[\textcolor{stringliteral}{"id"}].asString(), comms[\textcolor{stringliteral}{"parent\_id"}].
+      asString(), 
+32                 comms[\textcolor{stringliteral}{"reply"}].asBool(), comms[\textcolor{stringliteral}{"polarity"}].asFloat(), comms[\textcolor{stringliteral}{"author"}].asString());
+33             nComms.push\_back(com);
+34         \}
+35 
+36         \textcolor{comment}{// use the comment formatter to format the list, then add it to the topic}
+37         nComms = cfrm.\hyperlink{class_comment_formatter_a6a9af9cdde666a914d97c3f45e6c8a49}{sortCommentList}(nComms[0], nComms, a, nComms.size());
+38         \hyperlink{class_topic}{Topic} top(tops[\textcolor{stringliteral}{"id"}].asString(), tops[\textcolor{stringliteral}{"topic"}].asString(), nComms);
+39 
+40         \textcolor{comment}{// add the topic to the group}
+41         nTops.push\_back(top);
+42     \}
+43     \textcolor{keywordflow}{return} \hyperlink{class_group}{Group}(root[\textcolor{stringliteral}{"subject"}].asString(), nTops);
+44 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_group_populator_a161f0427ec538d3a99da2e53fdbc9b2b}\label{class_group_populator_a161f0427ec538d3a99da2e53fdbc9b2b}} 
+\index{Group\+Populator@{Group\+Populator}!root@{root}}
+\index{root@{root}!Group\+Populator@{Group\+Populator}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily Json\+::\+Value Group\+Populator\+::root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file Group\+Populator.\+h.
+
+
+
+Referenced by Group\+Populator(), and Populate\+Group().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_group_populator_8h}{Group\+Populator.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_group_populator_8cpp}{Group\+Populator.\+cpp}\end{DoxyCompactItemize}

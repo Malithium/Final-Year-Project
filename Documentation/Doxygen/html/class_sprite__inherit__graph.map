@@ -1,0 +1,4 @@
+<map id="Sprite" name="Sprite">
+<area shape="rect" id="node2" href="$class_n_p_c.html" title="{NPC\n|&#45; id\l&#45; groupID\l&#45; currentLine\l&#45; boredLvl\l&#45; currentUser\l&#45; text\l&#45; speech\l&#45; path\l&#45; endGoal\l&#45; speaking\l&#45; reading\l&#45; idle\l&#45; moving\l&#45; emotionLevels\l|+ NPC()\l+ prepareComment()\l+ LoadComment()\l+ renderComment()\l+ LoadBox()\l+ renderBox()\l+ freeBox()\l+ getLinesToRender()\l+ applyEmotionLevel()\l+ evaluateEmotionLevel()\land 26 more...\l}" alt="" coords="5,380,172,795"/>
+<area shape="rect" id="node3" href="$class_text_box.html" title="{TextBox\n|&#45; fontWidth\l&#45; fontHeight\l&#45; textToRender\l&#45; fontTexture\l|+ TextBox()\l+ TextBox()\l+ renderComment()\l+ loadText()\l+ createStrings()\l+ getFontTexture()\l+ getLinesToRender()\l+ freeComment()\l+ returnLine()\l+ emptyTextToRender()\l}" alt="" coords="196,461,355,714"/>
+</map>

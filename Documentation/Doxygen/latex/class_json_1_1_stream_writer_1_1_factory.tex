@@ -1,0 +1,92 @@
+\hypertarget{class_json_1_1_stream_writer_1_1_factory}{}\section{Json\+:\+:Stream\+Writer\+:\+:Factory Class Reference}
+\label{class_json_1_1_stream_writer_1_1_factory}\index{Json\+::\+Stream\+Writer\+::\+Factory@{Json\+::\+Stream\+Writer\+::\+Factory}}
+
+
+A simple abstract factory.  
+
+
+
+
+{\ttfamily \#include $<$json.\+h$>$}
+
+
+
+Inheritance diagram for Json\+:\+:Stream\+Writer\+:\+:Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=211pt]{class_json_1_1_stream_writer_1_1_factory__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Json\+:\+:Stream\+Writer\+:\+:Factory\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=187pt]{class_json_1_1_stream_writer_1_1_factory__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual \hyperlink{class_json_1_1_stream_writer_1_1_factory_ad334ad5e81e3b9b1768620a446366ff1}{$\sim$\+Factory} ()
+\item 
+virtual \hyperlink{class_json_1_1_stream_writer}{Stream\+Writer} $\ast$ \hyperlink{class_json_1_1_stream_writer_1_1_factory_a9d30ec53e8288cd53befccf1009c5f31}{new\+Stream\+Writer} () const =0
+\begin{DoxyCompactList}\small\item\em Allocate a \hyperlink{class_json_1_1_char_reader}{Char\+Reader} via operator new(). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A simple abstract factory. 
+
+Definition at line 1806 of file json.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_stream_writer_1_1_factory_ad334ad5e81e3b9b1768620a446366ff1}\label{class_json_1_1_stream_writer_1_1_factory_ad334ad5e81e3b9b1768620a446366ff1}} 
+\index{Json\+::\+Stream\+Writer\+::\+Factory@{Json\+::\+Stream\+Writer\+::\+Factory}!````~Factory@{$\sim$\+Factory}}
+\index{````~Factory@{$\sim$\+Factory}!Json\+::\+Stream\+Writer\+::\+Factory@{Json\+::\+Stream\+Writer\+::\+Factory}}
+\subsubsection{\texorpdfstring{$\sim$\+Factory()}{~Factory()}}
+{\footnotesize\ttfamily Json\+::\+Stream\+Writer\+::\+Factory\+::$\sim$\+Factory (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 5203 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+5204 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_stream_writer_1_1_factory_a9d30ec53e8288cd53befccf1009c5f31}\label{class_json_1_1_stream_writer_1_1_factory_a9d30ec53e8288cd53befccf1009c5f31}} 
+\index{Json\+::\+Stream\+Writer\+::\+Factory@{Json\+::\+Stream\+Writer\+::\+Factory}!new\+Stream\+Writer@{new\+Stream\+Writer}}
+\index{new\+Stream\+Writer@{new\+Stream\+Writer}!Json\+::\+Stream\+Writer\+::\+Factory@{Json\+::\+Stream\+Writer\+::\+Factory}}
+\subsubsection{\texorpdfstring{new\+Stream\+Writer()}{newStreamWriter()}}
+{\footnotesize\ttfamily virtual \hyperlink{class_json_1_1_stream_writer}{Stream\+Writer}$\ast$ Json\+::\+Stream\+Writer\+::\+Factory\+::new\+Stream\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Allocate a \hyperlink{class_json_1_1_char_reader}{Char\+Reader} via operator new(). 
+
+
+\begin{DoxyExceptions}{Exceptions}
+{\em std\+::exception} & if something goes wrong (e.\+g. invalid settings) \\
+\hline
+\end{DoxyExceptions}
+
+
+Implemented in \hyperlink{class_json_1_1_stream_writer_builder_ab9ee278609f88ae04a7c1a84e1f559e6}{Json\+::\+Stream\+Writer\+Builder}.
+
+
+
+Referenced by Json\+::write\+String().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{json_8h}{json.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{jsoncpp_8cpp}{jsoncpp.\+cpp}\end{DoxyCompactItemize}

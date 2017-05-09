@@ -1,0 +1,4 @@
+<map id="Base_Group" name="Base_Group">
+<area shape="rect" id="node2" href="$class_n_p_c___group.html" title="{NPC_Group\n||+ NPC_Group()\l+ simulateConversation()\l+ evaluateSpeaker()\l+ setSpeaker()\l}" alt="" coords="5,468,171,589"/>
+<area shape="rect" id="node3" href="$class_user___group.html" title="{User_Group\n||+ User_Group()\l+ simulateConversation()\l+ evaluateSpeaker()\l+ setSpeaker()\l}" alt="" coords="195,468,360,589"/>
+</map>

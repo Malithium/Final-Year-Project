@@ -1,0 +1,122 @@
+\hypertarget{class_json_1_1_static_string}{}\section{Json\+:\+:Static\+String Class Reference}
+\label{class_json_1_1_static_string}\index{Json\+::\+Static\+String@{Json\+::\+Static\+String}}
+
+
+Lightweight wrapper to tag static string.  
+
+
+
+
+{\ttfamily \#include $<$json.\+h$>$}
+
+
+
+Collaboration diagram for Json\+:\+:Static\+String\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_json_1_1_static_string__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_static_string_afb6baf1ec078ce76f0b0f9b39d19437f}{Static\+String} (const char $\ast$czstring)
+\item 
+\hyperlink{class_json_1_1_static_string_a256a6cc0c630aef670848a0f11707b62}{operator const char $\ast$} () const
+\item 
+const char $\ast$ \hyperlink{class_json_1_1_static_string_ad6be703d432d108623bb0aa06b0b90ca}{c\+\_\+str} () const
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{class_json_1_1_static_string_a9f0d9e8caee8f8db14e2c8c24760dffd}{c\+\_\+str\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Lightweight wrapper to tag static string. 
+
+\hyperlink{class_json_1_1_value}{Value} constructor and object\+Value member assignement takes advantage of the \hyperlink{class_json_1_1_static_string}{Static\+String} and avoid the cost of string duplication when storing the string or the member name.
+
+Example of usage\+: 
+\begin{DoxyCode}
+\hyperlink{class_json_1_1_value}{Json::Value} aValue( \hyperlink{class_json_1_1_static_string_afb6baf1ec078ce76f0b0f9b39d19437f}{StaticString}(\textcolor{stringliteral}{"some text"}) );
+\hyperlink{class_json_1_1_value}{Json::Value} object;
+\textcolor{keyword}{static} \textcolor{keyword}{const} \hyperlink{class_json_1_1_static_string_afb6baf1ec078ce76f0b0f9b39d19437f}{StaticString} code(\textcolor{stringliteral}{"code"});
+\textcolor{keywordtype}{object}[code] = 1234;
+\end{DoxyCode}
+ 
+
+Definition at line 573 of file json.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_static_string_afb6baf1ec078ce76f0b0f9b39d19437f}\label{class_json_1_1_static_string_afb6baf1ec078ce76f0b0f9b39d19437f}} 
+\index{Json\+::\+Static\+String@{Json\+::\+Static\+String}!Static\+String@{Static\+String}}
+\index{Static\+String@{Static\+String}!Json\+::\+Static\+String@{Json\+::\+Static\+String}}
+\subsubsection{\texorpdfstring{Static\+String()}{StaticString()}}
+{\footnotesize\ttfamily Json\+::\+Static\+String\+::\+Static\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{czstring }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+
+
+Definition at line 575 of file json.\+h.
+
+
+\begin{DoxyCode}
+575 : \hyperlink{class_json_1_1_static_string_a9f0d9e8caee8f8db14e2c8c24760dffd}{c\_str\_}(czstring) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_static_string_ad6be703d432d108623bb0aa06b0b90ca}\label{class_json_1_1_static_string_ad6be703d432d108623bb0aa06b0b90ca}} 
+\index{Json\+::\+Static\+String@{Json\+::\+Static\+String}!c\+\_\+str@{c\+\_\+str}}
+\index{c\+\_\+str@{c\+\_\+str}!Json\+::\+Static\+String@{Json\+::\+Static\+String}}
+\subsubsection{\texorpdfstring{c\+\_\+str()}{c\_str()}}
+{\footnotesize\ttfamily const char$\ast$ Json\+::\+Static\+String\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 579 of file json.\+h.
+
+
+
+Referenced by Json\+::\+Value\+::operator\mbox{[}$\,$\mbox{]}(), and Json\+::\+Value\+::\+Value().
+
+
+\begin{DoxyCode}
+579 \{ \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_static_string_a9f0d9e8caee8f8db14e2c8c24760dffd}{c\_str\_}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_static_string_a256a6cc0c630aef670848a0f11707b62}\label{class_json_1_1_static_string_a256a6cc0c630aef670848a0f11707b62}} 
+\index{Json\+::\+Static\+String@{Json\+::\+Static\+String}!operator const char $\ast$@{operator const char $\ast$}}
+\index{operator const char $\ast$@{operator const char $\ast$}!Json\+::\+Static\+String@{Json\+::\+Static\+String}}
+\subsubsection{\texorpdfstring{operator const char $\ast$()}{operator const char *()}}
+{\footnotesize\ttfamily Json\+::\+Static\+String\+::operator const char $\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 577 of file json.\+h.
+
+
+\begin{DoxyCode}
+577 \{ \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_static_string_a9f0d9e8caee8f8db14e2c8c24760dffd}{c\_str\_}; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_json_1_1_static_string_a9f0d9e8caee8f8db14e2c8c24760dffd}\label{class_json_1_1_static_string_a9f0d9e8caee8f8db14e2c8c24760dffd}} 
+\index{Json\+::\+Static\+String@{Json\+::\+Static\+String}!c\+\_\+str\+\_\+@{c\+\_\+str\+\_\+}}
+\index{c\+\_\+str\+\_\+@{c\+\_\+str\+\_\+}!Json\+::\+Static\+String@{Json\+::\+Static\+String}}
+\subsubsection{\texorpdfstring{c\+\_\+str\+\_\+}{c\_str\_}}
+{\footnotesize\ttfamily const char$\ast$ Json\+::\+Static\+String\+::c\+\_\+str\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 582 of file json.\+h.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{json_8h}{json.\+h}\end{DoxyCompactItemize}

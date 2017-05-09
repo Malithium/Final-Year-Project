@@ -1,0 +1,483 @@
+\hypertarget{class_sprite}{}\section{Sprite Class Reference}
+\label{class_sprite}\index{Sprite@{Sprite}}
+
+
+{\ttfamily \#include $<$Sprite.\+h$>$}
+
+
+
+Inheritance diagram for Sprite\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_sprite__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sprite\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_sprite__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_sprite_a12cba3ac1868418add3c4d95ce87e615}{Sprite} ()
+\item 
+\hyperlink{class_sprite_a9e4b47480afc64a0969d2b9014af02cc}{Sprite} (std\+::string file\+Name, S\+D\+L\+\_\+\+Renderer $\ast$renderer, int x=0, int y=0)
+\item 
+int \hyperlink{class_sprite_aba3d4752461ec679fbf5de7ec4c34f61}{get\+Width} ()
+\item 
+int \hyperlink{class_sprite_a67b67082cfda90103d2d9eefea04cc4b}{get\+Height} ()
+\item 
+int \hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX} ()
+\item 
+int \hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY} ()
+\item 
+\hyperlink{class_texture}{Texture} \hyperlink{class_sprite_a95126cbe568a388a5b1092dee95716d0}{get\+Texture} ()
+\item 
+void \hyperlink{class_sprite_afe7d6d636fc460358c40a403af259d0e}{setY} (int y)
+\item 
+void \hyperlink{class_sprite_ae21322c28b8719af996990fafa920762}{setX} (int x)
+\item 
+void \hyperlink{class_sprite_a1ca0939610f24386a4eecb8e91688c65}{set\+Color} (int r, int g, int b)
+\item 
+void \hyperlink{class_sprite_a72231a3cc5414b94ab6bfcbddc3b327c}{render} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\item 
+void \hyperlink{class_sprite_abce3359b4f055bac7384038046ed9ead}{free} ()
+\item 
+bool \hyperlink{class_sprite_adab722e01e4d3e197f52ecad6ac8d70a}{load\+Media} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_sprite_a0af496e3e6540f1f1321913a741a737a}{posX}
+\item 
+int \hyperlink{class_sprite_a1ef80a5eff9d5b0bb90ae355daf09efe}{posY}
+\item 
+int \hyperlink{class_sprite_a0a3364944c5e361fc9e7ae406224d682}{width}
+\item 
+int \hyperlink{class_sprite_a1f07c8f2080c193759aec0e13503d7ab}{height}
+\item 
+std\+::string \hyperlink{class_sprite_a595ffe434aadbc94b9abd272c0356c9d}{sprite\+File}
+\item 
+\hyperlink{class_texture}{Texture} \hyperlink{class_sprite_aa4978b284ebaae7225869d238dcb32cb}{texture}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base sprite class, all graphical sprites will inherit this class 
+
+Definition at line 7 of file Sprite.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_sprite_a12cba3ac1868418add3c4d95ce87e615}\label{class_sprite_a12cba3ac1868418add3c4d95ce87e615}} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Sprite.\+cpp.
+
+
+
+References posX, posY, and sprite\+File.
+
+
+\begin{DoxyCode}
+4 \{
+5     \hyperlink{class_sprite_a0af496e3e6540f1f1321913a741a737a}{posX} = 0;
+6     \hyperlink{class_sprite_a1ef80a5eff9d5b0bb90ae355daf09efe}{posY} = 0;
+7     \hyperlink{class_sprite_a595ffe434aadbc94b9abd272c0356c9d}{spriteFile} = \textcolor{stringliteral}{""};
+8 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_a9e4b47480afc64a0969d2b9014af02cc}\label{class_sprite_a9e4b47480afc64a0969d2b9014af02cc}} 
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\index{Sprite@{Sprite}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{Sprite()}{Sprite()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sprite\+::\+Sprite (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x = {\ttfamily 0},  }\item[{int}]{y = {\ttfamily 0} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file Sprite.\+cpp.
+
+
+\begin{DoxyCode}
+10                                                                       : \hyperlink{class_sprite_a0af496e3e6540f1f1321913a741a737a}{posX}(x), 
+      \hyperlink{class_sprite_a1ef80a5eff9d5b0bb90ae355daf09efe}{posY}(y), \hyperlink{class_sprite_a595ffe434aadbc94b9abd272c0356c9d}{spriteFile}(fileName)
+11 \{
+12 
+13 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_sprite_abce3359b4f055bac7384038046ed9ead}\label{class_sprite_abce3359b4f055bac7384038046ed9ead}} 
+\index{Sprite@{Sprite}!free@{free}}
+\index{free@{free}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily void Sprite\+::free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 55 of file Sprite.\+cpp.
+
+
+
+References Texture\+::free(), and texture.
+
+
+
+Referenced by N\+P\+C\+::free\+Box().
+
+
+\begin{DoxyCode}
+56 \{
+57     \hyperlink{class_sprite_aa4978b284ebaae7225869d238dcb32cb}{texture}.\hyperlink{class_texture_a46d06aec832e5a954f1c8ca957c2c6e5}{free}();
+58 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_a67b67082cfda90103d2d9eefea04cc4b}\label{class_sprite_a67b67082cfda90103d2d9eefea04cc4b}} 
+\index{Sprite@{Sprite}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily int Sprite\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file Sprite.\+cpp.
+
+
+
+References height.
+
+
+\begin{DoxyCode}
+21 \{
+22     \textcolor{keywordflow}{return} \hyperlink{class_sprite_a1f07c8f2080c193759aec0e13503d7ab}{height};
+23 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_a95126cbe568a388a5b1092dee95716d0}\label{class_sprite_a95126cbe568a388a5b1092dee95716d0}} 
+\index{Sprite@{Sprite}!get\+Texture@{get\+Texture}}
+\index{get\+Texture@{get\+Texture}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{get\+Texture()}{getTexture()}}
+{\footnotesize\ttfamily \hyperlink{class_texture}{Texture} Sprite\+::get\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file Sprite.\+cpp.
+
+
+
+References texture.
+
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordflow}{return} \hyperlink{class_sprite_aa4978b284ebaae7225869d238dcb32cb}{texture};
+18 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_aba3d4752461ec679fbf5de7ec4c34f61}\label{class_sprite_aba3d4752461ec679fbf5de7ec4c34f61}} 
+\index{Sprite@{Sprite}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily int Sprite\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Sprite.\+cpp.
+
+
+
+References width.
+
+
+
+Referenced by Text\+Box\+::create\+Strings(), and Text\+Box\+::load\+Text().
+
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{keywordflow}{return} \hyperlink{class_sprite_a0a3364944c5e361fc9e7ae406224d682}{width};
+28 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}\label{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}} 
+\index{Sprite@{Sprite}!getX@{getX}}
+\index{getX@{getX}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily int Sprite\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file Sprite.\+cpp.
+
+
+
+References posX.
+
+
+
+Referenced by N\+P\+C\+::\+Load\+Box(), N\+P\+C\+::move(), and Text\+Box\+::render\+Comment().
+
+
+\begin{DoxyCode}
+31 \{
+32     \textcolor{keywordflow}{return} \hyperlink{class_sprite_a0af496e3e6540f1f1321913a741a737a}{posX};
+33 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}\label{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}} 
+\index{Sprite@{Sprite}!getY@{getY}}
+\index{getY@{getY}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily int Sprite\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file Sprite.\+cpp.
+
+
+
+References posY.
+
+
+
+Referenced by N\+P\+C\+::\+Load\+Box(), N\+P\+C\+::move(), and Text\+Box\+::render\+Comment().
+
+
+\begin{DoxyCode}
+36 \{
+37     \textcolor{keywordflow}{return} \hyperlink{class_sprite_a1ef80a5eff9d5b0bb90ae355daf09efe}{posY};
+38 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_adab722e01e4d3e197f52ecad6ac8d70a}\label{class_sprite_adab722e01e4d3e197f52ecad6ac8d70a}} 
+\index{Sprite@{Sprite}!load\+Media@{load\+Media}}
+\index{load\+Media@{load\+Media}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{load\+Media()}{loadMedia()}}
+{\footnotesize\ttfamily bool Sprite\+::load\+Media (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file Sprite.\+cpp.
+
+
+
+References Texture\+::get\+Height(), Texture\+::get\+Width(), height, Texture\+::load\+From\+File(), sprite\+File, texture, and width.
+
+
+
+Referenced by N\+P\+C\+::\+Load\+Box().
+
+
+\begin{DoxyCode}
+66 \{
+67     \textcolor{comment}{//Loading success flag}
+68     \textcolor{keywordtype}{bool} success = \textcolor{keyword}{true};
+69 
+70     \textcolor{comment}{//Load dot texture}
+71     \textcolor{keywordflow}{if} (!\hyperlink{class_sprite_aa4978b284ebaae7225869d238dcb32cb}{texture}.\hyperlink{class_texture_a1c143b8aa5f134bb5a8c9d4c3d950d2f}{loadFromFile}(\hyperlink{class_sprite_a595ffe434aadbc94b9abd272c0356c9d}{spriteFile}, renderer))
+72     \{
+73         printf(\textcolor{stringliteral}{"Failed to load texture!\(\backslash\)n"});
+74         success = \textcolor{keyword}{false};
+75     \}
+76 
+77         \hyperlink{class_sprite_a0a3364944c5e361fc9e7ae406224d682}{width} = \hyperlink{class_sprite_aa4978b284ebaae7225869d238dcb32cb}{texture}.\hyperlink{class_texture_a91a6fd3355bc870194851514194daaab}{getWidth}();
+78         \hyperlink{class_sprite_a1f07c8f2080c193759aec0e13503d7ab}{height} = \hyperlink{class_sprite_aa4978b284ebaae7225869d238dcb32cb}{texture}.\hyperlink{class_texture_a80e143905655b173df5994300088ce35}{getHeight}();
+79 
+80     \textcolor{keywordflow}{return} success;
+81 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_a72231a3cc5414b94ab6bfcbddc3b327c}\label{class_sprite_a72231a3cc5414b94ab6bfcbddc3b327c}} 
+\index{Sprite@{Sprite}!render@{render}}
+\index{render@{render}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Sprite\+::render (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 50 of file Sprite.\+cpp.
+
+
+
+References posX, posY, Texture\+::render(), and texture.
+
+
+
+Referenced by N\+P\+C\+::render\+Box().
+
+
+\begin{DoxyCode}
+51 \{
+52     \hyperlink{class_sprite_aa4978b284ebaae7225869d238dcb32cb}{texture}.\hyperlink{class_texture_ac91a5257c451c80ffbf9a3d1485ba1c8}{render}(\hyperlink{class_sprite_a0af496e3e6540f1f1321913a741a737a}{posX}, \hyperlink{class_sprite_a1ef80a5eff9d5b0bb90ae355daf09efe}{posY}, renderer);
+53 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_a1ca0939610f24386a4eecb8e91688c65}\label{class_sprite_a1ca0939610f24386a4eecb8e91688c65}} 
+\index{Sprite@{Sprite}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}}
+{\footnotesize\ttfamily void Sprite\+::set\+Color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+Definition at line 60 of file Sprite.\+cpp.
+
+
+
+References Texture\+::set\+Color(), and texture.
+
+
+
+Referenced by N\+P\+C\+::evaluate\+Emotion\+Level().
+
+
+\begin{DoxyCode}
+61 \{
+62     \hyperlink{class_sprite_aa4978b284ebaae7225869d238dcb32cb}{texture}.\hyperlink{class_texture_ab3149eb648f437a09dc0938942c2c4ce}{setColor}(r, g, b);
+63 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_ae21322c28b8719af996990fafa920762}\label{class_sprite_ae21322c28b8719af996990fafa920762}} 
+\index{Sprite@{Sprite}!setX@{setX}}
+\index{setX@{setX}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{set\+X()}{setX()}}
+{\footnotesize\ttfamily void Sprite\+::setX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file Sprite.\+cpp.
+
+
+
+References posX.
+
+
+
+Referenced by N\+P\+C\+::\+Load\+Box(), and N\+P\+C\+::move().
+
+
+\begin{DoxyCode}
+41 \{
+42     \hyperlink{class_sprite_a0af496e3e6540f1f1321913a741a737a}{posX} = x;
+43 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_sprite_afe7d6d636fc460358c40a403af259d0e}\label{class_sprite_afe7d6d636fc460358c40a403af259d0e}} 
+\index{Sprite@{Sprite}!setY@{setY}}
+\index{setY@{setY}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{set\+Y()}{setY()}}
+{\footnotesize\ttfamily void Sprite\+::setY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 45 of file Sprite.\+cpp.
+
+
+
+References posY.
+
+
+
+Referenced by N\+P\+C\+::\+Load\+Box(), and N\+P\+C\+::move().
+
+
+\begin{DoxyCode}
+46 \{
+47     \hyperlink{class_sprite_a1ef80a5eff9d5b0bb90ae355daf09efe}{posY} = y;
+48 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_sprite_a1f07c8f2080c193759aec0e13503d7ab}\label{class_sprite_a1f07c8f2080c193759aec0e13503d7ab}} 
+\index{Sprite@{Sprite}!height@{height}}
+\index{height@{height}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily int Sprite\+::height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file Sprite.\+h.
+
+
+
+Referenced by get\+Height(), and load\+Media().
+
+\mbox{\Hypertarget{class_sprite_a0af496e3e6540f1f1321913a741a737a}\label{class_sprite_a0af496e3e6540f1f1321913a741a737a}} 
+\index{Sprite@{Sprite}!posX@{posX}}
+\index{posX@{posX}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{posX}{posX}}
+{\footnotesize\ttfamily int Sprite\+::posX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file Sprite.\+h.
+
+
+
+Referenced by get\+X(), render(), set\+X(), and Sprite().
+
+\mbox{\Hypertarget{class_sprite_a1ef80a5eff9d5b0bb90ae355daf09efe}\label{class_sprite_a1ef80a5eff9d5b0bb90ae355daf09efe}} 
+\index{Sprite@{Sprite}!posY@{posY}}
+\index{posY@{posY}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{posY}{posY}}
+{\footnotesize\ttfamily int Sprite\+::posY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 29 of file Sprite.\+h.
+
+
+
+Referenced by get\+Y(), render(), set\+Y(), and Sprite().
+
+\mbox{\Hypertarget{class_sprite_a595ffe434aadbc94b9abd272c0356c9d}\label{class_sprite_a595ffe434aadbc94b9abd272c0356c9d}} 
+\index{Sprite@{Sprite}!sprite\+File@{sprite\+File}}
+\index{sprite\+File@{sprite\+File}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{sprite\+File}{spriteFile}}
+{\footnotesize\ttfamily std\+::string Sprite\+::sprite\+File\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 31 of file Sprite.\+h.
+
+
+
+Referenced by load\+Media(), and Sprite().
+
+\mbox{\Hypertarget{class_sprite_aa4978b284ebaae7225869d238dcb32cb}\label{class_sprite_aa4978b284ebaae7225869d238dcb32cb}} 
+\index{Sprite@{Sprite}!texture@{texture}}
+\index{texture@{texture}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{texture}{texture}}
+{\footnotesize\ttfamily \hyperlink{class_texture}{Texture} Sprite\+::texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 33 of file Sprite.\+h.
+
+
+
+Referenced by free(), get\+Texture(), load\+Media(), render(), and set\+Color().
+
+\mbox{\Hypertarget{class_sprite_a0a3364944c5e361fc9e7ae406224d682}\label{class_sprite_a0a3364944c5e361fc9e7ae406224d682}} 
+\index{Sprite@{Sprite}!width@{width}}
+\index{width@{width}!Sprite@{Sprite}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily int Sprite\+::width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file Sprite.\+h.
+
+
+
+Referenced by get\+Width(), and load\+Media().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_sprite_8h}{Sprite.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_sprite_8cpp}{Sprite.\+cpp}\end{DoxyCompactItemize}

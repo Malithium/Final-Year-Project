@@ -1,0 +1,337 @@
+\hypertarget{class_json_1_1_path}{}\section{Json\+:\+:Path Class Reference}
+\label{class_json_1_1_path}\index{Json\+::\+Path@{Json\+::\+Path}}
+
+
+Experimental and untested\+: represents a \char`\"{}path\char`\"{} to access a node.  
+
+
+
+
+{\ttfamily \#include $<$json.\+h$>$}
+
+
+
+Collaboration diagram for Json\+:\+:Path\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{class_json_1_1_path__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_path_a7356c0e9c1fc2276390fd396271c1300}{Path} (const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&path, const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&a1=\hyperlink{class_json_1_1_path_argument}{Path\+Argument}(), const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&a2=\hyperlink{class_json_1_1_path_argument}{Path\+Argument}(), const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&a3=\hyperlink{class_json_1_1_path_argument}{Path\+Argument}(), const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&a4=\hyperlink{class_json_1_1_path_argument}{Path\+Argument}(), const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&a5=\hyperlink{class_json_1_1_path_argument}{Path\+Argument}())
+\item 
+const \hyperlink{class_json_1_1_value}{Value} \& \hyperlink{class_json_1_1_path_ad1abdc54d2e03fc0e9436c3b9fd55a33}{resolve} (const \hyperlink{class_json_1_1_value}{Value} \&root) const
+\item 
+\hyperlink{class_json_1_1_value}{Value} \hyperlink{class_json_1_1_path_ab65ab001ccdbc6f8b5f123da58b92539}{resolve} (const \hyperlink{class_json_1_1_value}{Value} \&root, const \hyperlink{class_json_1_1_value}{Value} \&default\+Value) const
+\item 
+\hyperlink{class_json_1_1_value}{Value} \& \hyperlink{class_json_1_1_path_a858f9426f0f7bbe0450644d72b44e26b}{make} (\hyperlink{class_json_1_1_value}{Value} \&root) const
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} $\ast$ $>$ \hyperlink{class_json_1_1_path_ab29d7b2fc896c7d3c5ed4609af3a3f23}{In\+Args}
+\item 
+typedef std\+::vector$<$ \hyperlink{class_json_1_1_path_argument}{Path\+Argument} $>$ \hyperlink{class_json_1_1_path_a27d96232d034d7a78286468676f9cb3e}{Args}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_json_1_1_path_a362a420a47acb1a1f9c79173cbfef94d}{make\+Path} (const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&path, const \hyperlink{class_json_1_1_path_ab29d7b2fc896c7d3c5ed4609af3a3f23}{In\+Args} \&in)
+\item 
+void \hyperlink{class_json_1_1_path_ae65717a5fbc35b1336cbf783b15aad2e}{add\+Path\+In\+Arg} (const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&path, const \hyperlink{class_json_1_1_path_ab29d7b2fc896c7d3c5ed4609af3a3f23}{In\+Args} \&in, In\+Args\+::const\+\_\+iterator \&it\+In\+Arg, \hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9}{Path\+Argument\+::\+Kind} kind)
+\item 
+void \hyperlink{class_json_1_1_path_a0fa77fc0cefefcfcf2f1242c79009dd9}{invalid\+Path} (const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&path, int location)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_path_a27d96232d034d7a78286468676f9cb3e}{Args} \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Experimental and untested\+: represents a \char`\"{}path\char`\"{} to access a node. 
+
+Syntax\+:
+\begin{DoxyItemize}
+\item \char`\"{}.\char`\"{} =$>$ root node
+\item \char`\"{}.\mbox{[}n\mbox{]}\char`\"{} =$>$ elements at index \textquotesingle{}n\textquotesingle{} of root node (an array value)
+\item \char`\"{}.\+name\char`\"{} =$>$ member named \textquotesingle{}name\textquotesingle{} of root node (an object value)
+\item \char`\"{}.\+name1.\+name2.\+name3\char`\"{}
+\item \char`\"{}.\mbox{[}0\mbox{]}\mbox{[}1\mbox{]}\mbox{[}2\mbox{]}.\+name1\mbox{[}3\mbox{]}\char`\"{}
+\item \char`\"{}.\%\char`\"{} =$>$ member name is provided as parameter
+\item \char`\"{}.\mbox{[}\%\mbox{]}\char`\"{} =$>$ index is provied as parameter 
+\end{DoxyItemize}
+
+Definition at line 1101 of file json.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_json_1_1_path_a27d96232d034d7a78286468676f9cb3e}\label{class_json_1_1_path_a27d96232d034d7a78286468676f9cb3e}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!Args@{Args}}
+\index{Args@{Args}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{Args}{Args}}
+{\footnotesize\ttfamily typedef std\+::vector$<$\hyperlink{class_json_1_1_path_argument}{Path\+Argument}$>$ \hyperlink{class_json_1_1_path_a27d96232d034d7a78286468676f9cb3e}{Json\+::\+Path\+::\+Args}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1118 of file json.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_path_ab29d7b2fc896c7d3c5ed4609af3a3f23}\label{class_json_1_1_path_ab29d7b2fc896c7d3c5ed4609af3a3f23}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!In\+Args@{In\+Args}}
+\index{In\+Args@{In\+Args}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{In\+Args}{InArgs}}
+{\footnotesize\ttfamily typedef std\+::vector$<$const \hyperlink{class_json_1_1_path_argument}{Path\+Argument}$\ast$$>$ \hyperlink{class_json_1_1_path_ab29d7b2fc896c7d3c5ed4609af3a3f23}{Json\+::\+Path\+::\+In\+Args}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1117 of file json.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_path_a7356c0e9c1fc2276390fd396271c1300}\label{class_json_1_1_path_a7356c0e9c1fc2276390fd396271c1300}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!Path@{Path}}
+\index{Path@{Path}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{Path()}{Path()}}
+{\footnotesize\ttfamily Json\+::\+Path\+::\+Path (\begin{DoxyParamCaption}\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{path,  }\item[{const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&}]{a1 = {\ttfamily \hyperlink{class_json_1_1_path_argument}{Path\+Argument}()},  }\item[{const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&}]{a2 = {\ttfamily \hyperlink{class_json_1_1_path_argument}{Path\+Argument}()},  }\item[{const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&}]{a3 = {\ttfamily \hyperlink{class_json_1_1_path_argument}{Path\+Argument}()},  }\item[{const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&}]{a4 = {\ttfamily \hyperlink{class_json_1_1_path_argument}{Path\+Argument}()},  }\item[{const \hyperlink{class_json_1_1_path_argument}{Path\+Argument} \&}]{a5 = {\ttfamily \hyperlink{class_json_1_1_path_argument}{Path\+Argument}()} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3936 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+3941                                    \{
+3942   \hyperlink{class_json_1_1_path_ab29d7b2fc896c7d3c5ed4609af3a3f23}{InArgs} in;
+3943   in.push\_back(&a1);
+3944   in.push\_back(&a2);
+3945   in.push\_back(&a3);
+3946   in.push\_back(&a4);
+3947   in.push\_back(&a5);
+3948   \hyperlink{class_json_1_1_path_a362a420a47acb1a1f9c79173cbfef94d}{makePath}(path, in);
+3949 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_path_ae65717a5fbc35b1336cbf783b15aad2e}\label{class_json_1_1_path_ae65717a5fbc35b1336cbf783b15aad2e}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!add\+Path\+In\+Arg@{add\+Path\+In\+Arg}}
+\index{add\+Path\+In\+Arg@{add\+Path\+In\+Arg}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{add\+Path\+In\+Arg()}{addPathInArg()}}
+{\footnotesize\ttfamily void Json\+::\+Path\+::add\+Path\+In\+Arg (\begin{DoxyParamCaption}\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{path,  }\item[{const \hyperlink{class_json_1_1_path_ab29d7b2fc896c7d3c5ed4609af3a3f23}{In\+Args} \&}]{in,  }\item[{In\+Args\+::const\+\_\+iterator \&}]{it\+In\+Arg,  }\item[{\hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9}{Path\+Argument\+::\+Kind}}]{kind }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 3982 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+3985                                                \{
+3986   \textcolor{keywordflow}{if} (itInArg == in.end()) \{
+3987     \textcolor{comment}{// Error: missing argument %d}
+3988   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} ((*itInArg)->kind\_ != kind) \{
+3989     \textcolor{comment}{// Error: bad argument type}
+3990   \} \textcolor{keywordflow}{else} \{
+3991     \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\_}.push\_back(**itInArg++);
+3992   \}
+3993 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_path_a0fa77fc0cefefcfcf2f1242c79009dd9}\label{class_json_1_1_path_a0fa77fc0cefefcfcf2f1242c79009dd9}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!invalid\+Path@{invalid\+Path}}
+\index{invalid\+Path@{invalid\+Path}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{invalid\+Path()}{invalidPath()}}
+{\footnotesize\ttfamily void Json\+::\+Path\+::invalid\+Path (\begin{DoxyParamCaption}\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{path,  }\item[{int}]{location }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 3995 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+3995                                                      \{
+3996   \textcolor{comment}{// Error: invalid path.}
+3997 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_path_a858f9426f0f7bbe0450644d72b44e26b}\label{class_json_1_1_path_a858f9426f0f7bbe0450644d72b44e26b}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!make@{make}}
+\index{make@{make}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{make()}{make()}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Value} \& Json\+::\+Path\+::make (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_value}{Value} \&}]{root }\end{DoxyParamCaption}) const}
+
+Creates the \char`\"{}path\char`\"{} to access the specified node and returns a reference on the node. 
+
+Definition at line 4044 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::\+Path\+Argument\+::index\+\_\+, Json\+::\+Value\+::is\+Array(), Json\+::\+Value\+::is\+Object(), Json\+::\+Path\+Argument\+::key\+\_\+, Json\+::\+Path\+Argument\+::kind\+\_\+, Json\+::\+Path\+Argument\+::kind\+Index, and Json\+::\+Path\+Argument\+::kind\+Key.
+
+
+\begin{DoxyCode}
+4044                                    \{
+4045   Value* node = &root;
+4046   \textcolor{keywordflow}{for} (Args::const\_iterator it = \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\_}.begin(); it != \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\_}.end(); ++it) \{
+4047     \textcolor{keyword}{const} PathArgument& arg = *it;
+4048     \textcolor{keywordflow}{if} (arg.kind\_ == \hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9ae5a976b898111903334cb131f5e03dc4}{PathArgument::kindIndex}) \{
+4049       \textcolor{keywordflow}{if} (!node->isArray()) \{
+4050         \textcolor{comment}{// Error: node is not an array at position ...}
+4051       \}
+4052       node = &((*node)[arg.index\_]);
+4053     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (arg.kind\_ == \hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9a74f5968d06c01701b7a46092c33ba7d1}{PathArgument::kindKey}) \{
+4054       \textcolor{keywordflow}{if} (!node->isObject()) \{
+4055         \textcolor{comment}{// Error: node is not an object at position...}
+4056       \}
+4057       node = &((*node)[arg.key\_]);
+4058     \}
+4059   \}
+4060   \textcolor{keywordflow}{return} *node;
+4061 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_path_a362a420a47acb1a1f9c79173cbfef94d}\label{class_json_1_1_path_a362a420a47acb1a1f9c79173cbfef94d}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!make\+Path@{make\+Path}}
+\index{make\+Path@{make\+Path}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{make\+Path()}{makePath()}}
+{\footnotesize\ttfamily void Json\+::\+Path\+::make\+Path (\begin{DoxyParamCaption}\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{path,  }\item[{const \hyperlink{class_json_1_1_path_ab29d7b2fc896c7d3c5ed4609af3a3f23}{In\+Args} \&}]{in }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 3951 of file jsoncpp.\+cpp.
+
+
+
+References J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, Json\+::\+Path\+Argument\+::kind\+Index, and Json\+::\+Path\+Argument\+::kind\+Key.
+
+
+\begin{DoxyCode}
+3951                                                                 \{
+3952   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* current = path.c\_str();
+3953   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* end = current + path.length();
+3954   InArgs::const\_iterator itInArg = in.begin();
+3955   \textcolor{keywordflow}{while} (current != end) \{
+3956     \textcolor{keywordflow}{if} (*current == \textcolor{charliteral}{'['}) \{
+3957       ++current;
+3958       \textcolor{keywordflow}{if} (*current == \textcolor{charliteral}{'%'})
+3959         \hyperlink{class_json_1_1_path_ae65717a5fbc35b1336cbf783b15aad2e}{addPathInArg}(path, in, itInArg, \hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9ae5a976b898111903334cb131f5e03dc4}{PathArgument::kindIndex});
+3960       \textcolor{keywordflow}{else} \{
+3961         \hyperlink{namespace_json_a8048e741f2177c3b5d9ede4a5b8c53c2}{ArrayIndex} index = 0;
+3962         \textcolor{keywordflow}{for} (; current != end && *current >= \textcolor{charliteral}{'0'} && *current <= \textcolor{charliteral}{'9'}; ++current)
+3963           index = index * 10 + \hyperlink{namespace_json_a8048e741f2177c3b5d9ede4a5b8c53c2}{ArrayIndex}(*current - \textcolor{charliteral}{'0'});
+3964         \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\_}.push\_back(index);
+3965       \}
+3966       \textcolor{keywordflow}{if} (current == end || *++current != \textcolor{charliteral}{']'})
+3967         \hyperlink{class_json_1_1_path_a0fa77fc0cefefcfcf2f1242c79009dd9}{invalidPath}(path, \textcolor{keywordtype}{int}(current - path.c\_str()));
+3968     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*current == \textcolor{charliteral}{'%'}) \{
+3969       \hyperlink{class_json_1_1_path_ae65717a5fbc35b1336cbf783b15aad2e}{addPathInArg}(path, in, itInArg, \hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9a74f5968d06c01701b7a46092c33ba7d1}{PathArgument::kindKey});
+3970       ++current;
+3971     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (*current == \textcolor{charliteral}{'.'} || *current == \textcolor{charliteral}{']'}) \{
+3972       ++current;
+3973     \} \textcolor{keywordflow}{else} \{
+3974       \textcolor{keyword}{const} \textcolor{keywordtype}{char}* beginName = current;
+3975       \textcolor{keywordflow}{while} (current != end && !strchr(\textcolor{stringliteral}{"[."}, *current))
+3976         ++current;
+3977       \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\_}.push\_back(\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}(beginName, current));
+3978     \}
+3979   \}
+3980 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_path_ad1abdc54d2e03fc0e9436c3b9fd55a33}\label{class_json_1_1_path_ad1abdc54d2e03fc0e9436c3b9fd55a33}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!resolve@{resolve}}
+\index{resolve@{resolve}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{resolve()}{resolve()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily const \hyperlink{class_json_1_1_value}{Value} \& Json\+::\+Path\+::resolve (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{root }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 3999 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::\+Path\+Argument\+::index\+\_\+, Json\+::\+Value\+::is\+Array(), Json\+::\+Value\+::is\+Object(), Json\+::\+Value\+::is\+Valid\+Index(), Json\+::\+Path\+Argument\+::key\+\_\+, Json\+::\+Path\+Argument\+::kind\+\_\+, Json\+::\+Path\+Argument\+::kind\+Index, Json\+::\+Path\+Argument\+::kind\+Key, Json\+::\+Value\+::null, and Json\+::\+Value\+::null\+Singleton().
+
+
+\begin{DoxyCode}
+3999                                                   \{
+4000   \textcolor{keyword}{const} Value* node = &root;
+4001   \textcolor{keywordflow}{for} (Args::const\_iterator it = \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\_}.begin(); it != \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\_}.end(); ++it) \{
+4002     \textcolor{keyword}{const} PathArgument& arg = *it;
+4003     \textcolor{keywordflow}{if} (arg.kind\_ == \hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9ae5a976b898111903334cb131f5e03dc4}{PathArgument::kindIndex}) \{
+4004       \textcolor{keywordflow}{if} (!node->isArray() || !node->isValidIndex(arg.index\_)) \{
+4005         \textcolor{comment}{// Error: unable to resolve path (array value expected at position...}
+4006         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_a21ddb05b92c60c7548e928bf371e7d45}{Value::null};
+4007       \}
+4008       node = &((*node)[arg.index\_]);
+4009     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (arg.kind\_ == \hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9a74f5968d06c01701b7a46092c33ba7d1}{PathArgument::kindKey}) \{
+4010       \textcolor{keywordflow}{if} (!node->isObject()) \{
+4011         \textcolor{comment}{// Error: unable to resolve path (object value expected at position...)}
+4012         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_a21ddb05b92c60c7548e928bf371e7d45}{Value::null};
+4013       \}
+4014       node = &((*node)[arg.key\_]);
+4015       \textcolor{keywordflow}{if} (node == &\hyperlink{class_json_1_1_value_af2f124567acc35d021a424e53ebdfcab}{Value::nullSingleton}()) \{
+4016         \textcolor{comment}{// Error: unable to resolve path (object has no member named '' at}
+4017         \textcolor{comment}{// position...)}
+4018         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_a21ddb05b92c60c7548e928bf371e7d45}{Value::null};
+4019       \}
+4020     \}
+4021   \}
+4022   \textcolor{keywordflow}{return} *node;
+4023 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_path_ab65ab001ccdbc6f8b5f123da58b92539}\label{class_json_1_1_path_ab65ab001ccdbc6f8b5f123da58b92539}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!resolve@{resolve}}
+\index{resolve@{resolve}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{resolve()}{resolve()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Value} Json\+::\+Path\+::resolve (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{root,  }\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{default\+Value }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 4025 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::\+Path\+Argument\+::index\+\_\+, Json\+::\+Value\+::is\+Array(), Json\+::\+Value\+::is\+Object(), Json\+::\+Value\+::is\+Valid\+Index(), Json\+::\+Path\+Argument\+::key\+\_\+, Json\+::\+Path\+Argument\+::kind\+\_\+, Json\+::\+Path\+Argument\+::kind\+Index, Json\+::\+Path\+Argument\+::kind\+Key, and Json\+::\+Value\+::null\+Singleton().
+
+
+\begin{DoxyCode}
+4025                                                                       \{
+4026   \textcolor{keyword}{const} Value* node = &root;
+4027   \textcolor{keywordflow}{for} (Args::const\_iterator it = \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\_}.begin(); it != \hyperlink{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}{args\_}.end(); ++it) \{
+4028     \textcolor{keyword}{const} PathArgument& arg = *it;
+4029     \textcolor{keywordflow}{if} (arg.kind\_ == \hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9ae5a976b898111903334cb131f5e03dc4}{PathArgument::kindIndex}) \{
+4030       \textcolor{keywordflow}{if} (!node->isArray() || !node->isValidIndex(arg.index\_))
+4031         \textcolor{keywordflow}{return} defaultValue;
+4032       node = &((*node)[arg.index\_]);
+4033     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (arg.kind\_ == \hyperlink{class_json_1_1_path_argument_a2420bbad778573c147e578701b84d9b9a74f5968d06c01701b7a46092c33ba7d1}{PathArgument::kindKey}) \{
+4034       \textcolor{keywordflow}{if} (!node->isObject())
+4035         \textcolor{keywordflow}{return} defaultValue;
+4036       node = &((*node)[arg.key\_]);
+4037       \textcolor{keywordflow}{if} (node == &\hyperlink{class_json_1_1_value_af2f124567acc35d021a424e53ebdfcab}{Value::nullSingleton}())
+4038         \textcolor{keywordflow}{return} defaultValue;
+4039     \}
+4040   \}
+4041   \textcolor{keywordflow}{return} *node;
+4042 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}\label{class_json_1_1_path_af33d0de7ee9f99d3e361bdf504dc2bc7}} 
+\index{Json\+::\+Path@{Json\+::\+Path}!args\+\_\+@{args\+\_\+}}
+\index{args\+\_\+@{args\+\_\+}!Json\+::\+Path@{Json\+::\+Path}}
+\subsubsection{\texorpdfstring{args\+\_\+}{args\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_path_a27d96232d034d7a78286468676f9cb3e}{Args} Json\+::\+Path\+::args\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1127 of file json.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{json_8h}{json.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{jsoncpp_8cpp}{jsoncpp.\+cpp}\end{DoxyCompactItemize}

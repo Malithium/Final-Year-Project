@@ -1,0 +1,540 @@
+\hypertarget{class_json_1_1_value_iterator_base}{}\section{Json\+:\+:Value\+Iterator\+Base Class Reference}
+\label{class_json_1_1_value_iterator_base}\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+
+
+base class for \hyperlink{class_json_1_1_value}{Value} iterators.  
+
+
+
+
+{\ttfamily \#include $<$json.\+h$>$}
+
+
+
+Inheritance diagram for Json\+:\+:Value\+Iterator\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=320pt]{class_json_1_1_value_iterator_base__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Json\+:\+:Value\+Iterator\+Base\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=203pt]{class_json_1_1_value_iterator_base__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::bidirectional\+\_\+iterator\+\_\+tag \hyperlink{class_json_1_1_value_iterator_base_a02fd11a4fbdc0007da1e8bcf5e6b83c3}{iterator\+\_\+category}
+\item 
+typedef unsigned int \hyperlink{class_json_1_1_value_iterator_base_a9d3a3c7ce5cdefe23cb486239cf07bb5}{size\+\_\+t}
+\item 
+typedef int \hyperlink{class_json_1_1_value_iterator_base_a4e44bf8cbd17ec8d6e2c185904a15ebd}{difference\+\_\+type}
+\item 
+typedef \hyperlink{class_json_1_1_value_iterator_base}{Value\+Iterator\+Base} \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_json_1_1_value_iterator_base_a1248d8016f88b51371a0fcbd355b3cfd}{operator==} (const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&other) const
+\item 
+bool \hyperlink{class_json_1_1_value_iterator_base_aa83bdcc8114b7d040eb8eb42eeed5f4a}{operator!=} (const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&other) const
+\item 
+\hyperlink{class_json_1_1_value_iterator_base_a4e44bf8cbd17ec8d6e2c185904a15ebd}{difference\+\_\+type} \hyperlink{class_json_1_1_value_iterator_base_a98e254263fca5f1fc8fcac7bcb0260bf}{operator-\/} (const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&other) const
+\item 
+\hyperlink{class_json_1_1_value}{Value} \hyperlink{class_json_1_1_value_iterator_base_a3838ba39c43c518cf3ed4aa6ce78ccad}{key} () const
+\item 
+\hyperlink{namespace_json_a800fb90eb6ee8d5d62b600c06f87f7d4}{U\+Int} \hyperlink{class_json_1_1_value_iterator_base_a549c66a0bd20e9ae772175a5c0d2e88a}{index} () const
+\begin{DoxyCompactList}\small\item\em Return the index of the referenced \hyperlink{class_json_1_1_value}{Value}, or -\/1 if it is not an array\+Value. \end{DoxyCompactList}\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_value_iterator_base_a522989403c976fdbb94da846b99418db}{name} () const
+\item 
+char const  $\ast$ \hyperlink{class_json_1_1_value_iterator_base_a54765da6759fd3f1edcbfbaf308ec263}{member\+Name} () const
+\item 
+char const  $\ast$ \hyperlink{class_json_1_1_value_iterator_base_a391c9cbd0edf9a447b37df00e8ce6059}{member\+Name} (char const $\ast$$\ast$end) const
+\item 
+\hyperlink{class_json_1_1_value_iterator_base_af45b028d9ff9cbd2554a87878b42dd75}{Value\+Iterator\+Base} ()
+\item 
+\hyperlink{class_json_1_1_value_iterator_base_a640e990e5f03a96fd650122a2906f59d}{Value\+Iterator\+Base} (const Value\+::\+Object\+Values\+::iterator \&current)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_value}{Value} \& \hyperlink{class_json_1_1_value_iterator_base_aa5b75c9514a30ba2ea3c9a35c165c18e}{deref} () const
+\item 
+void \hyperlink{class_json_1_1_value_iterator_base_afe58f9534e1fd2033419fd9fe244551e}{increment} ()
+\item 
+void \hyperlink{class_json_1_1_value_iterator_base_affc8cf5ff54a9f432cc693362c153fa6}{decrement} ()
+\item 
+\hyperlink{class_json_1_1_value_iterator_base_a4e44bf8cbd17ec8d6e2c185904a15ebd}{difference\+\_\+type} \hyperlink{class_json_1_1_value_iterator_base_af11473c9e20d07782e42b52a2f9e4540}{compute\+Distance} (const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&other) const
+\item 
+bool \hyperlink{class_json_1_1_value_iterator_base_a010b5ad3f3337ae3732e5d7e16ca5e25}{is\+Equal} (const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&other) const
+\item 
+void \hyperlink{class_json_1_1_value_iterator_base_a496e6aba44808433ec5858c178be5719}{copy} (const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&other)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Value\+::\+Object\+Values\+::iterator \hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\+\_\+}
+\item 
+bool \hyperlink{class_json_1_1_value_iterator_base_a3e08b114a1aed9bde518c527f94a8c59}{is\+Null\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+base class for \hyperlink{class_json_1_1_value}{Value} iterators. 
+
+
+
+Definition at line 1133 of file json.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a4e44bf8cbd17ec8d6e2c185904a15ebd}\label{class_json_1_1_value_iterator_base_a4e44bf8cbd17ec8d6e2c185904a15ebd}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!difference\+\_\+type@{difference\+\_\+type}}
+\index{difference\+\_\+type@{difference\+\_\+type}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{difference\+\_\+type}{difference\_type}}
+{\footnotesize\ttfamily typedef int \hyperlink{class_json_1_1_value_iterator_base_a4e44bf8cbd17ec8d6e2c185904a15ebd}{Json\+::\+Value\+Iterator\+Base\+::difference\+\_\+type}}
+
+
+
+Definition at line 1137 of file json.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a02fd11a4fbdc0007da1e8bcf5e6b83c3}\label{class_json_1_1_value_iterator_base_a02fd11a4fbdc0007da1e8bcf5e6b83c3}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!iterator\+\_\+category@{iterator\+\_\+category}}
+\index{iterator\+\_\+category@{iterator\+\_\+category}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{iterator\+\_\+category}{iterator\_category}}
+{\footnotesize\ttfamily typedef std\+::bidirectional\+\_\+iterator\+\_\+tag \hyperlink{class_json_1_1_value_iterator_base_a02fd11a4fbdc0007da1e8bcf5e6b83c3}{Json\+::\+Value\+Iterator\+Base\+::iterator\+\_\+category}}
+
+
+
+Definition at line 1135 of file json.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}\label{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!Self\+Type@{Self\+Type}}
+\index{Self\+Type@{Self\+Type}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{Self\+Type}{SelfType}}
+{\footnotesize\ttfamily typedef \hyperlink{class_json_1_1_value_iterator_base}{Value\+Iterator\+Base} \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Json\+::\+Value\+Iterator\+Base\+::\+Self\+Type}}
+
+
+
+Definition at line 1138 of file json.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a9d3a3c7ce5cdefe23cb486239cf07bb5}\label{class_json_1_1_value_iterator_base_a9d3a3c7ce5cdefe23cb486239cf07bb5}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!size\+\_\+t@{size\+\_\+t}}
+\index{size\+\_\+t@{size\+\_\+t}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{size\+\_\+t}{size\_t}}
+{\footnotesize\ttfamily typedef unsigned int \hyperlink{class_json_1_1_value_iterator_base_a9d3a3c7ce5cdefe23cb486239cf07bb5}{Json\+::\+Value\+Iterator\+Base\+::size\+\_\+t}}
+
+
+
+Definition at line 1136 of file json.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_af45b028d9ff9cbd2554a87878b42dd75}\label{class_json_1_1_value_iterator_base_af45b028d9ff9cbd2554a87878b42dd75}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!Value\+Iterator\+Base@{Value\+Iterator\+Base}}
+\index{Value\+Iterator\+Base@{Value\+Iterator\+Base}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{Value\+Iterator\+Base()}{ValueIteratorBase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Json\+::\+Value\+Iterator\+Base\+::\+Value\+Iterator\+Base (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2284 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2285     : \hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\_}(), \hyperlink{class_json_1_1_value_iterator_base_a3e08b114a1aed9bde518c527f94a8c59}{isNull\_}(\textcolor{keyword}{true}) \{
+2286 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a640e990e5f03a96fd650122a2906f59d}\label{class_json_1_1_value_iterator_base_a640e990e5f03a96fd650122a2906f59d}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!Value\+Iterator\+Base@{Value\+Iterator\+Base}}
+\index{Value\+Iterator\+Base@{Value\+Iterator\+Base}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{Value\+Iterator\+Base()}{ValueIteratorBase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Json\+::\+Value\+Iterator\+Base\+::\+Value\+Iterator\+Base (\begin{DoxyParamCaption}\item[{const Value\+::\+Object\+Values\+::iterator \&}]{current }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Definition at line 2288 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2290     : \hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\_}(current), \hyperlink{class_json_1_1_value_iterator_base_a3e08b114a1aed9bde518c527f94a8c59}{isNull\_}(\textcolor{keyword}{false}) \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_af11473c9e20d07782e42b52a2f9e4540}\label{class_json_1_1_value_iterator_base_af11473c9e20d07782e42b52a2f9e4540}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!compute\+Distance@{compute\+Distance}}
+\index{compute\+Distance@{compute\+Distance}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{compute\+Distance()}{computeDistance()}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value_iterator_base_a4e44bf8cbd17ec8d6e2c185904a15ebd}{Value\+Iterator\+Base\+::difference\+\_\+type} Json\+::\+Value\+Iterator\+Base\+::compute\+Distance (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 2305 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, and is\+Null\+\_\+.
+
+
+
+Referenced by operator-\/().
+
+
+\begin{DoxyCode}
+2305                                                               \{
+2306 \textcolor{preprocessor}{#ifdef JSON\_USE\_CPPTL\_SMALLMAP}
+2307   \textcolor{keywordflow}{return} other.current\_ - \hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\_};
+2308 \textcolor{preprocessor}{#else}
+2309   \textcolor{comment}{// Iterator for null value are initialized using the default}
+2310   \textcolor{comment}{// constructor, which initialize current\_ to the default}
+2311   \textcolor{comment}{// std::map::iterator. As begin() and end() are two instance}
+2312   \textcolor{comment}{// of the default std::map::iterator, they can not be compared.}
+2313   \textcolor{comment}{// To allow this, we handle this comparison specifically.}
+2314   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_value_iterator_base_a3e08b114a1aed9bde518c527f94a8c59}{isNull\_} && other.isNull\_) \{
+2315     \textcolor{keywordflow}{return} 0;
+2316   \}
+2317 
+2318   \textcolor{comment}{// Usage of std::distance is not portable (does not compile with Sun Studio 12}
+2319   \textcolor{comment}{// RogueWave STL,}
+2320   \textcolor{comment}{// which is the one used by default).}
+2321   \textcolor{comment}{// Using a portable hand-made version for non random iterator instead:}
+2322   \textcolor{comment}{//   return difference\_type( std::distance( current\_, other.current\_ ) );}
+2323   \hyperlink{class_json_1_1_value_iterator_base_a4e44bf8cbd17ec8d6e2c185904a15ebd}{difference\_type} myDistance = 0;
+2324   \textcolor{keywordflow}{for} (Value::ObjectValues::iterator it = \hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\_}; it != other.current\_;
+2325        ++it) \{
+2326     ++myDistance;
+2327   \}
+2328   \textcolor{keywordflow}{return} myDistance;
+2329 \textcolor{preprocessor}{#endif}
+2330 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a496e6aba44808433ec5858c178be5719}\label{class_json_1_1_value_iterator_base_a496e6aba44808433ec5858c178be5719}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!copy@{copy}}
+\index{copy@{copy}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{copy()}{copy()}}
+{\footnotesize\ttfamily void Json\+::\+Value\+Iterator\+Base\+::copy (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&}]{other }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 2339 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, and is\+Null\+\_\+.
+
+
+
+Referenced by Json\+::\+Value\+Const\+Iterator\+::operator=(), and Json\+::\+Value\+Iterator\+::operator=().
+
+
+\begin{DoxyCode}
+2339                                                   \{
+2340   \hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\_} = other.current\_;
+2341   \hyperlink{class_json_1_1_value_iterator_base_a3e08b114a1aed9bde518c527f94a8c59}{isNull\_} = other.isNull\_;
+2342 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_affc8cf5ff54a9f432cc693362c153fa6}\label{class_json_1_1_value_iterator_base_affc8cf5ff54a9f432cc693362c153fa6}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!decrement@{decrement}}
+\index{decrement@{decrement}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{decrement()}{decrement()}}
+{\footnotesize\ttfamily void Json\+::\+Value\+Iterator\+Base\+::decrement (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 2300 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+.
+
+
+\begin{DoxyCode}
+2300                                   \{
+2301   --\hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\_};
+2302 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_aa5b75c9514a30ba2ea3c9a35c165c18e}\label{class_json_1_1_value_iterator_base_aa5b75c9514a30ba2ea3c9a35c165c18e}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!deref@{deref}}
+\index{deref@{deref}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{deref()}{deref()}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Value} \& Json\+::\+Value\+Iterator\+Base\+::deref (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 2292 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+.
+
+
+\begin{DoxyCode}
+2292                                       \{
+2293   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\_}->second;
+2294 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_afe58f9534e1fd2033419fd9fe244551e}\label{class_json_1_1_value_iterator_base_afe58f9534e1fd2033419fd9fe244551e}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!increment@{increment}}
+\index{increment@{increment}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{increment()}{increment()}}
+{\footnotesize\ttfamily void Json\+::\+Value\+Iterator\+Base\+::increment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 2296 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+.
+
+
+\begin{DoxyCode}
+2296                                   \{
+2297   ++\hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\_};
+2298 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a549c66a0bd20e9ae772175a5c0d2e88a}\label{class_json_1_1_value_iterator_base_a549c66a0bd20e9ae772175a5c0d2e88a}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!index@{index}}
+\index{index@{index}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{index()}{index()}}
+{\footnotesize\ttfamily \hyperlink{namespace_json_a800fb90eb6ee8d5d62b600c06f87f7d4}{U\+Int} Json\+::\+Value\+Iterator\+Base\+::index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return the index of the referenced \hyperlink{class_json_1_1_value}{Value}, or -\/1 if it is not an array\+Value. 
+
+
+
+Definition at line 2354 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::\+Value\+::\+C\+Z\+String\+::data(), and Json\+::\+Value\+::\+C\+Z\+String\+::index().
+
+
+\begin{DoxyCode}
+2354                                     \{
+2355   \textcolor{keyword}{const} Value::CZString czstring = (*current\_).first;
+2356   \textcolor{keywordflow}{if} (!czstring.data())
+2357     \textcolor{keywordflow}{return} czstring.index();
+2358   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_a0933d59b45793ae4aade1757c322a98d}{Value::UInt}(-1);
+2359 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a010b5ad3f3337ae3732e5d7e16ca5e25}\label{class_json_1_1_value_iterator_base_a010b5ad3f3337ae3732e5d7e16ca5e25}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!is\+Equal@{is\+Equal}}
+\index{is\+Equal@{is\+Equal}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{is\+Equal()}{isEqual()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+Iterator\+Base\+::is\+Equal (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 2332 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, and is\+Null\+\_\+.
+
+
+\begin{DoxyCode}
+2332                                                            \{
+2333   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_value_iterator_base_a3e08b114a1aed9bde518c527f94a8c59}{isNull\_}) \{
+2334     \textcolor{keywordflow}{return} other.isNull\_;
+2335   \}
+2336   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}{current\_} == other.current\_;
+2337 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a3838ba39c43c518cf3ed4aa6ce78ccad}\label{class_json_1_1_value_iterator_base_a3838ba39c43c518cf3ed4aa6ce78ccad}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!key@{key}}
+\index{key@{key}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{key()}{key()}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Value} Json\+::\+Value\+Iterator\+Base\+::key (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return either the index or the member name of the referenced value as a \hyperlink{class_json_1_1_value}{Value}. 
+
+Definition at line 2344 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::\+Value\+::\+C\+Z\+String\+::data(), Json\+::\+Value\+::\+C\+Z\+String\+::index(), Json\+::\+Value\+::\+C\+Z\+String\+::is\+Static\+String(), and Json\+::\+Value\+::\+C\+Z\+String\+::length().
+
+
+\begin{DoxyCode}
+2344                                    \{
+2345   \textcolor{keyword}{const} Value::CZString czstring = (*current\_).first;
+2346   \textcolor{keywordflow}{if} (czstring.data()) \{
+2347     \textcolor{keywordflow}{if} (czstring.isStaticString())
+2348       \textcolor{keywordflow}{return} Value(StaticString(czstring.data()));
+2349     \textcolor{keywordflow}{return} Value(czstring.data(), czstring.data() + czstring.length());
+2350   \}
+2351   \textcolor{keywordflow}{return} Value(czstring.index());
+2352 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a54765da6759fd3f1edcbfbaf308ec263}\label{class_json_1_1_value_iterator_base_a54765da6759fd3f1edcbfbaf308ec263}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!member\+Name@{member\+Name}}
+\index{member\+Name@{member\+Name}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{member\+Name()}{memberName()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char const  $\ast$ Json\+::\+Value\+Iterator\+Base\+::member\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the member name of the referenced \hyperlink{class_json_1_1_value}{Value}. \char`\"{}\char`\"{} if it is not an object\+Value. \begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000004}{Deprecated}]This cannot be used for U\+T\+F-\/8 strings, since there can be embedded nulls. \end{DoxyRefDesc}
+
+
+Definition at line 2369 of file jsoncpp.\+cpp.
+
+
+
+Referenced by name().
+
+
+\begin{DoxyCode}
+2369                                                 \{
+2370   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* cname = (*current\_).first.data();
+2371   \textcolor{keywordflow}{return} cname ? cname : \textcolor{stringliteral}{""};
+2372 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a391c9cbd0edf9a447b37df00e8ce6059}\label{class_json_1_1_value_iterator_base_a391c9cbd0edf9a447b37df00e8ce6059}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!member\+Name@{member\+Name}}
+\index{member\+Name@{member\+Name}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{member\+Name()}{memberName()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily char const  $\ast$ Json\+::\+Value\+Iterator\+Base\+::member\+Name (\begin{DoxyParamCaption}\item[{char const $\ast$$\ast$}]{end }\end{DoxyParamCaption}) const}
+
+Return the member name of the referenced \hyperlink{class_json_1_1_value}{Value}, or N\+U\+LL if it is not an object\+Value. \begin{DoxyNote}{Note}
+Better version than \hyperlink{class_json_1_1_value_iterator_base_a54765da6759fd3f1edcbfbaf308ec263}{member\+Name()}. Allows embedded nulls. 
+\end{DoxyNote}
+
+
+Definition at line 2374 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2374                                                                 \{
+2375   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* cname = (*current\_).first.data();
+2376   \textcolor{keywordflow}{if} (!cname) \{
+2377     *end = NULL;
+2378     \textcolor{keywordflow}{return} NULL;
+2379   \}
+2380   *end = cname + (*current\_).first.length();
+2381   \textcolor{keywordflow}{return} cname;
+2382 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a522989403c976fdbb94da846b99418db}\label{class_json_1_1_value_iterator_base_a522989403c976fdbb94da846b99418db}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!name@{name}}
+\index{name@{name}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{name()}{name()}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Value\+Iterator\+Base\+::name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+Return the member name of the referenced \hyperlink{class_json_1_1_value}{Value}, or \char`\"{}\char`\"{} if it is not an object\+Value. \begin{DoxyNote}{Note}
+Avoid {\ttfamily c\+\_\+str()} on result, as embedded zeroes are possible. 
+\end{DoxyNote}
+
+
+Definition at line 2361 of file jsoncpp.\+cpp.
+
+
+
+References J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, and member\+Name().
+
+
+\begin{DoxyCode}
+2361                                              \{
+2362   \textcolor{keywordtype}{char} \textcolor{keyword}{const}* keey;
+2363   \textcolor{keywordtype}{char} \textcolor{keyword}{const}* end;
+2364   keey = \hyperlink{class_json_1_1_value_iterator_base_a54765da6759fd3f1edcbfbaf308ec263}{memberName}(&end);
+2365   \textcolor{keywordflow}{if} (!keey) \textcolor{keywordflow}{return} \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}();
+2366   \textcolor{keywordflow}{return} \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}(keey, end);
+2367 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_aa83bdcc8114b7d040eb8eb42eeed5f4a}\label{class_json_1_1_value_iterator_base_aa83bdcc8114b7d040eb8eb42eeed5f4a}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{operator"!=()}{operator!=()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+Iterator\+Base\+::operator!= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1142 of file json.\+h.
+
+
+\begin{DoxyCode}
+1142 \{ \textcolor{keywordflow}{return} !\hyperlink{class_json_1_1_value_iterator_base_a010b5ad3f3337ae3732e5d7e16ca5e25}{isEqual}(other); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a98e254263fca5f1fc8fcac7bcb0260bf}\label{class_json_1_1_value_iterator_base_a98e254263fca5f1fc8fcac7bcb0260bf}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{operator-\/()}{operator-()}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value_iterator_base_a4e44bf8cbd17ec8d6e2c185904a15ebd}{difference\+\_\+type} Json\+::\+Value\+Iterator\+Base\+::operator-\/ (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1144 of file json.\+h.
+
+
+
+References compute\+Distance(), J\+S\+O\+N\+C\+P\+P\+\_\+\+D\+E\+P\+R\+E\+C\+A\+T\+ED, and J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG.
+
+
+\begin{DoxyCode}
+1144                                                          \{
+1145     \textcolor{keywordflow}{return} other.computeDistance(*\textcolor{keyword}{this});
+1146   \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a1248d8016f88b51371a0fcbd355b3cfd}\label{class_json_1_1_value_iterator_base_a1248d8016f88b51371a0fcbd355b3cfd}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!operator==@{operator==}}
+\index{operator==@{operator==}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+Iterator\+Base\+::operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value_iterator_base_a9d2a940d03ea06d20d972f41a89149ee}{Self\+Type} \&}]{other }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1140 of file json.\+h.
+
+
+\begin{DoxyCode}
+1140 \{ \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_value_iterator_base_a010b5ad3f3337ae3732e5d7e16ca5e25}{isEqual}(other); \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}\label{class_json_1_1_value_iterator_base_ab3138ce8af8301cca3b041ea55cb922a}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!current\+\_\+@{current\+\_\+}}
+\index{current\+\_\+@{current\+\_\+}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{current\+\_\+}{current\_}}
+{\footnotesize\ttfamily Value\+::\+Object\+Values\+::iterator Json\+::\+Value\+Iterator\+Base\+::current\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1184 of file json.\+h.
+
+
+
+Referenced by compute\+Distance(), copy(), decrement(), deref(), increment(), and is\+Equal().
+
+\mbox{\Hypertarget{class_json_1_1_value_iterator_base_a3e08b114a1aed9bde518c527f94a8c59}\label{class_json_1_1_value_iterator_base_a3e08b114a1aed9bde518c527f94a8c59}} 
+\index{Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}!is\+Null\+\_\+@{is\+Null\+\_\+}}
+\index{is\+Null\+\_\+@{is\+Null\+\_\+}!Json\+::\+Value\+Iterator\+Base@{Json\+::\+Value\+Iterator\+Base}}
+\subsubsection{\texorpdfstring{is\+Null\+\_\+}{isNull\_}}
+{\footnotesize\ttfamily bool Json\+::\+Value\+Iterator\+Base\+::is\+Null\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1186 of file json.\+h.
+
+
+
+Referenced by compute\+Distance(), copy(), and is\+Equal().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{json_8h}{json.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{jsoncpp_8cpp}{jsoncpp.\+cpp}\end{DoxyCompactItemize}

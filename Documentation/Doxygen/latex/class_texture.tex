@@ -1,0 +1,471 @@
+\hypertarget{class_texture}{}\section{Texture Class Reference}
+\label{class_texture}\index{Texture@{Texture}}
+
+
+{\ttfamily \#include $<$Texture.\+h$>$}
+
+
+
+Collaboration diagram for Texture\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{class_texture__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_texture_a6c275e3f186675ff6ed73ccf970e552f}{Texture} ()
+\item 
+\hyperlink{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}{$\sim$\+Texture} ()
+\item 
+bool \hyperlink{class_texture_a1c143b8aa5f134bb5a8c9d4c3d950d2f}{load\+From\+File} (std\+::string path, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em Loads image at specified path. \end{DoxyCompactList}\item 
+bool \hyperlink{class_texture_a78708fd59f16721c2c19b2075a91e1bc}{load\+From\+Rendered\+Text} (std\+::string texture\+Text, S\+D\+L\+\_\+\+Color text\+Color, S\+D\+L\+\_\+\+Renderer $\ast$renderer, T\+T\+F\+\_\+\+Font $\ast$g\+Font, int wrap\+Length)
+\begin{DoxyCompactList}\small\item\em Creates image from font string. \end{DoxyCompactList}\item 
+void \hyperlink{class_texture_a46d06aec832e5a954f1c8ca957c2c6e5}{free} ()
+\begin{DoxyCompactList}\small\item\em Deallocates texture. \end{DoxyCompactList}\item 
+void \hyperlink{class_texture_ac91a5257c451c80ffbf9a3d1485ba1c8}{render} (int x, int y, S\+D\+L\+\_\+\+Renderer $\ast$renderer, S\+D\+L\+\_\+\+Rect $\ast$clip=N\+U\+LL, double angle=0.\+0, S\+D\+L\+\_\+\+Point $\ast$center=N\+U\+LL, S\+D\+L\+\_\+\+Renderer\+Flip flip=S\+D\+L\+\_\+\+F\+L\+I\+P\+\_\+\+N\+O\+NE)
+\begin{DoxyCompactList}\small\item\em Renders texture at given point. \end{DoxyCompactList}\item 
+void \hyperlink{class_texture_ab3149eb648f437a09dc0938942c2c4ce}{set\+Color} (int r, int g, int b)
+\begin{DoxyCompactList}\small\item\em sets the sprites R\+BG values \end{DoxyCompactList}\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{class_texture_a4c7638bab72e620b54cd8224019eb3dd}{get\+S\+D\+L\+Texture} ()
+\begin{DoxyCompactList}\small\item\em returns the S\+DL texture \end{DoxyCompactList}\item 
+int \hyperlink{class_texture_a91a6fd3355bc870194851514194daaab}{get\+Width} ()
+\begin{DoxyCompactList}\small\item\em Gets image width. \end{DoxyCompactList}\item 
+int \hyperlink{class_texture_a80e143905655b173df5994300088ce35}{get\+Height} ()
+\begin{DoxyCompactList}\small\item\em Gets image height. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Texture $\ast$ \hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{m\+Texture}
+\begin{DoxyCompactList}\small\item\em The actual hardware texture. \end{DoxyCompactList}\item 
+int \hyperlink{class_texture_a0e007f4b4f1a314e5b0dae1402a13afb}{m\+Width}
+\begin{DoxyCompactList}\small\item\em Image dimensions. \end{DoxyCompactList}\item 
+int \hyperlink{class_texture_ad7078e03c0ef6e69b733eb85fd72aec2}{m\+Height}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation is based on the L\+Texture class from \href{http://lazyfoo.net/tutorials/SDL/12_color_modulation/index.php}{\tt http\+://lazyfoo.\+net/tutorials/\+S\+D\+L/12\+\_\+color\+\_\+modulation/index.\+php} it is a wrapper surrounding the S\+D\+L\+\_\+\+Texture class 
+
+Definition at line 13 of file Texture.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_texture_a6c275e3f186675ff6ed73ccf970e552f}\label{class_texture_a6c275e3f186675ff6ed73ccf970e552f}} 
+\index{Texture@{Texture}!Texture@{Texture}}
+\index{Texture@{Texture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{Texture()}{Texture()}}
+{\footnotesize\ttfamily Texture\+::\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Texture.\+cpp.
+
+
+
+References m\+Height, m\+Texture, and m\+Width.
+
+
+\begin{DoxyCode}
+6 \{
+7     \textcolor{comment}{//Initialize}
+8     \hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture} = NULL;
+9     \hyperlink{class_texture_a0e007f4b4f1a314e5b0dae1402a13afb}{mWidth} = 0;
+10     \hyperlink{class_texture_ad7078e03c0ef6e69b733eb85fd72aec2}{mHeight} = 0;
+11 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}\label{class_texture_a09c4bcb7462f64c1d20fa69dba3cee8a}} 
+\index{Texture@{Texture}!````~Texture@{$\sim$\+Texture}}
+\index{````~Texture@{$\sim$\+Texture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{$\sim$\+Texture()}{~Texture()}}
+{\footnotesize\ttfamily Texture\+::$\sim$\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file Texture.\+cpp.
+
+
+
+References free().
+
+
+\begin{DoxyCode}
+15 \{
+16     \textcolor{comment}{//Deallocate}
+17     \hyperlink{class_texture_a46d06aec832e5a954f1c8ca957c2c6e5}{free}();
+18 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_texture_a46d06aec832e5a954f1c8ca957c2c6e5}\label{class_texture_a46d06aec832e5a954f1c8ca957c2c6e5}} 
+\index{Texture@{Texture}!free@{free}}
+\index{free@{free}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily void Texture\+::free (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Deallocates texture. 
+
+Frees up the memory space the texture is occupying 
+
+Definition at line 114 of file Texture.\+cpp.
+
+
+
+References m\+Texture.
+
+
+
+Referenced by Sprite\+::free(), Text\+Box\+::free\+Comment(), load\+From\+File(), load\+From\+Rendered\+Text(), and $\sim$\+Texture().
+
+
+\begin{DoxyCode}
+115 \{
+116     \textcolor{comment}{//Free texture if it exists}
+117     \textcolor{keywordflow}{if} (\hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture} != NULL)
+118     \{
+119         SDL\_DestroyTexture(\hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture});
+120         \hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture} = NULL;
+121     \}
+122 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_a80e143905655b173df5994300088ce35}\label{class_texture_a80e143905655b173df5994300088ce35}} 
+\index{Texture@{Texture}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{get\+Height()}{getHeight()}}
+{\footnotesize\ttfamily int Texture\+::get\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets image height. 
+
+get the Textures height 
+
+Definition at line 164 of file Texture.\+cpp.
+
+
+
+References m\+Texture.
+
+
+
+Referenced by Sprite\+::load\+Media(), and Text\+Box\+::load\+Text().
+
+
+\begin{DoxyCode}
+165 \{
+166     \textcolor{keywordtype}{int} w, h;
+167     SDL\_QueryTexture(\hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture}, NULL, NULL, &w, &h);
+168     \textcolor{keywordflow}{return} h;
+169 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_a4c7638bab72e620b54cd8224019eb3dd}\label{class_texture_a4c7638bab72e620b54cd8224019eb3dd}} 
+\index{Texture@{Texture}!get\+S\+D\+L\+Texture@{get\+S\+D\+L\+Texture}}
+\index{get\+S\+D\+L\+Texture@{get\+S\+D\+L\+Texture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{get\+S\+D\+L\+Texture()}{getSDLTexture()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture $\ast$ Texture\+::get\+S\+D\+L\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the S\+DL texture 
+
+Return the S\+D\+L\+\_\+\+Texture pointer 
+
+Definition at line 67 of file Texture.\+cpp.
+
+
+
+References m\+Texture.
+
+
+\begin{DoxyCode}
+68 \{
+69     \textcolor{keywordflow}{return} \hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture};
+70 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_a91a6fd3355bc870194851514194daaab}\label{class_texture_a91a6fd3355bc870194851514194daaab}} 
+\index{Texture@{Texture}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{get\+Width()}{getWidth()}}
+{\footnotesize\ttfamily int Texture\+::get\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gets image width. 
+
+get the Textures width 
+
+Definition at line 154 of file Texture.\+cpp.
+
+
+
+References m\+Texture.
+
+
+
+Referenced by Sprite\+::load\+Media(), and Text\+Box\+::load\+Text().
+
+
+\begin{DoxyCode}
+155 \{
+156     \textcolor{keywordtype}{int} w, h;
+157     SDL\_QueryTexture(\hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture}, NULL, NULL, &w, &h);
+158     \textcolor{keywordflow}{return} w;
+159 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_a1c143b8aa5f134bb5a8c9d4c3d950d2f}\label{class_texture_a1c143b8aa5f134bb5a8c9d4c3d950d2f}} 
+\index{Texture@{Texture}!load\+From\+File@{load\+From\+File}}
+\index{load\+From\+File@{load\+From\+File}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{load\+From\+File()}{loadFromFile()}}
+{\footnotesize\ttfamily bool Texture\+::load\+From\+File (\begin{DoxyParamCaption}\item[{std\+::string}]{path,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Loads image at specified path. 
+
+Loads in a P\+NG images as a texture to the game 
+
+Definition at line 23 of file Texture.\+cpp.
+
+
+
+References free(), m\+Height, m\+Texture, and m\+Width.
+
+
+
+Referenced by Sprite\+::load\+Media().
+
+
+\begin{DoxyCode}
+24 \{
+25     \textcolor{comment}{//Get rid of preexisting texture}
+26     \hyperlink{class_texture_a46d06aec832e5a954f1c8ca957c2c6e5}{free}();
+27 
+28     \textcolor{comment}{//The final texture}
+29     SDL\_Texture* newTexture = NULL;
+30 
+31     \textcolor{comment}{//Load image at specified path}
+32     SDL\_Surface* loadedSurface = IMG\_Load(path.c\_str());
+33     \textcolor{keywordflow}{if} (loadedSurface == NULL)
+34     \{
+35         printf(\textcolor{stringliteral}{"Unable to load image %s! SDL\_image Error: %s\(\backslash\)n"}, path.c\_str(), IMG\_GetError());
+36     \}
+37     \textcolor{keywordflow}{else}
+38     \{
+39         \textcolor{comment}{//Color key image}
+40         SDL\_SetColorKey(loadedSurface, SDL\_TRUE, SDL\_MapRGB(loadedSurface->format, 0, 0xFF, 0xFF));
+41 
+42         \textcolor{comment}{//Create texture from surface pixels}
+43         newTexture = SDL\_CreateTextureFromSurface(renderer, loadedSurface);
+44         \textcolor{keywordflow}{if} (newTexture == NULL)
+45         \{
+46             printf(\textcolor{stringliteral}{"Unable to create texture from %s! SDL Error: %s\(\backslash\)n"}, path.c\_str(), SDL\_GetError());
+47         \}
+48         \textcolor{keywordflow}{else}
+49         \{
+50             \textcolor{comment}{//Get image dimensions}
+51             \hyperlink{class_texture_a0e007f4b4f1a314e5b0dae1402a13afb}{mWidth} = loadedSurface->w;
+52             \hyperlink{class_texture_ad7078e03c0ef6e69b733eb85fd72aec2}{mHeight} = loadedSurface->h;
+53         \}
+54 
+55         \textcolor{comment}{//Get rid of old loaded surface}
+56         SDL\_FreeSurface(loadedSurface);
+57     \}
+58 
+59     \textcolor{comment}{//Return success}
+60     \hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture} = newTexture;
+61     \textcolor{keywordflow}{return} \hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture} != NULL;
+62 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_a78708fd59f16721c2c19b2075a91e1bc}\label{class_texture_a78708fd59f16721c2c19b2075a91e1bc}} 
+\index{Texture@{Texture}!load\+From\+Rendered\+Text@{load\+From\+Rendered\+Text}}
+\index{load\+From\+Rendered\+Text@{load\+From\+Rendered\+Text}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{load\+From\+Rendered\+Text()}{loadFromRenderedText()}}
+{\footnotesize\ttfamily bool Texture\+::load\+From\+Rendered\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{texture\+Text,  }\item[{S\+D\+L\+\_\+\+Color}]{text\+Color,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{T\+T\+F\+\_\+\+Font $\ast$}]{g\+Font,  }\item[{int}]{wrap\+Length }\end{DoxyParamCaption})}
+
+
+
+Creates image from font string. 
+
+loads in any parsed in text as a texture, we want the text to wrap depending on width 
+
+Definition at line 75 of file Texture.\+cpp.
+
+
+
+References free(), m\+Height, m\+Texture, and m\+Width.
+
+
+
+Referenced by Text\+Box\+::load\+Text().
+
+
+\begin{DoxyCode}
+76 \{
+77     \textcolor{comment}{//Get rid of preexisting texture}
+78     \hyperlink{class_texture_a46d06aec832e5a954f1c8ca957c2c6e5}{free}();
+79 
+80     \textcolor{comment}{//Render text surface}
+81     SDL\_Surface* textSurface = TTF\_RenderText\_Blended\_Wrapped(gFont, textureText.c\_str(), textColor, 
+      wrapLength);
+82 
+83     \textcolor{keywordflow}{if} (textSurface == NULL)
+84     \{
+85         printf(\textcolor{stringliteral}{"Unable to render text surface! SDL\_ttf Error: %s\(\backslash\)n"}, TTF\_GetError());
+86     \}
+87     \textcolor{keywordflow}{else}
+88     \{
+89         
+90         \textcolor{comment}{//Create texture from surface pixels}
+91         \hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture} = SDL\_CreateTextureFromSurface(renderer, textSurface);
+92         \textcolor{keywordflow}{if} (\hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture} == NULL)
+93         \{
+94             printf(\textcolor{stringliteral}{"Unable to create texture from rendered text! SDL Error: %s\(\backslash\)n"}, SDL\_GetError());
+95         \}
+96         \textcolor{keywordflow}{else}
+97         \{
+98             \textcolor{comment}{//Get image dimensions}
+99             \hyperlink{class_texture_a0e007f4b4f1a314e5b0dae1402a13afb}{mWidth} = textSurface->w;
+100             \hyperlink{class_texture_ad7078e03c0ef6e69b733eb85fd72aec2}{mHeight} = textSurface->h;
+101         \}
+102 
+103         \textcolor{comment}{//Get rid of old surface}
+104         SDL\_FreeSurface(textSurface);
+105     \}
+106 
+107     \textcolor{comment}{//Return success}
+108     \textcolor{keywordflow}{return} \hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture} != NULL;
+109 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_ac91a5257c451c80ffbf9a3d1485ba1c8}\label{class_texture_ac91a5257c451c80ffbf9a3d1485ba1c8}} 
+\index{Texture@{Texture}!render@{render}}
+\index{render@{render}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{render()}{render()}}
+{\footnotesize\ttfamily void Texture\+::render (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{S\+D\+L\+\_\+\+Rect $\ast$}]{clip = {\ttfamily NULL},  }\item[{double}]{angle = {\ttfamily 0.0},  }\item[{S\+D\+L\+\_\+\+Point $\ast$}]{center = {\ttfamily NULL},  }\item[{S\+D\+L\+\_\+\+Renderer\+Flip}]{flip = {\ttfamily SDL\+\_\+FLIP\+\_\+NONE} }\end{DoxyParamCaption})}
+
+
+
+Renders texture at given point. 
+
+Renders the image to the screen 
+
+Definition at line 135 of file Texture.\+cpp.
+
+
+
+References m\+Height, m\+Texture, and m\+Width.
+
+
+
+Referenced by Sprite\+::render(), and Text\+Box\+::render\+Comment().
+
+
+\begin{DoxyCode}
+136 \{
+137     \textcolor{comment}{//Set rendering space and render to screen}
+138     SDL\_Rect renderQuad = \{ x, y, \hyperlink{class_texture_a0e007f4b4f1a314e5b0dae1402a13afb}{mWidth}, \hyperlink{class_texture_ad7078e03c0ef6e69b733eb85fd72aec2}{mHeight} \};
+139 
+140     \textcolor{comment}{//Set clip rendering dimensions}
+141     \textcolor{keywordflow}{if} (clip != NULL)
+142     \{
+143         renderQuad.w = clip->w;
+144         renderQuad.h = clip->h;
+145     \}
+146 
+147     \textcolor{comment}{//Render to screen}
+148     SDL\_RenderCopyEx(renderer, \hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture}, clip, &renderQuad, angle, center, flip);
+149 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_texture_ab3149eb648f437a09dc0938942c2c4ce}\label{class_texture_ab3149eb648f437a09dc0938942c2c4ce}} 
+\index{Texture@{Texture}!set\+Color@{set\+Color}}
+\index{set\+Color@{set\+Color}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{set\+Color()}{setColor()}}
+{\footnotesize\ttfamily void Texture\+::set\+Color (\begin{DoxyParamCaption}\item[{int}]{r,  }\item[{int}]{g,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+
+
+sets the sprites R\+BG values 
+
+Modulates the colour of our \hyperlink{class_texture}{Texture} 
+
+Definition at line 127 of file Texture.\+cpp.
+
+
+
+References m\+Texture.
+
+
+
+Referenced by Sprite\+::set\+Color().
+
+
+\begin{DoxyCode}
+128 \{
+129     SDL\_SetTextureColorMod(\hyperlink{class_texture_a28e61626f21dd1c69968e53687a13424}{mTexture}, r, g, b);
+130 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_texture_ad7078e03c0ef6e69b733eb85fd72aec2}\label{class_texture_ad7078e03c0ef6e69b733eb85fd72aec2}} 
+\index{Texture@{Texture}!m\+Height@{m\+Height}}
+\index{m\+Height@{m\+Height}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{m\+Height}{mHeight}}
+{\footnotesize\ttfamily int Texture\+::m\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 48 of file Texture.\+h.
+
+
+
+Referenced by load\+From\+File(), load\+From\+Rendered\+Text(), render(), and Texture().
+
+\mbox{\Hypertarget{class_texture_a28e61626f21dd1c69968e53687a13424}\label{class_texture_a28e61626f21dd1c69968e53687a13424}} 
+\index{Texture@{Texture}!m\+Texture@{m\+Texture}}
+\index{m\+Texture@{m\+Texture}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{m\+Texture}{mTexture}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Texture$\ast$ Texture\+::m\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The actual hardware texture. 
+
+
+
+Definition at line 44 of file Texture.\+h.
+
+
+
+Referenced by free(), get\+Height(), get\+S\+D\+L\+Texture(), get\+Width(), load\+From\+File(), load\+From\+Rendered\+Text(), render(), set\+Color(), and Texture().
+
+\mbox{\Hypertarget{class_texture_a0e007f4b4f1a314e5b0dae1402a13afb}\label{class_texture_a0e007f4b4f1a314e5b0dae1402a13afb}} 
+\index{Texture@{Texture}!m\+Width@{m\+Width}}
+\index{m\+Width@{m\+Width}!Texture@{Texture}}
+\subsubsection{\texorpdfstring{m\+Width}{mWidth}}
+{\footnotesize\ttfamily int Texture\+::m\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Image dimensions. 
+
+
+
+Definition at line 47 of file Texture.\+h.
+
+
+
+Referenced by load\+From\+File(), load\+From\+Rendered\+Text(), render(), and Texture().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_texture_8h}{Texture.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_texture_8cpp}{Texture.\+cpp}\end{DoxyCompactItemize}

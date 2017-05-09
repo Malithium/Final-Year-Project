@@ -1,0 +1,394 @@
+\hypertarget{class_node}{}\section{Node Class Reference}
+\label{class_node}\index{Node@{Node}}
+
+
+{\ttfamily \#include $<$Node.\+h$>$}
+
+
+
+Collaboration diagram for Node\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_node__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_node_ad7a34779cad45d997bfd6d3d8043c75f}{Node} ()
+\item 
+\hyperlink{class_node_ad00949d1efbe6d24086446c2b16e8876}{Node} (int x, int y, std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$=nullptr)
+\item 
+int \hyperlink{class_node_a6c026e5d8c28591c6e2bd08c68619fd1}{getX} ()
+\item 
+void \hyperlink{class_node_adb106b3c9cca356ce404d45ce9ef1a89}{setX} (int x)
+\item 
+int \hyperlink{class_node_abab48a3f494994d4f456897f3372d3ae}{getY} ()
+\item 
+void \hyperlink{class_node_a2655bd886609cf39f486130733124ec7}{setY} (int y)
+\item 
+int \hyperlink{class_node_a9133c5c2e1c994b914535bbbefa33d7c}{getG} ()
+\item 
+void \hyperlink{class_node_acc878bf405f93ff15be94426b0f768f4}{setG} (int g)
+\item 
+int \hyperlink{class_node_a1108111505a673b217d5e13d6ac36d14}{getH} ()
+\item 
+void \hyperlink{class_node_a6076b0a2e7543341bd7b6e60c7635157}{setH} (int h)
+\item 
+int \hyperlink{class_node_a8dd9a1d6ac9638fd1168283ad47e5127}{get\+ID} ()
+\item 
+void \hyperlink{class_node_ae2ecbbfa7ede81db532c484e7e134fe6}{set\+ID} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$ \hyperlink{class_node_a5a7ffc7ca51647866a2d458cc8b42e00}{get\+Parent} ()
+\item 
+void \hyperlink{class_node_a5889e5c01190f75a7074e00c76f6a68a}{set\+Parent} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$ parent)
+\item 
+float \hyperlink{class_node_af483f2ed468aad829701a0ca7ba68966}{getF} ()
+\item 
+float \hyperlink{class_node_a2454f74ba33e81bd20945139c73e28fa}{man\+Hattan\+Distance} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$ node\+End)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_node_ac85b927d8c9cdc484f169129d317f6f0}{Node\+XY}
+\item 
+std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$ \hyperlink{class_node_aface6c6a7d38a7cc94090ef35bf9e95a}{parent\+Node}
+\item 
+int \hyperlink{class_node_a59a543130a10c95f1e8642cf8c5645e8}{id}
+\item 
+float \hyperlink{class_node_a3c6a67023068f762eaaa8a4861ab3e9f}{G}
+\item 
+float \hyperlink{class_node_a26426055f336a81dc05680b981e4c270}{H}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file Node.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_node_ad7a34779cad45d997bfd6d3d8043c75f}\label{class_node_ad7a34779cad45d997bfd6d3d8043c75f}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Node.\+cpp.
+
+
+\begin{DoxyCode}
+3 \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_node_ad00949d1efbe6d24086446c2b16e8876}\label{class_node_ad00949d1efbe6d24086446c2b16e8876}} 
+\index{Node@{Node}!Node@{Node}}
+\index{Node@{Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node()}{Node()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Node\+::\+Node (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y,  }\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$}]{node = {\ttfamily nullptr} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Node.\+cpp.
+
+
+
+References Node\+XY.
+
+
+\begin{DoxyCode}
+5                                                  : \hyperlink{class_node_a3c6a67023068f762eaaa8a4861ab3e9f}{G}(0), \hyperlink{class_node_a26426055f336a81dc05680b981e4c270}{H}(0)
+6 \{
+7     \hyperlink{class_node_ac85b927d8c9cdc484f169129d317f6f0}{NodeXY}.first = x;
+8     \hyperlink{class_node_ac85b927d8c9cdc484f169129d317f6f0}{NodeXY}.second = y;
+9 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_node_af483f2ed468aad829701a0ca7ba68966}\label{class_node_af483f2ed468aad829701a0ca7ba68966}} 
+\index{Node@{Node}!getF@{getF}}
+\index{getF@{getF}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+F()}{getF()}}
+{\footnotesize\ttfamily float Node\+::getF (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 31 of file Node.\+cpp.
+
+
+
+References G, and H.
+
+
+\begin{DoxyCode}
+32 \{
+33     \textcolor{keywordflow}{return} \hyperlink{class_node_a3c6a67023068f762eaaa8a4861ab3e9f}{G} + \hyperlink{class_node_a26426055f336a81dc05680b981e4c270}{H};
+34 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_node_a9133c5c2e1c994b914535bbbefa33d7c}\label{class_node_a9133c5c2e1c994b914535bbbefa33d7c}} 
+\index{Node@{Node}!getG@{getG}}
+\index{getG@{getG}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+G()}{getG()}}
+{\footnotesize\ttfamily int Node\+::getG (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_node_a1108111505a673b217d5e13d6ac36d14}\label{class_node_a1108111505a673b217d5e13d6ac36d14}} 
+\index{Node@{Node}!getH@{getH}}
+\index{getH@{getH}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+H()}{getH()}}
+{\footnotesize\ttfamily int Node\+::getH (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_node_a8dd9a1d6ac9638fd1168283ad47e5127}\label{class_node_a8dd9a1d6ac9638fd1168283ad47e5127}} 
+\index{Node@{Node}!get\+ID@{get\+ID}}
+\index{get\+ID@{get\+ID}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+I\+D()}{getID()}}
+{\footnotesize\ttfamily int Node\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_node_a5a7ffc7ca51647866a2d458cc8b42e00}\label{class_node_a5a7ffc7ca51647866a2d458cc8b42e00}} 
+\index{Node@{Node}!get\+Parent@{get\+Parent}}
+\index{get\+Parent@{get\+Parent}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Parent()}{getParent()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$ Node\+::get\+Parent (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 36 of file Node.\+cpp.
+
+
+
+References parent\+Node.
+
+
+\begin{DoxyCode}
+37 \{
+38     \textcolor{keywordflow}{return} \hyperlink{class_node_aface6c6a7d38a7cc94090ef35bf9e95a}{parentNode};
+39 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_node_a6c026e5d8c28591c6e2bd08c68619fd1}\label{class_node_a6c026e5d8c28591c6e2bd08c68619fd1}} 
+\index{Node@{Node}!getX@{getX}}
+\index{getX@{getX}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+X()}{getX()}}
+{\footnotesize\ttfamily int Node\+::getX (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file Node.\+cpp.
+
+
+
+References Node\+XY.
+
+
+
+Referenced by man\+Hattan\+Distance().
+
+
+\begin{DoxyCode}
+12 \{
+13     \textcolor{keywordflow}{return} \hyperlink{class_node_ac85b927d8c9cdc484f169129d317f6f0}{NodeXY}.first;
+14 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_node_abab48a3f494994d4f456897f3372d3ae}\label{class_node_abab48a3f494994d4f456897f3372d3ae}} 
+\index{Node@{Node}!getY@{getY}}
+\index{getY@{getY}!Node@{Node}}
+\subsubsection{\texorpdfstring{get\+Y()}{getY()}}
+{\footnotesize\ttfamily int Node\+::getY (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file Node.\+cpp.
+
+
+
+References Node\+XY.
+
+
+
+Referenced by man\+Hattan\+Distance().
+
+
+\begin{DoxyCode}
+22 \{
+23     \textcolor{keywordflow}{return} \hyperlink{class_node_ac85b927d8c9cdc484f169129d317f6f0}{NodeXY}.second;
+24 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_node_a2454f74ba33e81bd20945139c73e28fa}\label{class_node_a2454f74ba33e81bd20945139c73e28fa}} 
+\index{Node@{Node}!man\+Hattan\+Distance@{man\+Hattan\+Distance}}
+\index{man\+Hattan\+Distance@{man\+Hattan\+Distance}!Node@{Node}}
+\subsubsection{\texorpdfstring{man\+Hattan\+Distance()}{manHattanDistance()}}
+{\footnotesize\ttfamily float Node\+::man\+Hattan\+Distance (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$}]{node\+End }\end{DoxyParamCaption})}
+
+
+
+Definition at line 46 of file Node.\+cpp.
+
+
+
+References get\+X(), and get\+Y().
+
+
+\begin{DoxyCode}
+47 \{
+48     \textcolor{keywordtype}{float} x = (float)(fabs(this->\hyperlink{class_node_a6c026e5d8c28591c6e2bd08c68619fd1}{getX}() - endNode->getX()));
+49     \textcolor{keywordtype}{float} y = (float)(fabs(this->\hyperlink{class_node_abab48a3f494994d4f456897f3372d3ae}{getY}() - endNode->getY()));
+50 
+51     \textcolor{keywordflow}{return} x + y;
+52 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_node_acc878bf405f93ff15be94426b0f768f4}\label{class_node_acc878bf405f93ff15be94426b0f768f4}} 
+\index{Node@{Node}!setG@{setG}}
+\index{setG@{setG}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+G()}{setG()}}
+{\footnotesize\ttfamily void Node\+::setG (\begin{DoxyParamCaption}\item[{int}]{g }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_node_a6076b0a2e7543341bd7b6e60c7635157}\label{class_node_a6076b0a2e7543341bd7b6e60c7635157}} 
+\index{Node@{Node}!setH@{setH}}
+\index{setH@{setH}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+H()}{setH()}}
+{\footnotesize\ttfamily void Node\+::setH (\begin{DoxyParamCaption}\item[{int}]{h }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_node_ae2ecbbfa7ede81db532c484e7e134fe6}\label{class_node_ae2ecbbfa7ede81db532c484e7e134fe6}} 
+\index{Node@{Node}!set\+ID@{set\+ID}}
+\index{set\+ID@{set\+ID}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+I\+D()}{setID()}}
+{\footnotesize\ttfamily void Node\+::set\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{class_node_a5889e5c01190f75a7074e00c76f6a68a}\label{class_node_a5889e5c01190f75a7074e00c76f6a68a}} 
+\index{Node@{Node}!set\+Parent@{set\+Parent}}
+\index{set\+Parent@{set\+Parent}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+Parent()}{setParent()}}
+{\footnotesize\ttfamily void Node\+::set\+Parent (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$}]{parent }\end{DoxyParamCaption})}
+
+
+
+Definition at line 41 of file Node.\+cpp.
+
+
+
+References parent\+Node.
+
+
+\begin{DoxyCode}
+42 \{
+43     \hyperlink{class_node_aface6c6a7d38a7cc94090ef35bf9e95a}{parentNode} = nParent;
+44 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_node_adb106b3c9cca356ce404d45ce9ef1a89}\label{class_node_adb106b3c9cca356ce404d45ce9ef1a89}} 
+\index{Node@{Node}!setX@{setX}}
+\index{setX@{setX}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+X()}{setX()}}
+{\footnotesize\ttfamily void Node\+::setX (\begin{DoxyParamCaption}\item[{int}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file Node.\+cpp.
+
+
+
+References Node\+XY.
+
+
+\begin{DoxyCode}
+17 \{
+18     \hyperlink{class_node_ac85b927d8c9cdc484f169129d317f6f0}{NodeXY}.first = nX;
+19 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_node_a2655bd886609cf39f486130733124ec7}\label{class_node_a2655bd886609cf39f486130733124ec7}} 
+\index{Node@{Node}!setY@{setY}}
+\index{setY@{setY}!Node@{Node}}
+\subsubsection{\texorpdfstring{set\+Y()}{setY()}}
+{\footnotesize\ttfamily void Node\+::setY (\begin{DoxyParamCaption}\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file Node.\+cpp.
+
+
+
+References Node\+XY.
+
+
+\begin{DoxyCode}
+27 \{
+28     \hyperlink{class_node_ac85b927d8c9cdc484f169129d317f6f0}{NodeXY}.second = nY;
+29 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_node_a3c6a67023068f762eaaa8a4861ab3e9f}\label{class_node_a3c6a67023068f762eaaa8a4861ab3e9f}} 
+\index{Node@{Node}!G@{G}}
+\index{G@{G}!Node@{Node}}
+\subsubsection{\texorpdfstring{G}{G}}
+{\footnotesize\ttfamily float Node\+::G\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file Node.\+h.
+
+
+
+Referenced by get\+F().
+
+\mbox{\Hypertarget{class_node_a26426055f336a81dc05680b981e4c270}\label{class_node_a26426055f336a81dc05680b981e4c270}} 
+\index{Node@{Node}!H@{H}}
+\index{H@{H}!Node@{Node}}
+\subsubsection{\texorpdfstring{H}{H}}
+{\footnotesize\ttfamily float Node\+::H\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file Node.\+h.
+
+
+
+Referenced by get\+F().
+
+\mbox{\Hypertarget{class_node_a59a543130a10c95f1e8642cf8c5645e8}\label{class_node_a59a543130a10c95f1e8642cf8c5645e8}} 
+\index{Node@{Node}!id@{id}}
+\index{id@{id}!Node@{Node}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int Node\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file Node.\+h.
+
+\mbox{\Hypertarget{class_node_ac85b927d8c9cdc484f169129d317f6f0}\label{class_node_ac85b927d8c9cdc484f169129d317f6f0}} 
+\index{Node@{Node}!Node\+XY@{Node\+XY}}
+\index{Node\+XY@{Node\+XY}!Node@{Node}}
+\subsubsection{\texorpdfstring{Node\+XY}{NodeXY}}
+{\footnotesize\ttfamily std\+::pair$<$int, int$>$ Node\+::\+Node\+XY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file Node.\+h.
+
+
+
+Referenced by get\+X(), get\+Y(), Node(), set\+X(), and set\+Y().
+
+\mbox{\Hypertarget{class_node_aface6c6a7d38a7cc94090ef35bf9e95a}\label{class_node_aface6c6a7d38a7cc94090ef35bf9e95a}} 
+\index{Node@{Node}!parent\+Node@{parent\+Node}}
+\index{parent\+Node@{parent\+Node}!Node@{Node}}
+\subsubsection{\texorpdfstring{parent\+Node}{parentNode}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\hyperlink{class_node}{Node}$>$ Node\+::parent\+Node\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file Node.\+h.
+
+
+
+Referenced by get\+Parent(), and set\+Parent().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_node_8h}{Node.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_node_8cpp}{Node.\+cpp}\end{DoxyCompactItemize}

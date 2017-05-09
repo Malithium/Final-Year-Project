@@ -1,0 +1,125 @@
+\hypertarget{class_json_1_1_exception}{}\section{Json\+:\+:Exception Class Reference}
+\label{class_json_1_1_exception}\index{Json\+::\+Exception@{Json\+::\+Exception}}
+
+
+{\ttfamily \#include $<$json.\+h$>$}
+
+
+
+Inheritance diagram for Json\+:\+:Exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{class_json_1_1_exception__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Json\+:\+:Exception\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{class_json_1_1_exception__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_exception_ae764aa42e0755bd4ce9d303e2733fa8f}{Exception} (\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} const \&msg)
+\item 
+\hyperlink{class_json_1_1_exception_add6af5e0ecdf36f40d7f3554b9786e21}{$\sim$\+Exception} () \hyperlink{json_8h_af8418c6d82d9de6e5f3c739fcf2fe88d}{J\+S\+O\+N\+C\+P\+P\+\_\+\+N\+O\+E\+X\+C\+E\+PT} \hyperlink{json_8h_a824d6199c91488107e443226fa6022c5}{J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\item 
+char const  $\ast$ \hyperlink{class_json_1_1_exception_a70b7ce35e761fb93e8cd338e04619cd6}{what} () const \hyperlink{json_8h_af8418c6d82d9de6e5f3c739fcf2fe88d}{J\+S\+O\+N\+C\+P\+P\+\_\+\+N\+O\+E\+X\+C\+E\+PT} \hyperlink{json_8h_a824d6199c91488107e443226fa6022c5}{J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_exception_aae3cbb8b45bf21480f64502a8329659f}{msg\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Base class for all exceptions we throw.
+
+We use nothing but these internally. Of course, S\+TL can throw others. 
+
+Definition at line 497 of file json.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_exception_ae764aa42e0755bd4ce9d303e2733fa8f}\label{class_json_1_1_exception_ae764aa42e0755bd4ce9d303e2733fa8f}} 
+\index{Json\+::\+Exception@{Json\+::\+Exception}!Exception@{Exception}}
+\index{Exception@{Exception}!Json\+::\+Exception@{Json\+::\+Exception}}
+\subsubsection{\texorpdfstring{Exception()}{Exception()}}
+{\footnotesize\ttfamily Json\+::\+Exception\+::\+Exception (\begin{DoxyParamCaption}\item[{\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} const \&}]{msg }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2640 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2641   : \hyperlink{class_json_1_1_exception_aae3cbb8b45bf21480f64502a8329659f}{msg\_}(msg)
+2642 \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_exception_add6af5e0ecdf36f40d7f3554b9786e21}\label{class_json_1_1_exception_add6af5e0ecdf36f40d7f3554b9786e21}} 
+\index{Json\+::\+Exception@{Json\+::\+Exception}!````~Exception@{$\sim$\+Exception}}
+\index{````~Exception@{$\sim$\+Exception}!Json\+::\+Exception@{Json\+::\+Exception}}
+\subsubsection{\texorpdfstring{$\sim$\+Exception()}{~Exception()}}
+{\footnotesize\ttfamily Json\+::\+Exception\+::$\sim$\+Exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 2643 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+2644 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_exception_a70b7ce35e761fb93e8cd338e04619cd6}\label{class_json_1_1_exception_a70b7ce35e761fb93e8cd338e04619cd6}} 
+\index{Json\+::\+Exception@{Json\+::\+Exception}!what@{what}}
+\index{what@{what}!Json\+::\+Exception@{Json\+::\+Exception}}
+\subsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily char const  $\ast$ Json\+::\+Exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Definition at line 2645 of file jsoncpp.\+cpp.
+
+
+
+References msg\+\_\+.
+
+
+\begin{DoxyCode}
+2646 \{
+2647   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_exception_aae3cbb8b45bf21480f64502a8329659f}{msg\_}.c\_str();
+2648 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_json_1_1_exception_aae3cbb8b45bf21480f64502a8329659f}\label{class_json_1_1_exception_aae3cbb8b45bf21480f64502a8329659f}} 
+\index{Json\+::\+Exception@{Json\+::\+Exception}!msg\+\_\+@{msg\+\_\+}}
+\index{msg\+\_\+@{msg\+\_\+}!Json\+::\+Exception@{Json\+::\+Exception}}
+\subsubsection{\texorpdfstring{msg\+\_\+}{msg\_}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Exception\+::msg\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 503 of file json.\+h.
+
+
+
+Referenced by what().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{json_8h}{json.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{jsoncpp_8cpp}{jsoncpp.\+cpp}\end{DoxyCompactItemize}

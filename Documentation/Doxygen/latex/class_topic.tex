@@ -1,0 +1,301 @@
+\hypertarget{class_topic}{}\section{Topic Class Reference}
+\label{class_topic}\index{Topic@{Topic}}
+
+
+{\ttfamily \#include $<$Topic.\+h$>$}
+
+
+
+Collaboration diagram for Topic\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_topic__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_topic_af3301cb0d535eb066a3ea4ed54e28414}{Topic} ()
+\item 
+\hyperlink{class_topic_a1f896499cd9eddcf5138830364860534}{Topic} (std\+::string n\+Id, std\+::string n\+Topic, std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$ n\+Comments)
+\item 
+std\+::string \hyperlink{class_topic_a0306b941698e573841540d44de1a908a}{get\+Id} ()
+\item 
+std\+::string \hyperlink{class_topic_a9f6ad6642112c5f121a92aceb8df9c43}{get\+Topic} ()
+\item 
+std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$ \hyperlink{class_topic_ac800190b0f4f8ee514255cc75bce1f13}{get\+Comments} ()
+\item 
+void \hyperlink{class_topic_a11ecfa79333a902a33398ac628280cfa}{set\+Id} (std\+::string n\+Id)
+\item 
+void \hyperlink{class_topic_a64ecaea143938ef771830f05b703853f}{set\+Topic} (std\+::string n\+Topic)
+\item 
+void \hyperlink{class_topic_ada5f53077553db0022f528b0328a7437}{set\+Comments} (std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$ n\+Comments)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_topic_a3f0e95d8c647b06bd9a3e257d86e021a}{id}
+\item 
+std\+::string \hyperlink{class_topic_ae74abf3428c3d51f0e3c95e995d29633}{topic}
+\item 
+std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$ \hyperlink{class_topic_a7302f2cd0169b84d3e4e58af7bc1f73d}{comments}
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_topic_adc7b3e2ce62c70f0ea7a2dcb1649bd24}{operator==} (const \hyperlink{class_topic}{Topic} \&c1, const \hyperlink{class_topic}{Topic} \&c2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Model representation for the comment object within the program 
+
+Definition at line 6 of file Topic.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_topic_af3301cb0d535eb066a3ea4ed54e28414}\label{class_topic_af3301cb0d535eb066a3ea4ed54e28414}} 
+\index{Topic@{Topic}!Topic@{Topic}}
+\index{Topic@{Topic}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{Topic()}{Topic()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Topic\+::\+Topic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Topic.\+cpp.
+
+
+\begin{DoxyCode}
+4 \{
+5 
+6 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_topic_a1f896499cd9eddcf5138830364860534}\label{class_topic_a1f896499cd9eddcf5138830364860534}} 
+\index{Topic@{Topic}!Topic@{Topic}}
+\index{Topic@{Topic}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{Topic()}{Topic()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Topic\+::\+Topic (\begin{DoxyParamCaption}\item[{std\+::string}]{n\+Id,  }\item[{std\+::string}]{n\+Topic,  }\item[{std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$}]{n\+Comments }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file Topic.\+cpp.
+
+
+
+References set\+Comments(), set\+Id(), and set\+Topic().
+
+
+\begin{DoxyCode}
+9 \{
+10     \hyperlink{class_topic_a11ecfa79333a902a33398ac628280cfa}{setId}(nId);
+11     \hyperlink{class_topic_a64ecaea143938ef771830f05b703853f}{setTopic}(nTopic);
+12     \hyperlink{class_topic_ada5f53077553db0022f528b0328a7437}{setComments}(nComments);
+13 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_topic_ac800190b0f4f8ee514255cc75bce1f13}\label{class_topic_ac800190b0f4f8ee514255cc75bce1f13}} 
+\index{Topic@{Topic}!get\+Comments@{get\+Comments}}
+\index{get\+Comments@{get\+Comments}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{get\+Comments()}{getComments()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$ Topic\+::get\+Comments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file Topic.\+cpp.
+
+
+
+References comments.
+
+
+
+Referenced by Base\+\_\+\+Group\+::\+Base\+\_\+\+Group().
+
+
+\begin{DoxyCode}
+26 \{
+27     \textcolor{keywordflow}{return} \hyperlink{class_topic_a7302f2cd0169b84d3e4e58af7bc1f73d}{comments};
+28 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_topic_a0306b941698e573841540d44de1a908a}\label{class_topic_a0306b941698e573841540d44de1a908a}} 
+\index{Topic@{Topic}!get\+Id@{get\+Id}}
+\index{get\+Id@{get\+Id}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{get\+Id()}{getId()}}
+{\footnotesize\ttfamily std\+::string Topic\+::get\+Id (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file Topic.\+cpp.
+
+
+
+References id.
+
+
+\begin{DoxyCode}
+16 \{
+17     \textcolor{keywordflow}{return} \hyperlink{class_topic_a3f0e95d8c647b06bd9a3e257d86e021a}{id};
+18 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_topic_a9f6ad6642112c5f121a92aceb8df9c43}\label{class_topic_a9f6ad6642112c5f121a92aceb8df9c43}} 
+\index{Topic@{Topic}!get\+Topic@{get\+Topic}}
+\index{get\+Topic@{get\+Topic}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{get\+Topic()}{getTopic()}}
+{\footnotesize\ttfamily std\+::string Topic\+::get\+Topic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 20 of file Topic.\+cpp.
+
+
+
+References topic.
+
+
+
+Referenced by Base\+\_\+\+Group\+::\+Base\+\_\+\+Group().
+
+
+\begin{DoxyCode}
+21 \{
+22     \textcolor{keywordflow}{return} \hyperlink{class_topic_ae74abf3428c3d51f0e3c95e995d29633}{topic};
+23 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_topic_ada5f53077553db0022f528b0328a7437}\label{class_topic_ada5f53077553db0022f528b0328a7437}} 
+\index{Topic@{Topic}!set\+Comments@{set\+Comments}}
+\index{set\+Comments@{set\+Comments}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{set\+Comments()}{setComments()}}
+{\footnotesize\ttfamily void Topic\+::set\+Comments (\begin{DoxyParamCaption}\item[{std\+::vector$<$ \hyperlink{class_comment}{Comment} $>$}]{n\+Comments }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file Topic.\+cpp.
+
+
+
+Referenced by Topic().
+
+
+\begin{DoxyCode}
+41 \{
+42     \hyperlink{namespacecomments}{comments} = nComments;
+43 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_topic_a11ecfa79333a902a33398ac628280cfa}\label{class_topic_a11ecfa79333a902a33398ac628280cfa}} 
+\index{Topic@{Topic}!set\+Id@{set\+Id}}
+\index{set\+Id@{set\+Id}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{set\+Id()}{setId()}}
+{\footnotesize\ttfamily void Topic\+::set\+Id (\begin{DoxyParamCaption}\item[{std\+::string}]{n\+Id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 30 of file Topic.\+cpp.
+
+
+
+Referenced by Topic().
+
+
+\begin{DoxyCode}
+31 \{
+32     \textcolor{keywordtype}{id} = nId;
+33 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_topic_a64ecaea143938ef771830f05b703853f}\label{class_topic_a64ecaea143938ef771830f05b703853f}} 
+\index{Topic@{Topic}!set\+Topic@{set\+Topic}}
+\index{set\+Topic@{set\+Topic}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{set\+Topic()}{setTopic()}}
+{\footnotesize\ttfamily void Topic\+::set\+Topic (\begin{DoxyParamCaption}\item[{std\+::string}]{n\+Topic }\end{DoxyParamCaption})}
+
+
+
+Definition at line 35 of file Topic.\+cpp.
+
+
+
+References topic.
+
+
+
+Referenced by Topic().
+
+
+\begin{DoxyCode}
+36 \{
+37     \hyperlink{class_topic_ae74abf3428c3d51f0e3c95e995d29633}{topic} = nTopic;
+38 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_topic_adc7b3e2ce62c70f0ea7a2dcb1649bd24}\label{class_topic_adc7b3e2ce62c70f0ea7a2dcb1649bd24}} 
+\index{Topic@{Topic}!operator==@{operator==}}
+\index{operator==@{operator==}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_topic}{Topic} \&}]{c1,  }\item[{const \hyperlink{class_topic}{Topic} \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 45 of file Topic.\+cpp.
+
+
+\begin{DoxyCode}
+46 \{
+47     \textcolor{keywordflow}{return}  (t1.id == t2.id) && (t1.topic == t2.topic) && (t1.comments == t2.comments);
+48 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_topic_a7302f2cd0169b84d3e4e58af7bc1f73d}\label{class_topic_a7302f2cd0169b84d3e4e58af7bc1f73d}} 
+\index{Topic@{Topic}!comments@{comments}}
+\index{comments@{comments}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{comments}{comments}}
+{\footnotesize\ttfamily std\+::vector$<$\hyperlink{class_comment}{Comment}$>$ Topic\+::comments\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 22 of file Topic.\+h.
+
+
+
+Referenced by get\+Comments(), and operator==().
+
+\mbox{\Hypertarget{class_topic_a3f0e95d8c647b06bd9a3e257d86e021a}\label{class_topic_a3f0e95d8c647b06bd9a3e257d86e021a}} 
+\index{Topic@{Topic}!id@{id}}
+\index{id@{id}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily std\+::string Topic\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file Topic.\+h.
+
+
+
+Referenced by get\+Id(), and operator==().
+
+\mbox{\Hypertarget{class_topic_ae74abf3428c3d51f0e3c95e995d29633}\label{class_topic_ae74abf3428c3d51f0e3c95e995d29633}} 
+\index{Topic@{Topic}!topic@{topic}}
+\index{topic@{topic}!Topic@{Topic}}
+\subsubsection{\texorpdfstring{topic}{topic}}
+{\footnotesize\ttfamily std\+::string Topic\+::topic\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file Topic.\+h.
+
+
+
+Referenced by get\+Topic(), operator==(), and set\+Topic().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_topic_8h}{Topic.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_topic_8cpp}{Topic.\+cpp}\end{DoxyCompactItemize}

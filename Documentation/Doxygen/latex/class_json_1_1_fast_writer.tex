@@ -1,0 +1,341 @@
+\hypertarget{class_json_1_1_fast_writer}{}\section{Json\+:\+:Fast\+Writer Class Reference}
+\label{class_json_1_1_fast_writer}\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+
+
+Outputs a \hyperlink{class_json_1_1_value}{Value} in \href{http://www.json.org}{\tt J\+S\+ON} format without formatting (not human friendly).  
+
+
+
+
+{\ttfamily \#include $<$json.\+h$>$}
+
+
+
+Inheritance diagram for Json\+:\+:Fast\+Writer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=223pt]{class_json_1_1_fast_writer__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Json\+:\+:Fast\+Writer\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_1_1_fast_writer__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_fast_writer_a1bbc73ce1a1cc7b09cd1e02db3905170}{Fast\+Writer} ()
+\item 
+\hyperlink{class_json_1_1_fast_writer_a34152eac509fe00c9b2e15ce2fc94ab8}{$\sim$\+Fast\+Writer} () \hyperlink{json_8h_a824d6199c91488107e443226fa6022c5}{J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\item 
+void \hyperlink{class_json_1_1_fast_writer_a78d98e9f76d33660ad6e6a1abe287d45}{enable\+Y\+A\+M\+L\+Compatibility} ()
+\item 
+void \hyperlink{class_json_1_1_fast_writer_a6e93d8dce951e408517311026a065b40}{drop\+Null\+Placeholders} ()
+\begin{DoxyCompactList}\small\item\em Drop the \char`\"{}null\char`\"{} string from the writer\textquotesingle{}s output for null\+Values. Strictly speaking, this is not valid J\+S\+ON. But when the output is being fed to a browser\textquotesingle{}s Javascript, it makes for smaller output and the browser can handle the output just fine. \end{DoxyCompactList}\item 
+void \hyperlink{class_json_1_1_fast_writer_af4ee077d365d75941fb2688d97207a55}{omit\+Ending\+Line\+Feed} ()
+\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_fast_writer_a93d45ba4bc312371d08beb3e3dfbe654}{write} (const \hyperlink{class_json_1_1_value}{Value} \&root) \hyperlink{json_8h_a824d6199c91488107e443226fa6022c5}{J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_json_1_1_fast_writer_a2ef4a2ce13a341171f01f414f4fdd765}{write\+Value} (const \hyperlink{class_json_1_1_value}{Value} \&value)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\+\_\+}
+\item 
+bool \hyperlink{class_json_1_1_fast_writer_a4c4c1911179bf472d24492915b0e489a}{yaml\+Compatiblity\+Enabled\+\_\+}
+\item 
+bool \hyperlink{class_json_1_1_fast_writer_a97e9d4ff84b59a48756dcc27a71b5904}{drop\+Null\+Placeholders\+\_\+}
+\item 
+bool \hyperlink{class_json_1_1_fast_writer_abd6e13851db6dcf59d84af68d48d50ac}{omit\+Ending\+Line\+Feed\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Outputs a \hyperlink{class_json_1_1_value}{Value} in \href{http://www.json.org}{\tt J\+S\+ON} format without formatting (not human friendly). 
+
+The J\+S\+ON document is written in a single line. It is not intended for \textquotesingle{}human\textquotesingle{} consumption, but may be usefull to support feature such as R\+PC where bandwith is limited. \begin{DoxySeeAlso}{See also}
+\hyperlink{class_json_1_1_reader}{Reader}, \hyperlink{class_json_1_1_value}{Value} 
+\end{DoxySeeAlso}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000008}{Deprecated}]Use \hyperlink{class_json_1_1_stream_writer_builder}{Stream\+Writer\+Builder}. \end{DoxyRefDesc}
+
+
+Definition at line 1907 of file json.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_fast_writer_a1bbc73ce1a1cc7b09cd1e02db3905170}\label{class_json_1_1_fast_writer_a1bbc73ce1a1cc7b09cd1e02db3905170}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!Fast\+Writer@{Fast\+Writer}}
+\index{Fast\+Writer@{Fast\+Writer}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{Fast\+Writer()}{FastWriter()}}
+{\footnotesize\ttfamily Json\+::\+Fast\+Writer\+::\+Fast\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4404 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+4405     : \hyperlink{class_json_1_1_fast_writer_a4c4c1911179bf472d24492915b0e489a}{yamlCompatiblityEnabled\_}(\textcolor{keyword}{false}), 
+      \hyperlink{class_json_1_1_fast_writer_a97e9d4ff84b59a48756dcc27a71b5904}{dropNullPlaceholders\_}(\textcolor{keyword}{false}),
+4406       \hyperlink{class_json_1_1_fast_writer_abd6e13851db6dcf59d84af68d48d50ac}{omitEndingLineFeed\_}(\textcolor{keyword}{false}) \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_fast_writer_a34152eac509fe00c9b2e15ce2fc94ab8}\label{class_json_1_1_fast_writer_a34152eac509fe00c9b2e15ce2fc94ab8}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!````~Fast\+Writer@{$\sim$\+Fast\+Writer}}
+\index{````~Fast\+Writer@{$\sim$\+Fast\+Writer}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{$\sim$\+Fast\+Writer()}{~FastWriter()}}
+{\footnotesize\ttfamily Json\+::\+Fast\+Writer\+::$\sim$\+Fast\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 1911 of file json.\+h.
+
+
+
+References J\+S\+O\+N\+C\+P\+P\+\_\+\+O\+V\+E\+R\+R\+I\+DE, and J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG.
+
+
+\begin{DoxyCode}
+1911 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_fast_writer_a6e93d8dce951e408517311026a065b40}\label{class_json_1_1_fast_writer_a6e93d8dce951e408517311026a065b40}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!drop\+Null\+Placeholders@{drop\+Null\+Placeholders}}
+\index{drop\+Null\+Placeholders@{drop\+Null\+Placeholders}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{drop\+Null\+Placeholders()}{dropNullPlaceholders()}}
+{\footnotesize\ttfamily void Json\+::\+Fast\+Writer\+::drop\+Null\+Placeholders (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Drop the \char`\"{}null\char`\"{} string from the writer\textquotesingle{}s output for null\+Values. Strictly speaking, this is not valid J\+S\+ON. But when the output is being fed to a browser\textquotesingle{}s Javascript, it makes for smaller output and the browser can handle the output just fine. 
+
+
+
+Definition at line 4410 of file jsoncpp.\+cpp.
+
+
+
+References drop\+Null\+Placeholders\+\_\+.
+
+
+\begin{DoxyCode}
+4410 \{ \hyperlink{class_json_1_1_fast_writer_a97e9d4ff84b59a48756dcc27a71b5904}{dropNullPlaceholders\_} = \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_fast_writer_a78d98e9f76d33660ad6e6a1abe287d45}\label{class_json_1_1_fast_writer_a78d98e9f76d33660ad6e6a1abe287d45}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!enable\+Y\+A\+M\+L\+Compatibility@{enable\+Y\+A\+M\+L\+Compatibility}}
+\index{enable\+Y\+A\+M\+L\+Compatibility@{enable\+Y\+A\+M\+L\+Compatibility}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{enable\+Y\+A\+M\+L\+Compatibility()}{enableYAMLCompatibility()}}
+{\footnotesize\ttfamily void Json\+::\+Fast\+Writer\+::enable\+Y\+A\+M\+L\+Compatibility (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4408 of file jsoncpp.\+cpp.
+
+
+
+References yaml\+Compatiblity\+Enabled\+\_\+.
+
+
+\begin{DoxyCode}
+4408 \{ \hyperlink{class_json_1_1_fast_writer_a4c4c1911179bf472d24492915b0e489a}{yamlCompatiblityEnabled\_} = \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_fast_writer_af4ee077d365d75941fb2688d97207a55}\label{class_json_1_1_fast_writer_af4ee077d365d75941fb2688d97207a55}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!omit\+Ending\+Line\+Feed@{omit\+Ending\+Line\+Feed}}
+\index{omit\+Ending\+Line\+Feed@{omit\+Ending\+Line\+Feed}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{omit\+Ending\+Line\+Feed()}{omitEndingLineFeed()}}
+{\footnotesize\ttfamily void Json\+::\+Fast\+Writer\+::omit\+Ending\+Line\+Feed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4412 of file jsoncpp.\+cpp.
+
+
+
+References omit\+Ending\+Line\+Feed\+\_\+.
+
+
+\begin{DoxyCode}
+4412 \{ \hyperlink{class_json_1_1_fast_writer_abd6e13851db6dcf59d84af68d48d50ac}{omitEndingLineFeed\_} = \textcolor{keyword}{true}; \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_fast_writer_a93d45ba4bc312371d08beb3e3dfbe654}\label{class_json_1_1_fast_writer_a93d45ba4bc312371d08beb3e3dfbe654}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!write@{write}}
+\index{write@{write}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Fast\+Writer\+::write (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{root }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Implements \hyperlink{class_json_1_1_writer_a61c55882b82c7651d0b9b683c6d3f371}{Json\+::\+Writer}.
+
+
+
+Definition at line 4414 of file jsoncpp.\+cpp.
+
+
+
+References document\+\_\+, omit\+Ending\+Line\+Feed\+\_\+, and write\+Value().
+
+
+\begin{DoxyCode}
+4414                                                   \{
+4415   \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} = \textcolor{stringliteral}{""};
+4416   \hyperlink{class_json_1_1_fast_writer_a2ef4a2ce13a341171f01f414f4fdd765}{writeValue}(root);
+4417   \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_fast_writer_abd6e13851db6dcf59d84af68d48d50ac}{omitEndingLineFeed\_})
+4418     \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \textcolor{stringliteral}{"\(\backslash\)n"};
+4419   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_};
+4420 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_fast_writer_a2ef4a2ce13a341171f01f414f4fdd765}\label{class_json_1_1_fast_writer_a2ef4a2ce13a341171f01f414f4fdd765}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!write\+Value@{write\+Value}}
+\index{write\+Value@{write\+Value}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{write\+Value()}{writeValue()}}
+{\footnotesize\ttfamily void Json\+::\+Fast\+Writer\+::write\+Value (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 4422 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::array\+Value, Json\+::\+Value\+::as\+Bool(), Json\+::\+Value\+::as\+Double(), Json\+::\+Value\+::as\+Largest\+Int(), Json\+::\+Value\+::as\+Largest\+U\+Int(), Json\+::boolean\+Value, document\+\_\+, drop\+Null\+Placeholders\+\_\+, Json\+::\+Value\+::get\+Member\+Names(), Json\+::\+Value\+::get\+String(), Json\+::int\+Value, J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, Json\+::null\+Value, Json\+::object\+Value, Json\+::real\+Value, Json\+::\+Value\+::size(), Json\+::string\+Value, Json\+::\+Value\+::type(), Json\+::uint\+Value, Json\+::value\+To\+Quoted\+String\+N(), Json\+::value\+To\+String(), and yaml\+Compatiblity\+Enabled\+\_\+.
+
+
+
+Referenced by write().
+
+
+\begin{DoxyCode}
+4422                                               \{
+4423   \textcolor{keywordflow}{switch} (value.type()) \{
+4424   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea7d9899633b4409bd3fc107e6737f8391}{nullValue}:
+4425     \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_fast_writer_a97e9d4ff84b59a48756dcc27a71b5904}{dropNullPlaceholders\_})
+4426       \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \textcolor{stringliteral}{"null"};
+4427     \textcolor{keywordflow}{break};
+4428   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae5a9d708d5c9e23ae9bf98898522512d}{intValue}:
+4429     \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \hyperlink{namespace_json_a498503e8f49d6a3811e3c9f6757da60d}{valueToString}(value.asLargestInt());
+4430     \textcolor{keywordflow}{break};
+4431   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eaea788d9a3bb00adc6d68d97d43e1ccd3}{uintValue}:
+4432     \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \hyperlink{namespace_json_a498503e8f49d6a3811e3c9f6757da60d}{valueToString}(value.asLargestUInt());
+4433     \textcolor{keywordflow}{break};
+4434   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eab837c7b869c14d8be712deb45c9e490e}{realValue}:
+4435     \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \hyperlink{namespace_json_a498503e8f49d6a3811e3c9f6757da60d}{valueToString}(value.asDouble());
+4436     \textcolor{keywordflow}{break};
+4437   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea804ef857affea2d415843c73f261c258}{stringValue}:
+4438   \{
+4439     \textcolor{comment}{// Is NULL possible for value.string\_? No.}
+4440     \textcolor{keywordtype}{char} \textcolor{keyword}{const}* str;
+4441     \textcolor{keywordtype}{char} \textcolor{keyword}{const}* end;
+4442     \textcolor{keywordtype}{bool} ok = value.getString(&str, &end);
+4443     \textcolor{keywordflow}{if} (ok) \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \hyperlink{namespace_json_a29aff81733b8fdaabf3f1acfc3ad339f}{valueToQuotedStringN}(str, static\_cast<unsigned>(end-
+      str));
+4444     \textcolor{keywordflow}{break};
+4445   \}
+4446   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4ea14c30dbf4da86f7b809be299f671f7fd}{booleanValue}:
+4447     \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \hyperlink{namespace_json_a498503e8f49d6a3811e3c9f6757da60d}{valueToString}(value.asBool());
+4448     \textcolor{keywordflow}{break};
+4449   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue}: \{
+4450     \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \textcolor{charliteral}{'['};
+4451     \hyperlink{namespace_json_a8048e741f2177c3b5d9ede4a5b8c53c2}{ArrayIndex} size = value.size();
+4452     \textcolor{keywordflow}{for} (\hyperlink{namespace_json_a8048e741f2177c3b5d9ede4a5b8c53c2}{ArrayIndex} index = 0; index < size; ++index) \{
+4453       \textcolor{keywordflow}{if} (index > 0)
+4454         \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \textcolor{charliteral}{','};
+4455       \hyperlink{class_json_1_1_fast_writer_a2ef4a2ce13a341171f01f414f4fdd765}{writeValue}(value[index]);
+4456     \}
+4457     \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \textcolor{charliteral}{']'};
+4458   \} \textcolor{keywordflow}{break};
+4459   \textcolor{keywordflow}{case} \hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue}: \{
+4460     \hyperlink{class_json_1_1_value_a9ae9069983fc38f1928d76f9c79ac64d}{Value::Members} members(value.getMemberNames());
+4461     \hyperlink{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}{document\_} += \textcolor{charliteral}{'\{'};
+4462     \textcolor{keywordflow}{for} (Value::Members::iterator it = members.begin(); it != members.end();
+4463          ++it) \{
+4464       \textcolor{keyword}{const} \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}& name = *it;
+4465       \textcolor{keywordflow}{if} (it != members.begin())
+4466         document\_ += \textcolor{charliteral}{','};
+4467       document\_ += \hyperlink{namespace_json_a29aff81733b8fdaabf3f1acfc3ad339f}{valueToQuotedStringN}(name.data(), \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned}\textcolor{keyword}{>}(name.length(
+      )));
+4468       document\_ += \hyperlink{class_json_1_1_fast_writer_a4c4c1911179bf472d24492915b0e489a}{yamlCompatiblityEnabled\_} ? \textcolor{stringliteral}{": "} : \textcolor{stringliteral}{":"};
+4469       \hyperlink{class_json_1_1_fast_writer_a2ef4a2ce13a341171f01f414f4fdd765}{writeValue}(value[name]);
+4470     \}
+4471     document\_ += \textcolor{charliteral}{'\}'};
+4472   \} \textcolor{keywordflow}{break};
+4473   \}
+4474 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}\label{class_json_1_1_fast_writer_a5e08c44579db8704dba1ebe37d39fdba}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!document\+\_\+@{document\+\_\+}}
+\index{document\+\_\+@{document\+\_\+}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{document\+\_\+}{document\_}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Fast\+Writer\+::document\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1930 of file json.\+h.
+
+
+
+Referenced by write(), and write\+Value().
+
+\mbox{\Hypertarget{class_json_1_1_fast_writer_a97e9d4ff84b59a48756dcc27a71b5904}\label{class_json_1_1_fast_writer_a97e9d4ff84b59a48756dcc27a71b5904}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!drop\+Null\+Placeholders\+\_\+@{drop\+Null\+Placeholders\+\_\+}}
+\index{drop\+Null\+Placeholders\+\_\+@{drop\+Null\+Placeholders\+\_\+}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{drop\+Null\+Placeholders\+\_\+}{dropNullPlaceholders\_}}
+{\footnotesize\ttfamily bool Json\+::\+Fast\+Writer\+::drop\+Null\+Placeholders\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1932 of file json.\+h.
+
+
+
+Referenced by drop\+Null\+Placeholders(), and write\+Value().
+
+\mbox{\Hypertarget{class_json_1_1_fast_writer_abd6e13851db6dcf59d84af68d48d50ac}\label{class_json_1_1_fast_writer_abd6e13851db6dcf59d84af68d48d50ac}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!omit\+Ending\+Line\+Feed\+\_\+@{omit\+Ending\+Line\+Feed\+\_\+}}
+\index{omit\+Ending\+Line\+Feed\+\_\+@{omit\+Ending\+Line\+Feed\+\_\+}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{omit\+Ending\+Line\+Feed\+\_\+}{omitEndingLineFeed\_}}
+{\footnotesize\ttfamily bool Json\+::\+Fast\+Writer\+::omit\+Ending\+Line\+Feed\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1933 of file json.\+h.
+
+
+
+Referenced by omit\+Ending\+Line\+Feed(), and write().
+
+\mbox{\Hypertarget{class_json_1_1_fast_writer_a4c4c1911179bf472d24492915b0e489a}\label{class_json_1_1_fast_writer_a4c4c1911179bf472d24492915b0e489a}} 
+\index{Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}!yaml\+Compatiblity\+Enabled\+\_\+@{yaml\+Compatiblity\+Enabled\+\_\+}}
+\index{yaml\+Compatiblity\+Enabled\+\_\+@{yaml\+Compatiblity\+Enabled\+\_\+}!Json\+::\+Fast\+Writer@{Json\+::\+Fast\+Writer}}
+\subsubsection{\texorpdfstring{yaml\+Compatiblity\+Enabled\+\_\+}{yamlCompatiblityEnabled\_}}
+{\footnotesize\ttfamily bool Json\+::\+Fast\+Writer\+::yaml\+Compatiblity\+Enabled\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1931 of file json.\+h.
+
+
+
+Referenced by enable\+Y\+A\+M\+L\+Compatibility(), and write\+Value().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{json_8h}{json.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{jsoncpp_8cpp}{jsoncpp.\+cpp}\end{DoxyCompactItemize}

@@ -1,0 +1,2080 @@
+\hypertarget{class_json_1_1_reader}{}\section{Json\+:\+:Reader Class Reference}
+\label{class_json_1_1_reader}\index{Json\+::\+Reader@{Json\+::\+Reader}}
+
+
+Unserialize a \href{http://www.json.org}{\tt J\+S\+ON} document into a \hyperlink{class_json_1_1_value}{Value}.  
+
+
+
+
+{\ttfamily \#include $<$json.\+h$>$}
+
+
+
+Collaboration diagram for Json\+:\+:Reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_1_1_reader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_json_1_1_reader_1_1_error_info}{Error\+Info}
+\item 
+struct \hyperlink{struct_json_1_1_reader_1_1_structured_error}{Structured\+Error}
+\begin{DoxyCompactList}\small\item\em An error tagged with where in the J\+S\+ON text it was encountered. \end{DoxyCompactList}\item 
+class \hyperlink{class_json_1_1_reader_1_1_token}{Token}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef char \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char}
+\item 
+typedef const \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} $\ast$ \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_reader_a0b3c4e24c8393354bab57a6ba3ffc27f}{Reader} ()
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_json_1_1_reader}{Reader} allowing all features for parsing. \end{DoxyCompactList}\item 
+\hyperlink{class_json_1_1_reader_a45f17831118337309180313e93ac33f8}{Reader} (const \hyperlink{class_json_1_1_features}{Features} \&features)
+\begin{DoxyCompactList}\small\item\em Constructs a \hyperlink{class_json_1_1_reader}{Reader} allowing the specified feature set for parsing. \end{DoxyCompactList}\item 
+bool \hyperlink{class_json_1_1_reader_af1da6c976ad1e96c742804c3853eef94}{parse} (const std\+::string \&document, \hyperlink{class_json_1_1_value}{Value} \&root, bool collect\+Comments=true)
+\begin{DoxyCompactList}\small\item\em Read a \hyperlink{class_json_1_1_value}{Value} from a \href{http://www.json.org}{\tt J\+S\+ON} document. \end{DoxyCompactList}\item 
+bool \hyperlink{class_json_1_1_reader_ac71ef2b64c7c27b062052e692af3fb32}{parse} (const char $\ast$begin\+Doc, const char $\ast$end\+Doc, \hyperlink{class_json_1_1_value}{Value} \&root, bool collect\+Comments=true)
+\begin{DoxyCompactList}\small\item\em Read a \hyperlink{class_json_1_1_value}{Value} from a \href{http://www.json.org}{\tt J\+S\+ON} document. \end{DoxyCompactList}\item 
+bool \hyperlink{class_json_1_1_reader_a6d5d0e23f68749d2f17feece4ccf504d}{parse} (\hyperlink{json_8h_a15f2f70b2ce0a2abd0f8112393dbc4de}{J\+S\+O\+N\+C\+P\+P\+\_\+\+I\+S\+T\+R\+E\+AM} \&is, \hyperlink{class_json_1_1_value}{Value} \&root, bool collect\+Comments=true)
+\begin{DoxyCompactList}\small\item\em Parse from input stream. \end{DoxyCompactList}\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_reader_a791cbc5afd1bef1631e07239dc452c79}{get\+Formated\+Error\+Messages} () const
+\begin{DoxyCompactList}\small\item\em Returns a user friendly string that list errors in the parsed document. \end{DoxyCompactList}\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_reader_ae638a7b1f36f7ccf99ba89fa36ccf222}{get\+Formatted\+Error\+Messages} () const
+\begin{DoxyCompactList}\small\item\em Returns a user friendly string that list errors in the parsed document. \end{DoxyCompactList}\item 
+std\+::vector$<$ \hyperlink{struct_json_1_1_reader_1_1_structured_error}{Structured\+Error} $>$ \hyperlink{class_json_1_1_reader_ae3d714e95bd98b27e296c607e408189b}{get\+Structured\+Errors} () const
+\begin{DoxyCompactList}\small\item\em Returns a vector of structured erros encounted while parsing. \end{DoxyCompactList}\item 
+bool \hyperlink{class_json_1_1_reader_af5fa7099083f01706635ade1d0f8ddb5}{push\+Error} (const \hyperlink{class_json_1_1_value}{Value} \&value, const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&message)
+\begin{DoxyCompactList}\small\item\em Add a semantic error message. \end{DoxyCompactList}\item 
+bool \hyperlink{class_json_1_1_reader_a3568be9db568ff57bd3fcc373143dff3}{push\+Error} (const \hyperlink{class_json_1_1_value}{Value} \&value, const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&message, const \hyperlink{class_json_1_1_value}{Value} \&extra)
+\begin{DoxyCompactList}\small\item\em Add a semantic error message with extra context. \end{DoxyCompactList}\item 
+bool \hyperlink{class_json_1_1_reader_a86cbb42b3e6d4a4d6416473b1a8f6ae7}{good} () const
+\begin{DoxyCompactList}\small\item\em Return whether there are any errors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9}{Token\+Type} \{ \newline
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a87fd3ad9cae11a8afe2bd022d8ab90f4}{token\+End\+Of\+Stream} = 0, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a6196ce743696e6c803b130e8eef970f3}{token\+Object\+Begin}, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{token\+Object\+End}, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a366d1a18459ad0c3b5bd32a35391e35a}{token\+Array\+Begin}, 
+\newline
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}{token\+Array\+End}, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ace89d4e0342535b8c00104ed4e5e0cee}{token\+String}, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9b1717bee03ce7016f507bd4598fa5c6}{token\+Number}, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9acec3234e26f2d6bf206187fc5d949a03}{token\+True}, 
+\newline
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ac24318c0842c7653c3555a82437b8eb2}{token\+False}, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a11bd0ba1c34448d075022b89d5bf9853}{token\+Null}, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9af2c235e8da86f11ffb1a1243e49ed1fa}{token\+Array\+Separator}, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a08227b96f54242f4f9a8a597403c4424}{token\+Member\+Separator}, 
+\newline
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}{token\+Comment}, 
+\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a55d1ab9135c3d068b57fafdbabfa569a}{token\+Error}
+ \}
+\item 
+typedef std\+::deque$<$ \hyperlink{class_json_1_1_reader_1_1_error_info}{Error\+Info} $>$ \hyperlink{class_json_1_1_reader_aae51e8f5bab3f067261c842a3ef858e5}{Errors}
+\item 
+typedef std\+::stack$<$ \hyperlink{class_json_1_1_value}{Value} $\ast$ $>$ \hyperlink{class_json_1_1_reader_a8da2114fe8b8124d41ea2f3434f0171b}{Nodes}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{read\+Token} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token)
+\item 
+void \hyperlink{class_json_1_1_reader_a40d0f69d15aeb2d52ff78d794f5ab8b2}{skip\+Spaces} ()
+\item 
+bool \hyperlink{class_json_1_1_reader_a3e5a7bc6b7b53f2ca8cb9da42f8ffb21}{match} (\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} pattern, int pattern\+Length)
+\item 
+bool \hyperlink{class_json_1_1_reader_ad2690e860a1b3332c5401fb0850ba065}{read\+Comment} ()
+\item 
+bool \hyperlink{class_json_1_1_reader_ae0ffe796abdc3c5851589ee500e28c79}{read\+C\+Style\+Comment} ()
+\item 
+bool \hyperlink{class_json_1_1_reader_a6716ef6290b0f469efaf8d379c357967}{read\+Cpp\+Style\+Comment} ()
+\item 
+bool \hyperlink{class_json_1_1_reader_a6328a0b1994e05118886f9fc9c608643}{read\+String} ()
+\item 
+void \hyperlink{class_json_1_1_reader_afb31bfda6bb27d6453057a47655e8363}{read\+Number} ()
+\item 
+bool \hyperlink{class_json_1_1_reader_a47e56844b803d41ec993a83fadf4495c}{read\+Value} ()
+\item 
+bool \hyperlink{class_json_1_1_reader_a0068eb3d8e86e91f0e4806f60da66b9c}{read\+Object} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token)
+\item 
+bool \hyperlink{class_json_1_1_reader_afd9a30c0af205c9f327613f486fae6b8}{read\+Array} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token)
+\item 
+bool \hyperlink{class_json_1_1_reader_a442d1f23edf0f4350f5eeab3ee3f7d46}{decode\+Number} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token)
+\item 
+bool \hyperlink{class_json_1_1_reader_a72f426ce3fa384d14aa10e9dd75618f0}{decode\+Number} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token, \hyperlink{class_json_1_1_value}{Value} \&decoded)
+\item 
+bool \hyperlink{class_json_1_1_reader_aaf736937912f5c9b8d221e57f209e3e0}{decode\+String} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token)
+\item 
+bool \hyperlink{class_json_1_1_reader_a8911a3225ee94d86d83edc2f8c1befe0}{decode\+String} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token, \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&decoded)
+\item 
+bool \hyperlink{class_json_1_1_reader_a2420bbb7fd6d5d3e7e2fea894dd8f70f}{decode\+Double} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token)
+\item 
+bool \hyperlink{class_json_1_1_reader_a5e4a66be7c413bca86078f14df5eb802}{decode\+Double} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token, \hyperlink{class_json_1_1_value}{Value} \&decoded)
+\item 
+bool \hyperlink{class_json_1_1_reader_a8fe24db3e9953aef3d637a56447e795c}{decode\+Unicode\+Code\+Point} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token, \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} \&current, \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} end, unsigned int \&unicode)
+\item 
+bool \hyperlink{class_json_1_1_reader_a469cb6f55971d7c41fca2752a3aa5bf7}{decode\+Unicode\+Escape\+Sequence} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token, \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} \&current, \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} end, unsigned int \&unicode)
+\item 
+bool \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{add\+Error} (const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&message, \hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token, \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} extra=0)
+\item 
+bool \hyperlink{class_json_1_1_reader_a8d4ed03a43082c5ace81ba5b81425eaf}{recover\+From\+Error} (\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9}{Token\+Type} skip\+Until\+Token)
+\item 
+bool \hyperlink{class_json_1_1_reader_a478db8ac6d00db1409608a37b66bc38d}{add\+Error\+And\+Recover} (const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&message, \hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token, \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9}{Token\+Type} skip\+Until\+Token)
+\item 
+void \hyperlink{class_json_1_1_reader_ad922ea5a8ab333084edbb84827861fa3}{skip\+Until\+Space} ()
+\item 
+\hyperlink{class_json_1_1_value}{Value} \& \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{current\+Value} ()
+\item 
+\hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} \hyperlink{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}{get\+Next\+Char} ()
+\item 
+void \hyperlink{class_json_1_1_reader_a8b2fb6af24382c3914fd4643b092c675}{get\+Location\+Line\+And\+Column} (\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} location, int \&line, int \&column) const
+\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_reader_a49757dec5a1a53eff388dc7bf2bda890}{get\+Location\+Line\+And\+Column} (\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} location) const
+\item 
+void \hyperlink{class_json_1_1_reader_aaea3bd62d12ffb6117a61476c0685049}{add\+Comment} (\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} begin, \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} end, \hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351}{Comment\+Placement} placement)
+\item 
+void \hyperlink{class_json_1_1_reader_a22e677ef400d8223f27e631b4cd4b821}{skip\+Comment\+Tokens} (\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&token)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_json_1_1_reader_a8da2114fe8b8124d41ea2f3434f0171b}{Nodes} \hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\+\_\+}
+\item 
+\hyperlink{class_json_1_1_reader_aae51e8f5bab3f067261c842a3ef858e5}{Errors} \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\+\_\+}
+\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_reader_abf99e137bc92a93623dc97598702261a}{document\+\_\+}
+\item 
+\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\+\_\+}
+\item 
+\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\+\_\+}
+\item 
+\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\+\_\+}
+\item 
+\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} \hyperlink{class_json_1_1_reader_a497a114f7b760f1b794b8fff9876615a}{last\+Value\+End\+\_\+}
+\item 
+\hyperlink{class_json_1_1_value}{Value} $\ast$ \hyperlink{class_json_1_1_reader_a87cc75ae5adc6a6755f0ba1c7255ff6c}{last\+Value\+\_\+}
+\item 
+\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{comments\+Before\+\_\+}
+\item 
+\hyperlink{class_json_1_1_features}{Features} \hyperlink{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}{features\+\_\+}
+\item 
+bool \hyperlink{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}{collect\+Comments\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Unserialize a \href{http://www.json.org}{\tt J\+S\+ON} document into a \hyperlink{class_json_1_1_value}{Value}. 
+
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000005}{Deprecated}]Use \hyperlink{class_json_1_1_char_reader}{Char\+Reader} and \hyperlink{class_json_1_1_char_reader_builder}{Char\+Reader\+Builder}. \end{DoxyRefDesc}
+
+
+Definition at line 1361 of file json.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}\label{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!Char@{Char}}
+\index{Char@{Char}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{Char}{Char}}
+{\footnotesize\ttfamily typedef char \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Json\+::\+Reader\+::\+Char}}
+
+
+
+Definition at line 1363 of file json.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_reader_aae51e8f5bab3f067261c842a3ef858e5}\label{class_json_1_1_reader_aae51e8f5bab3f067261c842a3ef858e5}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!Errors@{Errors}}
+\index{Errors@{Errors}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{Errors}{Errors}}
+{\footnotesize\ttfamily typedef std\+::deque$<$\hyperlink{class_json_1_1_reader_1_1_error_info}{Error\+Info}$>$ \hyperlink{class_json_1_1_reader_aae51e8f5bab3f067261c842a3ef858e5}{Json\+::\+Reader\+::\+Errors}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1518 of file json.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}\label{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!Location@{Location}}
+\index{Location@{Location}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{Location}{Location}}
+{\footnotesize\ttfamily typedef const \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char}$\ast$ \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Json\+::\+Reader\+::\+Location}}
+
+
+
+Definition at line 1364 of file json.\+h.
+
+\mbox{\Hypertarget{class_json_1_1_reader_a8da2114fe8b8124d41ea2f3434f0171b}\label{class_json_1_1_reader_a8da2114fe8b8124d41ea2f3434f0171b}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!Nodes@{Nodes}}
+\index{Nodes@{Nodes}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{Nodes}{Nodes}}
+{\footnotesize\ttfamily typedef std\+::stack$<$\hyperlink{class_json_1_1_value}{Value}$\ast$$>$ \hyperlink{class_json_1_1_reader_a8da2114fe8b8124d41ea2f3434f0171b}{Json\+::\+Reader\+::\+Nodes}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1559 of file json.\+h.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!Token\+Type@{Token\+Type}}
+\index{Token\+Type@{Token\+Type}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{Token\+Type}{TokenType}}
+{\footnotesize\ttfamily enum \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9}{Json\+::\+Reader\+::\+Token\+Type}\hspace{0.3cm}{\ttfamily [private]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+End\+Of\+Stream@{token\+End\+Of\+Stream}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+End\+Of\+Stream@{token\+End\+Of\+Stream}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a87fd3ad9cae11a8afe2bd022d8ab90f4}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a87fd3ad9cae11a8afe2bd022d8ab90f4}} 
+token\+End\+Of\+Stream&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Object\+Begin@{token\+Object\+Begin}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Object\+Begin@{token\+Object\+Begin}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a6196ce743696e6c803b130e8eef970f3}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a6196ce743696e6c803b130e8eef970f3}} 
+token\+Object\+Begin&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Object\+End@{token\+Object\+End}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Object\+End@{token\+Object\+End}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}} 
+token\+Object\+End&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Array\+Begin@{token\+Array\+Begin}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Array\+Begin@{token\+Array\+Begin}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a366d1a18459ad0c3b5bd32a35391e35a}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a366d1a18459ad0c3b5bd32a35391e35a}} 
+token\+Array\+Begin&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Array\+End@{token\+Array\+End}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Array\+End@{token\+Array\+End}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}} 
+token\+Array\+End&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+String@{token\+String}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+String@{token\+String}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ace89d4e0342535b8c00104ed4e5e0cee}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ace89d4e0342535b8c00104ed4e5e0cee}} 
+token\+String&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Number@{token\+Number}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Number@{token\+Number}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9b1717bee03ce7016f507bd4598fa5c6}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9b1717bee03ce7016f507bd4598fa5c6}} 
+token\+Number&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+True@{token\+True}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+True@{token\+True}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9acec3234e26f2d6bf206187fc5d949a03}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9acec3234e26f2d6bf206187fc5d949a03}} 
+token\+True&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+False@{token\+False}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+False@{token\+False}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ac24318c0842c7653c3555a82437b8eb2}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ac24318c0842c7653c3555a82437b8eb2}} 
+token\+False&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Null@{token\+Null}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Null@{token\+Null}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a11bd0ba1c34448d075022b89d5bf9853}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a11bd0ba1c34448d075022b89d5bf9853}} 
+token\+Null&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Array\+Separator@{token\+Array\+Separator}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Array\+Separator@{token\+Array\+Separator}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9af2c235e8da86f11ffb1a1243e49ed1fa}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9af2c235e8da86f11ffb1a1243e49ed1fa}} 
+token\+Array\+Separator&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Member\+Separator@{token\+Member\+Separator}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Member\+Separator@{token\+Member\+Separator}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a08227b96f54242f4f9a8a597403c4424}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a08227b96f54242f4f9a8a597403c4424}} 
+token\+Member\+Separator&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Comment@{token\+Comment}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Comment@{token\+Comment}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}} 
+token\+Comment&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{token\+Error@{token\+Error}!Json\+::\+Reader@{Json\+::\+Reader}}\index{Json\+::\+Reader@{Json\+::\+Reader}!token\+Error@{token\+Error}}}\mbox{\Hypertarget{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a55d1ab9135c3d068b57fafdbabfa569a}\label{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a55d1ab9135c3d068b57fafdbabfa569a}} 
+token\+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 1487 of file json.\+h.
+
+
+\begin{DoxyCode}
+1487                  \{
+1488     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a87fd3ad9cae11a8afe2bd022d8ab90f4}{tokenEndOfStream} = 0,
+1489     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a6196ce743696e6c803b130e8eef970f3}{tokenObjectBegin},
+1490     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd},
+1491     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a366d1a18459ad0c3b5bd32a35391e35a}{tokenArrayBegin},
+1492     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}{tokenArrayEnd},
+1493     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ace89d4e0342535b8c00104ed4e5e0cee}{tokenString},
+1494     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9b1717bee03ce7016f507bd4598fa5c6}{tokenNumber},
+1495     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9acec3234e26f2d6bf206187fc5d949a03}{tokenTrue},
+1496     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ac24318c0842c7653c3555a82437b8eb2}{tokenFalse},
+1497     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a11bd0ba1c34448d075022b89d5bf9853}{tokenNull},
+1498     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9af2c235e8da86f11ffb1a1243e49ed1fa}{tokenArraySeparator},
+1499     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a08227b96f54242f4f9a8a597403c4424}{tokenMemberSeparator},
+1500     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}{tokenComment},
+1501     \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a55d1ab9135c3d068b57fafdbabfa569a}{tokenError}
+1502   \};
+\end{DoxyCode}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_json_1_1_reader_a0b3c4e24c8393354bab57a6ba3ffc27f}\label{class_json_1_1_reader_a0b3c4e24c8393354bab57a6ba3ffc27f}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!Reader@{Reader}}
+\index{Reader@{Reader}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{Reader()}{Reader()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Json\+::\+Reader\+::\+Reader (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Constructs a \hyperlink{class_json_1_1_reader}{Reader} allowing all features for parsing. 
+
+
+
+Definition at line 310 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+311     : \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}(), \hyperlink{class_json_1_1_reader_abf99e137bc92a93623dc97598702261a}{document\_}(), \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_}(), \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_}(), 
+      \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_}(), \hyperlink{class_json_1_1_reader_a497a114f7b760f1b794b8fff9876615a}{lastValueEnd\_}(),
+312       \hyperlink{class_json_1_1_reader_a87cc75ae5adc6a6755f0ba1c7255ff6c}{lastValue\_}(), \hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{commentsBefore\_}(), \hyperlink{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}{features\_}(
+      \hyperlink{class_json_1_1_features_a63894da6e2c100b38741fa933f3d33ae}{Features::all}()),
+313       \hyperlink{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}{collectComments\_}() \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a45f17831118337309180313e93ac33f8}\label{class_json_1_1_reader_a45f17831118337309180313e93ac33f8}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!Reader@{Reader}}
+\index{Reader@{Reader}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{Reader()}{Reader()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Json\+::\+Reader\+::\+Reader (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_features}{Features} \&}]{features }\end{DoxyParamCaption})}
+
+
+
+Constructs a \hyperlink{class_json_1_1_reader}{Reader} allowing the specified feature set for parsing. 
+
+
+
+Definition at line 315 of file jsoncpp.\+cpp.
+
+
+\begin{DoxyCode}
+316     : \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}(), \hyperlink{class_json_1_1_reader_abf99e137bc92a93623dc97598702261a}{document\_}(), \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_}(), \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_}(), 
+      \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_}(), \hyperlink{class_json_1_1_reader_a497a114f7b760f1b794b8fff9876615a}{lastValueEnd\_}(),
+317       \hyperlink{class_json_1_1_reader_a87cc75ae5adc6a6755f0ba1c7255ff6c}{lastValue\_}(), \hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{commentsBefore\_}(), \hyperlink{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}{features\_}(features), 
+      \hyperlink{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}{collectComments\_}() \{
+318 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_json_1_1_reader_aaea3bd62d12ffb6117a61476c0685049}\label{class_json_1_1_reader_aaea3bd62d12ffb6117a61476c0685049}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!add\+Comment@{add\+Comment}}
+\index{add\+Comment@{add\+Comment}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{add\+Comment()}{addComment()}}
+{\footnotesize\ttfamily void Json\+::\+Reader\+::add\+Comment (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location}}]{begin,  }\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location}}]{end,  }\item[{\hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351}{Comment\+Placement}}]{placement }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 609 of file jsoncpp.\+cpp.
+
+
+
+References collect\+Comments\+\_\+, Json\+::comment\+After\+On\+Same\+Line, comments\+Before\+\_\+, J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, last\+Value\+\_\+, Json\+::normalize\+E\+O\+L(), and Json\+::\+Value\+::set\+Comment().
+
+
+
+Referenced by read\+Comment().
+
+
+\begin{DoxyCode}
+609                                                                            \{
+610   assert(\hyperlink{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}{collectComments\_});
+611   \textcolor{keyword}{const} \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}& normalized = \hyperlink{namespace_json_a63123f3dd63f340ac517a59f44ea7aa4}{normalizeEOL}(begin, end);
+612   \textcolor{keywordflow}{if} (placement == \hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a008a230a0586de54f30b76afe70fdcfa}{commentAfterOnSameLine}) \{
+613     assert(\hyperlink{class_json_1_1_reader_a87cc75ae5adc6a6755f0ba1c7255ff6c}{lastValue\_} != 0);
+614     \hyperlink{class_json_1_1_reader_a87cc75ae5adc6a6755f0ba1c7255ff6c}{lastValue\_}->\hyperlink{class_json_1_1_value_a29f3a30f7e5d3af6f38d57999bf5b480}{setComment}(normalized, placement);
+615   \} \textcolor{keywordflow}{else} \{
+616     \hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{commentsBefore\_} += normalized;
+617   \}
+618 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}\label{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!add\+Error@{add\+Error}}
+\index{add\+Error@{add\+Error}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{add\+Error()}{addError()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::add\+Error (\begin{DoxyParamCaption}\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{message,  }\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token,  }\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location}}]{extra = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 970 of file jsoncpp.\+cpp.
+
+
+
+References errors\+\_\+, Json\+::\+Reader\+::\+Error\+Info\+::extra\+\_\+, Json\+::\+Reader\+::\+Error\+Info\+::message\+\_\+, and Json\+::\+Reader\+::\+Error\+Info\+::token\+\_\+.
+
+
+
+Referenced by add\+Error\+And\+Recover(), decode\+Double(), decode\+String(), decode\+Unicode\+Code\+Point(), decode\+Unicode\+Escape\+Sequence(), parse(), and read\+Value().
+
+
+\begin{DoxyCode}
+970                                                                             \{
+971   ErrorInfo info;
+972   info.token\_ = token;
+973   info.message\_ = message;
+974   info.extra\_ = extra;
+975   \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.push\_back(info);
+976   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+977 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a478db8ac6d00db1409608a37b66bc38d}\label{class_json_1_1_reader_a478db8ac6d00db1409608a37b66bc38d}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!add\+Error\+And\+Recover@{add\+Error\+And\+Recover}}
+\index{add\+Error\+And\+Recover@{add\+Error\+And\+Recover}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{add\+Error\+And\+Recover()}{addErrorAndRecover()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::add\+Error\+And\+Recover (\begin{DoxyParamCaption}\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{message,  }\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token,  }\item[{\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9}{Token\+Type}}]{skip\+Until\+Token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 992 of file jsoncpp.\+cpp.
+
+
+
+References add\+Error(), and recover\+From\+Error().
+
+
+
+Referenced by read\+Array(), and read\+Object().
+
+
+\begin{DoxyCode}
+994                                                           \{
+995   \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(message, token);
+996   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a8d4ed03a43082c5ace81ba5b81425eaf}{recoverFromError}(skipUntilToken);
+997 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}\label{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!current\+Value@{current\+Value}}
+\index{current\+Value@{current\+Value}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{current\+Value()}{currentValue()}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Value} \& Json\+::\+Reader\+::current\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 999 of file jsoncpp.\+cpp.
+
+
+
+References nodes\+\_\+.
+
+
+
+Referenced by decode\+Double(), decode\+Number(), decode\+String(), read\+Array(), read\+Object(), and read\+Value().
+
+
+\begin{DoxyCode}
+999 \{ \textcolor{keywordflow}{return} *(\hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\_}.top()); \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a2420bbb7fd6d5d3e7e2fea894dd8f70f}\label{class_json_1_1_reader_a2420bbb7fd6d5d3e7e2fea894dd8f70f}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!decode\+Double@{decode\+Double}}
+\index{decode\+Double@{decode\+Double}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{decode\+Double()}{decodeDouble()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::decode\+Double (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 825 of file jsoncpp.\+cpp.
+
+
+
+References begin\+\_\+, current\+Value(), Json\+::\+Reader\+::\+Token\+::end\+\_\+, Json\+::\+Value\+::set\+Offset\+Limit(), Json\+::\+Value\+::set\+Offset\+Start(), Json\+::\+Reader\+::\+Token\+::start\+\_\+, and Json\+::\+Value\+::swap\+Payload().
+
+
+
+Referenced by decode\+Number().
+
+
+\begin{DoxyCode}
+825                                       \{
+826   Value decoded;
+827   \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_a2420bbb7fd6d5d3e7e2fea894dd8f70f}{decodeDouble}(token, decoded))
+828     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+829   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5263476047f20e2fc6de470e4de34fe5}{swapPayload}(decoded);
+830   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(token.start\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+831   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(token.end\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+832   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+833 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a5e4a66be7c413bca86078f14df5eb802}\label{class_json_1_1_reader_a5e4a66be7c413bca86078f14df5eb802}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!decode\+Double@{decode\+Double}}
+\index{decode\+Double@{decode\+Double}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{decode\+Double()}{decodeDouble()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::decode\+Double (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token,  }\item[{\hyperlink{class_json_1_1_value}{Value} \&}]{decoded }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 835 of file jsoncpp.\+cpp.
+
+
+
+References add\+Error(), Json\+::\+Reader\+::\+Token\+::end\+\_\+, J\+S\+O\+N\+C\+P\+P\+\_\+\+I\+S\+T\+R\+I\+N\+G\+S\+T\+R\+E\+AM, J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, and Json\+::\+Reader\+::\+Token\+::start\+\_\+.
+
+
+\begin{DoxyCode}
+835                                                       \{
+836   \textcolor{keywordtype}{double} value = 0;
+837   \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING} buffer(token.start\_, token.end\_);
+838   \hyperlink{json_8h_a1b5d70fe3d83273d200193177ded4c25}{JSONCPP\_ISTRINGSTREAM} is(buffer);
+839   \textcolor{keywordflow}{if} (!(is >> value))
+840     \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(\textcolor{stringliteral}{"'"} + \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}(token.start\_, token.end\_) +
+841                         \textcolor{stringliteral}{"' is not a number."},
+842                     token);
+843   decoded = value;
+844   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+845 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a442d1f23edf0f4350f5eeab3ee3f7d46}\label{class_json_1_1_reader_a442d1f23edf0f4350f5eeab3ee3f7d46}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!decode\+Number@{decode\+Number}}
+\index{decode\+Number@{decode\+Number}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{decode\+Number()}{decodeNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::decode\+Number (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 773 of file jsoncpp.\+cpp.
+
+
+
+References begin\+\_\+, current\+Value(), Json\+::\+Reader\+::\+Token\+::end\+\_\+, Json\+::\+Value\+::set\+Offset\+Limit(), Json\+::\+Value\+::set\+Offset\+Start(), Json\+::\+Reader\+::\+Token\+::start\+\_\+, and Json\+::\+Value\+::swap\+Payload().
+
+
+
+Referenced by read\+Object(), and read\+Value().
+
+
+\begin{DoxyCode}
+773                                       \{
+774   Value decoded;
+775   \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_a442d1f23edf0f4350f5eeab3ee3f7d46}{decodeNumber}(token, decoded))
+776     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+777   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5263476047f20e2fc6de470e4de34fe5}{swapPayload}(decoded);
+778   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(token.start\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+779   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(token.end\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+780   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+781 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a72f426ce3fa384d14aa10e9dd75618f0}\label{class_json_1_1_reader_a72f426ce3fa384d14aa10e9dd75618f0}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!decode\+Number@{decode\+Number}}
+\index{decode\+Number@{decode\+Number}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{decode\+Number()}{decodeNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::decode\+Number (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token,  }\item[{\hyperlink{class_json_1_1_value}{Value} \&}]{decoded }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 783 of file jsoncpp.\+cpp.
+
+
+
+References decode\+Double(), Json\+::\+Reader\+::\+Token\+::end\+\_\+, Json\+::\+Value\+::max\+Int, Json\+::\+Value\+::max\+Largest\+Int, Json\+::\+Value\+::max\+Largest\+U\+Int, Json\+::\+Value\+::min\+Largest\+Int, and Json\+::\+Reader\+::\+Token\+::start\+\_\+.
+
+
+\begin{DoxyCode}
+783                                                       \{
+784   \textcolor{comment}{// Attempts to parse the number as an integer. If the number is}
+785   \textcolor{comment}{// larger than the maximum supported value of an integer then}
+786   \textcolor{comment}{// we decode the number as a double.}
+787   \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} current = token.start\_;
+788   \textcolor{keywordtype}{bool} isNegative = *current == \textcolor{charliteral}{'-'};
+789   \textcolor{keywordflow}{if} (isNegative)
+790     ++current;
+791   \textcolor{comment}{// TODO: Help the compiler do the div and mod at compile time or get rid of them.}
+792   \hyperlink{class_json_1_1_value_a6682a3684d635e03fc06ba229fa24eec}{Value::LargestUInt} maxIntegerValue =
+793       isNegative ? \hyperlink{class_json_1_1_value_a6682a3684d635e03fc06ba229fa24eec}{Value::LargestUInt}(\hyperlink{class_json_1_1_value_a8b4977696f13296fa8755c7953fafb2f}{Value::maxLargestInt}) + 1
+794                  : \hyperlink{class_json_1_1_value_a8ddb32d9d55fa5323ae5135639dc2e31}{Value::maxLargestUInt};
+795   \hyperlink{class_json_1_1_value_a6682a3684d635e03fc06ba229fa24eec}{Value::LargestUInt} threshold = maxIntegerValue / 10;
+796   \hyperlink{class_json_1_1_value_a6682a3684d635e03fc06ba229fa24eec}{Value::LargestUInt} value = 0;
+797   \textcolor{keywordflow}{while} (current < token.end\_) \{
+798     \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = *current++;
+799     \textcolor{keywordflow}{if} (c < '0' || c > \textcolor{charliteral}{'9'})
+800       \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a2420bbb7fd6d5d3e7e2fea894dd8f70f}{decodeDouble}(token, decoded);
+801     \hyperlink{class_json_1_1_value_a0933d59b45793ae4aade1757c322a98d}{Value::UInt} digit(static\_cast<Value::UInt>(c - \textcolor{charliteral}{'0'}));
+802     \textcolor{keywordflow}{if} (value >= threshold) \{
+803       \textcolor{comment}{// We've hit or exceeded the max value divided by 10 (rounded down). If}
+804       \textcolor{comment}{// a) we've only just touched the limit, b) this is the last digit, and}
+805       \textcolor{comment}{// c) it's small enough to fit in that rounding delta, we're okay.}
+806       \textcolor{comment}{// Otherwise treat this number as a double to avoid overflow.}
+807       \textcolor{keywordflow}{if} (value > threshold || current != token.end\_ ||
+808           digit > maxIntegerValue % 10) \{
+809         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a2420bbb7fd6d5d3e7e2fea894dd8f70f}{decodeDouble}(token, decoded);
+810       \}
+811     \}
+812     value = value * 10 + digit;
+813   \}
+814   \textcolor{keywordflow}{if} (isNegative && value == maxIntegerValue)
+815     decoded = \hyperlink{class_json_1_1_value_af91df130daa50dd43d2cd89e6ee67706}{Value::minLargestInt};
+816   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (isNegative)
+817     decoded = -\hyperlink{class_json_1_1_value_a1cbb82642ed05109b9833e49f042ece7}{Value::LargestInt}(value);
+818   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (value <= \hyperlink{class_json_1_1_value_a6682a3684d635e03fc06ba229fa24eec}{Value::LargestUInt}(\hyperlink{class_json_1_1_value_a978c799a8af3114ef7dab6fd0a310a1b}{Value::maxInt}))
+819     decoded = \hyperlink{class_json_1_1_value_a1cbb82642ed05109b9833e49f042ece7}{Value::LargestInt}(value);
+820   \textcolor{keywordflow}{else}
+821     decoded = value;
+822   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+823 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_aaf736937912f5c9b8d221e57f209e3e0}\label{class_json_1_1_reader_aaf736937912f5c9b8d221e57f209e3e0}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!decode\+String@{decode\+String}}
+\index{decode\+String@{decode\+String}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{decode\+String()}{decodeString()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::decode\+String (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 847 of file jsoncpp.\+cpp.
+
+
+
+References begin\+\_\+, current\+Value(), Json\+::\+Reader\+::\+Token\+::end\+\_\+, J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, Json\+::\+Value\+::set\+Offset\+Limit(), Json\+::\+Value\+::set\+Offset\+Start(), Json\+::\+Reader\+::\+Token\+::start\+\_\+, and Json\+::\+Value\+::swap\+Payload().
+
+
+
+Referenced by read\+Object(), and read\+Value().
+
+
+\begin{DoxyCode}
+847                                       \{
+848   \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING} decoded\_string;
+849   \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_aaf736937912f5c9b8d221e57f209e3e0}{decodeString}(token, decoded\_string))
+850     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+851   Value decoded(decoded\_string);
+852   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5263476047f20e2fc6de470e4de34fe5}{swapPayload}(decoded);
+853   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(token.start\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+854   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(token.end\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+855   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+856 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a8911a3225ee94d86d83edc2f8c1befe0}\label{class_json_1_1_reader_a8911a3225ee94d86d83edc2f8c1befe0}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!decode\+String@{decode\+String}}
+\index{decode\+String@{decode\+String}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{decode\+String()}{decodeString()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::decode\+String (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token,  }\item[{\hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{decoded }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 858 of file jsoncpp.\+cpp.
+
+
+
+References add\+Error(), Json\+::code\+Point\+To\+U\+T\+F8(), decode\+Unicode\+Code\+Point(), Json\+::\+Reader\+::\+Token\+::end\+\_\+, and Json\+::\+Reader\+::\+Token\+::start\+\_\+.
+
+
+\begin{DoxyCode}
+858                                                                \{
+859   decoded.reserve(static\_cast<size\_t>(token.end\_ - token.start\_ - 2));
+860   \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} current = token.start\_ + 1; \textcolor{comment}{// skip '"'}
+861   \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} end = token.end\_ - 1;       \textcolor{comment}{// do not include '"'}
+862   \textcolor{keywordflow}{while} (current != end) \{
+863     \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = *current++;
+864     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'"'})
+865       \textcolor{keywordflow}{break};
+866     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}) \{
+867       \textcolor{keywordflow}{if} (current == end)
+868         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(\textcolor{stringliteral}{"Empty escape sequence in string"}, token, current);
+869       \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} escape = *current++;
+870       \textcolor{keywordflow}{switch} (escape) \{
+871       \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+872         decoded += \textcolor{charliteral}{'"'};
+873         \textcolor{keywordflow}{break};
+874       \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'}:
+875         decoded += \textcolor{charliteral}{'/'};
+876         \textcolor{keywordflow}{break};
+877       \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}:
+878         decoded += \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'};
+879         \textcolor{keywordflow}{break};
+880       \textcolor{keywordflow}{case} \textcolor{charliteral}{'b'}:
+881         decoded += \textcolor{charliteral}{'\(\backslash\)b'};
+882         \textcolor{keywordflow}{break};
+883       \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}:
+884         decoded += \textcolor{charliteral}{'\(\backslash\)f'};
+885         \textcolor{keywordflow}{break};
+886       \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+887         decoded += \textcolor{charliteral}{'\(\backslash\)n'};
+888         \textcolor{keywordflow}{break};
+889       \textcolor{keywordflow}{case} \textcolor{charliteral}{'r'}:
+890         decoded += \textcolor{charliteral}{'\(\backslash\)r'};
+891         \textcolor{keywordflow}{break};
+892       \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+893         decoded += \textcolor{charliteral}{'\(\backslash\)t'};
+894         \textcolor{keywordflow}{break};
+895       \textcolor{keywordflow}{case} \textcolor{charliteral}{'u'}: \{
+896         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} unicode;
+897         \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_a8fe24db3e9953aef3d637a56447e795c}{decodeUnicodeCodePoint}(token, current, end, unicode))
+898           \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+899         decoded += \hyperlink{namespace_json_a33f8bda65a5b1fc4f5ddc39cb03dc742}{codePointToUTF8}(unicode);
+900       \} \textcolor{keywordflow}{break};
+901       \textcolor{keywordflow}{default}:
+902         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(\textcolor{stringliteral}{"Bad escape sequence in string"}, token, current);
+903       \}
+904     \} \textcolor{keywordflow}{else} \{
+905       decoded += c;
+906     \}
+907   \}
+908   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+909 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a8fe24db3e9953aef3d637a56447e795c}\label{class_json_1_1_reader_a8fe24db3e9953aef3d637a56447e795c}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!decode\+Unicode\+Code\+Point@{decode\+Unicode\+Code\+Point}}
+\index{decode\+Unicode\+Code\+Point@{decode\+Unicode\+Code\+Point}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{decode\+Unicode\+Code\+Point()}{decodeUnicodeCodePoint()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::decode\+Unicode\+Code\+Point (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token,  }\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} \&}]{current,  }\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location}}]{end,  }\item[{unsigned int \&}]{unicode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 911 of file jsoncpp.\+cpp.
+
+
+
+References add\+Error(), and decode\+Unicode\+Escape\+Sequence().
+
+
+
+Referenced by decode\+String().
+
+
+\begin{DoxyCode}
+914                                                            \{
+915 
+916   \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_a469cb6f55971d7c41fca2752a3aa5bf7}{decodeUnicodeEscapeSequence}(token, current, end, unicode))
+917     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+918   \textcolor{keywordflow}{if} (unicode >= 0xD800 && unicode <= 0xDBFF) \{
+919     \textcolor{comment}{// surrogate pairs}
+920     \textcolor{keywordflow}{if} (end - current < 6)
+921       \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(
+922           \textcolor{stringliteral}{"additional six characters expected to parse unicode surrogate pair."},
+923           token,
+924           current);
+925     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} surrogatePair;
+926     \textcolor{keywordflow}{if} (*(current++) == \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'} && *(current++) == \textcolor{charliteral}{'u'}) \{
+927       \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a469cb6f55971d7c41fca2752a3aa5bf7}{decodeUnicodeEscapeSequence}(token, current, end, surrogatePair)) \{
+928         unicode = 0x10000 + ((unicode & 0x3FF) << 10) + (surrogatePair & 0x3FF);
+929       \} \textcolor{keywordflow}{else}
+930         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+931     \} \textcolor{keywordflow}{else}
+932       \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(\textcolor{stringliteral}{"expecting another \(\backslash\)\(\backslash\)u token to begin the second half of "}
+933                       \textcolor{stringliteral}{"a unicode surrogate pair"},
+934                       token,
+935                       current);
+936   \}
+937   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+938 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a469cb6f55971d7c41fca2752a3aa5bf7}\label{class_json_1_1_reader_a469cb6f55971d7c41fca2752a3aa5bf7}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!decode\+Unicode\+Escape\+Sequence@{decode\+Unicode\+Escape\+Sequence}}
+\index{decode\+Unicode\+Escape\+Sequence@{decode\+Unicode\+Escape\+Sequence}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{decode\+Unicode\+Escape\+Sequence()}{decodeUnicodeEscapeSequence()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::decode\+Unicode\+Escape\+Sequence (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token,  }\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} \&}]{current,  }\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location}}]{end,  }\item[{unsigned int \&}]{unicode }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 940 of file jsoncpp.\+cpp.
+
+
+
+References add\+Error().
+
+
+
+Referenced by decode\+Unicode\+Code\+Point().
+
+
+\begin{DoxyCode}
+943                                                                     \{
+944   \textcolor{keywordflow}{if} (end - current < 4)
+945     \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(
+946         \textcolor{stringliteral}{"Bad unicode escape sequence in string: four digits expected."},
+947         token,
+948         current);
+949   \textcolor{keywordtype}{int} unicode = 0;
+950   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} index = 0; index < 4; ++index) \{
+951     \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = *current++;
+952     unicode *= 16;
+953     \textcolor{keywordflow}{if} (c >= \textcolor{charliteral}{'0'} && c <= \textcolor{charliteral}{'9'})
+954       unicode += c - \textcolor{charliteral}{'0'};
+955     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c >= \textcolor{charliteral}{'a'} && c <= \textcolor{charliteral}{'f'})
+956       unicode += c - \textcolor{charliteral}{'a'} + 10;
+957     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c >= \textcolor{charliteral}{'A'} && c <= \textcolor{charliteral}{'F'})
+958       unicode += c - \textcolor{charliteral}{'A'} + 10;
+959     \textcolor{keywordflow}{else}
+960       \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(
+961           \textcolor{stringliteral}{"Bad unicode escape sequence in string: hexadecimal digit expected."},
+962           token,
+963           current);
+964   \}
+965   ret\_unicode = \textcolor{keyword}{static\_cast<}\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}\textcolor{keyword}{>}(unicode);
+966   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+967 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a791cbc5afd1bef1631e07239dc452c79}\label{class_json_1_1_reader_a791cbc5afd1bef1631e07239dc452c79}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!get\+Formated\+Error\+Messages@{get\+Formated\+Error\+Messages}}
+\index{get\+Formated\+Error\+Messages@{get\+Formated\+Error\+Messages}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{get\+Formated\+Error\+Messages()}{getFormatedErrorMessages()}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Reader\+::get\+Formated\+Error\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a user friendly string that list errors in the parsed document. 
+
+\begin{DoxyReturn}{Returns}
+Formatted error message with the list of errors with their location in the parsed document. An empty string is returned if no error occurred during parsing. 
+\end{DoxyReturn}
+\begin{DoxyRefDesc}{Deprecated}
+\item[\hyperlink{deprecated__deprecated000006}{Deprecated}]Use \hyperlink{class_json_1_1_reader_ae638a7b1f36f7ccf99ba89fa36ccf222}{get\+Formatted\+Error\+Messages()} instead (typo fix). \end{DoxyRefDesc}
+
+
+Definition at line 1039 of file jsoncpp.\+cpp.
+
+
+
+References get\+Formatted\+Error\+Messages().
+
+
+\begin{DoxyCode}
+1039                                                       \{
+1040   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_ae638a7b1f36f7ccf99ba89fa36ccf222}{getFormattedErrorMessages}();
+1041 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_ae638a7b1f36f7ccf99ba89fa36ccf222}\label{class_json_1_1_reader_ae638a7b1f36f7ccf99ba89fa36ccf222}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!get\+Formatted\+Error\+Messages@{get\+Formatted\+Error\+Messages}}
+\index{get\+Formatted\+Error\+Messages@{get\+Formatted\+Error\+Messages}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{get\+Formatted\+Error\+Messages()}{getFormattedErrorMessages()}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Reader\+::get\+Formatted\+Error\+Messages (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a user friendly string that list errors in the parsed document. 
+
+\begin{DoxyReturn}{Returns}
+Formatted error message with the list of errors with their location in the parsed document. An empty string is returned if no error occurred during parsing. 
+\end{DoxyReturn}
+
+
+Definition at line 1043 of file jsoncpp.\+cpp.
+
+
+
+References errors\+\_\+, Json\+::\+Reader\+::\+Error\+Info\+::extra\+\_\+, get\+Location\+Line\+And\+Column(), J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, Json\+::\+Reader\+::\+Error\+Info\+::message\+\_\+, Json\+::\+Reader\+::\+Token\+::start\+\_\+, and Json\+::\+Reader\+::\+Error\+Info\+::token\+\_\+.
+
+
+
+Referenced by get\+Formated\+Error\+Messages().
+
+
+\begin{DoxyCode}
+1043                                                        \{
+1044   \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING} formattedMessage;
+1045   \textcolor{keywordflow}{for} (Errors::const\_iterator itError = \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.begin();
+1046        itError != \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.end();
+1047        ++itError) \{
+1048     \textcolor{keyword}{const} ErrorInfo& error = *itError;
+1049     formattedMessage +=
+1050         \textcolor{stringliteral}{"* "} + \hyperlink{class_json_1_1_reader_a8b2fb6af24382c3914fd4643b092c675}{getLocationLineAndColumn}(error.token\_.start\_) + \textcolor{stringliteral}{"\(\backslash\)n"};
+1051     formattedMessage += \textcolor{stringliteral}{"  "} + error.message\_ + \textcolor{stringliteral}{"\(\backslash\)n"};
+1052     \textcolor{keywordflow}{if} (error.extra\_)
+1053       formattedMessage +=
+1054           \textcolor{stringliteral}{"See "} + \hyperlink{class_json_1_1_reader_a8b2fb6af24382c3914fd4643b092c675}{getLocationLineAndColumn}(error.extra\_) + \textcolor{stringliteral}{" for detail.\(\backslash\)n"};
+1055   \}
+1056   \textcolor{keywordflow}{return} formattedMessage;
+1057 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a8b2fb6af24382c3914fd4643b092c675}\label{class_json_1_1_reader_a8b2fb6af24382c3914fd4643b092c675}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!get\+Location\+Line\+And\+Column@{get\+Location\+Line\+And\+Column}}
+\index{get\+Location\+Line\+And\+Column@{get\+Location\+Line\+And\+Column}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{get\+Location\+Line\+And\+Column()}{getLocationLineAndColumn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Json\+::\+Reader\+::get\+Location\+Line\+And\+Column (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location}}]{location,  }\item[{int \&}]{line,  }\item[{int \&}]{column }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1007 of file jsoncpp.\+cpp.
+
+
+
+References begin\+\_\+, and end\+\_\+.
+
+
+
+Referenced by get\+Formatted\+Error\+Messages(), and get\+Location\+Line\+And\+Column().
+
+
+\begin{DoxyCode}
+1009                                                          \{
+1010   \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} current = \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_};
+1011   \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} lastLineStart = current;
+1012   line = 0;
+1013   \textcolor{keywordflow}{while} (current < location && current != \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_}) \{
+1014     \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = *current++;
+1015     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'\(\backslash\)r'}) \{
+1016       \textcolor{keywordflow}{if} (*current == \textcolor{charliteral}{'\(\backslash\)n'})
+1017         ++current;
+1018       lastLineStart = current;
+1019       ++line;
+1020     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'\(\backslash\)n'}) \{
+1021       lastLineStart = current;
+1022       ++line;
+1023     \}
+1024   \}
+1025   \textcolor{comment}{// column & line start at 1}
+1026   column = int(location - lastLineStart) + 1;
+1027   ++line;
+1028 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a49757dec5a1a53eff388dc7bf2bda890}\label{class_json_1_1_reader_a49757dec5a1a53eff388dc7bf2bda890}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!get\+Location\+Line\+And\+Column@{get\+Location\+Line\+And\+Column}}
+\index{get\+Location\+Line\+And\+Column@{get\+Location\+Line\+And\+Column}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{get\+Location\+Line\+And\+Column()}{getLocationLineAndColumn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Reader\+::get\+Location\+Line\+And\+Column (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location}}]{location }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1030 of file jsoncpp.\+cpp.
+
+
+
+References get\+Location\+Line\+And\+Column().
+
+
+\begin{DoxyCode}
+1030                                                                        \{
+1031   \textcolor{keywordtype}{int} line, column;
+1032   \hyperlink{class_json_1_1_reader_a8b2fb6af24382c3914fd4643b092c675}{getLocationLineAndColumn}(location, line, column);
+1033   \textcolor{keywordtype}{char} buffer[18 + 16 + 16 + 1];
+1034   snprintf(buffer, \textcolor{keyword}{sizeof}(buffer), \textcolor{stringliteral}{"Line %d, Column %d"}, line, column);
+1035   \textcolor{keywordflow}{return} buffer;
+1036 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}\label{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!get\+Next\+Char@{get\+Next\+Char}}
+\index{get\+Next\+Char@{get\+Next\+Char}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{get\+Next\+Char()}{getNextChar()}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Reader\+::\+Char} Json\+::\+Reader\+::get\+Next\+Char (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1001 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, and end\+\_\+.
+
+
+
+Referenced by read\+Comment(), read\+Cpp\+Style\+Comment(), read\+C\+Style\+Comment(), read\+String(), and read\+Token().
+
+
+\begin{DoxyCode}
+1001                                \{
+1002   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} == \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_})
+1003     \textcolor{keywordflow}{return} 0;
+1004   \textcolor{keywordflow}{return} *\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_}++;
+1005 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_ae3d714e95bd98b27e296c607e408189b}\label{class_json_1_1_reader_ae3d714e95bd98b27e296c607e408189b}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!get\+Structured\+Errors@{get\+Structured\+Errors}}
+\index{get\+Structured\+Errors@{get\+Structured\+Errors}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{get\+Structured\+Errors()}{getStructuredErrors()}}
+{\footnotesize\ttfamily std\+::vector$<$ \hyperlink{struct_json_1_1_reader_1_1_structured_error}{Reader\+::\+Structured\+Error} $>$ Json\+::\+Reader\+::get\+Structured\+Errors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a vector of structured erros encounted while parsing. 
+
+\begin{DoxyReturn}{Returns}
+A (possibly empty) vector of \hyperlink{struct_json_1_1_reader_1_1_structured_error}{Structured\+Error} objects. Currently only one error can be returned, but the caller should tolerate multiple errors. This can occur if the parser recovers from a non-\/fatal parse error and then encounters additional errors. 
+\end{DoxyReturn}
+
+
+Definition at line 1059 of file jsoncpp.\+cpp.
+
+
+
+References begin\+\_\+, Json\+::\+Reader\+::\+Token\+::end\+\_\+, errors\+\_\+, Json\+::\+Reader\+::\+Structured\+Error\+::message, Json\+::\+Reader\+::\+Error\+Info\+::message\+\_\+, Json\+::\+Reader\+::\+Structured\+Error\+::offset\+\_\+limit, Json\+::\+Reader\+::\+Structured\+Error\+::offset\+\_\+start, Json\+::\+Reader\+::\+Token\+::start\+\_\+, and Json\+::\+Reader\+::\+Error\+Info\+::token\+\_\+.
+
+
+\begin{DoxyCode}
+1059                                                                    \{
+1060   std::vector<Reader::StructuredError> allErrors;
+1061   \textcolor{keywordflow}{for} (Errors::const\_iterator itError = \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.begin();
+1062        itError != \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.end();
+1063        ++itError) \{
+1064     \textcolor{keyword}{const} ErrorInfo& error = *itError;
+1065     Reader::StructuredError structured;
+1066     structured.offset\_start = error.token\_.start\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_};
+1067     structured.offset\_limit = error.token\_.end\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_};
+1068     structured.message = error.message\_;
+1069     allErrors.push\_back(structured);
+1070   \}
+1071   \textcolor{keywordflow}{return} allErrors;
+1072 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a86cbb42b3e6d4a4d6416473b1a8f6ae7}\label{class_json_1_1_reader_a86cbb42b3e6d4a4d6416473b1a8f6ae7}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!good@{good}}
+\index{good@{good}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{good()}{good()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::good (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Return whether there are any errors. 
+
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if there are no errors to report {\ttfamily false} if errors have occurred. 
+\end{DoxyReturn}
+
+
+Definition at line 1109 of file jsoncpp.\+cpp.
+
+
+
+References errors\+\_\+.
+
+
+\begin{DoxyCode}
+1109                         \{
+1110   \textcolor{keywordflow}{return} !\hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.size();
+1111 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a3e5a7bc6b7b53f2ca8cb9da42f8ffb21}\label{class_json_1_1_reader_a3e5a7bc6b7b53f2ca8cb9da42f8ffb21}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!match@{match}}
+\index{match@{match}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{match()}{match()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::match (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location}}]{pattern,  }\item[{int}]{pattern\+Length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 555 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, and end\+\_\+.
+
+
+
+Referenced by read\+Token().
+
+
+\begin{DoxyCode}
+555                                                       \{
+556   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} - \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} < patternLength)
+557     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+558   \textcolor{keywordtype}{int} index = patternLength;
+559   \textcolor{keywordflow}{while} (index--)
+560     \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_}[index] != pattern[index])
+561       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+562   \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} += patternLength;
+563   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+564 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_af1da6c976ad1e96c742804c3853eef94}\label{class_json_1_1_reader_af1da6c976ad1e96c742804c3853eef94}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!parse@{parse}}
+\index{parse@{parse}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::parse (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{document,  }\item[{\hyperlink{class_json_1_1_value}{Value} \&}]{root,  }\item[{bool}]{collect\+Comments = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Read a \hyperlink{class_json_1_1_value}{Value} from a \href{http://www.json.org}{\tt J\+S\+ON} document. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em document} & U\+T\+F-\/8 encoded string containing the document to read. \\
+\hline
+{\em root} & \mbox{[}out\mbox{]} Contains the root value of the document if it was successfully parsed. \\
+\hline
+{\em collect\+Comments} & {\ttfamily true} to collect comment and allow writing them back during serialization, {\ttfamily false} to discard comments. This parameter is ignored if \hyperlink{class_json_1_1_features_a33afd389719624b6bdb23950b3c346c9}{Features\+::allow\+Comments\+\_\+} is {\ttfamily false}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the document was successfully parsed, {\ttfamily false} if an error occurred. 
+\end{DoxyReturn}
+
+
+Definition at line 321 of file jsoncpp.\+cpp.
+
+
+
+References document\+\_\+, J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, and std\+::swap().
+
+
+\begin{DoxyCode}
+321                                                                           \{
+322   \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING} documentCopy(document.data(), document.data() + document.capacity());
+323   \hyperlink{namespacestd_a22cc6fcbbb1f2f705c7888b615e43582}{std::swap}(documentCopy, \hyperlink{class_json_1_1_reader_abf99e137bc92a93623dc97598702261a}{document\_});
+324   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* begin = \hyperlink{class_json_1_1_reader_abf99e137bc92a93623dc97598702261a}{document\_}.c\_str();
+325   \textcolor{keyword}{const} \textcolor{keywordtype}{char}* end = begin + \hyperlink{class_json_1_1_reader_abf99e137bc92a93623dc97598702261a}{document\_}.length();
+326   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_af1da6c976ad1e96c742804c3853eef94}{parse}(begin, end, root, collectComments);
+327 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_ac71ef2b64c7c27b062052e692af3fb32}\label{class_json_1_1_reader_ac71ef2b64c7c27b062052e692af3fb32}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!parse@{parse}}
+\index{parse@{parse}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::parse (\begin{DoxyParamCaption}\item[{const char $\ast$}]{begin\+Doc,  }\item[{const char $\ast$}]{end\+Doc,  }\item[{\hyperlink{class_json_1_1_value}{Value} \&}]{root,  }\item[{bool}]{collect\+Comments = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Read a \hyperlink{class_json_1_1_value}{Value} from a \href{http://www.json.org}{\tt J\+S\+ON} document. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin\+Doc} & Pointer on the beginning of the U\+T\+F-\/8 encoded string of the document to read. \\
+\hline
+{\em end\+Doc} & Pointer on the end of the U\+T\+F-\/8 encoded string of the document to read. Must be $>$= begin\+Doc. \\
+\hline
+{\em root} & \mbox{[}out\mbox{]} Contains the root value of the document if it was successfully parsed. \\
+\hline
+{\em collect\+Comments} & {\ttfamily true} to collect comment and allow writing them back during serialization, {\ttfamily false} to discard comments. This parameter is ignored if \hyperlink{class_json_1_1_features_a33afd389719624b6bdb23950b3c346c9}{Features\+::allow\+Comments\+\_\+} is {\ttfamily false}. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the document was successfully parsed, {\ttfamily false} if an error occurred. 
+\end{DoxyReturn}
+
+
+Definition at line 342 of file jsoncpp.\+cpp.
+
+
+
+References add\+Error(), Json\+::\+Features\+::allow\+Comments\+\_\+, begin\+\_\+, collect\+Comments\+\_\+, Json\+::comment\+After, comments\+Before\+\_\+, current\+\_\+, Json\+::\+Reader\+::\+Token\+::end\+\_\+, end\+\_\+, errors\+\_\+, features\+\_\+, Json\+::\+Value\+::is\+Array(), Json\+::\+Value\+::is\+Object(), last\+Value\+\_\+, last\+Value\+End\+\_\+, nodes\+\_\+, read\+Value(), Json\+::\+Value\+::set\+Comment(), skip\+Comment\+Tokens(), Json\+::\+Reader\+::\+Token\+::start\+\_\+, Json\+::\+Features\+::strict\+Root\+\_\+, token\+Error, and Json\+::\+Reader\+::\+Token\+::type\+\_\+.
+
+
+\begin{DoxyCode}
+345                                          \{
+346   \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}{features\_}.\hyperlink{class_json_1_1_features_a33afd389719624b6bdb23950b3c346c9}{allowComments\_}) \{
+347     collectComments = \textcolor{keyword}{false};
+348   \}
+349 
+350   \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_} = beginDoc;
+351   \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} = endDoc;
+352   \hyperlink{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}{collectComments\_} = collectComments;
+353   \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} = \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_};
+354   \hyperlink{class_json_1_1_reader_a497a114f7b760f1b794b8fff9876615a}{lastValueEnd\_} = 0;
+355   \hyperlink{class_json_1_1_reader_a87cc75ae5adc6a6755f0ba1c7255ff6c}{lastValue\_} = 0;
+356   \hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{commentsBefore\_} = \textcolor{stringliteral}{""};
+357   \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.clear();
+358   \textcolor{keywordflow}{while} (!\hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\_}.empty())
+359     \hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\_}.pop();
+360   \hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\_}.push(&root);
+361 
+362   \textcolor{keywordtype}{bool} successful = \hyperlink{class_json_1_1_reader_a47e56844b803d41ec993a83fadf4495c}{readValue}();
+363   Token token;
+364   \hyperlink{class_json_1_1_reader_a22e677ef400d8223f27e631b4cd4b821}{skipCommentTokens}(token);
+365   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}{collectComments\_} && !\hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{commentsBefore\_}.empty())
+366     root.setComment(\hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{commentsBefore\_}, \hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351ac5784ca53b12250888ddb642b06aebef}{commentAfter});
+367   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}{features\_}.\hyperlink{class_json_1_1_features_a1162c37a1458adc32582b585b552f9c3}{strictRoot\_}) \{
+368     \textcolor{keywordflow}{if} (!root.isArray() && !root.isObject()) \{
+369       \textcolor{comment}{// Set error location to start of doc, ideally should be first token found}
+370       \textcolor{comment}{// in doc}
+371       token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a55d1ab9135c3d068b57fafdbabfa569a}{tokenError};
+372       token.start\_ = beginDoc;
+373       token.end\_ = endDoc;
+374       \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(
+375           \textcolor{stringliteral}{"A valid JSON document must be either an array or an object value."},
+376           token);
+377       \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+378     \}
+379   \}
+380   \textcolor{keywordflow}{return} successful;
+381 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a6d5d0e23f68749d2f17feece4ccf504d}\label{class_json_1_1_reader_a6d5d0e23f68749d2f17feece4ccf504d}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!parse@{parse}}
+\index{parse@{parse}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{parse()}{parse()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::parse (\begin{DoxyParamCaption}\item[{\hyperlink{json_8h_a15f2f70b2ce0a2abd0f8112393dbc4de}{J\+S\+O\+N\+C\+P\+P\+\_\+\+I\+S\+T\+R\+E\+AM} \&}]{is,  }\item[{\hyperlink{class_json_1_1_value}{Value} \&}]{root,  }\item[{bool}]{collect\+Comments = {\ttfamily true} }\end{DoxyParamCaption})}
+
+
+
+Parse from input stream. 
+
+\begin{DoxySeeAlso}{See also}
+Json\+::operator$>$$>$(std\+::istream\&, Json\+::\+Value\&). 
+\end{DoxySeeAlso}
+\mbox{\Hypertarget{class_json_1_1_reader_af5fa7099083f01706635ade1d0f8ddb5}\label{class_json_1_1_reader_af5fa7099083f01706635ade1d0f8ddb5}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!push\+Error@{push\+Error}}
+\index{push\+Error@{push\+Error}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{push\+Error()}{pushError()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::push\+Error (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{value,  }\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{message }\end{DoxyParamCaption})}
+
+
+
+Add a semantic error message. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & J\+S\+ON \hyperlink{class_json_1_1_value}{Value} location associated with the error \\
+\hline
+{\em message} & The error message. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the error was successfully added, {\ttfamily false} if the \hyperlink{class_json_1_1_value}{Value} offset exceeds the document size. 
+\end{DoxyReturn}
+
+
+Definition at line 1074 of file jsoncpp.\+cpp.
+
+
+
+References begin\+\_\+, Json\+::\+Reader\+::\+Token\+::end\+\_\+, end\+\_\+, errors\+\_\+, Json\+::\+Reader\+::\+Error\+Info\+::extra\+\_\+, Json\+::\+Value\+::get\+Offset\+Limit(), Json\+::\+Value\+::get\+Offset\+Start(), Json\+::\+Reader\+::\+Error\+Info\+::message\+\_\+, Json\+::\+Reader\+::\+Token\+::start\+\_\+, Json\+::\+Reader\+::\+Error\+Info\+::token\+\_\+, token\+Error, and Json\+::\+Reader\+::\+Token\+::type\+\_\+.
+
+
+\begin{DoxyCode}
+1074                                                                         \{
+1075   ptrdiff\_t \textcolor{keyword}{const} length = \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_};
+1076   \textcolor{keywordflow}{if}(value.getOffsetStart() > length
+1077     || value.getOffsetLimit() > length)
+1078     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1079   Token token;
+1080   token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a55d1ab9135c3d068b57fafdbabfa569a}{tokenError};
+1081   token.start\_ = begin\_ + value.getOffsetStart();
+1082   token.end\_ = \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} + value.getOffsetLimit();
+1083   ErrorInfo info;
+1084   info.token\_ = token;
+1085   info.message\_ = message;
+1086   info.extra\_ = 0;
+1087   \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.push\_back(info);
+1088   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1089 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a3568be9db568ff57bd3fcc373143dff3}\label{class_json_1_1_reader_a3568be9db568ff57bd3fcc373143dff3}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!push\+Error@{push\+Error}}
+\index{push\+Error@{push\+Error}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{push\+Error()}{pushError()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::push\+Error (\begin{DoxyParamCaption}\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{value,  }\item[{const \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} \&}]{message,  }\item[{const \hyperlink{class_json_1_1_value}{Value} \&}]{extra }\end{DoxyParamCaption})}
+
+
+
+Add a semantic error message with extra context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & J\+S\+ON \hyperlink{class_json_1_1_value}{Value} location associated with the error \\
+\hline
+{\em message} & The error message. \\
+\hline
+{\em extra} & Additional J\+S\+ON \hyperlink{class_json_1_1_value}{Value} location to contextualize the error \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+{\ttfamily true} if the error was successfully added, {\ttfamily false} if either \hyperlink{class_json_1_1_value}{Value} offset exceeds the document size. 
+\end{DoxyReturn}
+
+
+Definition at line 1091 of file jsoncpp.\+cpp.
+
+
+
+References begin\+\_\+, Json\+::\+Reader\+::\+Token\+::end\+\_\+, end\+\_\+, errors\+\_\+, Json\+::\+Reader\+::\+Error\+Info\+::extra\+\_\+, Json\+::\+Value\+::get\+Offset\+Limit(), Json\+::\+Value\+::get\+Offset\+Start(), Json\+::\+Reader\+::\+Error\+Info\+::message\+\_\+, Json\+::\+Reader\+::\+Token\+::start\+\_\+, Json\+::\+Reader\+::\+Error\+Info\+::token\+\_\+, token\+Error, and Json\+::\+Reader\+::\+Token\+::type\+\_\+.
+
+
+\begin{DoxyCode}
+1091                                                                                             \{
+1092   ptrdiff\_t \textcolor{keyword}{const} length = \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_};
+1093   \textcolor{keywordflow}{if}(value.getOffsetStart() > length
+1094     || value.getOffsetLimit() > length
+1095     || extra.getOffsetLimit() > length)
+1096     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1097   Token token;
+1098   token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a55d1ab9135c3d068b57fafdbabfa569a}{tokenError};
+1099   token.start\_ = begin\_ + value.getOffsetStart();
+1100   token.end\_ = begin\_ + value.getOffsetLimit();
+1101   ErrorInfo info;
+1102   info.token\_ = token;
+1103   info.message\_ = message;
+1104   info.extra\_ = begin\_ + extra.getOffsetStart();
+1105   \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.push\_back(info);
+1106   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1107 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_afd9a30c0af205c9f327613f486fae6b8}\label{class_json_1_1_reader_afd9a30c0af205c9f327613f486fae6b8}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!read\+Array@{read\+Array}}
+\index{read\+Array@{read\+Array}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{read\+Array()}{readArray()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::read\+Array (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 735 of file jsoncpp.\+cpp.
+
+
+
+References add\+Error\+And\+Recover(), Json\+::array\+Value, begin\+\_\+, current\+\_\+, current\+Value(), end\+\_\+, nodes\+\_\+, read\+Token(), read\+Value(), recover\+From\+Error(), Json\+::\+Value\+::set\+Offset\+Start(), skip\+Spaces(), Json\+::\+Reader\+::\+Token\+::start\+\_\+, Json\+::\+Value\+::swap\+Payload(), token\+Array\+End, token\+Array\+Separator, token\+Comment, and Json\+::\+Reader\+::\+Token\+::type\+\_\+.
+
+
+
+Referenced by read\+Value().
+
+
+\begin{DoxyCode}
+735                                         \{
+736   Value init(\hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eadc8f264f36b55b063c78126b335415f4}{arrayValue});
+737   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5263476047f20e2fc6de470e4de34fe5}{swapPayload}(init);
+738   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(tokenStart.start\_ - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+739   \hyperlink{class_json_1_1_reader_a40d0f69d15aeb2d52ff78d794f5ab8b2}{skipSpaces}();
+740   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} != \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} && *\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} == \textcolor{charliteral}{']'}) \textcolor{comment}{// empty array}
+741   \{
+742     Token endArray;
+743     \hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(endArray);
+744     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+745   \}
+746   \textcolor{keywordtype}{int} index = 0;
+747   \textcolor{keywordflow}{for} (;;) \{
+748     Value& value = \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}()[index++];
+749     \hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\_}.push(&value);
+750     \textcolor{keywordtype}{bool} ok = \hyperlink{class_json_1_1_reader_a47e56844b803d41ec993a83fadf4495c}{readValue}();
+751     \hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\_}.pop();
+752     \textcolor{keywordflow}{if} (!ok) \textcolor{comment}{// error already set}
+753       \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a8d4ed03a43082c5ace81ba5b81425eaf}{recoverFromError}(\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}{tokenArrayEnd});
+754 
+755     Token token;
+756     \textcolor{comment}{// Accept Comment after last item in the array.}
+757     ok = \hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(token);
+758     \textcolor{keywordflow}{while} (token.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}{tokenComment} && ok) \{
+759       ok = \hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(token);
+760     \}
+761     \textcolor{keywordtype}{bool} badTokenType =
+762         (token.type\_ != \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9af2c235e8da86f11ffb1a1243e49ed1fa}{tokenArraySeparator} && token.type\_ != 
+      \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}{tokenArrayEnd});
+763     \textcolor{keywordflow}{if} (!ok || badTokenType) \{
+764       \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a478db8ac6d00db1409608a37b66bc38d}{addErrorAndRecover}(
+765           \textcolor{stringliteral}{"Missing ',' or ']' in array declaration"}, token, \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}{tokenArrayEnd});
+766     \}
+767     \textcolor{keywordflow}{if} (token.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}{tokenArrayEnd})
+768       \textcolor{keywordflow}{break};
+769   \}
+770   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+771 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_ad2690e860a1b3332c5401fb0850ba065}\label{class_json_1_1_reader_ad2690e860a1b3332c5401fb0850ba065}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!read\+Comment@{read\+Comment}}
+\index{read\+Comment@{read\+Comment}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{read\+Comment()}{readComment()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::read\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 566 of file jsoncpp.\+cpp.
+
+
+
+References add\+Comment(), collect\+Comments\+\_\+, Json\+::comment\+After\+On\+Same\+Line, Json\+::comment\+Before, Json\+::contains\+New\+Line(), current\+\_\+, get\+Next\+Char(), last\+Value\+End\+\_\+, read\+Cpp\+Style\+Comment(), and read\+C\+Style\+Comment().
+
+
+
+Referenced by read\+Token().
+
+
+\begin{DoxyCode}
+566                          \{
+567   \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} commentBegin = \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} - 1;
+568   \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = \hyperlink{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}{getNextChar}();
+569   \textcolor{keywordtype}{bool} successful = \textcolor{keyword}{false};
+570   \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'*'})
+571     successful = \hyperlink{class_json_1_1_reader_ae0ffe796abdc3c5851589ee500e28c79}{readCStyleComment}();
+572   \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'/'})
+573     successful = \hyperlink{class_json_1_1_reader_a6716ef6290b0f469efaf8d379c357967}{readCppStyleComment}();
+574   \textcolor{keywordflow}{if} (!successful)
+575     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+576 
+577   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}{collectComments\_}) \{
+578     \hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351}{CommentPlacement} placement = \hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a52f1733775460517b2ea6bedf4906d52}{commentBefore};
+579     \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a497a114f7b760f1b794b8fff9876615a}{lastValueEnd\_} && !\hyperlink{namespace_json_a4d6ab0f651348832e5cc49b577a854d2}{containsNewLine}(
+      \hyperlink{class_json_1_1_reader_a497a114f7b760f1b794b8fff9876615a}{lastValueEnd\_}, commentBegin)) \{
+580       \textcolor{keywordflow}{if} (c != \textcolor{charliteral}{'*'} || !\hyperlink{namespace_json_a4d6ab0f651348832e5cc49b577a854d2}{containsNewLine}(commentBegin, \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_}))
+581         placement = \hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a008a230a0586de54f30b76afe70fdcfa}{commentAfterOnSameLine};
+582     \}
+583 
+584     \hyperlink{class_json_1_1_reader_aaea3bd62d12ffb6117a61476c0685049}{addComment}(commentBegin, \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_}, placement);
+585   \}
+586   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+587 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a6716ef6290b0f469efaf8d379c357967}\label{class_json_1_1_reader_a6716ef6290b0f469efaf8d379c357967}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!read\+Cpp\+Style\+Comment@{read\+Cpp\+Style\+Comment}}
+\index{read\+Cpp\+Style\+Comment@{read\+Cpp\+Style\+Comment}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{read\+Cpp\+Style\+Comment()}{readCppStyleComment()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::read\+Cpp\+Style\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 629 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, end\+\_\+, and get\+Next\+Char().
+
+
+
+Referenced by read\+Comment().
+
+
+\begin{DoxyCode}
+629                                  \{
+630   \textcolor{keywordflow}{while} (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} != \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_}) \{
+631     \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = \hyperlink{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}{getNextChar}();
+632     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'\(\backslash\)n'})
+633       \textcolor{keywordflow}{break};
+634     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'\(\backslash\)r'}) \{
+635       \textcolor{comment}{// Consume DOS EOL. It will be normalized in addComment.}
+636       \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} != \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} && *\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} == \textcolor{charliteral}{'\(\backslash\)n'})
+637         \hyperlink{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}{getNextChar}();
+638       \textcolor{comment}{// Break on Moc OS 9 EOL.}
+639       \textcolor{keywordflow}{break};
+640     \}
+641   \}
+642   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+643 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_ae0ffe796abdc3c5851589ee500e28c79}\label{class_json_1_1_reader_ae0ffe796abdc3c5851589ee500e28c79}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!read\+C\+Style\+Comment@{read\+C\+Style\+Comment}}
+\index{read\+C\+Style\+Comment@{read\+C\+Style\+Comment}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{read\+C\+Style\+Comment()}{readCStyleComment()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::read\+C\+Style\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 620 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, end\+\_\+, and get\+Next\+Char().
+
+
+
+Referenced by read\+Comment().
+
+
+\begin{DoxyCode}
+620                                \{
+621   \textcolor{keywordflow}{while} ((\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} + 1) < \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_}) \{
+622     \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = \hyperlink{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}{getNextChar}();
+623     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'*'} && *\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} == \textcolor{charliteral}{'/'})
+624       \textcolor{keywordflow}{break};
+625   \}
+626   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}{getNextChar}() == \textcolor{charliteral}{'/'};
+627 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_afb31bfda6bb27d6453057a47655e8363}\label{class_json_1_1_reader_afb31bfda6bb27d6453057a47655e8363}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!read\+Number@{read\+Number}}
+\index{read\+Number@{read\+Number}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{read\+Number()}{readNumber()}}
+{\footnotesize\ttfamily void Json\+::\+Reader\+::read\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 645 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, and end\+\_\+.
+
+
+
+Referenced by read\+Token().
+
+
+\begin{DoxyCode}
+645                         \{
+646   \textcolor{keyword}{const} \textcolor{keywordtype}{char} *p = \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_};
+647   \textcolor{keywordtype}{char} c = \textcolor{charliteral}{'0'}; \textcolor{comment}{// stopgap for already consumed character}
+648   \textcolor{comment}{// integral part}
+649   \textcolor{keywordflow}{while} (c >= \textcolor{charliteral}{'0'} && c <= \textcolor{charliteral}{'9'})
+650     c = (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} = p) < \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} ? *p++ : \textcolor{charliteral}{'\(\backslash\)0'};
+651   \textcolor{comment}{// fractional part}
+652   \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'.'}) \{
+653     c = (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} = p) < \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} ? *p++ : \textcolor{charliteral}{'\(\backslash\)0'};
+654     \textcolor{keywordflow}{while} (c >= \textcolor{charliteral}{'0'} && c <= \textcolor{charliteral}{'9'})
+655       c = (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} = p) < \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} ? *p++ : \textcolor{charliteral}{'\(\backslash\)0'};
+656   \}
+657   \textcolor{comment}{// exponential part}
+658   \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'e'} || c == \textcolor{charliteral}{'E'}) \{
+659     c = (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} = p) < \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} ? *p++ : \textcolor{charliteral}{'\(\backslash\)0'};
+660     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'+'} || c == \textcolor{charliteral}{'-'})
+661       c = (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} = p) < \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} ? *p++ : \textcolor{charliteral}{'\(\backslash\)0'};
+662     \textcolor{keywordflow}{while} (c >= \textcolor{charliteral}{'0'} && c <= \textcolor{charliteral}{'9'})
+663       c = (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} = p) < \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_} ? *p++ : \textcolor{charliteral}{'\(\backslash\)0'};
+664   \}
+665 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a0068eb3d8e86e91f0e4806f60da66b9c}\label{class_json_1_1_reader_a0068eb3d8e86e91f0e4806f60da66b9c}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!read\+Object@{read\+Object}}
+\index{read\+Object@{read\+Object}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{read\+Object()}{readObject()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::read\+Object (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 679 of file jsoncpp.\+cpp.
+
+
+
+References add\+Error\+And\+Recover(), Json\+::\+Features\+::allow\+Numeric\+Keys\+\_\+, Json\+::\+Value\+::as\+C\+String(), begin\+\_\+, current\+Value(), decode\+Number(), decode\+String(), features\+\_\+, J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG, nodes\+\_\+, Json\+::object\+Value, read\+Token(), read\+Value(), recover\+From\+Error(), Json\+::\+Value\+::set\+Offset\+Start(), Json\+::\+Reader\+::\+Token\+::start\+\_\+, Json\+::\+Value\+::swap\+Payload(), token\+Array\+Separator, token\+Comment, token\+Member\+Separator, token\+Number, token\+Object\+End, token\+String, and Json\+::\+Reader\+::\+Token\+::type\+\_\+.
+
+
+
+Referenced by read\+Value().
+
+
+\begin{DoxyCode}
+679                                          \{
+680   Token tokenName;
+681   \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING} name;
+682   Value init(\hyperlink{namespace_json_a7d654b75c16a57007925868e38212b4eae8386dcfc36d1ae897745f7b4f77a1f6}{objectValue});
+683   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5263476047f20e2fc6de470e4de34fe5}{swapPayload}(init);
+684   \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(tokenStart.start\_ - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+685   \textcolor{keywordflow}{while} (\hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(tokenName)) \{
+686     \textcolor{keywordtype}{bool} initialTokenOk = \textcolor{keyword}{true};
+687     \textcolor{keywordflow}{while} (tokenName.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}{tokenComment} && initialTokenOk)
+688       initialTokenOk = \hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(tokenName);
+689     \textcolor{keywordflow}{if} (!initialTokenOk)
+690       \textcolor{keywordflow}{break};
+691     \textcolor{keywordflow}{if} (tokenName.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd} && name.empty()) \textcolor{comment}{// empty object}
+692       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+693     name = \textcolor{stringliteral}{""};
+694     \textcolor{keywordflow}{if} (tokenName.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ace89d4e0342535b8c00104ed4e5e0cee}{tokenString}) \{
+695       \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_aaf736937912f5c9b8d221e57f209e3e0}{decodeString}(tokenName, name))
+696         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a8d4ed03a43082c5ace81ba5b81425eaf}{recoverFromError}(\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd});
+697     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (tokenName.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9b1717bee03ce7016f507bd4598fa5c6}{tokenNumber} && \hyperlink{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}{features\_}.
+      \hyperlink{class_json_1_1_features_aff3cb16b79d15d3d761b11a0dd6d4d6b}{allowNumericKeys\_}) \{
+698       Value numberName;
+699       \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_a442d1f23edf0f4350f5eeab3ee3f7d46}{decodeNumber}(tokenName, numberName))
+700         \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a8d4ed03a43082c5ace81ba5b81425eaf}{recoverFromError}(\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd});
+701       name = \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{JSONCPP\_STRING}(numberName.asCString());
+702     \} \textcolor{keywordflow}{else} \{
+703       \textcolor{keywordflow}{break};
+704     \}
+705 
+706     Token colon;
+707     \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(colon) || colon.type\_ != \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a08227b96f54242f4f9a8a597403c4424}{tokenMemberSeparator}) \{
+708       \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a478db8ac6d00db1409608a37b66bc38d}{addErrorAndRecover}(
+709           \textcolor{stringliteral}{"Missing ':' after object member name"}, colon, \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd});
+710     \}
+711     Value& value = \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}()[name];
+712     \hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\_}.push(&value);
+713     \textcolor{keywordtype}{bool} ok = \hyperlink{class_json_1_1_reader_a47e56844b803d41ec993a83fadf4495c}{readValue}();
+714     \hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\_}.pop();
+715     \textcolor{keywordflow}{if} (!ok) \textcolor{comment}{// error already set}
+716       \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a8d4ed03a43082c5ace81ba5b81425eaf}{recoverFromError}(\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd});
+717 
+718     Token comma;
+719     \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(comma) ||
+720         (comma.type\_ != \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd} && comma.type\_ != 
+      \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9af2c235e8da86f11ffb1a1243e49ed1fa}{tokenArraySeparator} &&
+721          comma.type\_ != \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}{tokenComment})) \{
+722       \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a478db8ac6d00db1409608a37b66bc38d}{addErrorAndRecover}(
+723           \textcolor{stringliteral}{"Missing ',' or '\}' in object declaration"}, comma, \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd});
+724     \}
+725     \textcolor{keywordtype}{bool} finalizeTokenOk = \textcolor{keyword}{true};
+726     \textcolor{keywordflow}{while} (comma.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}{tokenComment} && finalizeTokenOk)
+727       finalizeTokenOk = \hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(comma);
+728     \textcolor{keywordflow}{if} (comma.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd})
+729       \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+730   \}
+731   \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_a478db8ac6d00db1409608a37b66bc38d}{addErrorAndRecover}(
+732       \textcolor{stringliteral}{"Missing '\}' or object member name"}, tokenName, \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd});
+733 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a6328a0b1994e05118886f9fc9c608643}\label{class_json_1_1_reader_a6328a0b1994e05118886f9fc9c608643}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!read\+String@{read\+String}}
+\index{read\+String@{read\+String}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{read\+String()}{readString()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::read\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 667 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, end\+\_\+, and get\+Next\+Char().
+
+
+
+Referenced by read\+Token().
+
+
+\begin{DoxyCode}
+667                         \{
+668   \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = \textcolor{charliteral}{'\(\backslash\)0'};
+669   \textcolor{keywordflow}{while} (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} != \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_}) \{
+670     c = \hyperlink{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}{getNextChar}();
+671     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'})
+672       \hyperlink{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}{getNextChar}();
+673     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'"'})
+674       \textcolor{keywordflow}{break};
+675   \}
+676   \textcolor{keywordflow}{return} c == \textcolor{charliteral}{'"'};
+677 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}\label{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!read\+Token@{read\+Token}}
+\index{read\+Token@{read\+Token}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{read\+Token()}{readToken()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::read\+Token (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 474 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, Json\+::\+Reader\+::\+Token\+::end\+\_\+, get\+Next\+Char(), match(), read\+Comment(), read\+Number(), read\+String(), skip\+Spaces(), Json\+::\+Reader\+::\+Token\+::start\+\_\+, token\+Array\+Begin, token\+Array\+End, token\+Array\+Separator, token\+Comment, token\+End\+Of\+Stream, token\+Error, token\+False, token\+Member\+Separator, token\+Null, token\+Number, token\+Object\+Begin, token\+Object\+End, token\+String, token\+True, and Json\+::\+Reader\+::\+Token\+::type\+\_\+.
+
+
+
+Referenced by read\+Array(), read\+Object(), recover\+From\+Error(), and skip\+Comment\+Tokens().
+
+
+\begin{DoxyCode}
+474                                    \{
+475   \hyperlink{class_json_1_1_reader_a40d0f69d15aeb2d52ff78d794f5ab8b2}{skipSpaces}();
+476   token.start\_ = \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_};
+477   \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = \hyperlink{class_json_1_1_reader_ab61eb61333cc9ec3afe785663a53ce90}{getNextChar}();
+478   \textcolor{keywordtype}{bool} ok = \textcolor{keyword}{true};
+479   \textcolor{keywordflow}{switch} (c) \{
+480   \textcolor{keywordflow}{case} \textcolor{charliteral}{'\{'}:
+481     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a6196ce743696e6c803b130e8eef970f3}{tokenObjectBegin};
+482     \textcolor{keywordflow}{break};
+483   \textcolor{keywordflow}{case} \textcolor{charliteral}{'\}'}:
+484     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd};
+485     \textcolor{keywordflow}{break};
+486   \textcolor{keywordflow}{case} \textcolor{charliteral}{'['}:
+487     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a366d1a18459ad0c3b5bd32a35391e35a}{tokenArrayBegin};
+488     \textcolor{keywordflow}{break};
+489   \textcolor{keywordflow}{case} \textcolor{charliteral}{']'}:
+490     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}{tokenArrayEnd};
+491     \textcolor{keywordflow}{break};
+492   \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
+493     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ace89d4e0342535b8c00104ed4e5e0cee}{tokenString};
+494     ok = \hyperlink{class_json_1_1_reader_a6328a0b1994e05118886f9fc9c608643}{readString}();
+495     \textcolor{keywordflow}{break};
+496   \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'}:
+497     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}{tokenComment};
+498     ok = \hyperlink{class_json_1_1_reader_ad2690e860a1b3332c5401fb0850ba065}{readComment}();
+499     \textcolor{keywordflow}{break};
+500   \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'}:
+501   \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}:
+502   \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}:
+503   \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'}:
+504   \textcolor{keywordflow}{case} \textcolor{charliteral}{'4'}:
+505   \textcolor{keywordflow}{case} \textcolor{charliteral}{'5'}:
+506   \textcolor{keywordflow}{case} \textcolor{charliteral}{'6'}:
+507   \textcolor{keywordflow}{case} \textcolor{charliteral}{'7'}:
+508   \textcolor{keywordflow}{case} \textcolor{charliteral}{'8'}:
+509   \textcolor{keywordflow}{case} \textcolor{charliteral}{'9'}:
+510   \textcolor{keywordflow}{case} \textcolor{charliteral}{'-'}:
+511     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9b1717bee03ce7016f507bd4598fa5c6}{tokenNumber};
+512     \hyperlink{class_json_1_1_reader_afb31bfda6bb27d6453057a47655e8363}{readNumber}();
+513     \textcolor{keywordflow}{break};
+514   \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+515     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9acec3234e26f2d6bf206187fc5d949a03}{tokenTrue};
+516     ok = \hyperlink{class_json_1_1_reader_a3e5a7bc6b7b53f2ca8cb9da42f8ffb21}{match}(\textcolor{stringliteral}{"rue"}, 3);
+517     \textcolor{keywordflow}{break};
+518   \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}:
+519     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ac24318c0842c7653c3555a82437b8eb2}{tokenFalse};
+520     ok = \hyperlink{class_json_1_1_reader_a3e5a7bc6b7b53f2ca8cb9da42f8ffb21}{match}(\textcolor{stringliteral}{"alse"}, 4);
+521     \textcolor{keywordflow}{break};
+522   \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+523     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a11bd0ba1c34448d075022b89d5bf9853}{tokenNull};
+524     ok = \hyperlink{class_json_1_1_reader_a3e5a7bc6b7b53f2ca8cb9da42f8ffb21}{match}(\textcolor{stringliteral}{"ull"}, 3);
+525     \textcolor{keywordflow}{break};
+526   \textcolor{keywordflow}{case} \textcolor{charliteral}{','}:
+527     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9af2c235e8da86f11ffb1a1243e49ed1fa}{tokenArraySeparator};
+528     \textcolor{keywordflow}{break};
+529   \textcolor{keywordflow}{case} \textcolor{charliteral}{':'}:
+530     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a08227b96f54242f4f9a8a597403c4424}{tokenMemberSeparator};
+531     \textcolor{keywordflow}{break};
+532   \textcolor{keywordflow}{case} 0:
+533     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a87fd3ad9cae11a8afe2bd022d8ab90f4}{tokenEndOfStream};
+534     \textcolor{keywordflow}{break};
+535   \textcolor{keywordflow}{default}:
+536     ok = \textcolor{keyword}{false};
+537     \textcolor{keywordflow}{break};
+538   \}
+539   \textcolor{keywordflow}{if} (!ok)
+540     token.type\_ = \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a55d1ab9135c3d068b57fafdbabfa569a}{tokenError};
+541   token.end\_ = \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_};
+542   \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+543 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a47e56844b803d41ec993a83fadf4495c}\label{class_json_1_1_reader_a47e56844b803d41ec993a83fadf4495c}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!read\+Value@{read\+Value}}
+\index{read\+Value@{read\+Value}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{read\+Value()}{readValue()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::read\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 383 of file jsoncpp.\+cpp.
+
+
+
+References add\+Error(), Json\+::\+Features\+::allow\+Dropped\+Null\+Placeholders\+\_\+, begin\+\_\+, collect\+Comments\+\_\+, Json\+::comment\+Before, comments\+Before\+\_\+, current\+\_\+, current\+Value(), decode\+Number(), decode\+String(), Json\+::\+Reader\+::\+Token\+::end\+\_\+, features\+\_\+, last\+Value\+\_\+, last\+Value\+End\+\_\+, nodes\+\_\+, read\+Array(), read\+Object(), Json\+::\+Value\+::set\+Comment(), Json\+::\+Value\+::set\+Offset\+Limit(), Json\+::\+Value\+::set\+Offset\+Start(), skip\+Comment\+Tokens(), stack\+Limit\+\_\+g, Json\+::\+Reader\+::\+Token\+::start\+\_\+, Json\+::\+Value\+::swap\+Payload(), Json\+::throw\+Runtime\+Error(), token\+Array\+Begin, token\+Array\+End, token\+Array\+Separator, token\+False, token\+Null, token\+Number, token\+Object\+Begin, token\+Object\+End, token\+String, token\+True, and Json\+::\+Reader\+::\+Token\+::type\+\_\+.
+
+
+
+Referenced by parse(), read\+Array(), and read\+Object().
+
+
+\begin{DoxyCode}
+383                        \{
+384   \textcolor{comment}{// readValue() may call itself only if it calls readObject() or ReadArray().}
+385   \textcolor{comment}{// These methods execute nodes\_.push() just before and nodes\_.pop)() just after calling readValue(). }
+386   \textcolor{comment}{// parse() executes one nodes\_.push(), so > instead of >=.}
+387   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}{nodes\_}.size() > \hyperlink{jsoncpp_8cpp_a924838165f45fcacf57b5cd03062b478}{stackLimit\_g}) \hyperlink{namespace_json_a0ab7ff7f99788262d92d9ff3d924e065}{throwRuntimeError}(\textcolor{stringliteral}{"Exceeded
+       stackLimit in readValue()."});
+388 
+389   Token token;
+390   \hyperlink{class_json_1_1_reader_a22e677ef400d8223f27e631b4cd4b821}{skipCommentTokens}(token);
+391   \textcolor{keywordtype}{bool} successful = \textcolor{keyword}{true};
+392 
+393   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}{collectComments\_} && !\hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{commentsBefore\_}.empty()) \{
+394     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a29f3a30f7e5d3af6f38d57999bf5b480}{setComment}(\hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{commentsBefore\_}, 
+      \hyperlink{namespace_json_a4fc417c23905b2ae9e2c47d197a45351a52f1733775460517b2ea6bedf4906d52}{commentBefore});
+395     \hyperlink{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}{commentsBefore\_} = \textcolor{stringliteral}{""};
+396   \}
+397 
+398   \textcolor{keywordflow}{switch} (token.type\_) \{
+399   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a6196ce743696e6c803b130e8eef970f3}{tokenObjectBegin}:
+400     successful = \hyperlink{class_json_1_1_reader_a0068eb3d8e86e91f0e4806f60da66b9c}{readObject}(token);
+401     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+402     \textcolor{keywordflow}{break};
+403   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a366d1a18459ad0c3b5bd32a35391e35a}{tokenArrayBegin}:
+404     successful = \hyperlink{class_json_1_1_reader_afd9a30c0af205c9f327613f486fae6b8}{readArray}(token);
+405     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+406     \textcolor{keywordflow}{break};
+407   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9b1717bee03ce7016f507bd4598fa5c6}{tokenNumber}:
+408     successful = \hyperlink{class_json_1_1_reader_a442d1f23edf0f4350f5eeab3ee3f7d46}{decodeNumber}(token);
+409     \textcolor{keywordflow}{break};
+410   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ace89d4e0342535b8c00104ed4e5e0cee}{tokenString}:
+411     successful = \hyperlink{class_json_1_1_reader_aaf736937912f5c9b8d221e57f209e3e0}{decodeString}(token);
+412     \textcolor{keywordflow}{break};
+413   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9acec3234e26f2d6bf206187fc5d949a03}{tokenTrue}:
+414     \{
+415     Value v(\textcolor{keyword}{true});
+416     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5263476047f20e2fc6de470e4de34fe5}{swapPayload}(v);
+417     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(token.start\_ - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+418     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(token.end\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+419     \}
+420     \textcolor{keywordflow}{break};
+421   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ac24318c0842c7653c3555a82437b8eb2}{tokenFalse}:
+422     \{
+423     Value v(\textcolor{keyword}{false});
+424     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5263476047f20e2fc6de470e4de34fe5}{swapPayload}(v);
+425     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(token.start\_ - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+426     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(token.end\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+427     \}
+428     \textcolor{keywordflow}{break};
+429   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a11bd0ba1c34448d075022b89d5bf9853}{tokenNull}:
+430     \{
+431     Value v;
+432     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5263476047f20e2fc6de470e4de34fe5}{swapPayload}(v);
+433     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(token.start\_ - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+434     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(token.end\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+435     \}
+436     \textcolor{keywordflow}{break};
+437   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9af2c235e8da86f11ffb1a1243e49ed1fa}{tokenArraySeparator}:
+438   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a12d03a3a710b2d3f1384889df3da887d}{tokenObjectEnd}:
+439   \textcolor{keywordflow}{case} \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a9adc87fd67f5fc21391a4be89382a316}{tokenArrayEnd}:
+440     \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}{features\_}.\hyperlink{class_json_1_1_features_a5076aa72c05c7596ac339ede36c97a6a}{allowDroppedNullPlaceholders\_}) \{
+441       \textcolor{comment}{// "Un-read" the current token and mark the current value as a null}
+442       \textcolor{comment}{// token.}
+443       \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_}--;
+444       Value v;
+445       \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5263476047f20e2fc6de470e4de34fe5}{swapPayload}(v);
+446       \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_} - 1);
+447       \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+448       \textcolor{keywordflow}{break};
+449     \} \textcolor{comment}{// Else, fall through...}
+450   \textcolor{keywordflow}{default}:
+451     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a92e32ea0f4f8a15853a3cf0beac9feb9}{setOffsetStart}(token.start\_ - 
+      \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+452     \hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}().\hyperlink{class_json_1_1_value_a5e4f5853fec138150c5df6004a8c2bcf}{setOffsetLimit}(token.end\_ - \hyperlink{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}{begin\_});
+453     \textcolor{keywordflow}{return} \hyperlink{class_json_1_1_reader_af02176a1d2786b4415bbb00a1b10bb6b}{addError}(\textcolor{stringliteral}{"Syntax error: value, object or array expected."}, token);
+454   \}
+455 
+456   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}{collectComments\_}) \{
+457     \hyperlink{class_json_1_1_reader_a497a114f7b760f1b794b8fff9876615a}{lastValueEnd\_} = \hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_};
+458     \hyperlink{class_json_1_1_reader_a87cc75ae5adc6a6755f0ba1c7255ff6c}{lastValue\_} = &\hyperlink{class_json_1_1_reader_a85597f763fb0148a17359b6dfc6f7326}{currentValue}();
+459   \}
+460 
+461   \textcolor{keywordflow}{return} successful;
+462 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a8d4ed03a43082c5ace81ba5b81425eaf}\label{class_json_1_1_reader_a8d4ed03a43082c5ace81ba5b81425eaf}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!recover\+From\+Error@{recover\+From\+Error}}
+\index{recover\+From\+Error@{recover\+From\+Error}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{recover\+From\+Error()}{recoverFromError()}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::recover\+From\+Error (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9}{Token\+Type}}]{skip\+Until\+Token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 979 of file jsoncpp.\+cpp.
+
+
+
+References errors\+\_\+, read\+Token(), token\+End\+Of\+Stream, and Json\+::\+Reader\+::\+Token\+::type\+\_\+.
+
+
+
+Referenced by add\+Error\+And\+Recover(), read\+Array(), and read\+Object().
+
+
+\begin{DoxyCode}
+979                                                       \{
+980   \textcolor{keywordtype}{size\_t} \textcolor{keyword}{const} errorCount = \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.size();
+981   Token skip;
+982   \textcolor{keywordflow}{for} (;;) \{
+983     \textcolor{keywordflow}{if} (!\hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(skip))
+984       \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.resize(errorCount); \textcolor{comment}{// discard errors caused by recovery}
+985     \textcolor{keywordflow}{if} (skip.type\_ == skipUntilToken || skip.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9a87fd3ad9cae11a8afe2bd022d8ab90f4}{tokenEndOfStream})
+986       \textcolor{keywordflow}{break};
+987   \}
+988   \hyperlink{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}{errors\_}.resize(errorCount);
+989   \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+990 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a22e677ef400d8223f27e631b4cd4b821}\label{class_json_1_1_reader_a22e677ef400d8223f27e631b4cd4b821}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!skip\+Comment\+Tokens@{skip\+Comment\+Tokens}}
+\index{skip\+Comment\+Tokens@{skip\+Comment\+Tokens}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{skip\+Comment\+Tokens()}{skipCommentTokens()}}
+{\footnotesize\ttfamily void Json\+::\+Reader\+::skip\+Comment\+Tokens (\begin{DoxyParamCaption}\item[{\hyperlink{class_json_1_1_reader_1_1_token}{Token} \&}]{token }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 464 of file jsoncpp.\+cpp.
+
+
+
+References Json\+::\+Features\+::allow\+Comments\+\_\+, features\+\_\+, read\+Token(), token\+Comment, and Json\+::\+Reader\+::\+Token\+::type\+\_\+.
+
+
+
+Referenced by parse(), and read\+Value().
+
+
+\begin{DoxyCode}
+464                                            \{
+465   \textcolor{keywordflow}{if} (\hyperlink{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}{features\_}.\hyperlink{class_json_1_1_features_a33afd389719624b6bdb23950b3c346c9}{allowComments\_}) \{
+466     \textcolor{keywordflow}{do} \{
+467       \hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(token);
+468     \} \textcolor{keywordflow}{while} (token.type\_ == \hyperlink{class_json_1_1_reader_aa35e6ab574dc399a0a645ad98ed66bc9ae4fcf05c3b1ce462bacd34af0ccac32b}{tokenComment});
+469   \} \textcolor{keywordflow}{else} \{
+470     \hyperlink{class_json_1_1_reader_a7cb0631963cc0fd4ff6ed0f570976864}{readToken}(token);
+471   \}
+472 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_a40d0f69d15aeb2d52ff78d794f5ab8b2}\label{class_json_1_1_reader_a40d0f69d15aeb2d52ff78d794f5ab8b2}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!skip\+Spaces@{skip\+Spaces}}
+\index{skip\+Spaces@{skip\+Spaces}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{skip\+Spaces()}{skipSpaces()}}
+{\footnotesize\ttfamily void Json\+::\+Reader\+::skip\+Spaces (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 545 of file jsoncpp.\+cpp.
+
+
+
+References current\+\_\+, and end\+\_\+.
+
+
+
+Referenced by read\+Array(), and read\+Token().
+
+
+\begin{DoxyCode}
+545                         \{
+546   \textcolor{keywordflow}{while} (\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_} != \hyperlink{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}{end\_}) \{
+547     \hyperlink{class_json_1_1_reader_a3eec9118f3e9a672ba8348c3a79d0f45}{Char} c = *\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_};
+548     \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{' '} || c == \textcolor{charliteral}{'\(\backslash\)t'} || c == \textcolor{charliteral}{'\(\backslash\)r'} || c == \textcolor{charliteral}{'\(\backslash\)n'})
+549       ++\hyperlink{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}{current\_};
+550     \textcolor{keywordflow}{else}
+551       \textcolor{keywordflow}{break};
+552   \}
+553 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_json_1_1_reader_ad922ea5a8ab333084edbb84827861fa3}\label{class_json_1_1_reader_ad922ea5a8ab333084edbb84827861fa3}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!skip\+Until\+Space@{skip\+Until\+Space}}
+\index{skip\+Until\+Space@{skip\+Until\+Space}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{skip\+Until\+Space()}{skipUntilSpace()}}
+{\footnotesize\ttfamily void Json\+::\+Reader\+::skip\+Until\+Space (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}\label{class_json_1_1_reader_a327166839022ea91f0a8290960a8af76}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!begin\+\_\+@{begin\+\_\+}}
+\index{begin\+\_\+@{begin\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{begin\+\_\+}{begin\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} Json\+::\+Reader\+::begin\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1563 of file json.\+h.
+
+
+
+Referenced by decode\+Double(), decode\+Number(), decode\+String(), get\+Location\+Line\+And\+Column(), get\+Structured\+Errors(), parse(), push\+Error(), read\+Array(), read\+Object(), and read\+Value().
+
+\mbox{\Hypertarget{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}\label{class_json_1_1_reader_a8e9ce743f6004f0596692f0a9ee4626c}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!collect\+Comments\+\_\+@{collect\+Comments\+\_\+}}
+\index{collect\+Comments\+\_\+@{collect\+Comments\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{collect\+Comments\+\_\+}{collectComments\_}}
+{\footnotesize\ttfamily bool Json\+::\+Reader\+::collect\+Comments\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1570 of file json.\+h.
+
+
+
+Referenced by add\+Comment(), parse(), read\+Comment(), and read\+Value().
+
+\mbox{\Hypertarget{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}\label{class_json_1_1_reader_af777967adaf0b2e882efa07673754381}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!comments\+Before\+\_\+@{comments\+Before\+\_\+}}
+\index{comments\+Before\+\_\+@{comments\+Before\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{comments\+Before\+\_\+}{commentsBefore\_}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Reader\+::comments\+Before\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1568 of file json.\+h.
+
+
+
+Referenced by add\+Comment(), parse(), and read\+Value().
+
+\mbox{\Hypertarget{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}\label{class_json_1_1_reader_a2f2feb5201a26da7aa133d2f7434479b}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!current\+\_\+@{current\+\_\+}}
+\index{current\+\_\+@{current\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{current\+\_\+}{current\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} Json\+::\+Reader\+::current\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1565 of file json.\+h.
+
+
+
+Referenced by get\+Next\+Char(), match(), parse(), read\+Array(), read\+Comment(), read\+Cpp\+Style\+Comment(), read\+C\+Style\+Comment(), read\+Number(), read\+String(), read\+Token(), read\+Value(), and skip\+Spaces().
+
+\mbox{\Hypertarget{class_json_1_1_reader_abf99e137bc92a93623dc97598702261a}\label{class_json_1_1_reader_abf99e137bc92a93623dc97598702261a}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!document\+\_\+@{document\+\_\+}}
+\index{document\+\_\+@{document\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{document\+\_\+}{document\_}}
+{\footnotesize\ttfamily \hyperlink{json_8h_a1e723f95759de062585bc4a8fd3fa4be}{J\+S\+O\+N\+C\+P\+P\+\_\+\+S\+T\+R\+I\+NG} Json\+::\+Reader\+::document\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1562 of file json.\+h.
+
+
+
+Referenced by parse().
+
+\mbox{\Hypertarget{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}\label{class_json_1_1_reader_a714793579cbf4ee7c5a7223d2c8d77c1}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!end\+\_\+@{end\+\_\+}}
+\index{end\+\_\+@{end\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{end\+\_\+}{end\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} Json\+::\+Reader\+::end\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1564 of file json.\+h.
+
+
+
+Referenced by get\+Location\+Line\+And\+Column(), get\+Next\+Char(), match(), parse(), push\+Error(), read\+Array(), read\+Cpp\+Style\+Comment(), read\+C\+Style\+Comment(), read\+Number(), read\+String(), and skip\+Spaces().
+
+\mbox{\Hypertarget{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}\label{class_json_1_1_reader_a1bbce45dc4df753bed60c129f4b5147c}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!errors\+\_\+@{errors\+\_\+}}
+\index{errors\+\_\+@{errors\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{errors\+\_\+}{errors\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_reader_aae51e8f5bab3f067261c842a3ef858e5}{Errors} Json\+::\+Reader\+::errors\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1561 of file json.\+h.
+
+
+
+Referenced by add\+Error(), get\+Formatted\+Error\+Messages(), get\+Structured\+Errors(), good(), parse(), push\+Error(), and recover\+From\+Error().
+
+\mbox{\Hypertarget{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}\label{class_json_1_1_reader_aa9984ff8f519b5541346157b7aebf97b}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!features\+\_\+@{features\+\_\+}}
+\index{features\+\_\+@{features\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{features\+\_\+}{features\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_features}{Features} Json\+::\+Reader\+::features\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1569 of file json.\+h.
+
+
+
+Referenced by parse(), read\+Object(), read\+Value(), and skip\+Comment\+Tokens().
+
+\mbox{\Hypertarget{class_json_1_1_reader_a87cc75ae5adc6a6755f0ba1c7255ff6c}\label{class_json_1_1_reader_a87cc75ae5adc6a6755f0ba1c7255ff6c}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!last\+Value\+\_\+@{last\+Value\+\_\+}}
+\index{last\+Value\+\_\+@{last\+Value\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{last\+Value\+\_\+}{lastValue\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_value}{Value}$\ast$ Json\+::\+Reader\+::last\+Value\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1567 of file json.\+h.
+
+
+
+Referenced by add\+Comment(), parse(), and read\+Value().
+
+\mbox{\Hypertarget{class_json_1_1_reader_a497a114f7b760f1b794b8fff9876615a}\label{class_json_1_1_reader_a497a114f7b760f1b794b8fff9876615a}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!last\+Value\+End\+\_\+@{last\+Value\+End\+\_\+}}
+\index{last\+Value\+End\+\_\+@{last\+Value\+End\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{last\+Value\+End\+\_\+}{lastValueEnd\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_reader_a46795b5b272bf79a7730e406cb96375a}{Location} Json\+::\+Reader\+::last\+Value\+End\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1566 of file json.\+h.
+
+
+
+Referenced by parse(), read\+Comment(), and read\+Value().
+
+\mbox{\Hypertarget{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}\label{class_json_1_1_reader_ada3d2c47699dad662e6d156c8c78a6ac}} 
+\index{Json\+::\+Reader@{Json\+::\+Reader}!nodes\+\_\+@{nodes\+\_\+}}
+\index{nodes\+\_\+@{nodes\+\_\+}!Json\+::\+Reader@{Json\+::\+Reader}}
+\subsubsection{\texorpdfstring{nodes\+\_\+}{nodes\_}}
+{\footnotesize\ttfamily \hyperlink{class_json_1_1_reader_a8da2114fe8b8124d41ea2f3434f0171b}{Nodes} Json\+::\+Reader\+::nodes\+\_\+\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 1560 of file json.\+h.
+
+
+
+Referenced by current\+Value(), parse(), read\+Array(), read\+Object(), and read\+Value().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{json_8h}{json.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{jsoncpp_8cpp}{jsoncpp.\+cpp}\end{DoxyCompactItemize}

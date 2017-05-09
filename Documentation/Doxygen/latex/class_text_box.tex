@@ -1,0 +1,437 @@
+\hypertarget{class_text_box}{}\section{Text\+Box Class Reference}
+\label{class_text_box}\index{Text\+Box@{Text\+Box}}
+
+
+{\ttfamily \#include $<$Text\+Box.\+h$>$}
+
+
+
+Inheritance diagram for Text\+Box\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_text_box__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Text\+Box\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_text_box__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_text_box_a25b67e5ff6788c60b8aef3f3540879d0}{Text\+Box} ()
+\item 
+\hyperlink{class_text_box_a7e80f260cc97085b70e838f0f4250697}{Text\+Box} (std\+::string file\+Name, S\+D\+L\+\_\+\+Renderer $\ast$renderer, int x, int y)
+\item 
+void \hyperlink{class_text_box_a8746fe595a510ea6c3dc9908b448802c}{render\+Comment} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\item 
+bool \hyperlink{class_text_box_add2f877e6715744908d5eb0c9c53e5a9}{load\+Text} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, std\+::string text, T\+T\+F\+\_\+\+Font $\ast$font)
+\item 
+void \hyperlink{class_text_box_a19cb5e85c864060ecdb2fe2bab6fd54d}{create\+Strings} (std\+::string text, T\+T\+F\+\_\+\+Font $\ast$font)
+\item 
+\hyperlink{class_texture}{Texture} \hyperlink{class_text_box_a47653c059e6074242066423bad187fb6}{get\+Font\+Texture} ()
+\item 
+int \hyperlink{class_text_box_a7c620113713b6b841ef7e183c1d81312}{get\+Lines\+To\+Render} ()
+\item 
+void \hyperlink{class_text_box_a6ab09c23671be63b41bd0eba32d385e3}{free\+Comment} ()
+\item 
+std\+::string \hyperlink{class_text_box_ac10a24236f968ae36705f8bf300dfd79}{return\+Line} (int i)
+\item 
+void \hyperlink{class_text_box_a3c57ce309c31e346dbc504b5e23d7ebc}{empty\+Text\+To\+Render} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_text_box_a55045d04b5804c912bd9be29bc8478b9}{font\+Width}
+\item 
+int \hyperlink{class_text_box_a55689185cc0627e45b0d70304eb962d2}{font\+Height}
+\item 
+std\+::vector$<$ std\+::string $>$ \hyperlink{class_text_box_a13ec32aabf23db2253af70f19a2bf1e9}{text\+To\+Render}
+\item 
+\hyperlink{class_texture}{Texture} \hyperlink{class_text_box_a94e1863fccbb2e8de3547aa89b8e85f0}{font\+Texture}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Inherit\textquotesingle{}s from the base sprite class, handles text rendering to the screen, and freeing up that text 
+
+Definition at line 11 of file Text\+Box.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_text_box_a25b67e5ff6788c60b8aef3f3540879d0}\label{class_text_box_a25b67e5ff6788c60b8aef3f3540879d0}} 
+\index{Text\+Box@{Text\+Box}!Text\+Box@{Text\+Box}}
+\index{Text\+Box@{Text\+Box}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{Text\+Box()}{TextBox()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Text\+Box\+::\+Text\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Text\+Box.\+cpp.
+
+
+\begin{DoxyCode}
+3 \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_text_box_a7e80f260cc97085b70e838f0f4250697}\label{class_text_box_a7e80f260cc97085b70e838f0f4250697}} 
+\index{Text\+Box@{Text\+Box}!Text\+Box@{Text\+Box}}
+\index{Text\+Box@{Text\+Box}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{Text\+Box()}{TextBox()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Text\+Box\+::\+Text\+Box (\begin{DoxyParamCaption}\item[{std\+::string}]{file\+Name,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Text\+Box.\+cpp.
+
+
+\begin{DoxyCode}
+5 : \hyperlink{class_sprite_a12cba3ac1868418add3c4d95ce87e615}{Sprite}(fileName, renderer, x, y)\{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_text_box_a19cb5e85c864060ecdb2fe2bab6fd54d}\label{class_text_box_a19cb5e85c864060ecdb2fe2bab6fd54d}} 
+\index{Text\+Box@{Text\+Box}!create\+Strings@{create\+Strings}}
+\index{create\+Strings@{create\+Strings}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{create\+Strings()}{createStrings()}}
+{\footnotesize\ttfamily void Text\+Box\+::create\+Strings (\begin{DoxyParamCaption}\item[{std\+::string}]{text,  }\item[{T\+T\+F\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})}
+
+Breaks up text into 3 line chunks to be rendered \begin{DoxyRefDesc}{Bug}
+\item[\hyperlink{bug__bug000001}{Bug}]There is currently an issue where the texture will return 0, temp fix has been implemented where the texture width is hardcoded \end{DoxyRefDesc}
+
+
+Definition at line 50 of file Text\+Box.\+cpp.
+
+
+
+References Sprite\+::get\+Width(), and text\+To\+Render.
+
+
+
+Referenced by N\+P\+C\+::prepare\+Comment().
+
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keywordflow}{if} (font == NULL)
+53     \{
+54         printf(\textcolor{stringliteral}{"Failed to load font! SDL\_ttf Error: %s\(\backslash\)n"}, TTF\_GetError());
+55     \}
+56     \textcolor{keywordflow}{else}
+57     \{
+58         \textcolor{keywordflow}{try}
+59         \{
+60             \textcolor{comment}{// Find the dimensions of a single character rendered in the parsed in font}
+61             \textcolor{keywordtype}{int} tW, tH;
+62             TTF\_SizeText(font, \textcolor{stringliteral}{"a"}, &tW, &tH);
+63 
+64             \textcolor{comment}{// retrieve the width of our texture}
+65             \textcolor{keywordtype}{int} supposedWidth = \hyperlink{class_sprite_aba3d4752461ec679fbf5de7ec4c34f61}{getWidth}();
+66             
+68             \textcolor{keywordtype}{int} maxCharsPerLine = 180 / tW;
+69 
+70             \textcolor{keywordflow}{if} (maxCharsPerLine == 0)
+71                 \textcolor{keywordflow}{throw} std::overflow\_error(\textcolor{stringliteral}{"texture Width is 0!"});
+72             
+73             \textcolor{comment}{// Divide the length of text by the max number of chars that can be had per line}
+74             \textcolor{keywordtype}{int} numSubStrings = text.length() / maxCharsPerLine;
+75             std::vector<std::string> ret;
+76 
+77 
+78             std::stringstream threeChunks;
+79             \textcolor{keywordtype}{int} counter = 0;
+80             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < numSubStrings; i++)
+81             \{
+82                 \textcolor{comment}{// Create a substring using the maxCharPerLine value }
+83                 std::string textChunk = text.substr(i * maxCharsPerLine, maxCharsPerLine);
+84 
+85                 \textcolor{comment}{// feed the chunk into our string stream}
+86                 threeChunks << textChunk;
+87                 counter++;
+88 
+89                 \textcolor{comment}{// if we have 3 lines stored, push back the chunk}
+90                 \textcolor{keywordflow}{if} (counter == 3 || counter == numSubStrings)
+91                 \{
+92                     counter = 0;
+93                     \hyperlink{class_text_box_a13ec32aabf23db2253af70f19a2bf1e9}{textToRender}.push\_back(threeChunks.str());
+94                     threeChunks.str(\textcolor{stringliteral}{""});
+95                 \}
+96             \}
+97 
+98             \textcolor{comment}{// add the remainder text as a chunk}
+99             \textcolor{keywordflow}{if} (text.length() % maxCharsPerLine != 0)
+100             \{
+101                 threeChunks << text.substr(maxCharsPerLine * numSubStrings);
+102                 \hyperlink{class_text_box_a13ec32aabf23db2253af70f19a2bf1e9}{textToRender}.push\_back(threeChunks.str());
+103                 threeChunks.str(\textcolor{stringliteral}{""});
+104             \}
+105         \}
+106         \textcolor{keywordflow}{catch} (std::overflow\_error e)
+107         \{
+108             std::cout << e.what() << std::endl;;
+109         \}
+110     \}
+111 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_text_box_a3c57ce309c31e346dbc504b5e23d7ebc}\label{class_text_box_a3c57ce309c31e346dbc504b5e23d7ebc}} 
+\index{Text\+Box@{Text\+Box}!empty\+Text\+To\+Render@{empty\+Text\+To\+Render}}
+\index{empty\+Text\+To\+Render@{empty\+Text\+To\+Render}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{empty\+Text\+To\+Render()}{emptyTextToRender()}}
+{\footnotesize\ttfamily void Text\+Box\+::empty\+Text\+To\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 131 of file Text\+Box.\+cpp.
+
+
+
+References text\+To\+Render.
+
+
+
+Referenced by N\+P\+C\+::prepare\+Comment().
+
+
+\begin{DoxyCode}
+132 \{
+133     \hyperlink{class_text_box_a13ec32aabf23db2253af70f19a2bf1e9}{textToRender}.clear();
+134 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_text_box_a6ab09c23671be63b41bd0eba32d385e3}\label{class_text_box_a6ab09c23671be63b41bd0eba32d385e3}} 
+\index{Text\+Box@{Text\+Box}!free\+Comment@{free\+Comment}}
+\index{free\+Comment@{free\+Comment}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{free\+Comment()}{freeComment()}}
+{\footnotesize\ttfamily void Text\+Box\+::free\+Comment (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 113 of file Text\+Box.\+cpp.
+
+
+
+References font\+Texture, and Texture\+::free().
+
+
+
+Referenced by N\+P\+C\+::free\+Box().
+
+
+\begin{DoxyCode}
+114 \{
+115     \hyperlink{class_text_box_a94e1863fccbb2e8de3547aa89b8e85f0}{fontTexture}.\hyperlink{class_texture_a46d06aec832e5a954f1c8ca957c2c6e5}{free}();
+116 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_text_box_a47653c059e6074242066423bad187fb6}\label{class_text_box_a47653c059e6074242066423bad187fb6}} 
+\index{Text\+Box@{Text\+Box}!get\+Font\+Texture@{get\+Font\+Texture}}
+\index{get\+Font\+Texture@{get\+Font\+Texture}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{get\+Font\+Texture()}{getFontTexture()}}
+{\footnotesize\ttfamily \hyperlink{class_texture}{Texture} Text\+Box\+::get\+Font\+Texture (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file Text\+Box.\+cpp.
+
+
+
+References font\+Texture.
+
+
+\begin{DoxyCode}
+13 \{
+14     \textcolor{keywordflow}{return} \hyperlink{class_text_box_a94e1863fccbb2e8de3547aa89b8e85f0}{fontTexture};
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_text_box_a7c620113713b6b841ef7e183c1d81312}\label{class_text_box_a7c620113713b6b841ef7e183c1d81312}} 
+\index{Text\+Box@{Text\+Box}!get\+Lines\+To\+Render@{get\+Lines\+To\+Render}}
+\index{get\+Lines\+To\+Render@{get\+Lines\+To\+Render}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{get\+Lines\+To\+Render()}{getLinesToRender()}}
+{\footnotesize\ttfamily int Text\+Box\+::get\+Lines\+To\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 118 of file Text\+Box.\+cpp.
+
+
+
+References text\+To\+Render.
+
+
+
+Referenced by N\+P\+C\+::get\+Lines\+To\+Render().
+
+
+\begin{DoxyCode}
+119 \{
+120     \textcolor{keywordflow}{return} \hyperlink{class_text_box_a13ec32aabf23db2253af70f19a2bf1e9}{textToRender}.size();
+121 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_text_box_add2f877e6715744908d5eb0c9c53e5a9}\label{class_text_box_add2f877e6715744908d5eb0c9c53e5a9}} 
+\index{Text\+Box@{Text\+Box}!load\+Text@{load\+Text}}
+\index{load\+Text@{load\+Text}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{load\+Text()}{loadText()}}
+{\footnotesize\ttfamily bool Text\+Box\+::load\+Text (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{std\+::string}]{text,  }\item[{T\+T\+F\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})}
+
+Load parsed in text as a texture 
+
+Definition at line 20 of file Text\+Box.\+cpp.
+
+
+
+References font\+Height, font\+Texture, font\+Width, Texture\+::get\+Height(), Sprite\+::get\+Width(), Texture\+::get\+Width(), and Texture\+::load\+From\+Rendered\+Text().
+
+
+
+Referenced by N\+P\+C\+::\+Load\+Comment().
+
+
+\begin{DoxyCode}
+21 \{
+22     \textcolor{comment}{//Loading success flag}
+23     \textcolor{keywordtype}{bool} success = \textcolor{keyword}{true};
+24 
+25     \textcolor{comment}{//Open the font}
+26     \textcolor{keywordflow}{if} (font == NULL)
+27     \{
+28         printf(\textcolor{stringliteral}{"Failed to load font! SDL\_ttf Error: %s\(\backslash\)n"}, TTF\_GetError());
+29         success = \textcolor{keyword}{false};
+30     \}
+31     \textcolor{keywordflow}{else}
+32     \{
+33         \textcolor{comment}{//Render text}
+34         SDL\_Color textColor = \{ 0, 0, 0 \};
+35         \textcolor{keywordflow}{if} (!\hyperlink{class_text_box_a94e1863fccbb2e8de3547aa89b8e85f0}{fontTexture}.\hyperlink{class_texture_a78708fd59f16721c2c19b2075a91e1bc}{loadFromRenderedText}(text, textColor, renderer, 
+      font, \hyperlink{class_sprite_aba3d4752461ec679fbf5de7ec4c34f61}{getWidth}()))
+36         \{
+37             printf(\textcolor{stringliteral}{"Failed to render text texture!\(\backslash\)n"});
+38             success = \textcolor{keyword}{false};
+39         \}
+40         \hyperlink{class_text_box_a55045d04b5804c912bd9be29bc8478b9}{fontWidth} = \hyperlink{class_text_box_a94e1863fccbb2e8de3547aa89b8e85f0}{fontTexture}.\hyperlink{class_texture_a91a6fd3355bc870194851514194daaab}{getWidth}();
+41         \hyperlink{class_text_box_a55689185cc0627e45b0d70304eb962d2}{fontHeight} = \hyperlink{class_text_box_a94e1863fccbb2e8de3547aa89b8e85f0}{fontTexture}.\hyperlink{class_texture_a80e143905655b173df5994300088ce35}{getHeight}();
+42     \}
+43 
+44     \textcolor{keywordflow}{return} success;
+45 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_text_box_a8746fe595a510ea6c3dc9908b448802c}\label{class_text_box_a8746fe595a510ea6c3dc9908b448802c}} 
+\index{Text\+Box@{Text\+Box}!render\+Comment@{render\+Comment}}
+\index{render\+Comment@{render\+Comment}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{render\+Comment()}{renderComment()}}
+{\footnotesize\ttfamily void Text\+Box\+::render\+Comment (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Definition at line 7 of file Text\+Box.\+cpp.
+
+
+
+References font\+Texture, Sprite\+::get\+X(), Sprite\+::get\+Y(), and Texture\+::render().
+
+
+
+Referenced by N\+P\+C\+::render\+Comment().
+
+
+\begin{DoxyCode}
+8 \{
+9     \hyperlink{class_text_box_a94e1863fccbb2e8de3547aa89b8e85f0}{fontTexture}.\hyperlink{class_texture_ac91a5257c451c80ffbf9a3d1485ba1c8}{render}(\hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX}(), \hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY}(), renderer);
+10 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_text_box_ac10a24236f968ae36705f8bf300dfd79}\label{class_text_box_ac10a24236f968ae36705f8bf300dfd79}} 
+\index{Text\+Box@{Text\+Box}!return\+Line@{return\+Line}}
+\index{return\+Line@{return\+Line}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{return\+Line()}{returnLine()}}
+{\footnotesize\ttfamily std\+::string Text\+Box\+::return\+Line (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file Text\+Box.\+cpp.
+
+
+
+References text\+To\+Render.
+
+
+
+Referenced by N\+P\+C\+::\+Load\+Comment().
+
+
+\begin{DoxyCode}
+124 \{
+125     \textcolor{keywordflow}{if} (\hyperlink{class_text_box_a13ec32aabf23db2253af70f19a2bf1e9}{textToRender}.size() > 0)
+126         \textcolor{keywordflow}{return} \hyperlink{class_text_box_a13ec32aabf23db2253af70f19a2bf1e9}{textToRender}[i];
+127     \textcolor{keywordflow}{else}
+128         \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+129 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_text_box_a55689185cc0627e45b0d70304eb962d2}\label{class_text_box_a55689185cc0627e45b0d70304eb962d2}} 
+\index{Text\+Box@{Text\+Box}!font\+Height@{font\+Height}}
+\index{font\+Height@{font\+Height}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{font\+Height}{fontHeight}}
+{\footnotesize\ttfamily int Text\+Box\+::font\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file Text\+Box.\+h.
+
+
+
+Referenced by load\+Text().
+
+\mbox{\Hypertarget{class_text_box_a94e1863fccbb2e8de3547aa89b8e85f0}\label{class_text_box_a94e1863fccbb2e8de3547aa89b8e85f0}} 
+\index{Text\+Box@{Text\+Box}!font\+Texture@{font\+Texture}}
+\index{font\+Texture@{font\+Texture}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{font\+Texture}{fontTexture}}
+{\footnotesize\ttfamily \hyperlink{class_texture}{Texture} Text\+Box\+::font\+Texture\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 33 of file Text\+Box.\+h.
+
+
+
+Referenced by free\+Comment(), get\+Font\+Texture(), load\+Text(), and render\+Comment().
+
+\mbox{\Hypertarget{class_text_box_a55045d04b5804c912bd9be29bc8478b9}\label{class_text_box_a55045d04b5804c912bd9be29bc8478b9}} 
+\index{Text\+Box@{Text\+Box}!font\+Width@{font\+Width}}
+\index{font\+Width@{font\+Width}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{font\+Width}{fontWidth}}
+{\footnotesize\ttfamily int Text\+Box\+::font\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 30 of file Text\+Box.\+h.
+
+
+
+Referenced by load\+Text().
+
+\mbox{\Hypertarget{class_text_box_a13ec32aabf23db2253af70f19a2bf1e9}\label{class_text_box_a13ec32aabf23db2253af70f19a2bf1e9}} 
+\index{Text\+Box@{Text\+Box}!text\+To\+Render@{text\+To\+Render}}
+\index{text\+To\+Render@{text\+To\+Render}!Text\+Box@{Text\+Box}}
+\subsubsection{\texorpdfstring{text\+To\+Render}{textToRender}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::string$>$ Text\+Box\+::text\+To\+Render\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 32 of file Text\+Box.\+h.
+
+
+
+Referenced by create\+Strings(), empty\+Text\+To\+Render(), get\+Lines\+To\+Render(), and return\+Line().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_text_box_8h}{Text\+Box.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_text_box_8cpp}{Text\+Box.\+cpp}\end{DoxyCompactItemize}

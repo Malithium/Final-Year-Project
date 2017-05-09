@@ -1,0 +1,107 @@
+\hypertarget{class_resource_data}{}\section{Resource\+Data Class Reference}
+\label{class_resource_data}\index{Resource\+Data@{Resource\+Data}}
+
+
+{\ttfamily \#include $<$Resource\+Data.\+h$>$}
+
+
+
+Collaboration diagram for Resource\+Data\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=173pt]{class_resource_data__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_resource_data_afa0fffd6caad715b697c1b3a388c975d}{Resource\+Data} (std\+::ifstream file)
+\item 
+std\+::string \hyperlink{class_resource_data_a2e18ba115b2598590c15a16240542948}{read\+Data} (std\+::string key)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Json\+::\+Value \hyperlink{class_resource_data_a0e9ea464b4a3fae26f68d01e344008fb}{root}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Reads in the resource data for the application 
+
+Definition at line 8 of file Resource\+Data.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_resource_data_afa0fffd6caad715b697c1b3a388c975d}\label{class_resource_data_afa0fffd6caad715b697c1b3a388c975d}} 
+\index{Resource\+Data@{Resource\+Data}!Resource\+Data@{Resource\+Data}}
+\index{Resource\+Data@{Resource\+Data}!Resource\+Data@{Resource\+Data}}
+\subsubsection{\texorpdfstring{Resource\+Data()}{ResourceData()}}
+{\footnotesize\ttfamily Resource\+Data\+::\+Resource\+Data (\begin{DoxyParamCaption}\item[{std\+::ifstream}]{file }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Resource\+Data.\+cpp.
+
+
+
+References root.
+
+
+\begin{DoxyCode}
+6 \{
+7     file >> \hyperlink{class_resource_data_a0e9ea464b4a3fae26f68d01e344008fb}{root};
+8 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_resource_data_a2e18ba115b2598590c15a16240542948}\label{class_resource_data_a2e18ba115b2598590c15a16240542948}} 
+\index{Resource\+Data@{Resource\+Data}!read\+Data@{read\+Data}}
+\index{read\+Data@{read\+Data}!Resource\+Data@{Resource\+Data}}
+\subsubsection{\texorpdfstring{read\+Data()}{readData()}}
+{\footnotesize\ttfamily std\+::string Resource\+Data\+::read\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 10 of file Resource\+Data.\+cpp.
+
+
+
+References root.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{keywordflow}{return} \hyperlink{class_resource_data_a0e9ea464b4a3fae26f68d01e344008fb}{root}[key].asString();
+13 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_resource_data_a0e9ea464b4a3fae26f68d01e344008fb}\label{class_resource_data_a0e9ea464b4a3fae26f68d01e344008fb}} 
+\index{Resource\+Data@{Resource\+Data}!root@{root}}
+\index{root@{root}!Resource\+Data@{Resource\+Data}}
+\subsubsection{\texorpdfstring{root}{root}}
+{\footnotesize\ttfamily Json\+::\+Value Resource\+Data\+::root\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 15 of file Resource\+Data.\+h.
+
+
+
+Referenced by read\+Data(), and Resource\+Data().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_resource_data_8h}{Resource\+Data.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_resource_data_8cpp}{Resource\+Data.\+cpp}\end{DoxyCompactItemize}

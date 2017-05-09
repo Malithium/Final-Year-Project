@@ -1,0 +1,695 @@
+\hypertarget{class_room}{}\section{Room Class Reference}
+\label{class_room}\index{Room@{Room}}
+
+
+{\ttfamily \#include $<$Room.\+h$>$}
+
+
+
+Collaboration diagram for Room\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_room__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_room_ac6ef93a7d9c3e1d624e025058d5f16ff}{Room} ()
+\item 
+\hyperlink{class_room_a2f37c248b2d9882531e01ab675ea54f0}{Room} (int group\+Num, int x, int y, int width, int height, std\+::string N\+P\+C\+Sprite, std\+::string Text\+Box\+Sprite, S\+D\+L\+\_\+\+Renderer $\ast$renderer, \hyperlink{class_group}{Group} grp)
+\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_room_ac57c28e2c1048649e816f731f63f9daf}{get\+Room\+Position} (int pos)
+\begin{DoxyCompactList}\small\item\em return the rooms positions \end{DoxyCompactList}\item 
+void \hyperlink{class_room_a876301b35488a7dc07bde00f0b701f9a}{Load\+N\+P\+Cs} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em render the N\+P\+Cs to the scene \end{DoxyCompactList}\item 
+void \hyperlink{class_room_a85476905ce9262f07dbb4a25f9729545}{Load\+Conversation} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, bool time, std\+::string boredom\+Level, T\+T\+F\+\_\+\+Font $\ast$font)
+\begin{DoxyCompactList}\small\item\em render the \hyperlink{class_n_p_c}{N\+PC} conversations in the room \end{DoxyCompactList}\item 
+void \hyperlink{class_room_ae40e34ac3588b2dfe2be6c5d66e20552}{Handle\+Move} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em handle \hyperlink{class_n_p_c}{N\+PC} movement \end{DoxyCompactList}\item 
+void \hyperlink{class_room_af25611552daa6c57915a0b0c98c40a8a}{basic\+Path} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_n_p_c}{N\+PC} $>$ npc, S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em generate a basic path for the \hyperlink{class_n_p_c}{N\+PC} to follow \end{DoxyCompactList}\item 
+int \hyperlink{class_room_a7d4ef90e7eb605f2c198b28175900d45}{find\+Open\+Group} (int exclude)
+\begin{DoxyCompactList}\small\item\em return the id of any open groups \end{DoxyCompactList}\item 
+void \hyperlink{class_room_af6bdbbf116aeafe290a31990a1124562}{leave\+Group} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_n_p_c}{N\+PC} $>$ npc)
+\begin{DoxyCompactList}\small\item\em remove an npc from a group \end{DoxyCompactList}\item 
+void \hyperlink{class_room_a8cf434656fbafb4d65ee47c33db5c8ed}{join\+Group} (std\+::shared\+\_\+ptr$<$ \hyperlink{class_n_p_c}{N\+PC} $>$ npc, int id)
+\begin{DoxyCompactList}\small\item\em add an npc to a group \end{DoxyCompactList}\item 
+bool \hyperlink{class_room_a0c1e8e264493205408553a998a068b29}{check\+Group} (int id)
+\begin{DoxyCompactList}\small\item\em check if any groups have finished conversing \end{DoxyCompactList}\item 
+void \hyperlink{class_room_a03dc1536ef3b1ed301c76b08685e7103}{clean\+Up\+Groups} ()
+\begin{DoxyCompactList}\small\item\em remove any inactive groups \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_room_a3538dc1a9a08a492cec337399db77259}{room\+Width}
+\item 
+int \hyperlink{class_room_a3f6fbe94c4c124e4c4df85e57fbb703b}{room\+Height}
+\item 
+int \hyperlink{class_room_a5cb7d8efa1ea04af080f7e2c041fea1a}{roomX}
+\item 
+int \hyperlink{class_room_a702c5d200cedc6e9eef5cbc2034fdc17}{roomY}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_n_p_c}{N\+PC} $>$ $>$ \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{room\+N\+P\+Cs}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_base___group}{Base\+\_\+\+Group} $>$ $>$ \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{room\+Groups}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$ $>$ \hyperlink{class_room_adcf7b7bd55783c0e80b2508ce9485d78}{room\+Nodes}
+\item 
+std\+::string \hyperlink{class_room_a469d309dfc2c2693c27cbcb512f9c14c}{roomsubject}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Room.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_room_ac6ef93a7d9c3e1d624e025058d5f16ff}\label{class_room_ac6ef93a7d9c3e1d624e025058d5f16ff}} 
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\subsubsection{\texorpdfstring{Room()}{Room()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Room\+::\+Room (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file Room.\+cpp.
+
+
+\begin{DoxyCode}
+3 \{\}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_a2f37c248b2d9882531e01ab675ea54f0}\label{class_room_a2f37c248b2d9882531e01ab675ea54f0}} 
+\index{Room@{Room}!Room@{Room}}
+\index{Room@{Room}!Room@{Room}}
+\subsubsection{\texorpdfstring{Room()}{Room()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Room\+::\+Room (\begin{DoxyParamCaption}\item[{int}]{group\+Num,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{std\+::string}]{N\+P\+C\+Sprite,  }\item[{std\+::string}]{Text\+Box\+Sprite,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{\hyperlink{class_group}{Group}}]{grp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file Room.\+cpp.
+
+
+
+References get\+Room\+Position(), Group\+::get\+Topics(), room\+Groups, room\+Height, room\+Nodes, room\+N\+P\+Cs, room\+Width, roomX, and roomY.
+
+
+\begin{DoxyCode}
+6 \{
+7     \hyperlink{class_room_a3538dc1a9a08a492cec337399db77259}{roomWidth} = width;
+8     \hyperlink{class_room_a3f6fbe94c4c124e4c4df85e57fbb703b}{roomHeight} = height;
+9     \hyperlink{class_room_a5cb7d8efa1ea04af080f7e2c041fea1a}{roomX} = x;
+10     \hyperlink{class_room_a702c5d200cedc6e9eef5cbc2034fdc17}{roomY} = y;
+11     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = 0;
+12     \textcolor{keywordtype}{int} groupID = 0;
+13 
+14     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < groupNum; i++)
+15     \{
+16         \textcolor{comment}{// Get a random number for the number of NPCs}
+17         std::mt19937 rng;
+18         rng.seed(std::random\_device()());
+19         std::uniform\_int\_distribution<std::mt19937::result\_type> distGroup(2, 6);
+20         \textcolor{keywordtype}{int} random = distGroup(rng);
+21 
+22         \textcolor{comment}{// Get an availale position in the room}
+23         std::pair<int, int> positions = \hyperlink{class_room_ac57c28e2c1048649e816f731f63f9daf}{getRoomPosition}(i);
+24 
+25         \textcolor{comment}{// Create a group within the room}
+26         std::shared\_ptr<Base\_Group> group(\textcolor{keyword}{new} \hyperlink{class_n_p_c___group}{NPC\_Group}(positions.first, positions.second, random,
+       TextBoxSprite, NPCSprite, renderer, grp.\hyperlink{class_group_a160daa5f96a8203bd30340dfc1810af1}{getTopics}()[i]));
+27         
+28         \textcolor{comment}{// Generate a random number if NPCs and add them to the new group}
+29         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} n = 0; n < random; n++)
+30         \{
+31             std::shared\_ptr<NPC> nNPC(\textcolor{keyword}{new} \hyperlink{class_n_p_c}{NPC}(TextBoxSprite, NPCSprite, \textcolor{stringliteral}{""}, renderer, 0, 0));
+32             nNPC->setID(\textcolor{keywordtype}{id});
+33             nNPC->setGroupID(groupID);
+34             group->AddToGroup(nNPC);
+35             \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}.push\_back(nNPC);
+36             \textcolor{keywordtype}{id}++;
+37         \}
+38 
+39         \textcolor{comment}{// Set the group ID}
+40         group->setID(groupID);
+41 
+42         \textcolor{comment}{// Add the group to the room}
+43         \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.push\_back(group);
+44         groupID++;
+45 
+46         \textcolor{comment}{// Surround the group with Nodes}
+47         std::shared\_ptr<Node> node1(\textcolor{keyword}{new} \hyperlink{class_node}{Node}(positions.first - 50, positions.second - 50));
+48         std::shared\_ptr<Node> node2(\textcolor{keyword}{new} \hyperlink{class_node}{Node}(positions.first + 80, positions.second - 50));
+49         std::shared\_ptr<Node> node3(\textcolor{keyword}{new} \hyperlink{class_node}{Node}(positions.first - 50, positions.second + 80));
+50         std::shared\_ptr<Node> node4(\textcolor{keyword}{new} \hyperlink{class_node}{Node}(positions.first + 80, positions.second + 80));
+51         \hyperlink{class_room_adcf7b7bd55783c0e80b2508ce9485d78}{roomNodes}.push\_back(node1);
+52         \hyperlink{class_room_adcf7b7bd55783c0e80b2508ce9485d78}{roomNodes}.push\_back(node2);
+53         \hyperlink{class_room_adcf7b7bd55783c0e80b2508ce9485d78}{roomNodes}.push\_back(node3);
+54         \hyperlink{class_room_adcf7b7bd55783c0e80b2508ce9485d78}{roomNodes}.push\_back(node4);
+55 
+56         \textcolor{keywordtype}{int} size = \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->getNPCList().size();
+57         std::cout << \textcolor{stringliteral}{"Group of index "} << i << \textcolor{stringliteral}{" has: "} << size << \textcolor{stringliteral}{" NPCs"} << std::endl;
+58     \}
+59 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_room_af25611552daa6c57915a0b0c98c40a8a}\label{class_room_af25611552daa6c57915a0b0c98c40a8a}} 
+\index{Room@{Room}!basic\+Path@{basic\+Path}}
+\index{basic\+Path@{basic\+Path}!Room@{Room}}
+\subsubsection{\texorpdfstring{basic\+Path()}{basicPath()}}
+{\footnotesize\ttfamily void Room\+::basic\+Path (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_n_p_c}{N\+PC} $>$}]{npc,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+generate a basic path for the \hyperlink{class_n_p_c}{N\+PC} to follow 
+
+Creates a basic path for the \hyperlink{class_n_p_c}{N\+PC} to walk to 
+
+Definition at line 283 of file Room.\+cpp.
+
+
+
+Referenced by Handle\+Move().
+
+
+\begin{DoxyCode}
+284 \{
+285     std::vector<std::shared\_ptr<Node>> \hyperlink{class_room_af25611552daa6c57915a0b0c98c40a8a}{basicPath};
+286     basicPath.push\_back(std::shared\_ptr<Node>(\textcolor{keyword}{new} \hyperlink{class_node}{Node}(npc->getEndGoal().first, npc->getEndGoal().
+      second)));
+287     npc->setPath(basicPath);
+288     std::cout << \textcolor{stringliteral}{"The goal Node for NPC: "} << npc->getID() << \textcolor{stringliteral}{" is: "} << basicPath[0]->getX() << \textcolor{stringliteral}{" , "} << 
+      basicPath[0]->getY() << std::endl;
+289 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_a0c1e8e264493205408553a998a068b29}\label{class_room_a0c1e8e264493205408553a998a068b29}} 
+\index{Room@{Room}!check\+Group@{check\+Group}}
+\index{check\+Group@{check\+Group}!Room@{Room}}
+\subsubsection{\texorpdfstring{check\+Group()}{checkGroup()}}
+{\footnotesize\ttfamily bool Room\+::check\+Group (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+check if any groups have finished conversing 
+
+Check if a group exists in the room 
+
+Definition at line 171 of file Room.\+cpp.
+
+
+
+References room\+Groups.
+
+
+
+Referenced by Handle\+Move().
+
+
+\begin{DoxyCode}
+172 \{
+173     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.size(); i++)
+174     \{
+175         \textcolor{keywordflow}{if} (\hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->getID() == id)
+176             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+177     \}
+178     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+179 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_a03dc1536ef3b1ed301c76b08685e7103}\label{class_room_a03dc1536ef3b1ed301c76b08685e7103}} 
+\index{Room@{Room}!clean\+Up\+Groups@{clean\+Up\+Groups}}
+\index{clean\+Up\+Groups@{clean\+Up\+Groups}!Room@{Room}}
+\subsubsection{\texorpdfstring{clean\+Up\+Groups()}{cleanUpGroups()}}
+{\footnotesize\ttfamily void Room\+::clean\+Up\+Groups (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+remove any inactive groups 
+
+Checks to see if any groups have finished their conversations and then removes them from the room 
+
+Definition at line 258 of file Room.\+cpp.
+
+
+
+References room\+Groups, and room\+N\+P\+Cs.
+
+
+
+Referenced by Handle\+Move().
+
+
+\begin{DoxyCode}
+259 \{
+260     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} g = 0; g < \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.size(); g++)
+261     \{
+262         \textcolor{keywordflow}{if} (\hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[g]->getScript().size() == 0)
+263         \{
+264             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} n = 0; n < \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}.size(); n++)
+265             \{
+266                 \textcolor{keywordflow}{if} (\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[n]->getGroupID() == \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[g]->getID()) \{
+267                     \textcolor{keywordflow}{if} (!(\hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[g]->inGroup(\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[n])))
+268                     \{
+269                         \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[n]->setGroupID(-1);
+270                         \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[n]->setIdle(\textcolor{keyword}{true});
+271                     \}
+272                 \}
+273             \}
+274             \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[g]->cleanUpGroup();
+275             \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.erase(\hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.begin() + g);
+276         \}
+277     \}
+278 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_a7d4ef90e7eb605f2c198b28175900d45}\label{class_room_a7d4ef90e7eb605f2c198b28175900d45}} 
+\index{Room@{Room}!find\+Open\+Group@{find\+Open\+Group}}
+\index{find\+Open\+Group@{find\+Open\+Group}!Room@{Room}}
+\subsubsection{\texorpdfstring{find\+Open\+Group()}{findOpenGroup()}}
+{\footnotesize\ttfamily int Room\+::find\+Open\+Group (\begin{DoxyParamCaption}\item[{int}]{exclude }\end{DoxyParamCaption})}
+
+
+
+return the id of any open groups 
+
+Checks if any groups have any available space 
+
+Definition at line 124 of file Room.\+cpp.
+
+
+
+References room\+Groups.
+
+
+
+Referenced by Handle\+Move().
+
+
+\begin{DoxyCode}
+125 \{
+126     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.size(); i++)
+127     \{
+128         \textcolor{keywordflow}{if} (\hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->isAvailable() && \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->getID() != exclude)
+129         \{
+130             \textcolor{keywordflow}{return} \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->getID();
+131         \}
+132     \}
+133     \textcolor{keywordflow}{return} -1;
+134 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_ac57c28e2c1048649e816f731f63f9daf}\label{class_room_ac57c28e2c1048649e816f731f63f9daf}} 
+\index{Room@{Room}!get\+Room\+Position@{get\+Room\+Position}}
+\index{get\+Room\+Position@{get\+Room\+Position}!Room@{Room}}
+\subsubsection{\texorpdfstring{get\+Room\+Position()}{getRoomPosition()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ Room\+::get\+Room\+Position (\begin{DoxyParamCaption}\item[{int}]{pos }\end{DoxyParamCaption})}
+
+
+
+return the rooms positions 
+
+Returns a pair of integers that hold the X and Y of the available room spaces. 
+
+Definition at line 64 of file Room.\+cpp.
+
+
+
+References room\+Height, room\+Width, roomX, and roomY.
+
+
+
+Referenced by Room().
+
+
+\begin{DoxyCode}
+65 \{
+66     std::pair<int, int> XYPos;
+67     \textcolor{keywordflow}{switch} (pos)
+68     \{
+69     \textcolor{keywordflow}{case} 0:
+70         XYPos.first = \hyperlink{class_room_a3538dc1a9a08a492cec337399db77259}{roomWidth} / 2;
+71         XYPos.second = \hyperlink{class_room_a3f6fbe94c4c124e4c4df85e57fbb703b}{roomHeight} / 2;
+72         \textcolor{keywordflow}{break};
+73     \textcolor{keywordflow}{case} 1:
+74         XYPos.first = \hyperlink{class_room_a3538dc1a9a08a492cec337399db77259}{roomWidth} - \hyperlink{class_room_a5cb7d8efa1ea04af080f7e2c041fea1a}{roomX};
+75         XYPos.second = \hyperlink{class_room_a3f6fbe94c4c124e4c4df85e57fbb703b}{roomHeight} - \hyperlink{class_room_a702c5d200cedc6e9eef5cbc2034fdc17}{roomY};
+76         \textcolor{keywordflow}{break};
+77     \textcolor{keywordflow}{case} 2:
+78         XYPos.first = \hyperlink{class_room_a5cb7d8efa1ea04af080f7e2c041fea1a}{roomX};
+79         XYPos.second = \hyperlink{class_room_a702c5d200cedc6e9eef5cbc2034fdc17}{roomY};
+80         \textcolor{keywordflow}{break};
+81     \textcolor{keywordflow}{case} 3:
+82         XYPos.first = \hyperlink{class_room_a3538dc1a9a08a492cec337399db77259}{roomWidth} - \hyperlink{class_room_a5cb7d8efa1ea04af080f7e2c041fea1a}{roomX};
+83         XYPos.second = \hyperlink{class_room_a702c5d200cedc6e9eef5cbc2034fdc17}{roomY};
+84         \textcolor{keywordflow}{break};
+85     \textcolor{keywordflow}{case} 4:
+86         XYPos.first = \hyperlink{class_room_a5cb7d8efa1ea04af080f7e2c041fea1a}{roomX};
+87         XYPos.second = \hyperlink{class_room_a3f6fbe94c4c124e4c4df85e57fbb703b}{roomHeight} - \hyperlink{class_room_a702c5d200cedc6e9eef5cbc2034fdc17}{roomY};
+88         \textcolor{keywordflow}{break};
+89     \}
+90 
+91     \textcolor{keywordflow}{return} XYPos;
+92 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_ae40e34ac3588b2dfe2be6c5d66e20552}\label{class_room_ae40e34ac3588b2dfe2be6c5d66e20552}} 
+\index{Room@{Room}!Handle\+Move@{Handle\+Move}}
+\index{Handle\+Move@{Handle\+Move}!Room@{Room}}
+\subsubsection{\texorpdfstring{Handle\+Move()}{HandleMove()}}
+{\footnotesize\ttfamily void Room\+::\+Handle\+Move (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+handle \hyperlink{class_n_p_c}{N\+PC} movement 
+
+Handles the N\+P\+Cs movement between groups 
+
+Definition at line 184 of file Room.\+cpp.
+
+
+
+References basic\+Path(), check\+Group(), clean\+Up\+Groups(), find\+Open\+Group(), join\+Group(), leave\+Group(), and room\+N\+P\+Cs.
+
+
+\begin{DoxyCode}
+185 \{
+186     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}.size(); i++)
+187     \{
+188         \textcolor{comment}{// Check if the NPCs group is still active}
+189         \textcolor{keywordtype}{bool} gCheck = \hyperlink{class_room_a0c1e8e264493205408553a998a068b29}{checkGroup}(\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getGroupID());
+190         \textcolor{keywordflow}{if} (\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getGroupID() == -1 || !gCheck)
+191         \{
+192             \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->setIdle(\textcolor{keyword}{true});
+193         \}
+194 
+195         \textcolor{comment}{// Check if an NPC is currently idle}
+196         \textcolor{keywordflow}{if} (\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getIdle())
+197         \{
+198             \textcolor{keywordflow}{if} (!\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getMoving())
+199             \{
+200                 \textcolor{comment}{// Remove any groups in the scene that are no longer active}
+201                 \hyperlink{class_room_a03dc1536ef3b1ed301c76b08685e7103}{cleanUpGroups}();
+202 
+203                 \textcolor{comment}{// Check if an NPCs group exists in the room}
+204                 \textcolor{keywordtype}{int} gID = \hyperlink{class_room_a7d4ef90e7eb605f2c198b28175900d45}{findOpenGroup}(\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getGroupID());
+205                 \textcolor{keywordflow}{if} (gID > -1)
+206                 \{
+207                     \textcolor{comment}{// Remove the NPC from the his current group}
+208                     \hyperlink{class_room_af6bdbbf116aeafe290a31990a1124562}{leaveGroup}(\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]);
+209 
+210                     \textcolor{comment}{// Move the NPC to a new group}
+211                     \hyperlink{class_room_a8cf434656fbafb4d65ee47c33db5c8ed}{joinGroup}(\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i], gID);   
+212 
+213                     \textcolor{comment}{// Call the basic move method and set the NPC to move}
+214                     \hyperlink{class_room_af25611552daa6c57915a0b0c98c40a8a}{basicPath}(\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i], renderer);
+215                     \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->setMoving(\textcolor{keyword}{true});
+216 
+217                     \textcolor{comment}{// Free up any lingereing speech the NPC had left from the previous conversation}
+218                     \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->freeBox();
+219                 \}
+220 
+221                 \textcolor{comment}{// if there are no existing rooms, move the NPC off the screen to be deleted.}
+222                 \textcolor{keywordflow}{if} (gID == -1)
+223                 \{
+224                     \hyperlink{class_room_af6bdbbf116aeafe290a31990a1124562}{leaveGroup}(\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]);
+225                     \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->setEndGoal(std::pair<int, int>(800, 800));
+226                     \hyperlink{class_room_af25611552daa6c57915a0b0c98c40a8a}{basicPath}(\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i], renderer);
+227                     \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->setMoving(\textcolor{keyword}{true});
+228                     \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->freeBox();
+229                 \}
+230             \}
+231             \textcolor{keywordflow}{else}
+232             \{
+233                 \textcolor{comment}{// If an NPC is idle, call the movement method to start his movement process}
+234                 \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->move();
+235 
+236                 \textcolor{comment}{// Check if the NPC has met his end goal}
+237                 \textcolor{keywordflow}{if} (\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getX() == \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getEndGoal().first && 
+      \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getY() == \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getEndGoal().second)
+238                 \{
+239                     \textcolor{comment}{// If the NPC has met his goal he is no longer idle or bored}
+240                     \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->setIdle(\textcolor{keyword}{false});
+241                     \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->setMoving(\textcolor{keyword}{false});
+242                     \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->setBoredom(0);
+243 
+244                     \textcolor{comment}{// If the NPC has reached here, then he is no longer in the room}
+245                     \textcolor{keywordflow}{if} (\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getX() == 800 && \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}[i]->getY() == 800)
+246                     \{
+247                         \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}.erase(\hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}.begin() + i);
+248                     \}
+249                 \}
+250             \}
+251         \}
+252     \}
+253 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_a8cf434656fbafb4d65ee47c33db5c8ed}\label{class_room_a8cf434656fbafb4d65ee47c33db5c8ed}} 
+\index{Room@{Room}!join\+Group@{join\+Group}}
+\index{join\+Group@{join\+Group}!Room@{Room}}
+\subsubsection{\texorpdfstring{join\+Group()}{joinGroup()}}
+{\footnotesize\ttfamily void Room\+::join\+Group (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_n_p_c}{N\+PC} $>$}]{npc,  }\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+add an npc to a group 
+
+Adds an \hyperlink{class_n_p_c}{N\+PC} to a group 
+
+Definition at line 156 of file Room.\+cpp.
+
+
+
+References room\+Groups.
+
+
+
+Referenced by Handle\+Move().
+
+
+\begin{DoxyCode}
+157 \{
+158     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.size(); i++)
+159     \{
+160         \textcolor{keywordflow}{if} (\hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->getID() == id)
+161         \{
+162             \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->joinSpace(npc);
+163             npc->setMoving(\textcolor{keyword}{true});
+164         \}
+165     \}
+166 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_af6bdbbf116aeafe290a31990a1124562}\label{class_room_af6bdbbf116aeafe290a31990a1124562}} 
+\index{Room@{Room}!leave\+Group@{leave\+Group}}
+\index{leave\+Group@{leave\+Group}!Room@{Room}}
+\subsubsection{\texorpdfstring{leave\+Group()}{leaveGroup()}}
+{\footnotesize\ttfamily void Room\+::leave\+Group (\begin{DoxyParamCaption}\item[{std\+::shared\+\_\+ptr$<$ \hyperlink{class_n_p_c}{N\+PC} $>$}]{npc }\end{DoxyParamCaption})}
+
+
+
+remove an npc from a group 
+
+Removes an \hyperlink{class_n_p_c}{N\+PC} from a group 
+
+Definition at line 139 of file Room.\+cpp.
+
+
+
+References room\+Groups.
+
+
+
+Referenced by Handle\+Move().
+
+
+\begin{DoxyCode}
+140 \{
+141     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.size(); i++)
+142     \{
+143         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} n = 0; n < \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->getNPCList().size(); n++)
+144         \{
+145             \textcolor{keywordflow}{if} (\hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->getNPCList()[n]->getID() == npc->getID())
+146             \{
+147                 \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}[i]->leaveSpace(npc);
+148             \}
+149         \}
+150     \}
+151 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_a85476905ce9262f07dbb4a25f9729545}\label{class_room_a85476905ce9262f07dbb4a25f9729545}} 
+\index{Room@{Room}!Load\+Conversation@{Load\+Conversation}}
+\index{Load\+Conversation@{Load\+Conversation}!Room@{Room}}
+\subsubsection{\texorpdfstring{Load\+Conversation()}{LoadConversation()}}
+{\footnotesize\ttfamily void Room\+::\+Load\+Conversation (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{bool}]{time,  }\item[{std\+::string}]{boredom\+Level,  }\item[{T\+T\+F\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})}
+
+
+
+render the \hyperlink{class_n_p_c}{N\+PC} conversations in the room 
+
+Simulate and render each conversation happening in the room 
+
+Definition at line 111 of file Room.\+cpp.
+
+
+
+References room\+Groups.
+
+
+\begin{DoxyCode}
+112 \{
+113     std::vector<std::shared\_ptr<Base\_Group>>::iterator groupIterator;
+114     \textcolor{keywordflow}{for} (groupIterator = \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.begin(); groupIterator != 
+      \hyperlink{class_room_a2d63fa17f30d50dd5267f04170a662b0}{roomGroups}.end(); groupIterator++)
+115     \{
+116         (*groupIterator)->simulateConversation(renderer, time, boredomLevel, font);
+117         (*groupIterator)->renderConversation(renderer);
+118     \}
+119 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_room_a876301b35488a7dc07bde00f0b701f9a}\label{class_room_a876301b35488a7dc07bde00f0b701f9a}} 
+\index{Room@{Room}!Load\+N\+P\+Cs@{Load\+N\+P\+Cs}}
+\index{Load\+N\+P\+Cs@{Load\+N\+P\+Cs}!Room@{Room}}
+\subsubsection{\texorpdfstring{Load\+N\+P\+Cs()}{LoadNPCs()}}
+{\footnotesize\ttfamily void Room\+::\+Load\+N\+P\+Cs (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+render the N\+P\+Cs to the scene 
+
+Call each of the \hyperlink{class_n_p_c}{N\+PC}\textquotesingle{}s render functions to render each of there sprites to the screen. 
+
+Definition at line 97 of file Room.\+cpp.
+
+
+
+References room\+N\+P\+Cs.
+
+
+\begin{DoxyCode}
+98 \{
+99     std::vector<std::shared\_ptr<NPC>>::iterator npcIterator;
+100     \textcolor{keywordflow}{for} (npcIterator = \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}.begin(); npcIterator != \hyperlink{class_room_a34bdf24cc8c52d638bcfd851c295f23b}{roomNPCs}.end(); npcIterator++)
+101     \{
+102         (*npcIterator)->loadMedia(renderer);
+103         (*npcIterator)->evaluateEmotionLevel();
+104         (*npcIterator)->render(renderer);
+105     \}
+106 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_room_a2d63fa17f30d50dd5267f04170a662b0}\label{class_room_a2d63fa17f30d50dd5267f04170a662b0}} 
+\index{Room@{Room}!room\+Groups@{room\+Groups}}
+\index{room\+Groups@{room\+Groups}!Room@{Room}}
+\subsubsection{\texorpdfstring{room\+Groups}{roomGroups}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{class_base___group}{Base\+\_\+\+Group}$>$ $>$ Room\+::room\+Groups\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 46 of file Room.\+h.
+
+
+
+Referenced by check\+Group(), clean\+Up\+Groups(), find\+Open\+Group(), join\+Group(), leave\+Group(), Load\+Conversation(), and Room().
+
+\mbox{\Hypertarget{class_room_a3f6fbe94c4c124e4c4df85e57fbb703b}\label{class_room_a3f6fbe94c4c124e4c4df85e57fbb703b}} 
+\index{Room@{Room}!room\+Height@{room\+Height}}
+\index{room\+Height@{room\+Height}!Room@{Room}}
+\subsubsection{\texorpdfstring{room\+Height}{roomHeight}}
+{\footnotesize\ttfamily int Room\+::room\+Height\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file Room.\+h.
+
+
+
+Referenced by get\+Room\+Position(), and Room().
+
+\mbox{\Hypertarget{class_room_adcf7b7bd55783c0e80b2508ce9485d78}\label{class_room_adcf7b7bd55783c0e80b2508ce9485d78}} 
+\index{Room@{Room}!room\+Nodes@{room\+Nodes}}
+\index{room\+Nodes@{room\+Nodes}!Room@{Room}}
+\subsubsection{\texorpdfstring{room\+Nodes}{roomNodes}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{class_node}{Node}$>$ $>$ Room\+::room\+Nodes\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 47 of file Room.\+h.
+
+
+
+Referenced by Room().
+
+\mbox{\Hypertarget{class_room_a34bdf24cc8c52d638bcfd851c295f23b}\label{class_room_a34bdf24cc8c52d638bcfd851c295f23b}} 
+\index{Room@{Room}!room\+N\+P\+Cs@{room\+N\+P\+Cs}}
+\index{room\+N\+P\+Cs@{room\+N\+P\+Cs}!Room@{Room}}
+\subsubsection{\texorpdfstring{room\+N\+P\+Cs}{roomNPCs}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{class_n_p_c}{N\+PC}$>$ $>$ Room\+::room\+N\+P\+Cs\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 45 of file Room.\+h.
+
+
+
+Referenced by clean\+Up\+Groups(), Handle\+Move(), Load\+N\+P\+Cs(), and Room().
+
+\mbox{\Hypertarget{class_room_a469d309dfc2c2693c27cbcb512f9c14c}\label{class_room_a469d309dfc2c2693c27cbcb512f9c14c}} 
+\index{Room@{Room}!roomsubject@{roomsubject}}
+\index{roomsubject@{roomsubject}!Room@{Room}}
+\subsubsection{\texorpdfstring{roomsubject}{roomsubject}}
+{\footnotesize\ttfamily std\+::string Room\+::roomsubject\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 48 of file Room.\+h.
+
+\mbox{\Hypertarget{class_room_a3538dc1a9a08a492cec337399db77259}\label{class_room_a3538dc1a9a08a492cec337399db77259}} 
+\index{Room@{Room}!room\+Width@{room\+Width}}
+\index{room\+Width@{room\+Width}!Room@{Room}}
+\subsubsection{\texorpdfstring{room\+Width}{roomWidth}}
+{\footnotesize\ttfamily int Room\+::room\+Width\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file Room.\+h.
+
+
+
+Referenced by get\+Room\+Position(), and Room().
+
+\mbox{\Hypertarget{class_room_a5cb7d8efa1ea04af080f7e2c041fea1a}\label{class_room_a5cb7d8efa1ea04af080f7e2c041fea1a}} 
+\index{Room@{Room}!roomX@{roomX}}
+\index{roomX@{roomX}!Room@{Room}}
+\subsubsection{\texorpdfstring{roomX}{roomX}}
+{\footnotesize\ttfamily int Room\+::roomX\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file Room.\+h.
+
+
+
+Referenced by get\+Room\+Position(), and Room().
+
+\mbox{\Hypertarget{class_room_a702c5d200cedc6e9eef5cbc2034fdc17}\label{class_room_a702c5d200cedc6e9eef5cbc2034fdc17}} 
+\index{Room@{Room}!roomY@{roomY}}
+\index{roomY@{roomY}!Room@{Room}}
+\subsubsection{\texorpdfstring{roomY}{roomY}}
+{\footnotesize\ttfamily int Room\+::roomY\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file Room.\+h.
+
+
+
+Referenced by get\+Room\+Position(), and Room().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_room_8h}{Room.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_room_8cpp}{Room.\+cpp}\end{DoxyCompactItemize}

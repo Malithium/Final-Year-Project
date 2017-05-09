@@ -1,0 +1,1197 @@
+\hypertarget{class_n_p_c}{}\section{N\+PC Class Reference}
+\label{class_n_p_c}\index{N\+PC@{N\+PC}}
+
+
+{\ttfamily \#include $<$N\+P\+C.\+h$>$}
+
+
+
+Inheritance diagram for N\+PC\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_n_p_c__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for N\+PC\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_n_p_c__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_n_p_c_a9db0a86ef6a5ab2b406c46c8ec6d740a}{N\+PC} (std\+::string t\+Box\+Sprite, std\+::string N\+P\+C\+Sprite, std\+::string \hyperlink{class_n_p_c_a64ad332dcfeb84a7a6bedd404378f05b}{text}, S\+D\+L\+\_\+\+Renderer $\ast$renderer, int x, int y)
+\item 
+void \hyperlink{class_n_p_c_af0a849c937b7d765b2bec4d122a2b62c}{prepare\+Comment} (std\+::string txt, T\+T\+F\+\_\+\+Font $\ast$font)
+\begin{DoxyCompactList}\small\item\em Breaks up parsed in text into a chunked comment. \end{DoxyCompactList}\item 
+void \hyperlink{class_n_p_c_a468647f008c7e65f2a25be9dcd5e5968}{Load\+Comment} (S\+D\+L\+\_\+\+Renderer $\ast$renderer, int i, T\+T\+F\+\_\+\+Font $\ast$font)
+\begin{DoxyCompactList}\small\item\em Loads the N\+P\+Cs comment into the textbox. \end{DoxyCompactList}\item 
+void \hyperlink{class_n_p_c_abfad5a818584b5ee6fab0605873ae5c4}{render\+Comment} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em Renders the N\+P\+Cs comment. \end{DoxyCompactList}\item 
+void \hyperlink{class_n_p_c_aa9d97773d1a9b49e2a8dd5adaa23beff}{Load\+Box} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em Loads the N\+P\+Cs \hyperlink{class_text_box}{Text\+Box}. \end{DoxyCompactList}\item 
+void \hyperlink{class_n_p_c_ad5e9a664ceae6a920e63d34f2738b21d}{render\+Box} (S\+D\+L\+\_\+\+Renderer $\ast$renderer)
+\begin{DoxyCompactList}\small\item\em Renders the N\+P\+Cs \hyperlink{class_text_box}{Text\+Box}. \end{DoxyCompactList}\item 
+void \hyperlink{class_n_p_c_abacec0f0add55305f86ad56e4c80cd18}{free\+Box} ()
+\begin{DoxyCompactList}\small\item\em Frees up the memory space the textbox is occupying. \end{DoxyCompactList}\item 
+int \hyperlink{class_n_p_c_a64425a9a6a4b6262e4f9e0a4e5169ce4}{get\+Lines\+To\+Render} ()
+\begin{DoxyCompactList}\small\item\em returns the number of line being rendered to the screen \end{DoxyCompactList}\item 
+void \hyperlink{class_n_p_c_a3cb8421a139170f47247b1e126eb722b}{apply\+Emotion\+Level} (float polarity)
+\item 
+void \hyperlink{class_n_p_c_a278f18152374a82602f57f98c0a43800}{evaluate\+Emotion\+Level} ()
+\begin{DoxyCompactList}\small\item\em Evaluates the emotional level of the \hyperlink{class_n_p_c}{N\+PC}. \end{DoxyCompactList}\item 
+void \hyperlink{class_n_p_c_abaa15a4fd5a37a62983d7fd2acafe271}{move} ()
+\begin{DoxyCompactList}\small\item\em Handles the N\+P\+Cs movement. \end{DoxyCompactList}\item 
+void \hyperlink{class_n_p_c_a81d67fe2002ad57334c40fadcba25dc4}{set\+ID} (int i)
+\item 
+int \hyperlink{class_n_p_c_ac4588139be32c307a0d31e302f377dea}{get\+ID} ()
+\item 
+int \hyperlink{class_n_p_c_a7ea10930901666fc087de1a74d339b84}{get\+Group\+ID} ()
+\item 
+void \hyperlink{class_n_p_c_aaa89e6f11f1bda185769ae321f345960}{set\+Group\+ID} (int \hyperlink{class_n_p_c_a1b705223f885df652f2faffc4735d03c}{id})
+\item 
+int \hyperlink{class_n_p_c_a83d65db3ffe79025091a655d92fe4f27}{get\+Current\+Line} ()
+\item 
+void \hyperlink{class_n_p_c_ac2143e6bbc303d3fbe65c5603746557e}{set\+Current\+Line} (int \hyperlink{class_n_p_c_a1b705223f885df652f2faffc4735d03c}{id})
+\item 
+bool \hyperlink{class_n_p_c_a759c42c8f2a75d2684157574cf3ddc65}{get\+Speaking} ()
+\item 
+void \hyperlink{class_n_p_c_a16d67a6d98c54df2fe320c64c5680285}{set\+Speaking} (bool val)
+\item 
+float \hyperlink{class_n_p_c_a6ee0944f7b8cdf1ab5ab164b3d7074bc}{get\+Emotion\+Level} ()
+\item 
+bool \hyperlink{class_n_p_c_a5f19b3b029fd8366921b5bb71335ee9a}{get\+Idle} ()
+\item 
+void \hyperlink{class_n_p_c_a154d9c6f7c920edcfaeb20f826419ac6}{set\+Idle} (bool n\+Idle)
+\item 
+bool \hyperlink{class_n_p_c_acb2a20f35f7bb54569032cc1b6a67be0}{get\+Moving} ()
+\item 
+void \hyperlink{class_n_p_c_af18588e2baa382f12e4e9fe56fc247bc}{set\+Moving} (bool \hyperlink{class_n_p_c_abaa15a4fd5a37a62983d7fd2acafe271}{move})
+\item 
+bool \hyperlink{class_n_p_c_a723183afdc657db3ec2ef88779e80968}{get\+Reading} ()
+\item 
+void \hyperlink{class_n_p_c_a9e0ab46138990129c16b78c2a6ee6e25}{set\+Reading} (bool read)
+\item 
+int \hyperlink{class_n_p_c_a6e50d697a2444e3aff5bfce6252f7bb5}{get\+Boredom} ()
+\item 
+void \hyperlink{class_n_p_c_a3e24b9fe9d34b635c2f57c48eab0b29d}{set\+Boredom} (int lvl)
+\item 
+std\+::string \hyperlink{class_n_p_c_a289f4c34cf597a7e61f787844f80a356}{get\+Current\+User} ()
+\item 
+void \hyperlink{class_n_p_c_a30076f45e31741e86a79f280eca215cb}{set\+Current\+User} (std\+::string user)
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$ $>$ \hyperlink{class_n_p_c_aa9a219c85034a65f903f38781356b05b}{get\+Path} ()
+\item 
+void \hyperlink{class_n_p_c_a9582ddb2cc78ad77c8ded77e192be5b0}{set\+Path} (std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$$>$ new\+Path)
+\item 
+std\+::string \hyperlink{class_n_p_c_a480c5ef808977d9d81aef0f9e7b2093f}{get\+Text} ()
+\item 
+void \hyperlink{class_n_p_c_ae94160d4a1fe8d5195e9ae66f78059ce}{set\+Text} (std\+::string t)
+\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_n_p_c_a64a6c85370defc9094cf5e597a7bc85d}{get\+End\+Goal} ()
+\item 
+void \hyperlink{class_n_p_c_aefc13625a35497cf6158c15692c52eda}{set\+End\+Goal} (std\+::pair$<$ int, int $>$ new\+Goal)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_n_p_c_a1b705223f885df652f2faffc4735d03c}{id}
+\item 
+int \hyperlink{class_n_p_c_ab370e8a4fbb5ccabdc06821f7dfda428}{group\+ID}
+\item 
+int \hyperlink{class_n_p_c_a0969e4514a21f3b2966a24d78e9e3343}{current\+Line}
+\item 
+int \hyperlink{class_n_p_c_a1f67b7dfca770653fc523dfc558e7fdf}{bored\+Lvl}
+\item 
+std\+::string \hyperlink{class_n_p_c_a944f970943002adc4f0c970b0200c011}{current\+User} = \char`\"{}\char`\"{}
+\item 
+std\+::string \hyperlink{class_n_p_c_a64ad332dcfeb84a7a6bedd404378f05b}{text}
+\item 
+\hyperlink{class_text_box}{Text\+Box} \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}
+\item 
+std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$ $>$ \hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}
+\item 
+std\+::pair$<$ int, int $>$ \hyperlink{class_n_p_c_ab2349a8d6757b61a73f87de9cba387d1}{end\+Goal}
+\item 
+bool \hyperlink{class_n_p_c_a0dc17cd2d9b7d486e6d74089819117e7}{speaking} = false
+\item 
+bool \hyperlink{class_n_p_c_a04d8f196cdd6de84f38131836d9c9cc7}{reading} = false
+\item 
+bool \hyperlink{class_n_p_c_aa228d3e449507a6326cef7b449752e62}{idle} = false
+\item 
+bool \hyperlink{class_n_p_c_a4dfc6a89cae1301e7f722bbba67f3dbb}{moving} = false
+\item 
+float \hyperlink{class_n_p_c_a804b5c812457417231e3b4ab5e06ac88}{emotion\+Levels} = 0.\+0f
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_n_p_c_a3e1f9defd10ab4be568a190fbcd0ac07}{operator==} (const \hyperlink{class_n_p_c}{N\+PC} \&c1, const \hyperlink{class_n_p_c}{N\+PC} \&c2)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\hyperlink{class_n_p_c}{N\+PC} class inherits from sprite class, uses the textbox class in conjunction with it\textquotesingle{}s base rendering methods for the \hyperlink{class_n_p_c}{N\+PC} sprite. holds all the actions a \hyperlink{class_n_p_c}{N\+PC} can perform within the application. 
+
+Definition at line 9 of file N\+P\+C.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_n_p_c_a9db0a86ef6a5ab2b406c46c8ec6d740a}\label{class_n_p_c_a9db0a86ef6a5ab2b406c46c8ec6d740a}} 
+\index{N\+PC@{N\+PC}!N\+PC@{N\+PC}}
+\index{N\+PC@{N\+PC}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{N\+P\+C()}{NPC()}}
+{\footnotesize\ttfamily N\+P\+C\+::\+N\+PC (\begin{DoxyParamCaption}\item[{std\+::string}]{t\+Box\+Sprite,  }\item[{std\+::string}]{N\+P\+C\+Sprite,  }\item[{std\+::string}]{text,  }\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file N\+P\+C.\+cpp.
+
+
+
+References bored\+Lvl, and speech.
+
+
+\begin{DoxyCode}
+3                                                                                                         : 
+      \hyperlink{class_sprite_a12cba3ac1868418add3c4d95ce87e615}{Sprite}(NPCSprite, renderer, x, y)
+4 \{
+5     \hyperlink{class_n_p_c_a1f67b7dfca770653fc523dfc558e7fdf}{boredLvl} = 0;
+6     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech} = \hyperlink{class_text_box}{TextBox}(tBoxSprite, renderer, x, y);
+7 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_n_p_c_a3cb8421a139170f47247b1e126eb722b}\label{class_n_p_c_a3cb8421a139170f47247b1e126eb722b}} 
+\index{N\+PC@{N\+PC}!apply\+Emotion\+Level@{apply\+Emotion\+Level}}
+\index{apply\+Emotion\+Level@{apply\+Emotion\+Level}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{apply\+Emotion\+Level()}{applyEmotionLevel()}}
+{\footnotesize\ttfamily void N\+P\+C\+::apply\+Emotion\+Level (\begin{DoxyParamCaption}\item[{float}]{polarity }\end{DoxyParamCaption})}
+
+
+
+Definition at line 200 of file N\+P\+C.\+cpp.
+
+
+
+References emotion\+Levels.
+
+
+\begin{DoxyCode}
+201 \{
+202     \hyperlink{class_n_p_c_a804b5c812457417231e3b4ab5e06ac88}{emotionLevels} += val;
+203 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a278f18152374a82602f57f98c0a43800}\label{class_n_p_c_a278f18152374a82602f57f98c0a43800}} 
+\index{N\+PC@{N\+PC}!evaluate\+Emotion\+Level@{evaluate\+Emotion\+Level}}
+\index{evaluate\+Emotion\+Level@{evaluate\+Emotion\+Level}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{evaluate\+Emotion\+Level()}{evaluateEmotionLevel()}}
+{\footnotesize\ttfamily void N\+P\+C\+::evaluate\+Emotion\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Evaluates the emotional level of the \hyperlink{class_n_p_c}{N\+PC}. 
+
+Evaluates the N\+P\+Cs emotion level and converts it into R\+GB values 
+
+Definition at line 157 of file N\+P\+C.\+cpp.
+
+
+
+References get\+Emotion\+Level(), and Sprite\+::set\+Color().
+
+
+\begin{DoxyCode}
+158 \{
+159     \textcolor{keywordtype}{int} emo = \hyperlink{class_n_p_c_a6ee0944f7b8cdf1ab5ab164b3d7074bc}{getEmotionLevel}();
+160 
+161     \textcolor{comment}{// if the emotion level is less than 0 it is negative}
+162     \textcolor{keywordflow}{if} (emo < 0)
+163     \{
+164         emo = abs(emo) * 10;
+165 
+166         \textcolor{comment}{// ensure that the highest possible value is 255}
+167         \textcolor{keywordflow}{if} (emo > 255)
+168             emo = 255;
+169 
+170         \textcolor{comment}{// set the NPCs color to be more red to show negativity}
+171         \hyperlink{class_sprite_a1ca0939610f24386a4eecb8e91688c65}{setColor}(255, 255-emo, 255-emo);
+172     \}
+173     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(emo > 0)
+174     \{
+175 
+176         emo = emo * 10;
+177 
+178         \textcolor{keywordflow}{if} (emo > 255)
+179             emo = 255;
+180 
+181         \textcolor{comment}{// set the NPCs color to be more green to show positivity}
+182         \hyperlink{class_sprite_a1ca0939610f24386a4eecb8e91688c65}{setColor}(255-emo, 255, 255-emo);
+183     \}
+184 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_abacec0f0add55305f86ad56e4c80cd18}\label{class_n_p_c_abacec0f0add55305f86ad56e4c80cd18}} 
+\index{N\+PC@{N\+PC}!free\+Box@{free\+Box}}
+\index{free\+Box@{free\+Box}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{free\+Box()}{freeBox()}}
+{\footnotesize\ttfamily void N\+P\+C\+::free\+Box (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Frees up the memory space the textbox is occupying. 
+
+Frees the space that both the comment and its textbox occupy in memory 
+
+Definition at line 128 of file N\+P\+C.\+cpp.
+
+
+
+References Sprite\+::free(), Text\+Box\+::free\+Comment(), and speech.
+
+
+\begin{DoxyCode}
+129 \{
+130     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_sprite_abce3359b4f055bac7384038046ed9ead}{free}();
+131     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_text_box_a6ab09c23671be63b41bd0eba32d385e3}{freeComment}();
+132 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a6e50d697a2444e3aff5bfce6252f7bb5}\label{class_n_p_c_a6e50d697a2444e3aff5bfce6252f7bb5}} 
+\index{N\+PC@{N\+PC}!get\+Boredom@{get\+Boredom}}
+\index{get\+Boredom@{get\+Boredom}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Boredom()}{getBoredom()}}
+{\footnotesize\ttfamily int N\+P\+C\+::get\+Boredom (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 47 of file N\+P\+C.\+cpp.
+
+
+
+References bored\+Lvl.
+
+
+\begin{DoxyCode}
+48 \{
+49     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a1f67b7dfca770653fc523dfc558e7fdf}{boredLvl};
+50 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a83d65db3ffe79025091a655d92fe4f27}\label{class_n_p_c_a83d65db3ffe79025091a655d92fe4f27}} 
+\index{N\+PC@{N\+PC}!get\+Current\+Line@{get\+Current\+Line}}
+\index{get\+Current\+Line@{get\+Current\+Line}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Current\+Line()}{getCurrentLine()}}
+{\footnotesize\ttfamily int N\+P\+C\+::get\+Current\+Line (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 185 of file N\+P\+C.\+cpp.
+
+
+
+References current\+Line.
+
+
+\begin{DoxyCode}
+186 \{
+187     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a0969e4514a21f3b2966a24d78e9e3343}{currentLine};
+188 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a289f4c34cf597a7e61f787844f80a356}\label{class_n_p_c_a289f4c34cf597a7e61f787844f80a356}} 
+\index{N\+PC@{N\+PC}!get\+Current\+User@{get\+Current\+User}}
+\index{get\+Current\+User@{get\+Current\+User}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Current\+User()}{getCurrentUser()}}
+{\footnotesize\ttfamily std\+::string N\+P\+C\+::get\+Current\+User (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 52 of file N\+P\+C.\+cpp.
+
+
+
+References current\+User.
+
+
+\begin{DoxyCode}
+53 \{
+54     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a944f970943002adc4f0c970b0200c011}{currentUser};
+55 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a6ee0944f7b8cdf1ab5ab164b3d7074bc}\label{class_n_p_c_a6ee0944f7b8cdf1ab5ab164b3d7074bc}} 
+\index{N\+PC@{N\+PC}!get\+Emotion\+Level@{get\+Emotion\+Level}}
+\index{get\+Emotion\+Level@{get\+Emotion\+Level}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Emotion\+Level()}{getEmotionLevel()}}
+{\footnotesize\ttfamily float N\+P\+C\+::get\+Emotion\+Level (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 149 of file N\+P\+C.\+cpp.
+
+
+
+References emotion\+Levels.
+
+
+
+Referenced by evaluate\+Emotion\+Level().
+
+
+\begin{DoxyCode}
+150 \{
+151     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a804b5c812457417231e3b4ab5e06ac88}{emotionLevels};
+152 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a64a6c85370defc9094cf5e597a7bc85d}\label{class_n_p_c_a64a6c85370defc9094cf5e597a7bc85d}} 
+\index{N\+PC@{N\+PC}!get\+End\+Goal@{get\+End\+Goal}}
+\index{get\+End\+Goal@{get\+End\+Goal}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+End\+Goal()}{getEndGoal()}}
+{\footnotesize\ttfamily std\+::pair$<$ int, int $>$ N\+P\+C\+::get\+End\+Goal (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 225 of file N\+P\+C.\+cpp.
+
+
+
+References end\+Goal.
+
+
+\begin{DoxyCode}
+226 \{
+227     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_ab2349a8d6757b61a73f87de9cba387d1}{endGoal};
+228 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a7ea10930901666fc087de1a74d339b84}\label{class_n_p_c_a7ea10930901666fc087de1a74d339b84}} 
+\index{N\+PC@{N\+PC}!get\+Group\+ID@{get\+Group\+ID}}
+\index{get\+Group\+ID@{get\+Group\+ID}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Group\+I\+D()}{getGroupID()}}
+{\footnotesize\ttfamily int N\+P\+C\+::get\+Group\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file N\+P\+C.\+cpp.
+
+
+
+References group\+ID.
+
+
+\begin{DoxyCode}
+43 \{
+44     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_ab370e8a4fbb5ccabdc06821f7dfda428}{groupID};
+45 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_ac4588139be32c307a0d31e302f377dea}\label{class_n_p_c_ac4588139be32c307a0d31e302f377dea}} 
+\index{N\+PC@{N\+PC}!get\+ID@{get\+ID}}
+\index{get\+ID@{get\+ID}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+I\+D()}{getID()}}
+{\footnotesize\ttfamily int N\+P\+C\+::get\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 32 of file N\+P\+C.\+cpp.
+
+
+
+References id.
+
+
+\begin{DoxyCode}
+33 \{
+34     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a1b705223f885df652f2faffc4735d03c}{id};
+35 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a5f19b3b029fd8366921b5bb71335ee9a}\label{class_n_p_c_a5f19b3b029fd8366921b5bb71335ee9a}} 
+\index{N\+PC@{N\+PC}!get\+Idle@{get\+Idle}}
+\index{get\+Idle@{get\+Idle}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Idle()}{getIdle()}}
+{\footnotesize\ttfamily bool N\+P\+C\+::get\+Idle (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 215 of file N\+P\+C.\+cpp.
+
+
+
+References idle.
+
+
+\begin{DoxyCode}
+216 \{
+217     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_aa228d3e449507a6326cef7b449752e62}{idle};
+218 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a64425a9a6a4b6262e4f9e0a4e5169ce4}\label{class_n_p_c_a64425a9a6a4b6262e4f9e0a4e5169ce4}} 
+\index{N\+PC@{N\+PC}!get\+Lines\+To\+Render@{get\+Lines\+To\+Render}}
+\index{get\+Lines\+To\+Render@{get\+Lines\+To\+Render}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Lines\+To\+Render()}{getLinesToRender()}}
+{\footnotesize\ttfamily int N\+P\+C\+::get\+Lines\+To\+Render (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+returns the number of line being rendered to the screen 
+
+
+
+Definition at line 139 of file N\+P\+C.\+cpp.
+
+
+
+References Text\+Box\+::get\+Lines\+To\+Render(), and speech.
+
+
+\begin{DoxyCode}
+140 \{
+141     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_text_box_a7c620113713b6b841ef7e183c1d81312}{getLinesToRender}();
+142 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_acb2a20f35f7bb54569032cc1b6a67be0}\label{class_n_p_c_acb2a20f35f7bb54569032cc1b6a67be0}} 
+\index{N\+PC@{N\+PC}!get\+Moving@{get\+Moving}}
+\index{get\+Moving@{get\+Moving}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Moving()}{getMoving()}}
+{\footnotesize\ttfamily bool N\+P\+C\+::get\+Moving (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 254 of file N\+P\+C.\+cpp.
+
+
+
+References moving.
+
+
+\begin{DoxyCode}
+255 \{
+256     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a4dfc6a89cae1301e7f722bbba67f3dbb}{moving};
+257 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_aa9a219c85034a65f903f38781356b05b}\label{class_n_p_c_aa9a219c85034a65f903f38781356b05b}} 
+\index{N\+PC@{N\+PC}!get\+Path@{get\+Path}}
+\index{get\+Path@{get\+Path}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Path()}{getPath()}}
+{\footnotesize\ttfamily std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$ $>$ N\+P\+C\+::get\+Path (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 235 of file N\+P\+C.\+cpp.
+
+
+
+References path.
+
+
+\begin{DoxyCode}
+236 \{
+237     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path};
+238 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a723183afdc657db3ec2ef88779e80968}\label{class_n_p_c_a723183afdc657db3ec2ef88779e80968}} 
+\index{N\+PC@{N\+PC}!get\+Reading@{get\+Reading}}
+\index{get\+Reading@{get\+Reading}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Reading()}{getReading()}}
+{\footnotesize\ttfamily bool N\+P\+C\+::get\+Reading (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 244 of file N\+P\+C.\+cpp.
+
+
+
+References reading.
+
+
+\begin{DoxyCode}
+245 \{
+246     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a04d8f196cdd6de84f38131836d9c9cc7}{reading};
+247 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a759c42c8f2a75d2684157574cf3ddc65}\label{class_n_p_c_a759c42c8f2a75d2684157574cf3ddc65}} 
+\index{N\+PC@{N\+PC}!get\+Speaking@{get\+Speaking}}
+\index{get\+Speaking@{get\+Speaking}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Speaking()}{getSpeaking()}}
+{\footnotesize\ttfamily bool N\+P\+C\+::get\+Speaking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 144 of file N\+P\+C.\+cpp.
+
+
+
+References speaking.
+
+
+\begin{DoxyCode}
+145 \{
+146     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a0dc17cd2d9b7d486e6d74089819117e7}{speaking};
+147 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a480c5ef808977d9d81aef0f9e7b2093f}\label{class_n_p_c_a480c5ef808977d9d81aef0f9e7b2093f}} 
+\index{N\+PC@{N\+PC}!get\+Text@{get\+Text}}
+\index{get\+Text@{get\+Text}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{get\+Text()}{getText()}}
+{\footnotesize\ttfamily std\+::string N\+P\+C\+::get\+Text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 210 of file N\+P\+C.\+cpp.
+
+
+
+References text.
+
+
+\begin{DoxyCode}
+211 \{
+212     \textcolor{keywordflow}{return} \hyperlink{class_n_p_c_a64ad332dcfeb84a7a6bedd404378f05b}{text};
+213 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_aa9d97773d1a9b49e2a8dd5adaa23beff}\label{class_n_p_c_aa9d97773d1a9b49e2a8dd5adaa23beff}} 
+\index{N\+PC@{N\+PC}!Load\+Box@{Load\+Box}}
+\index{Load\+Box@{Load\+Box}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{Load\+Box()}{LoadBox()}}
+{\footnotesize\ttfamily void N\+P\+C\+::\+Load\+Box (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Loads the N\+P\+Cs \hyperlink{class_text_box}{Text\+Box}. 
+
+Load the Textbox into memory 
+
+Definition at line 109 of file N\+P\+C.\+cpp.
+
+
+
+References Sprite\+::get\+X(), Sprite\+::get\+Y(), Sprite\+::load\+Media(), Sprite\+::set\+X(), Sprite\+::set\+Y(), and speech.
+
+
+\begin{DoxyCode}
+110 \{
+111     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_sprite_ae21322c28b8719af996990fafa920762}{setX}(\hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX}() - 40);
+112     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_sprite_afe7d6d636fc460358c40a403af259d0e}{setY}(\hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY}() - 120);
+113     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_sprite_adab722e01e4d3e197f52ecad6ac8d70a}{loadMedia}(renderer);
+114 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a468647f008c7e65f2a25be9dcd5e5968}\label{class_n_p_c_a468647f008c7e65f2a25be9dcd5e5968}} 
+\index{N\+PC@{N\+PC}!Load\+Comment@{Load\+Comment}}
+\index{Load\+Comment@{Load\+Comment}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{Load\+Comment()}{LoadComment()}}
+{\footnotesize\ttfamily void N\+P\+C\+::\+Load\+Comment (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer,  }\item[{int}]{i,  }\item[{T\+T\+F\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})}
+
+
+
+Loads the N\+P\+Cs comment into the textbox. 
+
+Load in a comment as a texture 
+
+Definition at line 21 of file N\+P\+C.\+cpp.
+
+
+
+References Text\+Box\+::load\+Text(), Text\+Box\+::return\+Line(), and speech.
+
+
+\begin{DoxyCode}
+22 \{
+23     std::string txt = \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_text_box_ac10a24236f968ae36705f8bf300dfd79}{returnLine}(i);
+24     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_text_box_add2f877e6715744908d5eb0c9c53e5a9}{loadText}(renderer, txt, font);
+25 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_abaa15a4fd5a37a62983d7fd2acafe271}\label{class_n_p_c_abaa15a4fd5a37a62983d7fd2acafe271}} 
+\index{N\+PC@{N\+PC}!move@{move}}
+\index{move@{move}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{move()}{move()}}
+{\footnotesize\ttfamily void N\+P\+C\+::move (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Handles the N\+P\+Cs movement. 
+
+The N\+P\+Cs movement method 
+
+Definition at line 65 of file N\+P\+C.\+cpp.
+
+
+
+References Sprite\+::get\+X(), Sprite\+::get\+Y(), path, Sprite\+::set\+X(), and Sprite\+::set\+Y().
+
+
+
+Referenced by set\+Moving().
+
+
+\begin{DoxyCode}
+66 \{
+67     \textcolor{comment}{// if there is a path that the NPC can follow}
+68     \textcolor{keywordflow}{if} (\hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}.size() > 0)
+69     \{
+70         \textcolor{comment}{// Deduct the NPCs X & Y from the path nodes X & Y}
+71         \textcolor{keywordtype}{float} movementX = \hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}[0]->getX() - \hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX}();
+72         \textcolor{keywordtype}{float} movementY = \hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}[0]->getY() - \hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY}();
+73 
+74         \textcolor{comment}{// Find the length between the NPC and the node}
+75         \textcolor{keywordtype}{float} toWayPointLength = sqrt(movementX*movementX + movementY*movementY);
+76         
+77         \textcolor{comment}{// If the node has not been reached, then divide the movement values by the length}
+78         \textcolor{keywordflow}{if} (toWayPointLength > 0)
+79         \{
+80             movementX = movementX / toWayPointLength;
+81             movementY = movementY / toWayPointLength;
+82         \}
+83 
+84         \textcolor{keywordtype}{float} nX = \hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX}();
+85         \textcolor{keywordtype}{float} nY = \hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY}();
+86 
+87         \textcolor{comment}{// apply the movements value multiplied by a speed of 2}
+88         \hyperlink{class_sprite_ae21322c28b8719af996990fafa920762}{setX}(nX += movementX * 2);
+89         \hyperlink{class_sprite_afe7d6d636fc460358c40a403af259d0e}{setY}(nY += movementY * 2);
+90 
+91         \textcolor{comment}{// If the NPC is close to the node, set him to occupy that node space}
+92         \textcolor{keywordflow}{if} (\hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}[0]->\hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX}() - \hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX}() < 3 && \hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}[0]->\hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY}() - 
+      \hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY}() < 3 && \hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}[0]->\hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX}() - \hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX}() > -3 && \hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}[0]->\hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY}() - 
+      \hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY}() > -3)
+93         \{
+94             \hyperlink{class_sprite_ae21322c28b8719af996990fafa920762}{setX}(\hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}[0]->\hyperlink{class_sprite_a03d6c82bddfd3d164ce8997482c57c85}{getX}());
+95             \hyperlink{class_sprite_afe7d6d636fc460358c40a403af259d0e}{setY}(\hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}[0]->\hyperlink{class_sprite_a53ea8b27bcd0dab0627a2dceab2b9d98}{getY}());
+96             \hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}.erase(\hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path}.begin());
+97         \}
+98     \}
+99 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_af0a849c937b7d765b2bec4d122a2b62c}\label{class_n_p_c_af0a849c937b7d765b2bec4d122a2b62c}} 
+\index{N\+PC@{N\+PC}!prepare\+Comment@{prepare\+Comment}}
+\index{prepare\+Comment@{prepare\+Comment}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{prepare\+Comment()}{prepareComment()}}
+{\footnotesize\ttfamily void N\+P\+C\+::prepare\+Comment (\begin{DoxyParamCaption}\item[{std\+::string}]{txt,  }\item[{T\+T\+F\+\_\+\+Font $\ast$}]{font }\end{DoxyParamCaption})}
+
+
+
+Breaks up parsed in text into a chunked comment. 
+
+Break up the parsed in text into chunks to be scrolled 
+
+Definition at line 12 of file N\+P\+C.\+cpp.
+
+
+
+References Text\+Box\+::create\+Strings(), Text\+Box\+::empty\+Text\+To\+Render(), and speech.
+
+
+\begin{DoxyCode}
+13 \{
+14     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_text_box_a3c57ce309c31e346dbc504b5e23d7ebc}{emptyTextToRender}();
+15     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_text_box_a19cb5e85c864060ecdb2fe2bab6fd54d}{createStrings}(txt, font);
+16 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_ad5e9a664ceae6a920e63d34f2738b21d}\label{class_n_p_c_ad5e9a664ceae6a920e63d34f2738b21d}} 
+\index{N\+PC@{N\+PC}!render\+Box@{render\+Box}}
+\index{render\+Box@{render\+Box}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{render\+Box()}{renderBox()}}
+{\footnotesize\ttfamily void N\+P\+C\+::render\+Box (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Renders the N\+P\+Cs \hyperlink{class_text_box}{Text\+Box}. 
+
+Render the textbox to the screen 
+
+Definition at line 120 of file N\+P\+C.\+cpp.
+
+
+
+References Sprite\+::render(), and speech.
+
+
+\begin{DoxyCode}
+121 \{
+122     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_sprite_a72231a3cc5414b94ab6bfcbddc3b327c}{render}(renderer);
+123 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_abfad5a818584b5ee6fab0605873ae5c4}\label{class_n_p_c_abfad5a818584b5ee6fab0605873ae5c4}} 
+\index{N\+PC@{N\+PC}!render\+Comment@{render\+Comment}}
+\index{render\+Comment@{render\+Comment}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{render\+Comment()}{renderComment()}}
+{\footnotesize\ttfamily void N\+P\+C\+::render\+Comment (\begin{DoxyParamCaption}\item[{S\+D\+L\+\_\+\+Renderer $\ast$}]{renderer }\end{DoxyParamCaption})}
+
+
+
+Renders the N\+P\+Cs comment. 
+
+
+
+Definition at line 134 of file N\+P\+C.\+cpp.
+
+
+
+References Text\+Box\+::render\+Comment(), and speech.
+
+
+\begin{DoxyCode}
+135 \{
+136     \hyperlink{class_n_p_c_a1a1be15df827227f45559388897a9cd5}{speech}.\hyperlink{class_text_box_a8746fe595a510ea6c3dc9908b448802c}{renderComment}(renderer);
+137 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a3e24b9fe9d34b635c2f57c48eab0b29d}\label{class_n_p_c_a3e24b9fe9d34b635c2f57c48eab0b29d}} 
+\index{N\+PC@{N\+PC}!set\+Boredom@{set\+Boredom}}
+\index{set\+Boredom@{set\+Boredom}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Boredom()}{setBoredom()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Boredom (\begin{DoxyParamCaption}\item[{int}]{lvl }\end{DoxyParamCaption})}
+
+
+
+Definition at line 101 of file N\+P\+C.\+cpp.
+
+
+
+References bored\+Lvl.
+
+
+\begin{DoxyCode}
+102 \{
+103     \hyperlink{class_n_p_c_a1f67b7dfca770653fc523dfc558e7fdf}{boredLvl} = lvl;
+104 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_ac2143e6bbc303d3fbe65c5603746557e}\label{class_n_p_c_ac2143e6bbc303d3fbe65c5603746557e}} 
+\index{N\+PC@{N\+PC}!set\+Current\+Line@{set\+Current\+Line}}
+\index{set\+Current\+Line@{set\+Current\+Line}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Current\+Line()}{setCurrentLine()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Current\+Line (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 190 of file N\+P\+C.\+cpp.
+
+
+
+References current\+Line.
+
+
+\begin{DoxyCode}
+191 \{
+192     \hyperlink{class_n_p_c_a0969e4514a21f3b2966a24d78e9e3343}{currentLine} = line;
+193 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a30076f45e31741e86a79f280eca215cb}\label{class_n_p_c_a30076f45e31741e86a79f280eca215cb}} 
+\index{N\+PC@{N\+PC}!set\+Current\+User@{set\+Current\+User}}
+\index{set\+Current\+User@{set\+Current\+User}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Current\+User()}{setCurrentUser()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Current\+User (\begin{DoxyParamCaption}\item[{std\+::string}]{user }\end{DoxyParamCaption})}
+
+
+
+Definition at line 57 of file N\+P\+C.\+cpp.
+
+
+
+References current\+User.
+
+
+\begin{DoxyCode}
+58 \{
+59     \hyperlink{class_n_p_c_a944f970943002adc4f0c970b0200c011}{currentUser} = user;
+60 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_aefc13625a35497cf6158c15692c52eda}\label{class_n_p_c_aefc13625a35497cf6158c15692c52eda}} 
+\index{N\+PC@{N\+PC}!set\+End\+Goal@{set\+End\+Goal}}
+\index{set\+End\+Goal@{set\+End\+Goal}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+End\+Goal()}{setEndGoal()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+End\+Goal (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{new\+Goal }\end{DoxyParamCaption})}
+
+
+
+Definition at line 230 of file N\+P\+C.\+cpp.
+
+
+
+References end\+Goal.
+
+
+\begin{DoxyCode}
+231 \{
+232     \hyperlink{class_n_p_c_ab2349a8d6757b61a73f87de9cba387d1}{endGoal} = newGoal;
+233 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_aaa89e6f11f1bda185769ae321f345960}\label{class_n_p_c_aaa89e6f11f1bda185769ae321f345960}} 
+\index{N\+PC@{N\+PC}!set\+Group\+ID@{set\+Group\+ID}}
+\index{set\+Group\+ID@{set\+Group\+ID}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Group\+I\+D()}{setGroupID()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Group\+ID (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file N\+P\+C.\+cpp.
+
+
+
+References group\+ID, and id.
+
+
+\begin{DoxyCode}
+38 \{
+39     \hyperlink{class_n_p_c_ab370e8a4fbb5ccabdc06821f7dfda428}{groupID} = \hyperlink{class_n_p_c_a1b705223f885df652f2faffc4735d03c}{id};
+40 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a81d67fe2002ad57334c40fadcba25dc4}\label{class_n_p_c_a81d67fe2002ad57334c40fadcba25dc4}} 
+\index{N\+PC@{N\+PC}!set\+ID@{set\+ID}}
+\index{set\+ID@{set\+ID}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+I\+D()}{setID()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+ID (\begin{DoxyParamCaption}\item[{int}]{i }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file N\+P\+C.\+cpp.
+
+
+\begin{DoxyCode}
+28 \{
+29     \textcolor{keywordtype}{id} = i;
+30 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a154d9c6f7c920edcfaeb20f826419ac6}\label{class_n_p_c_a154d9c6f7c920edcfaeb20f826419ac6}} 
+\index{N\+PC@{N\+PC}!set\+Idle@{set\+Idle}}
+\index{set\+Idle@{set\+Idle}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Idle()}{setIdle()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Idle (\begin{DoxyParamCaption}\item[{bool}]{n\+Idle }\end{DoxyParamCaption})}
+
+
+
+Definition at line 220 of file N\+P\+C.\+cpp.
+
+
+
+References idle.
+
+
+\begin{DoxyCode}
+221 \{
+222     \hyperlink{class_n_p_c_aa228d3e449507a6326cef7b449752e62}{idle} = nIdle;
+223 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_af18588e2baa382f12e4e9fe56fc247bc}\label{class_n_p_c_af18588e2baa382f12e4e9fe56fc247bc}} 
+\index{N\+PC@{N\+PC}!set\+Moving@{set\+Moving}}
+\index{set\+Moving@{set\+Moving}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Moving()}{setMoving()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Moving (\begin{DoxyParamCaption}\item[{bool}]{move }\end{DoxyParamCaption})}
+
+
+
+Definition at line 258 of file N\+P\+C.\+cpp.
+
+
+
+References move(), and moving.
+
+
+\begin{DoxyCode}
+259 \{
+260     \hyperlink{class_n_p_c_a4dfc6a89cae1301e7f722bbba67f3dbb}{moving} = \hyperlink{class_n_p_c_abaa15a4fd5a37a62983d7fd2acafe271}{move};
+261 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a9582ddb2cc78ad77c8ded77e192be5b0}\label{class_n_p_c_a9582ddb2cc78ad77c8ded77e192be5b0}} 
+\index{N\+PC@{N\+PC}!set\+Path@{set\+Path}}
+\index{set\+Path@{set\+Path}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Path()}{setPath()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Path (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::shared\+\_\+ptr$<$ \hyperlink{class_node}{Node} $>$$>$}]{new\+Path }\end{DoxyParamCaption})}
+
+
+
+Definition at line 240 of file N\+P\+C.\+cpp.
+
+
+
+References path.
+
+
+\begin{DoxyCode}
+241 \{
+242     \hyperlink{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}{path} = newPath;
+243 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a9e0ab46138990129c16b78c2a6ee6e25}\label{class_n_p_c_a9e0ab46138990129c16b78c2a6ee6e25}} 
+\index{N\+PC@{N\+PC}!set\+Reading@{set\+Reading}}
+\index{set\+Reading@{set\+Reading}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Reading()}{setReading()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Reading (\begin{DoxyParamCaption}\item[{bool}]{read }\end{DoxyParamCaption})}
+
+
+
+Definition at line 249 of file N\+P\+C.\+cpp.
+
+
+
+References reading.
+
+
+\begin{DoxyCode}
+250 \{
+251     \hyperlink{class_n_p_c_a04d8f196cdd6de84f38131836d9c9cc7}{reading} = read;
+252 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_a16d67a6d98c54df2fe320c64c5680285}\label{class_n_p_c_a16d67a6d98c54df2fe320c64c5680285}} 
+\index{N\+PC@{N\+PC}!set\+Speaking@{set\+Speaking}}
+\index{set\+Speaking@{set\+Speaking}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Speaking()}{setSpeaking()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Speaking (\begin{DoxyParamCaption}\item[{bool}]{val }\end{DoxyParamCaption})}
+
+
+
+Definition at line 195 of file N\+P\+C.\+cpp.
+
+
+
+References speaking.
+
+
+\begin{DoxyCode}
+196 \{
+197     \hyperlink{class_n_p_c_a0dc17cd2d9b7d486e6d74089819117e7}{speaking} = val;
+198 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_n_p_c_ae94160d4a1fe8d5195e9ae66f78059ce}\label{class_n_p_c_ae94160d4a1fe8d5195e9ae66f78059ce}} 
+\index{N\+PC@{N\+PC}!set\+Text@{set\+Text}}
+\index{set\+Text@{set\+Text}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{set\+Text()}{setText()}}
+{\footnotesize\ttfamily void N\+P\+C\+::set\+Text (\begin{DoxyParamCaption}\item[{std\+::string}]{t }\end{DoxyParamCaption})}
+
+
+
+Definition at line 205 of file N\+P\+C.\+cpp.
+
+
+
+References text.
+
+
+\begin{DoxyCode}
+206 \{
+207     \hyperlink{class_n_p_c_a64ad332dcfeb84a7a6bedd404378f05b}{text} = str;
+208 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\Hypertarget{class_n_p_c_a3e1f9defd10ab4be568a190fbcd0ac07}\label{class_n_p_c_a3e1f9defd10ab4be568a190fbcd0ac07}} 
+\index{N\+PC@{N\+PC}!operator==@{operator==}}
+\index{operator==@{operator==}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{operator==}{operator==}}
+{\footnotesize\ttfamily bool operator== (\begin{DoxyParamCaption}\item[{const \hyperlink{class_n_p_c}{N\+PC} \&}]{c1,  }\item[{const \hyperlink{class_n_p_c}{N\+PC} \&}]{c2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 263 of file N\+P\+C.\+cpp.
+
+
+\begin{DoxyCode}
+264 \{
+265     \textcolor{keywordflow}{return} (c1.\hyperlink{class_n_p_c_a1b705223f885df652f2faffc4735d03c}{id} == c2.\hyperlink{class_n_p_c_a1b705223f885df652f2faffc4735d03c}{id});
+266 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_n_p_c_a1f67b7dfca770653fc523dfc558e7fdf}\label{class_n_p_c_a1f67b7dfca770653fc523dfc558e7fdf}} 
+\index{N\+PC@{N\+PC}!bored\+Lvl@{bored\+Lvl}}
+\index{bored\+Lvl@{bored\+Lvl}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{bored\+Lvl}{boredLvl}}
+{\footnotesize\ttfamily int N\+P\+C\+::bored\+Lvl\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 86 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Boredom(), N\+P\+C(), and set\+Boredom().
+
+\mbox{\Hypertarget{class_n_p_c_a0969e4514a21f3b2966a24d78e9e3343}\label{class_n_p_c_a0969e4514a21f3b2966a24d78e9e3343}} 
+\index{N\+PC@{N\+PC}!current\+Line@{current\+Line}}
+\index{current\+Line@{current\+Line}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{current\+Line}{currentLine}}
+{\footnotesize\ttfamily int N\+P\+C\+::current\+Line\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 85 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Current\+Line(), and set\+Current\+Line().
+
+\mbox{\Hypertarget{class_n_p_c_a944f970943002adc4f0c970b0200c011}\label{class_n_p_c_a944f970943002adc4f0c970b0200c011}} 
+\index{N\+PC@{N\+PC}!current\+User@{current\+User}}
+\index{current\+User@{current\+User}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{current\+User}{currentUser}}
+{\footnotesize\ttfamily std\+::string N\+P\+C\+::current\+User = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 88 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Current\+User(), and set\+Current\+User().
+
+\mbox{\Hypertarget{class_n_p_c_a804b5c812457417231e3b4ab5e06ac88}\label{class_n_p_c_a804b5c812457417231e3b4ab5e06ac88}} 
+\index{N\+PC@{N\+PC}!emotion\+Levels@{emotion\+Levels}}
+\index{emotion\+Levels@{emotion\+Levels}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{emotion\+Levels}{emotionLevels}}
+{\footnotesize\ttfamily float N\+P\+C\+::emotion\+Levels = 0.\+0f\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 100 of file N\+P\+C.\+h.
+
+
+
+Referenced by apply\+Emotion\+Level(), and get\+Emotion\+Level().
+
+\mbox{\Hypertarget{class_n_p_c_ab2349a8d6757b61a73f87de9cba387d1}\label{class_n_p_c_ab2349a8d6757b61a73f87de9cba387d1}} 
+\index{N\+PC@{N\+PC}!end\+Goal@{end\+Goal}}
+\index{end\+Goal@{end\+Goal}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{end\+Goal}{endGoal}}
+{\footnotesize\ttfamily std\+::pair$<$int, int$>$ N\+P\+C\+::end\+Goal\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 93 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+End\+Goal(), and set\+End\+Goal().
+
+\mbox{\Hypertarget{class_n_p_c_ab370e8a4fbb5ccabdc06821f7dfda428}\label{class_n_p_c_ab370e8a4fbb5ccabdc06821f7dfda428}} 
+\index{N\+PC@{N\+PC}!group\+ID@{group\+ID}}
+\index{group\+ID@{group\+ID}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{group\+ID}{groupID}}
+{\footnotesize\ttfamily int N\+P\+C\+::group\+ID\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 84 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Group\+I\+D(), and set\+Group\+I\+D().
+
+\mbox{\Hypertarget{class_n_p_c_a1b705223f885df652f2faffc4735d03c}\label{class_n_p_c_a1b705223f885df652f2faffc4735d03c}} 
+\index{N\+PC@{N\+PC}!id@{id}}
+\index{id@{id}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{id}{id}}
+{\footnotesize\ttfamily int N\+P\+C\+::id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 83 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+I\+D(), operator==(), and set\+Group\+I\+D().
+
+\mbox{\Hypertarget{class_n_p_c_aa228d3e449507a6326cef7b449752e62}\label{class_n_p_c_aa228d3e449507a6326cef7b449752e62}} 
+\index{N\+PC@{N\+PC}!idle@{idle}}
+\index{idle@{idle}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{idle}{idle}}
+{\footnotesize\ttfamily bool N\+P\+C\+::idle = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 97 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Idle(), and set\+Idle().
+
+\mbox{\Hypertarget{class_n_p_c_a4dfc6a89cae1301e7f722bbba67f3dbb}\label{class_n_p_c_a4dfc6a89cae1301e7f722bbba67f3dbb}} 
+\index{N\+PC@{N\+PC}!moving@{moving}}
+\index{moving@{moving}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{moving}{moving}}
+{\footnotesize\ttfamily bool N\+P\+C\+::moving = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 98 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Moving(), and set\+Moving().
+
+\mbox{\Hypertarget{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}\label{class_n_p_c_afdd6b1a6e4827259ec9d9fcd075cb099}} 
+\index{N\+PC@{N\+PC}!path@{path}}
+\index{path@{path}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{path}{path}}
+{\footnotesize\ttfamily std\+::vector$<$std\+::shared\+\_\+ptr$<$\hyperlink{class_node}{Node}$>$ $>$ N\+P\+C\+::path\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 92 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Path(), move(), and set\+Path().
+
+\mbox{\Hypertarget{class_n_p_c_a04d8f196cdd6de84f38131836d9c9cc7}\label{class_n_p_c_a04d8f196cdd6de84f38131836d9c9cc7}} 
+\index{N\+PC@{N\+PC}!reading@{reading}}
+\index{reading@{reading}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{reading}{reading}}
+{\footnotesize\ttfamily bool N\+P\+C\+::reading = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 96 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Reading(), and set\+Reading().
+
+\mbox{\Hypertarget{class_n_p_c_a0dc17cd2d9b7d486e6d74089819117e7}\label{class_n_p_c_a0dc17cd2d9b7d486e6d74089819117e7}} 
+\index{N\+PC@{N\+PC}!speaking@{speaking}}
+\index{speaking@{speaking}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{speaking}{speaking}}
+{\footnotesize\ttfamily bool N\+P\+C\+::speaking = false\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 95 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Speaking(), and set\+Speaking().
+
+\mbox{\Hypertarget{class_n_p_c_a1a1be15df827227f45559388897a9cd5}\label{class_n_p_c_a1a1be15df827227f45559388897a9cd5}} 
+\index{N\+PC@{N\+PC}!speech@{speech}}
+\index{speech@{speech}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{speech}{speech}}
+{\footnotesize\ttfamily \hyperlink{class_text_box}{Text\+Box} N\+P\+C\+::speech\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 90 of file N\+P\+C.\+h.
+
+
+
+Referenced by free\+Box(), get\+Lines\+To\+Render(), Load\+Box(), Load\+Comment(), N\+P\+C(), prepare\+Comment(), render\+Box(), and render\+Comment().
+
+\mbox{\Hypertarget{class_n_p_c_a64ad332dcfeb84a7a6bedd404378f05b}\label{class_n_p_c_a64ad332dcfeb84a7a6bedd404378f05b}} 
+\index{N\+PC@{N\+PC}!text@{text}}
+\index{text@{text}!N\+PC@{N\+PC}}
+\subsubsection{\texorpdfstring{text}{text}}
+{\footnotesize\ttfamily std\+::string N\+P\+C\+::text\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 89 of file N\+P\+C.\+h.
+
+
+
+Referenced by get\+Text(), and set\+Text().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_n_p_c_8h}{N\+P\+C.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_n_p_c_8cpp}{N\+P\+C.\+cpp}\end{DoxyCompactItemize}

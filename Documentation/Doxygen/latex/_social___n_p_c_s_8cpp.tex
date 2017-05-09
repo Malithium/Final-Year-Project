@@ -1,0 +1,146 @@
+\hypertarget{_social___n_p_c_s_8cpp}{}\section{C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+CS.cpp File Reference}
+\label{_social___n_p_c_s_8cpp}\index{C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S.\+cpp@{C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S.\+cpp}}
+{\ttfamily \#include \char`\"{}Python\+Handler.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Group\+Populator.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}J\+S\+O\+N\+Reader.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Resource\+Data.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}S\+D\+L\+Window.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Room.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Text\+Box.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$sys/stat.\+h$>$}\newline
+{\ttfamily \#include $<$sys/types.\+h$>$}\newline
+Include dependency graph for Social\+\_\+\+N\+P\+C\+S.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_social___n_p_c_s_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{_social___n_p_c_s_8cpp_a700a0caa5b70a06d1064e576f9f3cf65}{main} (int argc, char $\ast$args\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{_social___n_p_c_s_8cpp_a700a0caa5b70a06d1064e576f9f3cf65}\label{_social___n_p_c_s_8cpp_a700a0caa5b70a06d1064e576f9f3cf65}} 
+\index{Social\+\_\+\+N\+P\+C\+S.\+cpp@{Social\+\_\+\+N\+P\+C\+S.\+cpp}!main@{main}}
+\index{main@{main}!Social\+\_\+\+N\+P\+C\+S.\+cpp@{Social\+\_\+\+N\+P\+C\+S.\+cpp}}
+\subsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{args\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Entry point of the program 
+
+Definition at line 17 of file Social\+\_\+\+N\+P\+C\+S.\+cpp.
+
+
+
+References Python\+Handler\+::call\+Python\+Module(), S\+D\+L\+Window\+::get\+Renderer(), S\+D\+L\+Window\+::get\+Screen\+Height(), S\+D\+L\+Window\+::get\+Screen\+Width(), S\+D\+L\+Window\+::init(), Resource\+Data\+::read\+Data(), and J\+S\+O\+N\+Reader\+::\+Read\+Json\+File().
+
+
+\begin{DoxyCode}
+18 \{
+19     \textcolor{keywordtype}{int} lastTime = 0, currentTime;
+20     \textcolor{keyword}{struct }stat st;
+21 
+22 
+23     \textcolor{comment}{//Load in our resourceData}
+24     \hyperlink{class_j_s_o_n_reader}{JSONReader} resourceReader(\textcolor{stringliteral}{"ResourceData.json"});
+25     \hyperlink{class_j_s_o_n_reader}{JSONReader} reader(\textcolor{stringliteral}{"data.json"});
+26 
+27     \textcolor{keywordtype}{int} ierr = stat(\textcolor{stringliteral}{"data.json"}, &st);
+28     \textcolor{keywordflow}{if} (ierr != 0) \{
+29         std::cout << \textcolor{stringliteral}{"error"};
+30     \}
+31 
+32     time\_t date = st.st\_mtime;
+33     time\_t base;
+34     time(&base);
+35 
+36     \hyperlink{class_resource_data}{ResourceData} rData(resourceReader.ReadJsonFile());
+37 
+38     \textcolor{comment}{//check the timestamp on our data file, if it is less than 24 hours, then dont run the python script}
+39     \textcolor{keywordflow}{if} (rData.readData(\textcolor{stringliteral}{"Enable\_Python"}) == \textcolor{stringliteral}{"true"})
+40     \{
+41         \textcolor{keywordflow}{if} ((base - date) >= 60 * 60 * 24)
+42         \{
+43             \textcolor{comment}{//call the python module to get reddit comments}
+44             std::string pFile = rData.\hyperlink{class_resource_data_a2e18ba115b2598590c15a16240542948}{readData}(\textcolor{stringliteral}{"Python\_File"});
+45             std::string pMod = rData.readData(\textcolor{stringliteral}{"Python\_Module"});
+46             \hyperlink{class_python_handler}{PythonHandler} pHandler(rData.readData(\textcolor{stringliteral}{"Python\_File"}), rData.readData(\textcolor{stringliteral}{"
+      Python\_Module"}));
+47             pHandler.\hyperlink{class_python_handler_ac60ae844922ca438081e1f8cc0164b45}{callPythonModule}();
+48         \}
+49     \}
+50 
+51     \textcolor{comment}{//populate the group object with the data from the generated JSON file}
+52     \hyperlink{class_group_populator}{GroupPopulator} populator(reader.ReadJsonFile());
+53     \hyperlink{class_group}{Group} grp = populator.PopulateGroup();
+54 
+55     \textcolor{comment}{//define the game window}
+56     \hyperlink{class_s_d_l_window}{SDLWindow} window(\textcolor{stringliteral}{"Social NPC's"}, SDL\_WINDOWPOS\_UNDEFINED, SDL\_WINDOWPOS\_UNDEFINED, 800, 600, 
+      SDL\_WINDOW\_SHOWN);
+57 
+58     \textcolor{comment}{//initialise the game window}
+59     \textcolor{keywordflow}{if} (!window.init())
+60     \{
+61         printf(\textcolor{stringliteral}{"Failed to initialise!\(\backslash\)n"});
+62     \}
+63     \textcolor{keywordflow}{else}
+64     \{
+65         \textcolor{keywordtype}{bool} quit = \textcolor{keyword}{false};
+66         
+67         SDL\_Event e;
+68         SDL\_Renderer* renderer = window.getRenderer();
+69         \hyperlink{class_room}{Room} room1(5, 180, 180, window.getScreenWidth(), window.getScreenHeight(), rData.readData(\textcolor{stringliteral}{"
+      NPC\_Sprite"}), rData.readData(\textcolor{stringliteral}{"TextBox\_Sprite"}), renderer, grp);
+70 
+71         \textcolor{comment}{//Open up the font to be used in the application}
+72         TTF\_Font* font;
+73         font = TTF\_OpenFont(rData.readData(\textcolor{stringliteral}{"Font\_File"}).c\_str(), atoi(rData.readData(\textcolor{stringliteral}{"Font\_Size"}).c\_str()))
+      ;
+74         \textcolor{keywordtype}{int} i = 0;
+75         \textcolor{keywordtype}{bool} time = \textcolor{keyword}{true};
+76 
+77         \textcolor{keywordflow}{while} (!quit) \{
+78             \textcolor{keywordflow}{while} (SDL\_PollEvent(&e) != 0)
+79             \{
+80                 \textcolor{keywordflow}{if} (e.type == SDL\_QUIT)
+81                 \{
+82                     quit = \textcolor{keyword}{true};
+83                 \}
+84             \}
+85             \textcolor{comment}{//start tracking the time that has passed since the program started}
+86             currentTime = SDL\_GetTicks();
+87 
+88             SDL\_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
+89             SDL\_RenderClear(renderer);
+90             
+91             \textcolor{keywordflow}{if} (currentTime > lastTime + atoi(rData.readData(\textcolor{stringliteral}{"Timer\_Value"}).c\_str()))
+92             \{
+93                 time = \textcolor{keyword}{true};
+94                 lastTime = currentTime;
+95             \}
+96             \textcolor{keywordflow}{else}
+97             \{
+98                 time = \textcolor{keyword}{false};
+99             \}
+100 
+101             \textcolor{comment}{// Render the NPC sprites to the screen}
+102             room1.LoadNPCs(renderer);
+103 
+104             \textcolor{comment}{// Simulate and render the conversation of the NPCs}
+105             room1.LoadConversation(renderer, time, rData.readData(\textcolor{stringliteral}{"Boredom\_Level"}), font);
+106 
+107             \textcolor{comment}{// Handle the movement of any idle NPCs}
+108             room1.HandleMove(renderer);
+109 
+110             SDL\_RenderPresent(renderer);
+111         \}
+112         \textcolor{comment}{//close our font file}
+113         TTF\_CloseFont(font);
+114     \}
+115     \textcolor{keywordflow}{return} 0;
+116 \}
+\end{DoxyCode}

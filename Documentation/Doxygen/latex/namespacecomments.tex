@@ -1,0 +1,124 @@
+\hypertarget{namespacecomments}{}\section{comments Namespace Reference}
+\label{namespacecomments}\index{comments@{comments}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{classcomments_1_1_object}{Object}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+def \hyperlink{namespacecomments_a15146b34dd7b539d081e27278c3c322e}{get\+Sentiment} (body)
+\item 
+def \hyperlink{namespacecomments_aadd79f53e655498635ea6597a88b219c}{get\+Comments} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacecomments_aadd79f53e655498635ea6597a88b219c}\label{namespacecomments_aadd79f53e655498635ea6597a88b219c}} 
+\index{comments@{comments}!get\+Comments@{get\+Comments}}
+\index{get\+Comments@{get\+Comments}!comments@{comments}}
+\subsubsection{\texorpdfstring{get\+Comments()}{getComments()}}
+{\footnotesize\ttfamily def comments.\+get\+Comments (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file comments.\+py.
+
+
+
+References get\+Sentiment().
+
+
+\begin{DoxyCode}
+27 \textcolor{keyword}{def }\hyperlink{namespacecomments_aadd79f53e655498635ea6597a88b219c}{getComments}():
+28     with open(\textcolor{stringliteral}{"ResourceData.json"}) \textcolor{keyword}{as} data\_file:
+29         data = json.load(data\_file)
+30     r = praw.Reddit(user\_agent = data[\textcolor{stringliteral}{"User\_Agent"}], client\_id= data[\textcolor{stringliteral}{"Client\_Id"}], client\_secret=data[\textcolor{stringliteral}{"
+      Client\_Secret"}])
+31     sub = r.subreddit(data[\textcolor{stringliteral}{"Sub\_Reddit"}])
+32     subName = sub.fullname
+33     d = Object()
+34     d.subject = subName
+35     d.topics = []
+36     print(\textcolor{stringliteral}{"retrieving submissions"})
+37     
+38     \textcolor{comment}{#iterate over each submission}
+39     counter = 0
+40     i = 1;
+41     \textcolor{keywordflow}{for} submission \textcolor{keywordflow}{in} sub.top(limit=5, time\_filter=\textcolor{stringliteral}{'day'}):
+42         counter = counter + 1
+43         submission.comments.replace\_more(limit=0)   
+44         cList = []
+45         rList = []  
+46         comment\_queue = submission.comments[:]
+47         top = Object()
+48         top.topic = submission.title
+49         top.id = submission.fullname
+50 
+51         \textcolor{keywordflow}{while} comment\_queue:
+52             comment = comment\_queue.pop(0)
+53             \textcolor{keywordflow}{if} comment.author != \textcolor{keywordtype}{None}:
+54                 con = Object()
+55                 con.id = comment.id
+56                 con.body = re.sub(\textcolor{stringliteral}{' +'},\textcolor{stringliteral}{' '},comment.body.replace(\textcolor{stringliteral}{'\(\backslash\)n'}, \textcolor{stringliteral}{' '}).replace(\textcolor{stringliteral}{'\(\backslash\)r'},\textcolor{stringliteral}{' '}))
+57                 con.polarity = \hyperlink{namespacecomments_a15146b34dd7b539d081e27278c3c322e}{getSentiment}(con.body)
+58                 con.parent\_id = comment.parent\_id
+59                 author = comment.author
+60                 \textcolor{keywordflow}{if} author != \textcolor{keywordtype}{None}:
+61                     con.author = author.name
+62                 \textcolor{keywordflow}{else}:
+63                     con.author = \textcolor{stringliteral}{"none"}
+64                 \textcolor{comment}{#con.user = author.fullname}
+65                 \textcolor{keywordflow}{if} i == 1:
+66                     print(author.name)
+67                     i = 0
+68                 \textcolor{keywordflow}{if} comment.parent\_id == submission.fullname:
+69                     con.reply = \textcolor{keyword}{False}
+70                 \textcolor{keywordflow}{else}:
+71                     con.reply = \textcolor{keyword}{True}
+72                 cList.append(con)
+73                 comment\_queue.extend(comment.replies)
+74     
+75         \textcolor{comment}{#iterate over each comment in the comment list}
+76         top.comments = cList
+77         d.topics.append(top)
+78         print(\textcolor{stringliteral}{"\(\backslash\)rGenerated Objects : "} + str(counter))
+79         
+80     print(\textcolor{stringliteral}{"Generating JSON file"})
+81     with open(\textcolor{stringliteral}{'data.json'}, \textcolor{stringliteral}{'w'}) \textcolor{keyword}{as} outfile:
+82         outfile.write(d.toJSON())
+83         outfile.close()
+84 
+85 \hyperlink{namespacecomments_aadd79f53e655498635ea6597a88b219c}{getComments}()
+86 \end{DoxyCode}
+\mbox{\Hypertarget{namespacecomments_a15146b34dd7b539d081e27278c3c322e}\label{namespacecomments_a15146b34dd7b539d081e27278c3c322e}} 
+\index{comments@{comments}!get\+Sentiment@{get\+Sentiment}}
+\index{get\+Sentiment@{get\+Sentiment}!comments@{comments}}
+\subsubsection{\texorpdfstring{get\+Sentiment()}{getSentiment()}}
+{\footnotesize\ttfamily def comments.\+get\+Sentiment (\begin{DoxyParamCaption}\item[{}]{body }\end{DoxyParamCaption})}
+
+
+
+Definition at line 14 of file comments.\+py.
+
+
+
+Referenced by get\+Comments().
+
+
+\begin{DoxyCode}
+14 \textcolor{keyword}{def }\hyperlink{namespacecomments_a15146b34dd7b539d081e27278c3c322e}{getSentiment}(body):
+15     finalScore = 0
+16     roundedFinalScore = 0
+17     sid = SentimentIntensityAnalyzer()
+18     comLines = tokenize.sent\_tokenize(body)
+19     \textcolor{keywordflow}{for} line \textcolor{keywordflow}{in} comLines:
+20         ss = sid.polarity\_scores(line)
+21         lineCompoundScore = ss[\textcolor{stringliteral}{'compound'}]
+22         finalScore += lineCompoundScore 
+23 
+24     roundedFinalScore = round(finalScore/len(comLines),4)
+25     \textcolor{keywordflow}{return} roundedFinalScore
+26     
+\end{DoxyCode}

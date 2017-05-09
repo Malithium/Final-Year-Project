@@ -1,0 +1,159 @@
+\hypertarget{class_j_s_o_n_reader}{}\section{J\+S\+O\+N\+Reader Class Reference}
+\label{class_j_s_o_n_reader}\index{J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}}
+
+
+{\ttfamily \#include $<$J\+S\+O\+N\+Reader.\+h$>$}
+
+
+
+Collaboration diagram for J\+S\+O\+N\+Reader\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=170pt]{class_j_s_o_n_reader__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_j_s_o_n_reader_aa1480326d69874d2bab7183932b2d495}{J\+S\+O\+N\+Reader} (std\+::string f\+Name)
+\item 
+std\+::string \hyperlink{class_j_s_o_n_reader_abde6e34eccb5e195218923b8260391b2}{get\+File\+Name} ()
+\item 
+void \hyperlink{class_j_s_o_n_reader_ac9652f637597153cffe536fd2112c4f2}{set\+File\+Name} (std\+::string f\+Name)
+\item 
+std\+::ifstream \hyperlink{class_j_s_o_n_reader_a47c90ec12638eed9ea96feefc76096e1}{Read\+Json\+File} ()
+\begin{DoxyCompactList}\small\item\em reads a J\+S\+ON file into the program \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_j_s_o_n_reader_abae0923ae887d87350b9ca1ddd56d41e}{file\+Name}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Reads in a J\+S\+ON file 
+
+Definition at line 9 of file J\+S\+O\+N\+Reader.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_j_s_o_n_reader_aa1480326d69874d2bab7183932b2d495}\label{class_j_s_o_n_reader_aa1480326d69874d2bab7183932b2d495}} 
+\index{J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}!J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}}
+\index{J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}!J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}}
+\subsubsection{\texorpdfstring{J\+S\+O\+N\+Reader()}{JSONReader()}}
+{\footnotesize\ttfamily J\+S\+O\+N\+Reader\+::\+J\+S\+O\+N\+Reader (\begin{DoxyParamCaption}\item[{std\+::string}]{f\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file J\+S\+O\+N\+Reader.\+cpp.
+
+
+
+References set\+File\+Name().
+
+
+\begin{DoxyCode}
+4 \{
+5     \hyperlink{class_j_s_o_n_reader_ac9652f637597153cffe536fd2112c4f2}{setFileName}(fName);
+6 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_j_s_o_n_reader_abde6e34eccb5e195218923b8260391b2}\label{class_j_s_o_n_reader_abde6e34eccb5e195218923b8260391b2}} 
+\index{J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}!get\+File\+Name@{get\+File\+Name}}
+\index{get\+File\+Name@{get\+File\+Name}!J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}}
+\subsubsection{\texorpdfstring{get\+File\+Name()}{getFileName()}}
+{\footnotesize\ttfamily std\+::string J\+S\+O\+N\+Reader\+::get\+File\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file J\+S\+O\+N\+Reader.\+cpp.
+
+
+
+References file\+Name.
+
+
+\begin{DoxyCode}
+9 \{
+10     \textcolor{keywordflow}{return} \hyperlink{class_j_s_o_n_reader_abae0923ae887d87350b9ca1ddd56d41e}{fileName};
+11 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_j_s_o_n_reader_a47c90ec12638eed9ea96feefc76096e1}\label{class_j_s_o_n_reader_a47c90ec12638eed9ea96feefc76096e1}} 
+\index{J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}!Read\+Json\+File@{Read\+Json\+File}}
+\index{Read\+Json\+File@{Read\+Json\+File}!J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}}
+\subsubsection{\texorpdfstring{Read\+Json\+File()}{ReadJsonFile()}}
+{\footnotesize\ttfamily std\+::ifstream J\+S\+O\+N\+Reader\+::\+Read\+Json\+File (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+reads a J\+S\+ON file into the program 
+
+
+
+Definition at line 18 of file J\+S\+O\+N\+Reader.\+cpp.
+
+
+
+References file\+Name.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+19 \{
+20     \textcolor{keywordflow}{return} std::ifstream(\hyperlink{class_j_s_o_n_reader_abae0923ae887d87350b9ca1ddd56d41e}{fileName}, std::ifstream::binary);
+21 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_j_s_o_n_reader_ac9652f637597153cffe536fd2112c4f2}\label{class_j_s_o_n_reader_ac9652f637597153cffe536fd2112c4f2}} 
+\index{J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}!set\+File\+Name@{set\+File\+Name}}
+\index{set\+File\+Name@{set\+File\+Name}!J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}}
+\subsubsection{\texorpdfstring{set\+File\+Name()}{setFileName()}}
+{\footnotesize\ttfamily void J\+S\+O\+N\+Reader\+::set\+File\+Name (\begin{DoxyParamCaption}\item[{std\+::string}]{f\+Name }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file J\+S\+O\+N\+Reader.\+cpp.
+
+
+
+References file\+Name.
+
+
+
+Referenced by J\+S\+O\+N\+Reader().
+
+
+\begin{DoxyCode}
+14 \{
+15     \hyperlink{class_j_s_o_n_reader_abae0923ae887d87350b9ca1ddd56d41e}{fileName} = fName;
+16 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_j_s_o_n_reader_abae0923ae887d87350b9ca1ddd56d41e}\label{class_j_s_o_n_reader_abae0923ae887d87350b9ca1ddd56d41e}} 
+\index{J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}!file\+Name@{file\+Name}}
+\index{file\+Name@{file\+Name}!J\+S\+O\+N\+Reader@{J\+S\+O\+N\+Reader}}
+\subsubsection{\texorpdfstring{file\+Name}{fileName}}
+{\footnotesize\ttfamily std\+::string J\+S\+O\+N\+Reader\+::file\+Name\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file J\+S\+O\+N\+Reader.\+h.
+
+
+
+Referenced by get\+File\+Name(), Read\+Json\+File(), and set\+File\+Name().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_j_s_o_n_reader_8h}{J\+S\+O\+N\+Reader.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_j_s_o_n_reader_8cpp}{J\+S\+O\+N\+Reader.\+cpp}\end{DoxyCompactItemize}

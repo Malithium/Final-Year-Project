@@ -1,0 +1,584 @@
+\hypertarget{class_s_d_l_window}{}\section{S\+D\+L\+Window Class Reference}
+\label{class_s_d_l_window}\index{S\+D\+L\+Window@{S\+D\+L\+Window}}
+
+
+{\ttfamily \#include $<$S\+D\+L\+Window.\+h$>$}
+
+
+
+Collaboration diagram for S\+D\+L\+Window\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_s_d_l_window__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_s_d_l_window_ab081329db76eaeaed1716c2e3bad50b2}{S\+D\+L\+Window} ()
+\item 
+\hyperlink{class_s_d_l_window_a9f42587fe7eeda9b87e060bf74891338}{S\+D\+L\+Window} (char $\ast$title, int x, int y, int width, int height, Uint32 flag)
+\item 
+\hyperlink{class_s_d_l_window_a7a0af0daec54970ff2262b67a6ece281}{$\sim$\+S\+D\+L\+Window} ()
+\item 
+bool \hyperlink{class_s_d_l_window_ad0f1f0b8510c97c1eeeffffe30707b0c}{init} ()
+\item 
+int \hyperlink{class_s_d_l_window_ad9bd55d793deb62b26932c5e1b8c1042}{get\+Screen\+Width} ()
+\item 
+void \hyperlink{class_s_d_l_window_a36930c7e4f3dee77c19283a3ede6287d}{set\+Screen\+Width} (int width)
+\item 
+int \hyperlink{class_s_d_l_window_ae3220fe9d6ef946c50713c7e4b72d637}{get\+Screen\+Height} ()
+\item 
+void \hyperlink{class_s_d_l_window_ae80e9b827e6c2138f1506841a60a072b}{set\+Screen\+Height} (int height)
+\item 
+const char $\ast$ \hyperlink{class_s_d_l_window_a7a21e853e2875a2a2324a59eefd04057}{get\+Screen\+Title} ()
+\item 
+void \hyperlink{class_s_d_l_window_a1be36c2e5e329d203e929d59f2d5c308}{set\+Screen\+Title} (const char $\ast$title)
+\item 
+Uint32 \hyperlink{class_s_d_l_window_adec65d41c9403d18cc23389a62f1897a}{get\+Screen\+Flag} ()
+\item 
+void \hyperlink{class_s_d_l_window_a032e69e9664f4cfdb3e27e82d3bab986}{set\+Screen\+Flag} (Uint32 flag)
+\item 
+S\+D\+L\+\_\+\+Window $\ast$ \hyperlink{class_s_d_l_window_a7b170e4afb9920aba42be65369cf98eb}{get\+Window} ()
+\item 
+void \hyperlink{class_s_d_l_window_ad14a7b1965115315210ba34b7239e598}{set\+Window} (const char $\ast$title, int x, int y, int width, int height, Uint32 flag)
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \hyperlink{class_s_d_l_window_a9a6d80f754ee6209be95d6c964dea85e}{get\+Renderer} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+S\+D\+L\+\_\+\+Window $\ast$ \hyperlink{class_s_d_l_window_aa95576b14f59ec62a9e7f6fb8c2f79cc}{Window}
+\item 
+S\+D\+L\+\_\+\+Surface $\ast$ \hyperlink{class_s_d_l_window_a7e7b7186d315e3294fb1761e1eb284ae}{Surface}
+\item 
+S\+D\+L\+\_\+\+Renderer $\ast$ \hyperlink{class_s_d_l_window_ae679402fd05b8eb3fd8680f1f036aaca}{Renderer}
+\item 
+const char $\ast$ \hyperlink{class_s_d_l_window_afeb1a7d48dde026d437babea6667ebee}{S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE}
+\item 
+int \hyperlink{class_s_d_l_window_ade54e8777a5e5017b139b4559c791634}{S\+C\+R\+E\+E\+N\+\_\+X}
+\item 
+int \hyperlink{class_s_d_l_window_abdb8d6136e9724e854c491cb9eef054d}{S\+C\+R\+E\+E\+N\+\_\+Y}
+\item 
+int \hyperlink{class_s_d_l_window_ab3faec77de829876613ea52176ef61e1}{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH}
+\item 
+int \hyperlink{class_s_d_l_window_aed36cc4e541ecf78cda7e92f99a84d71}{S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT}
+\item 
+Uint32 \hyperlink{class_s_d_l_window_a52d0a3b9ea7107e63476b24bc8a43397}{S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+wrapper for the S\+DL window and renderer within the application 
+
+Definition at line 9 of file S\+D\+L\+Window.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_s_d_l_window_ab081329db76eaeaed1716c2e3bad50b2}\label{class_s_d_l_window_ab081329db76eaeaed1716c2e3bad50b2}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{S\+D\+L\+Window()}{SDLWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily S\+D\+L\+Window\+::\+S\+D\+L\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 3 of file S\+D\+L\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+4 \{
+5 
+6 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_a9f42587fe7eeda9b87e060bf74891338}\label{class_s_d_l_window_a9f42587fe7eeda9b87e060bf74891338}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{S\+D\+L\+Window()}{SDLWindow()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily S\+D\+L\+Window\+::\+S\+D\+L\+Window (\begin{DoxyParamCaption}\item[{char $\ast$}]{title,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{Uint32}]{flag }\end{DoxyParamCaption})}
+
+
+
+Definition at line 8 of file S\+D\+L\+Window.\+cpp.
+
+
+\begin{DoxyCode}
+8                                                                                  : 
+      \hyperlink{class_s_d_l_window_ade54e8777a5e5017b139b4559c791634}{SCREEN\_X}(x), \hyperlink{class_s_d_l_window_abdb8d6136e9724e854c491cb9eef054d}{SCREEN\_Y}(y), \hyperlink{class_s_d_l_window_ab3faec77de829876613ea52176ef61e1}{SCREEN\_WIDTH}(width), 
+      \hyperlink{class_s_d_l_window_aed36cc4e541ecf78cda7e92f99a84d71}{SCREEN\_HEIGHT}(height), \hyperlink{class_s_d_l_window_afeb1a7d48dde026d437babea6667ebee}{SCREEN\_TITLE}(title), \hyperlink{class_s_d_l_window_a52d0a3b9ea7107e63476b24bc8a43397}{SCREEN\_FLAG}(flag)
+9 \{
+10 
+11 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_a7a0af0daec54970ff2262b67a6ece281}\label{class_s_d_l_window_a7a0af0daec54970ff2262b67a6ece281}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!````~S\+D\+L\+Window@{$\sim$\+S\+D\+L\+Window}}
+\index{````~S\+D\+L\+Window@{$\sim$\+S\+D\+L\+Window}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{$\sim$\+S\+D\+L\+Window()}{~SDLWindow()}}
+{\footnotesize\ttfamily S\+D\+L\+Window\+::$\sim$\+S\+D\+L\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References Renderer, and Window.
+
+
+\begin{DoxyCode}
+14 \{
+15     SDL\_DestroyRenderer(\hyperlink{class_s_d_l_window_ae679402fd05b8eb3fd8680f1f036aaca}{Renderer});
+16     SDL\_DestroyWindow(\hyperlink{class_s_d_l_window_aa95576b14f59ec62a9e7f6fb8c2f79cc}{Window});
+17     \hyperlink{class_s_d_l_window_aa95576b14f59ec62a9e7f6fb8c2f79cc}{Window} = NULL;
+18     \hyperlink{class_s_d_l_window_ae679402fd05b8eb3fd8680f1f036aaca}{Renderer} = NULL;
+19     IMG\_Quit();
+20     SDL\_Quit();
+21 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_s_d_l_window_a9a6d80f754ee6209be95d6c964dea85e}\label{class_s_d_l_window_a9a6d80f754ee6209be95d6c964dea85e}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!get\+Renderer@{get\+Renderer}}
+\index{get\+Renderer@{get\+Renderer}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{get\+Renderer()}{getRenderer()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer $\ast$ S\+D\+L\+Window\+::get\+Renderer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 73 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References Renderer.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+74 \{
+75     \textcolor{keywordflow}{return} \hyperlink{class_s_d_l_window_ae679402fd05b8eb3fd8680f1f036aaca}{Renderer};
+76 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_adec65d41c9403d18cc23389a62f1897a}\label{class_s_d_l_window_adec65d41c9403d18cc23389a62f1897a}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!get\+Screen\+Flag@{get\+Screen\+Flag}}
+\index{get\+Screen\+Flag@{get\+Screen\+Flag}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{get\+Screen\+Flag()}{getScreenFlag()}}
+{\footnotesize\ttfamily Uint32 S\+D\+L\+Window\+::get\+Screen\+Flag (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG.
+
+
+\begin{DoxyCode}
+64 \{
+65     \textcolor{keywordflow}{return} \hyperlink{class_s_d_l_window_a52d0a3b9ea7107e63476b24bc8a43397}{SCREEN\_FLAG};
+66 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_ae3220fe9d6ef946c50713c7e4b72d637}\label{class_s_d_l_window_ae3220fe9d6ef946c50713c7e4b72d637}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!get\+Screen\+Height@{get\+Screen\+Height}}
+\index{get\+Screen\+Height@{get\+Screen\+Height}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{get\+Screen\+Height()}{getScreenHeight()}}
+{\footnotesize\ttfamily int S\+D\+L\+Window\+::get\+Screen\+Height (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+34 \{
+35     \textcolor{keywordflow}{return} \hyperlink{class_s_d_l_window_aed36cc4e541ecf78cda7e92f99a84d71}{SCREEN\_HEIGHT};
+36 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_a7a21e853e2875a2a2324a59eefd04057}\label{class_s_d_l_window_a7a21e853e2875a2a2324a59eefd04057}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!get\+Screen\+Title@{get\+Screen\+Title}}
+\index{get\+Screen\+Title@{get\+Screen\+Title}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{get\+Screen\+Title()}{getScreenTitle()}}
+{\footnotesize\ttfamily const char $\ast$ S\+D\+L\+Window\+::get\+Screen\+Title (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{return} \hyperlink{class_s_d_l_window_afeb1a7d48dde026d437babea6667ebee}{SCREEN\_TITLE};
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_ad9bd55d793deb62b26932c5e1b8c1042}\label{class_s_d_l_window_ad9bd55d793deb62b26932c5e1b8c1042}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!get\+Screen\+Width@{get\+Screen\+Width}}
+\index{get\+Screen\+Width@{get\+Screen\+Width}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{get\+Screen\+Width()}{getScreenWidth()}}
+{\footnotesize\ttfamily int S\+D\+L\+Window\+::get\+Screen\+Width (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+44 \{
+45     \textcolor{keywordflow}{return} \hyperlink{class_s_d_l_window_ab3faec77de829876613ea52176ef61e1}{SCREEN\_WIDTH};
+46 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_a7b170e4afb9920aba42be65369cf98eb}\label{class_s_d_l_window_a7b170e4afb9920aba42be65369cf98eb}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!get\+Window@{get\+Window}}
+\index{get\+Window@{get\+Window}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{get\+Window()}{getWindow()}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Window $\ast$ S\+D\+L\+Window\+::get\+Window (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 28 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References Window.
+
+
+\begin{DoxyCode}
+29 \{
+30     \textcolor{keywordflow}{return} \hyperlink{class_s_d_l_window_aa95576b14f59ec62a9e7f6fb8c2f79cc}{Window};
+31 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_ad0f1f0b8510c97c1eeeffffe30707b0c}\label{class_s_d_l_window_ad0f1f0b8510c97c1eeeffffe30707b0c}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!init@{init}}
+\index{init@{init}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily bool S\+D\+L\+Window\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References Renderer, S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG, S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT, S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE, S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH, S\+C\+R\+E\+E\+N\+\_\+X, S\+C\+R\+E\+E\+N\+\_\+Y, set\+Window(), and Window.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+79 \{
+80     \textcolor{keywordtype}{bool} success = \textcolor{keyword}{true};
+81 
+82     \textcolor{keywordflow}{if} (SDL\_Init(SDL\_INIT\_VIDEO) < 0)
+83     \{
+84         printf(\textcolor{stringliteral}{"SDL could not initialize! SDL\_Error: %s\(\backslash\)n"}, SDL\_GetError());
+85         success = \textcolor{keyword}{false};
+86     \}
+87     \textcolor{keywordflow}{else}
+88     \{
+89         \textcolor{comment}{//Set texture filtering to linear}
+90         \textcolor{keywordflow}{if} (!SDL\_SetHint(SDL\_HINT\_RENDER\_SCALE\_QUALITY, \textcolor{stringliteral}{"1"}))
+91         \{
+92             printf(\textcolor{stringliteral}{"Warning: Linear texture filtering not enabled!"});
+93         \}
+94 
+95         \hyperlink{class_s_d_l_window_ad14a7b1965115315210ba34b7239e598}{setWindow}(\hyperlink{class_s_d_l_window_afeb1a7d48dde026d437babea6667ebee}{SCREEN\_TITLE}, \hyperlink{class_s_d_l_window_ade54e8777a5e5017b139b4559c791634}{SCREEN\_X}, \hyperlink{class_s_d_l_window_abdb8d6136e9724e854c491cb9eef054d}{SCREEN\_Y}, 
+      \hyperlink{class_s_d_l_window_ab3faec77de829876613ea52176ef61e1}{SCREEN\_WIDTH}, \hyperlink{class_s_d_l_window_aed36cc4e541ecf78cda7e92f99a84d71}{SCREEN\_HEIGHT}, \hyperlink{class_s_d_l_window_a52d0a3b9ea7107e63476b24bc8a43397}{SCREEN\_FLAG});
+96         \textcolor{keywordflow}{if} (\hyperlink{class_s_d_l_window_aa95576b14f59ec62a9e7f6fb8c2f79cc}{Window} == NULL)
+97         \{
+98             printf(\textcolor{stringliteral}{"Window could not be created! SDL\_Error: %s\(\backslash\)n"}, SDL\_GetError());
+99             success = \textcolor{keyword}{false};
+100         \}
+101         \textcolor{keywordflow}{else}
+102         \{
+103             \hyperlink{class_s_d_l_window_ae679402fd05b8eb3fd8680f1f036aaca}{Renderer} = SDL\_CreateRenderer(\hyperlink{class_s_d_l_window_aa95576b14f59ec62a9e7f6fb8c2f79cc}{Window}, -1, SDL\_RENDERER\_ACCELERATED | 
+      SDL\_RENDERER\_PRESENTVSYNC);
+104             \textcolor{keywordflow}{if} (\hyperlink{class_s_d_l_window_ae679402fd05b8eb3fd8680f1f036aaca}{Renderer} == NULL)
+105             \{
+106                 printf(\textcolor{stringliteral}{"Renderer could not be created! SDL\_Error: %s\(\backslash\)n"}, SDL\_GetError());
+107                 success = \textcolor{keyword}{false};
+108             \}
+109             \textcolor{keywordflow}{else}
+110             \{
+111                 SDL\_SetRenderDrawColor(\hyperlink{class_s_d_l_window_ae679402fd05b8eb3fd8680f1f036aaca}{Renderer}, 0xFF, 0xFF, 0xFF, 0xFF);
+112 
+113                 \textcolor{keywordtype}{int} imgFlags = IMG\_INIT\_PNG;
+114                 \textcolor{keywordflow}{if} (!(IMG\_Init(imgFlags) & imgFlags))
+115                 \{
+116                     printf(\textcolor{stringliteral}{"SDL\_image could not initialize! SDL\_image Error: %s\(\backslash\)n"}, IMG\_GetError());
+117                     success = \textcolor{keyword}{false};
+118                 \}
+119 
+120                 \textcolor{keywordflow}{if} (TTF\_Init() == -1)
+121                 \{
+122                     printf(\textcolor{stringliteral}{"SDL\_ttf could not initialize! SDL\_ttf Error: %s\(\backslash\)n"}, TTF\_GetError());
+123                     success = \textcolor{keyword}{false};
+124                 \}
+125             \}
+126         \}
+127     \}
+128 
+129     \textcolor{keywordflow}{return} success;
+130 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_a032e69e9664f4cfdb3e27e82d3bab986}\label{class_s_d_l_window_a032e69e9664f4cfdb3e27e82d3bab986}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!set\+Screen\+Flag@{set\+Screen\+Flag}}
+\index{set\+Screen\+Flag@{set\+Screen\+Flag}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{set\+Screen\+Flag()}{setScreenFlag()}}
+{\footnotesize\ttfamily void S\+D\+L\+Window\+::set\+Screen\+Flag (\begin{DoxyParamCaption}\item[{Uint32}]{flag }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG.
+
+
+\begin{DoxyCode}
+69 \{
+70     \hyperlink{class_s_d_l_window_a52d0a3b9ea7107e63476b24bc8a43397}{SCREEN\_FLAG} = flag;
+71 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_ae80e9b827e6c2138f1506841a60a072b}\label{class_s_d_l_window_ae80e9b827e6c2138f1506841a60a072b}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!set\+Screen\+Height@{set\+Screen\+Height}}
+\index{set\+Screen\+Height@{set\+Screen\+Height}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{set\+Screen\+Height()}{setScreenHeight()}}
+{\footnotesize\ttfamily void S\+D\+L\+Window\+::set\+Screen\+Height (\begin{DoxyParamCaption}\item[{int}]{height }\end{DoxyParamCaption})}
+
+
+
+Definition at line 38 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT.
+
+
+\begin{DoxyCode}
+39 \{
+40     \hyperlink{class_s_d_l_window_aed36cc4e541ecf78cda7e92f99a84d71}{SCREEN\_HEIGHT} = height;
+41 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_a1be36c2e5e329d203e929d59f2d5c308}\label{class_s_d_l_window_a1be36c2e5e329d203e929d59f2d5c308}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!set\+Screen\+Title@{set\+Screen\+Title}}
+\index{set\+Screen\+Title@{set\+Screen\+Title}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{set\+Screen\+Title()}{setScreenTitle()}}
+{\footnotesize\ttfamily void S\+D\+L\+Window\+::set\+Screen\+Title (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title }\end{DoxyParamCaption})}
+
+
+
+Definition at line 58 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE.
+
+
+\begin{DoxyCode}
+59 \{
+60     \hyperlink{class_s_d_l_window_afeb1a7d48dde026d437babea6667ebee}{SCREEN\_TITLE} = title;
+61 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_a36930c7e4f3dee77c19283a3ede6287d}\label{class_s_d_l_window_a36930c7e4f3dee77c19283a3ede6287d}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!set\+Screen\+Width@{set\+Screen\+Width}}
+\index{set\+Screen\+Width@{set\+Screen\+Width}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{set\+Screen\+Width()}{setScreenWidth()}}
+{\footnotesize\ttfamily void S\+D\+L\+Window\+::set\+Screen\+Width (\begin{DoxyParamCaption}\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+Definition at line 48 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH.
+
+
+\begin{DoxyCode}
+49 \{
+50     \hyperlink{class_s_d_l_window_ab3faec77de829876613ea52176ef61e1}{SCREEN\_WIDTH} = width;
+51 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{class_s_d_l_window_ad14a7b1965115315210ba34b7239e598}\label{class_s_d_l_window_ad14a7b1965115315210ba34b7239e598}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!set\+Window@{set\+Window}}
+\index{set\+Window@{set\+Window}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{set\+Window()}{setWindow()}}
+{\footnotesize\ttfamily void S\+D\+L\+Window\+::set\+Window (\begin{DoxyParamCaption}\item[{const char $\ast$}]{title,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{int}]{width,  }\item[{int}]{height,  }\item[{Uint32}]{flag }\end{DoxyParamCaption})}
+
+
+
+Definition at line 23 of file S\+D\+L\+Window.\+cpp.
+
+
+
+References Window.
+
+
+
+Referenced by init().
+
+
+\begin{DoxyCode}
+24 \{
+25     \hyperlink{class_s_d_l_window_aa95576b14f59ec62a9e7f6fb8c2f79cc}{Window} = SDL\_CreateWindow(title, x, y, width, height, flag);
+26 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_s_d_l_window_ae679402fd05b8eb3fd8680f1f036aaca}\label{class_s_d_l_window_ae679402fd05b8eb3fd8680f1f036aaca}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!Renderer@{Renderer}}
+\index{Renderer@{Renderer}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{Renderer}{Renderer}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Renderer$\ast$ S\+D\+L\+Window\+::\+Renderer\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 37 of file S\+D\+L\+Window.\+h.
+
+
+
+Referenced by get\+Renderer(), init(), and $\sim$\+S\+D\+L\+Window().
+
+\mbox{\Hypertarget{class_s_d_l_window_a52d0a3b9ea7107e63476b24bc8a43397}\label{class_s_d_l_window_a52d0a3b9ea7107e63476b24bc8a43397}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG@{S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG}}
+\index{S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG@{S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG}{SCREEN\_FLAG}}
+{\footnotesize\ttfamily Uint32 S\+D\+L\+Window\+::\+S\+C\+R\+E\+E\+N\+\_\+\+F\+L\+AG\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 44 of file S\+D\+L\+Window.\+h.
+
+
+
+Referenced by get\+Screen\+Flag(), init(), and set\+Screen\+Flag().
+
+\mbox{\Hypertarget{class_s_d_l_window_aed36cc4e541ecf78cda7e92f99a84d71}\label{class_s_d_l_window_aed36cc4e541ecf78cda7e92f99a84d71}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT@{S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT}}
+\index{S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT@{S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT}{SCREEN\_HEIGHT}}
+{\footnotesize\ttfamily int S\+D\+L\+Window\+::\+S\+C\+R\+E\+E\+N\+\_\+\+H\+E\+I\+G\+HT\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 43 of file S\+D\+L\+Window.\+h.
+
+
+
+Referenced by get\+Screen\+Height(), init(), and set\+Screen\+Height().
+
+\mbox{\Hypertarget{class_s_d_l_window_afeb1a7d48dde026d437babea6667ebee}\label{class_s_d_l_window_afeb1a7d48dde026d437babea6667ebee}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE@{S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE}}
+\index{S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE@{S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE}{SCREEN\_TITLE}}
+{\footnotesize\ttfamily const char$\ast$ S\+D\+L\+Window\+::\+S\+C\+R\+E\+E\+N\+\_\+\+T\+I\+T\+LE\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 39 of file S\+D\+L\+Window.\+h.
+
+
+
+Referenced by get\+Screen\+Title(), init(), and set\+Screen\+Title().
+
+\mbox{\Hypertarget{class_s_d_l_window_ab3faec77de829876613ea52176ef61e1}\label{class_s_d_l_window_ab3faec77de829876613ea52176ef61e1}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH@{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH}}
+\index{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH@{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH}{SCREEN\_WIDTH}}
+{\footnotesize\ttfamily int S\+D\+L\+Window\+::\+S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 42 of file S\+D\+L\+Window.\+h.
+
+
+
+Referenced by get\+Screen\+Width(), init(), and set\+Screen\+Width().
+
+\mbox{\Hypertarget{class_s_d_l_window_ade54e8777a5e5017b139b4559c791634}\label{class_s_d_l_window_ade54e8777a5e5017b139b4559c791634}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+C\+R\+E\+E\+N\+\_\+X@{S\+C\+R\+E\+E\+N\+\_\+X}}
+\index{S\+C\+R\+E\+E\+N\+\_\+X@{S\+C\+R\+E\+E\+N\+\_\+X}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{S\+C\+R\+E\+E\+N\+\_\+X}{SCREEN\_X}}
+{\footnotesize\ttfamily int S\+D\+L\+Window\+::\+S\+C\+R\+E\+E\+N\+\_\+X\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 40 of file S\+D\+L\+Window.\+h.
+
+
+
+Referenced by init().
+
+\mbox{\Hypertarget{class_s_d_l_window_abdb8d6136e9724e854c491cb9eef054d}\label{class_s_d_l_window_abdb8d6136e9724e854c491cb9eef054d}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!S\+C\+R\+E\+E\+N\+\_\+Y@{S\+C\+R\+E\+E\+N\+\_\+Y}}
+\index{S\+C\+R\+E\+E\+N\+\_\+Y@{S\+C\+R\+E\+E\+N\+\_\+Y}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{S\+C\+R\+E\+E\+N\+\_\+Y}{SCREEN\_Y}}
+{\footnotesize\ttfamily int S\+D\+L\+Window\+::\+S\+C\+R\+E\+E\+N\+\_\+Y\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file S\+D\+L\+Window.\+h.
+
+
+
+Referenced by init().
+
+\mbox{\Hypertarget{class_s_d_l_window_a7e7b7186d315e3294fb1761e1eb284ae}\label{class_s_d_l_window_a7e7b7186d315e3294fb1761e1eb284ae}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!Surface@{Surface}}
+\index{Surface@{Surface}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{Surface}{Surface}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Surface$\ast$ S\+D\+L\+Window\+::\+Surface\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 36 of file S\+D\+L\+Window.\+h.
+
+\mbox{\Hypertarget{class_s_d_l_window_aa95576b14f59ec62a9e7f6fb8c2f79cc}\label{class_s_d_l_window_aa95576b14f59ec62a9e7f6fb8c2f79cc}} 
+\index{S\+D\+L\+Window@{S\+D\+L\+Window}!Window@{Window}}
+\index{Window@{Window}!S\+D\+L\+Window@{S\+D\+L\+Window}}
+\subsubsection{\texorpdfstring{Window}{Window}}
+{\footnotesize\ttfamily S\+D\+L\+\_\+\+Window$\ast$ S\+D\+L\+Window\+::\+Window\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 35 of file S\+D\+L\+Window.\+h.
+
+
+
+Referenced by get\+Window(), init(), set\+Window(), and $\sim$\+S\+D\+L\+Window().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_s_d_l_window_8h}{S\+D\+L\+Window.\+h}\item 
+C\+:/\+Users/\+Kyle Tuckey/\+Documents/\+Final Year Project/\+Social\+\_\+\+N\+P\+C\+S/\+Social\+\_\+\+N\+P\+C\+S/\hyperlink{_s_d_l_window_8cpp}{S\+D\+L\+Window.\+cpp}\end{DoxyCompactItemize}
