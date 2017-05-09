@@ -90,6 +90,9 @@
     <ClInclude Include="Base_Group.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="User_Group.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Social_NPCS.cpp">
@@ -147,6 +150,9 @@
       <Filter>Source Files\SDL</Filter>
     </ClCompile>
     <ClCompile Include="Base_Group.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="User_Group.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

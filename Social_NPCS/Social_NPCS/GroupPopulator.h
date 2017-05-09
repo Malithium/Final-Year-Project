@@ -12,6 +12,8 @@ class GroupPopulator
 public:
 	GroupPopulator(std::ifstream file);
 	GroupPopulator();
+
+	/// returns a populated group object
 	Group PopulateGroup();
 
 private:

@@ -15,31 +15,35 @@ class Texture
 public:
 	Texture();
 	~Texture();
-	//Loads image at specified path
+	///Loads image at specified path
 	bool loadFromFile(std::string path, SDL_Renderer* renderer);
 
-	//Creates image from font string
+	///Creates image from font string
 	bool loadFromRenderedText(std::string textureText, SDL_Color textColor, SDL_Renderer* renderer, TTF_Font* gFont, int wrapLength);
 
-	//Deallocates texture
+	///Deallocates texture
 	void free();
 
-	//Renders texture at given point
+	///Renders texture at given point
 	void render(int x, int y, SDL_Renderer* renderer, SDL_Rect* clip = NULL, double angle = 0.0, SDL_Point* center = NULL, SDL_RendererFlip flip = SDL_FLIP_NONE);
 
+	/// sets the sprites RBG values
 	void setColor(int r, int g, int b);
 
+	/// returns the SDL texture
 	SDL_Texture* getSDLTexture();
 
-	//Gets image dimensions
+	/// Gets image width
 	int getWidth();
+
+	/// Gets image height
 	int getHeight();
 
 private:
-	//The actual hardware texture
+	///The actual hardware texture
 	SDL_Texture* mTexture;
 
-	//Image dimensions
+	///Image dimensions
 	int mWidth;
 	int mHeight;
 };

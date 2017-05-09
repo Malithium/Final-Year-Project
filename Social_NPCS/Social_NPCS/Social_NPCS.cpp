@@ -11,6 +11,9 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
+/**
+* Entry point of the program
+*/
 int main(int argc, char* args[])
 {
 	int lastTime = 0, currentTime;
@@ -33,13 +36,16 @@ int main(int argc, char* args[])
 	ResourceData rData(resourceReader.ReadJsonFile());
 
 	//check the timestamp on our data file, if it is less than 24 hours, then dont run the python script
-	if ((base - date) >= 60 * 60 * 24)
+	if (rData.readData("Enable_Python") == "true")
 	{
-		//call the python module to get reddit comments
-		std::string pFile = rData.readData("Python_File");
-		std::string pMod = rData.readData("Python_Module");
-		PythonHandler pHandler(rData.readData("Python_File"), rData.readData("Python_Module"));
-		pHandler.callPythonModule();
+		if ((base - date) >= 60 * 60 * 24)
+		{
+			//call the python module to get reddit comments
+			std::string pFile = rData.readData("Python_File");
+			std::string pMod = rData.readData("Python_Module");
+			PythonHandler pHandler(rData.readData("Python_File"), rData.readData("Python_Module"));
+			pHandler.callPythonModule();
+		}
 	}
 
 	//populate the group object with the data from the generated JSON file
@@ -58,7 +64,6 @@ int main(int argc, char* args[])
 	{
 		bool quit = false;
 		
-		Texture* npcSprite = new Texture();
 		SDL_Event e;
 		SDL_Renderer* renderer = window.getRenderer();
 		Room room1(5, 180, 180, window.getScreenWidth(), window.getScreenHeight(), rData.readData("NPC_Sprite"), rData.readData("TextBox_Sprite"), renderer, grp);
@@ -66,7 +71,6 @@ int main(int argc, char* args[])
 		//Open up the font to be used in the application
 		TTF_Font* font;
 		font = TTF_OpenFont(rData.readData("Font_File").c_str(), atoi(rData.readData("Font_Size").c_str()));
-		Sprite colorTest("NPC.png", renderer, 100, 100);
 		int i = 0;
 		bool time = true;
 
@@ -84,7 +88,7 @@ int main(int argc, char* args[])
 			SDL_SetRenderDrawColor(renderer, 0xFF, 0xFF, 0xFF, 0xFF);
 			SDL_RenderClear(renderer);
 			
-			if (currentTime > lastTime + 30)
+			if (currentTime > lastTime + atoi(rData.readData("Timer_Value").c_str()))
 			{
 				time = true;
 				lastTime = currentTime;
@@ -94,8 +98,13 @@ int main(int argc, char* args[])
 				time = false;
 			}
 
+			// Render the NPC sprites to the screen
 			room1.LoadNPCs(renderer);
-			room1.LoadConversation(renderer, time, font);
+
+			// Simulate and render the conversation of the NPCs
+			room1.LoadConversation(renderer, time, rData.readData("Boredom_Level"), font);
+
+			// Handle the movement of any idle NPCs
 			room1.HandleMove(renderer);
 
 			SDL_RenderPresent(renderer);

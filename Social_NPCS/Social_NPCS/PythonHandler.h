@@ -15,6 +15,7 @@ public:
 	std::string getFunctionName();
 	void setFunctionName(std::string function);
 
+	/// Call the python script to gather comments
 	void callPythonModule();
 private:
 	std::string moduleName;

@@ -1,6 +1,7 @@
 #include "Comment.h"
 
-Comment::Comment(std::string nBody, std::string nId, std::string nP_Id, bool nReply, float nPolar): body(nBody), id(nId), parent_id(nP_Id), reply(nReply), polarity(nPolar){}
+Comment::Comment(std::string nBody, std::string nId, std::string nP_Id, bool nReply, float nPolar, std::string username): 
+	body(nBody), id(nId), parent_id(nP_Id), reply(nReply), polarity(nPolar), userName(username){}
 
 std::string Comment::getBody()
 {
@@ -52,12 +53,15 @@ void Comment::setPolarity(float polar)
 	polarity = polar;
 }
 
-/*
-bool operator== (const Comment &c1, const Comment &c2)
+std::string Comment::getUserName()
 {
-	return c1.id == c2.id;
+	return userName;
 }
-*/
+
+void Comment::setUserName(std::string name)
+{
+	userName = name;
+}
 
 bool operator== (const Comment &c1, const Comment &c2)
 {

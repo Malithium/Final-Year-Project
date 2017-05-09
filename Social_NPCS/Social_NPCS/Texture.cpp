@@ -1,7 +1,7 @@
 #include "Texture.h"
-
+/*This piece of code was originally from Lazy Foo' Productions
+(http://lazyfoo.net/)*/
  
-
 Texture::Texture()
 {
 	//Initialize
@@ -17,6 +17,9 @@ Texture::~Texture()
 	free();
 }
 
+/**
+* Loads in a PNG images as a texture to the game
+*/
 bool Texture::loadFromFile(std::string path, SDL_Renderer* renderer)
 {
 	//Get rid of preexisting texture
@@ -58,11 +61,17 @@ bool Texture::loadFromFile(std::string path, SDL_Renderer* renderer)
 	return mTexture != NULL;
 }
 
+/**
+* Return the SDL_Texture pointer
+*/
 SDL_Texture* Texture::getSDLTexture()
 {
 	return mTexture;
 }
 
+/**
+* loads in any parsed in text as a texture, we want the text to wrap depending on width
+*/
 bool Texture::loadFromRenderedText(std::string textureText, SDL_Color textColor, SDL_Renderer* renderer, TTF_Font* gFont, int wrapLength)
 {
 	//Get rid of preexisting texture
@@ -99,6 +108,9 @@ bool Texture::loadFromRenderedText(std::string textureText, SDL_Color textColor,
 	return mTexture != NULL;
 }
 
+/**
+* Frees up the memory space the texture is occupying
+*/
 void Texture::free()
 {
 	//Free texture if it exists
@@ -109,11 +121,17 @@ void Texture::free()
 	}
 }
 
+/**
+* Modulates the colour of our Texture
+*/
 void Texture::setColor(int r, int g, int b)
 {
 	SDL_SetTextureColorMod(mTexture, r, g, b);
 }
 
+/**
+* Renders the image to the screen
+*/
 void Texture::render(int x, int y, SDL_Renderer* renderer, SDL_Rect* clip, double angle, SDL_Point* center, SDL_RendererFlip flip)
 {
 	//Set rendering space and render to screen
@@ -130,6 +148,9 @@ void Texture::render(int x, int y, SDL_Renderer* renderer, SDL_Rect* clip, doubl
 	SDL_RenderCopyEx(renderer, mTexture, clip, &renderQuad, angle, center, flip);
 }
 
+/**
+* get the Textures width
+*/
 int Texture::getWidth()
 {
 	int w, h;
@@ -137,6 +158,9 @@ int Texture::getWidth()
 	return w;
 }
 
+/**
+* get the Textures height
+*/
 int Texture::getHeight()
 {
 	int w, h;

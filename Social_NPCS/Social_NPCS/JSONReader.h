@@ -14,6 +14,7 @@ public:
 	std::string getFileName();
 	void setFileName(std::string fName);
 
+	/// reads a JSON file into the program
 	std::ifstream ReadJsonFile();
 
 private:

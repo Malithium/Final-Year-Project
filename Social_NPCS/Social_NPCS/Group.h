@@ -14,6 +14,8 @@ public:
 
 	void setId(std::string nId);
 	void setTopics(std::vector<Topic> nTopics);
+
+	/// Custom compare operator
 	friend bool operator== (const Group &c1, const Group &c2);
 private:
 	std::string id;
